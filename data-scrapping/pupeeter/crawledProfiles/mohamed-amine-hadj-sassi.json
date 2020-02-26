@@ -1,0 +1,238 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Mohamed Amine Hadj Sassi",
+    "headline": "Ingénieur Développeur .Net",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4E03AQEUzYXzJSP6pQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=-ObBppQfc5xXyEhvEquuSgBeuLbcNzXA6WgCniUA9lk",
+    "location": "Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "J'ai eu la chance de vivre ma vie, j'ai pu me spécialiser dans mon sujet préféré\nde nombreux projets et faire partie de quelques grands clubs.\nJ'ai toujours été passionné par les nouvelles technologies dans tous les aspects du monde de l'informatique\nmais je me suis toujours retrouvé retiré à Microsoft technologies en particulier dans les applications Web (C # .NET et ASP .NET MVC).\nCe que je cherche dans un emploi est:\n- Être capable de faire quelque chose qui compte.\n- Traiter les nouvelles technologies et aider à améliorer ou mettre en œuvre de nouvelles techniques.\n- Gérer de grands projets et travailler jour et nuit pour respecter les délais et satisfaire les clients.\n- Travailler avec des gens talentueux parce que tout est dans le travail d'équipe.\n- Faites face à certains défis et pensez-vous que cela ne peut pas être fait."
+  },
+  "aboutAlternative": {
+    "text": "J'ai eu la chance de vivre ma vie, j'ai pu me spécialiser dans mon sujet préféré\nde nombreux projets et faire partie de quelques grands clubs.\nJ'ai toujours été passionné par les nouvelles technologies dans tous les aspects du monde de l'informatique\nmais je me suis toujours retrouvé retiré à Microsoft technologies en particulier dans les applications Web (C # .NET et ASP .NET MVC).\nCe que je cherche dans un emploi est:\n- Être capable de faire quelque chose qui compte.\n- Traiter les nouvelles technologies et aider à améliorer ou mettre en œuvre de nouvelles techniques.\n- Gérer de grands projets et travailler jour et nuit pour respecter les délais et satisfaire les clients.\n- Travailler avec des gens talentueux parce que tout est dans le travail d'équipe.\n- Faites face à certains défis et pensez-vous que cela ne peut pas être fait."
+  },
+  "positions": [
+    {
+      "title": "Ingénieur développeur. Net",
+      "companyName": "SYMDRIK",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "*Module Web :\n\nSpécification, Conception et Réalisation d'un  qui permet de :\n\n-Gestion des merchandisers, clients et des utilisateurs .\n\n-Gestion des types de visites, familles et des clients par merchandisers.\n\n-Création et validation des planifications par merchandisers.\n\nOutils: C# ,WinForm ,Razor, ASP.Net MVC 5 Code First, Entity Framework, Linq , Framework 4.5.2, DevExpress , CSS 3 , Bing Map API ,HTML 5 , Ajax, jQuery , JSON , JS ,Microsoft Visual Studio 2017, IIS , Microsoft SQL 2016,TFS, Sage X3\n…\nvoir plus",
+      "date1": "avr. 2019 – Aujourd’hui",
+      "date2": "11 mois"
+    },
+    {
+      "title": "Ingénieur développeur. Net",
+      "companyName": "Freelance",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "*Module d’intégration des pointages vers Sage Paie \n\nSpécification, Conception et Réalisation d'un module qui permet d’intégration des pointages des salariés vers Sage Paie .\n\n-Import des pointages depuis Fichier Excel / CSV / Texte.\n\n-Import des pointages depuis SQL Server.\n\n-Intégration des pointages vers Sage Paie.\n\n-Impression des pointages.\n\nOutils: C# ,WinForm , Microsoft Visual Studio 2017, DevExpress XPO ORM, Linq , Framework 4.5.2, TFS , Sage Paie & RH ,Microsoft SQL 2016.\n\n\n…\nvoir plus",
+      "date1": "avr. 2018 – mars 2019",
+      "date2": "1 an"
+    },
+    {
+      "title": "Ingénieur développeur .Net",
+      "companyName": "INFOSOFT Sage",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "*Module d’import des déclarations CNSS / Employés depuis Sage Paie\nSpécification, Conception et Réalisation d'un module qui permet d’import des déclarations des salariés depuis Sage Paie .\n\n*Module d’import des virements Bancaires des salariés depuis Sage Paie\nSpécification, Conception et Réalisation d'un module qui permet d’import des virements bancaires des salariés depuis Sage Paie .\n-Export des virements bancaires sous format texte des différents formats des banques Tunisiennes.\n\n*Module Interne Web pour la Fédération Tunisienne de Tennis de Table FTTT\nSpécification, Conception et Réalisation d'un module qui permet de :\n-Gestion des joueurs , équipes , entraineurs , arbitres (Ajout /Suppression / Modification).\n-Gestion des tournois , et des rencontres entre les différents équipes .\n-Création des tableaux de Bord dans l’interface d’accueil .\n\nOutils: C# , ASP.Net MVC 4 , Entity Framework ,Linq ,Framework 4.5 , CSS 3 , HTML 5 , Ajax, jQuery , JavaScript, Microsoft Visual Studio 2012, Crystal Report , IIS , Microsoft SQL 2012.\n\n*Module Interne Web pour une agence des voyages Tunisienne :\nSpécification, Conception et Réalisation d'un module qui permet de :\n\n-Gestion des clients , fournisseurs et des articles (Ajout /Suppression / Modification).\n-Gestion de vente des billets d’avions .\n-Gestion des réservations et facturation pour les hôtels en Tunisie / à étranger .\n-Impression de plusieurs états .\n\nOutils: C# , ASP.Net MVC 4 , Entity Framework, Linq , Framework 4.5 , CSS 3 , HTML 5 , Ajax, jQuery , JavaScript.Microsoft Visual Studio 2012, Crystal Report , IIS , Microsoft SQL 2012.\n\n*Module gestion commercial\nSpécification, Conception et Réalisation d'un module de gestion commercial en collaboration avec l’équipe de développement .\n-Import des structures depuis Fichier Excel et intégration vers le module .\n-Gestion des glossaires , frais et tiers.\n-Impression des structures\n-Impression des états spécifiques des pièces suivant les besoins des clients.\n…\nvoir plus",
+      "date1": "avr. 2015 – mars 2018",
+      "date2": "3 ans"
+    },
+    {
+      "title": "Développeur .Net",
+      "companyName": "Freelance",
+      "description": "Spécification, Conception et Réalisation d'un module de pesage qui permet :\n\n-Importation des données de la base commerciale Sage.\n-Gestion des véhicules / Chauffeurs .\n-Création des bons de pesage.\n-Création des factures dans la base commerciale Sage .\n\nOutils: C# ,WinForm , EF,Linq , Framework 4.5.2, DevExpress ,Microsoft Visual Studio 2012, Microsoft SQL 2012, Sage L100.\n\n…\nvoir plus",
+      "date1": "juil. 2014 – mars 2015",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Représentant technico-commercial",
+      "companyName": "Orange Tunisie",
+      "location": "Tunisie",
+      "description": "-Analyser les besoins des clients .\n-Fournir une assistance à l’équipe de vente et des solutions aux problématiques clients .",
+      "date1": "juin 2013 – juin 2014",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "companyName": "Nom du diplôme\nIngénieur"
+    },
+    {
+      "title": "École Nationale d'Electronique et des Télécommunications de Sfax (ENET'Com)",
+      "companyName": "Nom du diplôme\nLicense appliquée en technologie des réseaux et Télécommunications"
+    },
+    {
+      "title": "Lycée garçon Sfax",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "degree": "Ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2009",
+      "date2": "2012"
+    },
+    {
+      "title": "École Nationale d'Electronique et des Télécommunications de Sfax (ENET'Com)",
+      "degree": "License appliquée en technologie des réseaux et Télécommunications",
+      "fieldofstudy": "Systèmes d’Information et Base de Données",
+      "date1": "2006",
+      "date2": "2009"
+    },
+    {
+      "title": "Lycée garçon Sfax",
+      "degree": "Baccalauréat",
+      "fieldofstudy": "Mathématiques",
+      "date1": "2002",
+      "date2": "2006"
+    }
+  ],
+  "skills": [
+    {
+      "title": "C#",
+      "count": "1"
+    },
+    {
+      "title": "ASP.NET MVC"
+    },
+    {
+      "title": "DevExpress"
+    },
+    {
+      "title": ".NET framework"
+    },
+    {
+      "title": "Android",
+      "count": "1"
+    },
+    {
+      "title": "XML",
+      "count": "3"
+    },
+    {
+      "title": "Microsoft SQL Server"
+    },
+    {
+      "title": "Crystal Reports"
+    },
+    {
+      "title": "Visual Studio"
+    },
+    {
+      "title": "SQL Server Management Studio"
+    },
+    {
+      "title": "Team Foundation Server (TFS)"
+    },
+    {
+      "title": "XHTML"
+    },
+    {
+      "title": "html 5"
+    },
+    {
+      "title": "css"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "JSON"
+    },
+    {
+      "title": "jQuery"
+    },
+    {
+      "title": "AJAX"
+    },
+    {
+      "title": "Sage"
+    },
+    {
+      "title": "LINQ"
+    },
+    {
+      "title": "API Web ASP.NET"
+    },
+    {
+      "title": "mvc 5"
+    },
+    {
+      "title": "Architecture MVC"
+    },
+    {
+      "title": "Razor"
+    },
+    {
+      "title": "Telerik"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/mohamed-b%C3%A9chir-achoura-40404a73/",
+      "text": "Développeur Full Stack (React/React Native/Node.JS) chez ADN EXPERTISE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nesrine-meki-7612b8a9/",
+      "text": "Ingénieur Dév. & Intégration .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rym-jebri-79905214a/",
+      "text": "Développeur web chez E-novationduweb.com"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mbarki-mohamed-8897b8130/",
+      "text": "Développeur Android chez Mobile Powered"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabersaid/",
+      "text": "Développeur web Symfony / PHP / Angular / Javascript"
+    },
+    {
+      "user": "https://www.linkedin.com/in/firashamdouni7897777/",
+      "text": "Développeur chez Spectrum Groupe"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rania-kallel-5a78b610/",
+      "text": "Directeur Stratégie & Développement Chez NUMERYX"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rihab-mabrouk-6b5898105/",
+      "text": "Ingénieur informatique chez HRDatabank"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-ali-riahi-a088b9104/",
+      "text": "ingénieur études et développement full stack at SCOR"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sami-bel-hadj-ali-0171ab23/",
+      "text": "Responsable informatique chez TECHNIPROTEC METAL"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Mohamed Amine Hadj Sassi",
+    "headline": "Ingénieur Développeur .Net",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4E03AQEUzYXzJSP6pQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=-ObBppQfc5xXyEhvEquuSgBeuLbcNzXA6WgCniUA9lk",
+    "location": "Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "J'ai eu la chance de vivre ma vie, j'ai pu me spécialiser dans mon sujet préféré\nde nombreux projets et faire partie de quelques grands clubs.\nJ'ai toujours été passionné par les nouvelles technologies dans tous les aspects du monde de l'informatique\nmais je me suis toujours retrouvé retiré à Microsoft technologies en particulier dans les applications Web (C # .NET et ASP .NET MVC).\nCe que je cherche dans un emploi est:\n- Être capable de faire quelque chose qui compte.\n- Traiter les nouvelles technologies et aider à améliorer ou mettre en œuvre de nouvelles techniques.\n- Gérer de grands projets et travailler jour et nuit pour respecter les délais et satisfaire les clients.\n- Travailler avec des gens talentueux parce que tout est dans le travail d'équipe.\n- Faites face à certains défis et pensez-vous que cela ne peut pas être fait."
+  }
+}

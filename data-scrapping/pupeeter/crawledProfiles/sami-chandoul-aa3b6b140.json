@@ -1,0 +1,250 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Sami CHANDOUL",
+    "headline": "Ingénieur Java JEE (Efficacité & Autonomie)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHT1hG-Ef08lg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=U-YyoSC74YL9oYrYI0MuoaGhDdjEdXSuNolns9Pi6Lk",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Le génie informatique, ou l'ingénierie informatique, est une discipline qui traite de la conception, du développement et de la fabrication de système informatique, aussi bien d'un point de vue matériels que logiciels."
+  },
+  "aboutAlternative": {
+    "text": "Le génie informatique, ou l'ingénierie informatique, est une discipline qui traite de la conception, du développement et de la fabrication de système informatique, aussi bien d'un point de vue matériels que logiciels."
+  },
+  "positions": [
+    {
+      "title": "Ingénieur méthodes",
+      "companyName": "MONOPRIX Tunisie",
+      "date1": "août 2019 – Aujourd’hui",
+      "date2": "7 mois"
+    },
+    {
+      "title": "Ingénieur qualité",
+      "companyName": "Faurecia",
+      "location": "Tunisie",
+      "date1": "sept. 2018 – juil. 2019",
+      "date2": "11 mois"
+    },
+    {
+      "title": "Projet de fin d'étude",
+      "companyName": "Poulina Group Holding",
+      "location": "Zone industrielle Agareb",
+      "description": "La mise en place d’un plan d’action pour atteindre la vitesse maximale de la machine à papier : Application de la méthode DMAIC (Define, Measure, Analyze, Improve and Control) pour aboutir à un plan d’action adéquat, puis le panifié avec les diagrammes PERT et GANTT.",
+      "date1": "mars 2018 – mai 2018",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Stage ingénieur 2",
+      "companyName": "Valeo",
+      "location": "El mghira industrial zone",
+      "description": "Mise à jour des documents des différents lignes de l’UAP 5S",
+      "date1": "juil. 2017 – août 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage ingénieur 1",
+      "companyName": "Entreprise Chiheb Électrique",
+      "location": "Megrine",
+      "description": "Etude et Câblage des armoires électrique",
+      "date1": "juin 2017",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Stage technicien",
+      "companyName": "CHAKIRA Cable",
+      "location": "Sidi Hassine",
+      "description": "Suivi les différentes phases de fabrication des câbles",
+      "date1": "août 2016",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Ecole nationale supérieure des ingénieurs de Tunis",
+      "companyName": "Nom du diplôme\nDiplome d'ingénieur"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs d'El Manar (IPEIEM)",
+      "companyName": "Nom du diplôme\nDiplôme national d’entrée aux écoles nationales d’ingénieurs, rang 162 sur 1400"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole nationale supérieure des ingénieurs de Tunis",
+      "degree": "Diplome d'ingénieur",
+      "date1": "2015",
+      "date2": "2018"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs d'El Manar (IPEIEM)",
+      "degree": "Diplôme national d’entrée aux écoles nationales d’ingénieurs, rang 162 sur 1400",
+      "fieldofstudy": "physique-technique (PT)",
+      "date1": "2013",
+      "date2": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "title": "JEE"
+    },
+    {
+      "title": "Spring boot",
+      "count": "1"
+    },
+    {
+      "title": "Angular"
+    },
+    {
+      "title": "Ingénierie",
+      "count": "5"
+    },
+    {
+      "title": "JPA"
+    },
+    {
+      "title": "Hibernate"
+    },
+    {
+      "title": "JavaServer Faces (JSF)"
+    },
+    {
+      "title": "MySQL",
+      "count": "1"
+    },
+    {
+      "title": "java",
+      "count": "1"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "Oracle Database"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "AJAX"
+    },
+    {
+      "title": "Microsoft Word",
+      "count": "1"
+    },
+    {
+      "title": "Framework Spring"
+    },
+    {
+      "title": "Modèle MVC de Spring"
+    },
+    {
+      "title": "Services web RESTful"
+    },
+    {
+      "title": "postman"
+    },
+    {
+      "title": "Mapping objet-relationnel"
+    },
+    {
+      "title": "Injection de dépendances dans Spring"
+    },
+    {
+      "title": "Spring Security"
+    },
+    {
+      "title": "TypeScript"
+    },
+    {
+      "title": "CRUD"
+    },
+    {
+      "title": "Primefaces"
+    },
+    {
+      "title": "Technique avancées d’optimisation"
+    },
+    {
+      "title": "Plan d'expériences",
+      "count": "1"
+    },
+    {
+      "title": "Optimisation discrète"
+    },
+    {
+      "title": "Technologies du web"
+    },
+    {
+      "title": "autonomie"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Allemand",
+        "English",
+        "Français",
+        "Projet Spring boot & Angular 7",
+        "Projet Spring boot & Spring Security",
+        "Projet JEE"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/mbouzidi/",
+      "text": "Ingénieur principal chez Ministère de la santé publique Tunisie وزارة الصحة"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bedis-ben-fadhel-4757835a/",
+      "text": "directeur d'Agence chez BIAT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabersaid/",
+      "text": "Développeur web Symfony / PHP / Angular / Javascript"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jomaa-fredj-614a99107/",
+      "text": "Administrateur du système informatique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aymen-gobji-853a64119/",
+      "text": "Ingénieur Machines Spéciales chez GENOVIA Ingénierie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khaled-masmoudi-92529911b/",
+      "text": "Administrateur Système et DBA chez ArabSoft"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-akrouti/",
+      "text": "Developpeur web PHP/ Symfony Altran"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wajdi-ayari-1a4877108/",
+      "text": "Ingénieur Industriel et consultant ERP"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sakkouhi-mohamed-salah-6628b1127/",
+      "text": "mechanical design engineer chez Marquardt Tunisia ●CAD/CFD freelancer●"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arfaoui-abderrazek-6aabb1105/",
+      "text": "Diplôme d'ingénieur en génie électromécanique chez Université arabe des Sciences"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Sami CHANDOUL",
+    "headline": "Ingénieur Java JEE (Efficacité & Autonomie)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHT1hG-Ef08lg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=U-YyoSC74YL9oYrYI0MuoaGhDdjEdXSuNolns9Pi6Lk",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Le génie informatique, ou l'ingénierie informatique, est une discipline qui traite de la conception, du développement et de la fabrication de système informatique, aussi bien d'un point de vue matériels que logiciels."
+  }
+}

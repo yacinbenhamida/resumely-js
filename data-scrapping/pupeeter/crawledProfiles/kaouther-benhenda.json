@@ -1,0 +1,193 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "kaouther ben henda",
+    "headline": "Ingénieur Développeur Full-Stack JAVA/JEE",
+    "location": "Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Développeur JAVA",
+      "companyName": "Tessi",
+      "location": "Tunis",
+      "date1": "févr. 2019 – Aujourd’hui",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Développeur full stack JAVA/JEE",
+      "companyName": "AHR Consulting",
+      "location": "Tunis",
+      "date1": "mai 2018 – janv. 2019",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Projet de fin d’études",
+      "companyName": "OnlySoft",
+      "location": "Tunisie",
+      "date1": "2017",
+      "date2": "moins d’un an"
+    },
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs de Monastir",
+      "companyName": "Nom du diplôme\nConcours national d'enrée aux écoles d'ingénieurs"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs de Monastir",
+      "degree": "Concours national d'enrée aux écoles d'ingénieurs",
+      "fieldofstudy": "MP",
+      "date1": "2011",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "1"
+    },
+    {
+      "title": "MySQL",
+      "count": "1"
+    },
+    {
+      "title": "JavaScript",
+      "count": "1"
+    },
+    {
+      "title": "SQL",
+      "count": "1"
+    },
+    {
+      "title": "Feuilles de style en cascade (CSS)"
+    },
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "Java Enterprise Edition"
+    },
+    {
+      "title": "JSON"
+    },
+    {
+      "title": "JavaServer Faces (JSF)"
+    },
+    {
+      "title": "Android"
+    },
+    {
+      "title": "Hibernate"
+    },
+    {
+      "title": "Framework Spring"
+    },
+    {
+      "title": "Maven"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "JPA"
+    },
+    {
+      "title": "Tomcat"
+    },
+    {
+      "title": "Eclipse"
+    },
+    {
+      "title": "spring mvc"
+    },
+    {
+      "title": "Primefaces"
+    },
+    {
+      "title": "Jasper Reports"
+    },
+    {
+      "title": "spring data"
+    },
+    {
+      "title": "spring boot"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "1",
+      "title": "langue",
+      "items": [
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/souha-gaaloul/",
+      "text": "Data Scientist at Kpeiz"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wajdi-methlouthi-12669791/",
+      "text": "Java Software Engineer chez Tessi"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabersaid/",
+      "text": "Développeur web Symfony / PHP / Angular / Javascript"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ben-yaala-amir/",
+      "text": "Développeur Full Stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amel-salhi-4787b0185/",
+      "text": "Développement web chez IPSoft"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hatem-ben-sta-56774552/",
+      "text": "xxxxx"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-dhaker-abdeljawed-4857196a/",
+      "text": "FullStack JavaScript Developer | Software Architecture Enthusiast"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bilel-oueslati-23b501132/",
+      "text": "Ingénieur développement fullstack (PHP/Symfony)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/insaf-ghazouani-40010b27/",
+      "text": "Consultante Recrutement chez Manpower Professional"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hana-ben-hammouda-520bb3151/",
+      "text": "Ingenieur Développement (Angular + Node Js + Symfony) chez Iotech"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "kaouther ben henda",
+    "headline": "Ingénieur Développeur Full-Stack JAVA/JEE",
+    "location": "Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

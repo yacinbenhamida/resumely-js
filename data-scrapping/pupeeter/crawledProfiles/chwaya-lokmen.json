@@ -1,0 +1,229 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Lokmen Chwaya",
+    "headline": "Data Science Intern at Geeks Data",
+    "location": "Ariana Médina, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Data Science Intern",
+      "companyName": "Geeks Data",
+      "location": "Tunisie",
+      "description": "KeyWords : Text mining, Machine learning, Web scraping, Classification , AI , NLP (natural language processing)",
+      "date1": "juin 2019 – Aujourd’hui",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Data Analyst intern",
+      "companyName": "ODDO BHF",
+      "description": "Platform for identifying potential customers\n• Collection and exploration of the external data (scraped) and internal (CRM) data of the bank.\n• Modeling datawarehouse and loading data in it (ETL)\n• The prediction ,proﬁling and classiﬁcation of the potential customers",
+      "date1": "janv. 2019 – juin 2019",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Mobile Developer intern",
+      "companyName": "3S",
+      "location": "Gouvernorat de Gafsa, Tunisia",
+      "description": "Conception and development of an IOT Mobile application of a remote watering system using Raspberry Pi",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Nom du diplôme\nEngineering"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Engineering",
+      "fieldofstudy": "Computer Science",
+      "date1": "2015",
+      "date2": "2020"
+    }
+  ],
+  "skills": [
+    {
+      "title": "SQL",
+      "count": "6"
+    },
+    {
+      "title": "JavaScript",
+      "count": "4"
+    },
+    {
+      "title": "MySQL",
+      "count": "4"
+    },
+    {
+      "title": "Business Intelligence",
+      "count": "3"
+    },
+    {
+      "title": "Machine learning",
+      "count": "3"
+    },
+    {
+      "title": "Datawarehouse",
+      "count": "2"
+    },
+    {
+      "title": "ETL",
+      "count": "2"
+    },
+    {
+      "title": "Data mining",
+      "count": "2"
+    },
+    {
+      "title": "NLP",
+      "count": "2"
+    },
+    {
+      "title": "PHP",
+      "count": "3"
+    },
+    {
+      "title": "Python",
+      "count": "3"
+    },
+    {
+      "title": "Java",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "C",
+      "count": "2"
+    },
+    {
+      "title": "C#",
+      "count": "2"
+    },
+    {
+      "title": "JavaFX",
+      "count": "2"
+    },
+    {
+      "title": "R",
+      "count": "2"
+    },
+    {
+      "title": "Selenium",
+      "count": "2"
+    },
+    {
+      "title": "Microsoft Excel",
+      "count": "1"
+    },
+    {
+      "title": "SQL Server Integration Services (SSIS)"
+    },
+    {
+      "title": "SQL Server Reporting Services (SSRS)"
+    },
+    {
+      "title": "Hadoop"
+    },
+    {
+      "title": "Symfony",
+      "count": "2"
+    },
+    {
+      "title": "Web scraping",
+      "count": "2"
+    },
+    {
+      "title": "Talend",
+      "count": "1"
+    },
+    {
+      "title": "Spark"
+    },
+    {
+      "title": "PowerBI",
+      "count": "2"
+    },
+    {
+      "title": "MS BI",
+      "count": "1"
+    },
+    {
+      "title": "Time Series",
+      "count": "1"
+    },
+    {
+      "title": "Text mining",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "1",
+    "given": [
+      {
+        "user": "https://www.linkedin.com/in/aymen-mansour/",
+        "text": "N’importe quel employeur serait content d’avoir Lokmen comme collaborateur."
+      }
+    ],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/aicha-ferchichi-b03119160/",
+      "text": "Data science engineering student | Looking for a graduation internship"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khalil-belguith-8105a0137/",
+      "text": "Data Scientist chez Geeks Data"
+    },
+    {
+      "user": "https://www.linkedin.com/in/farah-hamdi/",
+      "text": "Data Science Intern chez Sentinel Data"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jihene-abidi-39063b194/",
+      "text": "Stagiaire chez HUXIUM"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jdidi-boujneh-44254a150/",
+      "text": "Data Science Engineering student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/allaoui-hayfa-1688b7175/",
+      "text": "Data science Student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/moez-abid-ml/",
+      "text": "Data Science / Engineering Student at ESPRIT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amine-mhamdi/",
+      "text": "BI | Big Data Analytics intern chez TEAMWILL CONSULTING"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chedya-abbassi-851305119/",
+      "text": "Ingénieur informatique à la recherche d'une opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ahmed-benmohamed/",
+      "text": "Junior Data Scientist at Barac.io"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Lokmen Chwaya",
+    "headline": "Data Science Intern at Geeks Data",
+    "location": "Ariana Médina, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

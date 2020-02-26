@@ -1,0 +1,144 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Nadia Ben Kacem",
+    "headline": "A la recherche d'un stage de fin d'études en (BI)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHmtgYnbrj3eQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=duABvCdMaH3eqMY15KKjD7WjXkpL6FCzXcPsoSSkwhE",
+    "location": "Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "étudiante en 3ème année informatique décisionnelle (BI) c'est double diplôme sans mobilité"
+  },
+  "aboutAlternative": {
+    "text": "étudiante en 3ème année informatique décisionnelle (BI) c'est double diplôme sans mobilité"
+  },
+  "positions": [
+    {
+      "title": "Etudiante avec une double diplômation",
+      "companyName": "Esprit School of Business",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "sept. 2019 – Aujourd’hui",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Spécialiste certifié",
+      "companyName": "Croissant Rouge Tunisien",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "date1": "avr. 2019",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Stagiaire été",
+      "companyName": "La Poste Tunisienne",
+      "date1": "juin 2018",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Membre d’équipe marketing",
+      "companyName": "Club Santé Esprit",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "date1": "janv. 2018",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Université Claude Bernard Lyon 1",
+      "companyName": "Nom du diplôme\ninformatique décisionnelle"
+    },
+    {
+      "title": "Esprit School of Business",
+      "companyName": "Nom du diplôme\nInformatique de gestion"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Université Claude Bernard Lyon 1",
+      "degree": "informatique décisionnelle",
+      "fieldofstudy": "BUSINESS INTELLIGENCE",
+      "date1": "2019",
+      "date2": "2020"
+    },
+    {
+      "title": "Esprit School of Business",
+      "degree": "Informatique de gestion",
+      "fieldofstudy": "Informatique",
+      "date1": "2017",
+      "date2": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Microsoft Office"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "PHP"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/nesrine-bettaieb-214227153/",
+      "text": "A la recherche d'un stage PFE (Master en Management digital et systèmes d'information)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-maghzaoui-894706188/",
+      "text": "Etudiante en M2 management digital et SI ( A la recherche d'un stage PFE en Big Data | SI | BI | Analyse des données )"
+    },
+    {
+      "user": "https://www.linkedin.com/in/charfeddine-amine/",
+      "text": "Développeur Mobile/Web"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rached-ghouma-1543ab114/",
+      "text": "Développeur BI chez MONOPRIX Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hedi-manai/",
+      "text": "Développeur Business Intelligence chez Tunisian Cloud"
+    },
+    {
+      "user": "https://www.linkedin.com/in/soumaya-ben-mrad-01b608132/",
+      "text": "Data Science Engineering Student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/kacem-nadia-449921124/",
+      "text": "consultante BI chez AIVENTU"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-seif-eddine-trad-69977b12b/",
+      "text": "Computer engineering student / Full Stack Developer Currently looking for an end-of-studies internship"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-dhaoui-345635196/",
+      "text": "Étudiant en 2ème année mastère en Business Analytics à la recherche d'un stage de projet de fin d'étude ."
+    },
+    {
+      "user": "https://www.linkedin.com/in/siwar-nouili-40718516b/",
+      "text": "Etudiante"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Nadia Ben Kacem",
+    "headline": "A la recherche d'un stage de fin d'études en (BI)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHmtgYnbrj3eQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=duABvCdMaH3eqMY15KKjD7WjXkpL6FCzXcPsoSSkwhE",
+    "location": "Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "étudiante en 3ème année informatique décisionnelle (BI) c'est double diplôme sans mobilité"
+  }
+}

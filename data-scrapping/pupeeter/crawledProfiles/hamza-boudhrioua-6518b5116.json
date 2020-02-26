@@ -1,0 +1,162 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Hamza Boudhrioua",
+    "headline": "Développeur Web Full Stack PHP/SYMFONY ANGULAR 7/8",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEjRDffjUSYCQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=YVqunKoSdHZz7NZQbOiOSW50m93cqOLIpzfPYBg9UgI",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "FORMATION :\n2011 – 2014 Licence Appliquée en informatique\n- Ecole supérieur de technologie et d’informatique (ESTI)\n- Spécialité : Systèmes informatiques et logiciels\n\n2014 – 2016 Master professionnel en informatique\n- Ecole National d’ingénieurs de Carthage (ENICAR)\n- Spécialité : Ingénierie des systèmes informatiques\n\nEXPERIENCE PROFESSIONNELLE:\n* Stage PFE Licence : Conception et réalisation d’un site web pour une agence immobilière avec (Symfony2.5 et MySQL) au sien de la société Digital Power Consulting (DPC).\n- Du 15/1/2014 jusqu’à 15/05/2014\n\n* Stage PFE Mastère: Conception et réalisation d’un outil de surveillance des réseaux sociaux au sien de la société MDWEB avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/02/2016 jusqu’à 20/06/2016\n\n* Développeur Web chez MDWEB : Développement d’un outil de surveillance des réseaux sociaux avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/07/2016 jusqu’à 14/01/2017.\n\n* Développeur Web chez ABSHORE : Développement des nouveaux modules d'un grand projet lié à l'industrie de la lunetterie.(Symfony2.3, Mysql, Amazon(S3,SQS)).\n- Depuis fevrier 2017 .\n\nDOMAINE DE COMPETANCES:\n- Développement Web (PHP, Python, AngularJS).\n- Big Data (MongoDB et CassandraDB).\n\nINFORMATIQUE:\nServeurs: Apache, Tomcat, WAMP.\nOS: Windows, Linux, MacOs.\nArchitecture: MVC\nConception: UML.\nDéveloppement: Java, PHP5,HTML5, XML, CSS3, JavaScript, AJAX, jQuery,\nEnvironnement de Développement: PhpStorm , Pycharm ,Eclipse, Netbeans.\nFrameworks PHP: Symfony (2.0, 2.3, 2.5, 2.8 , 3.1).\nFrameworks Python: Django.\nFrameworks JAVASCRIPT: AngularJs.\nOutils de travail collaboratif: SVN, GIT.\nOutils de gestion de projet : Redmine, Jira, Confluence.\nSystème Base de données: MySQL, MongoDB, CassandraDB.\nORM: Doctrine.\nProgrammation BD: SQL, Big Data (Nosql).\nFacebook API's : Graph Api, Insights Api.\nAmazon Cloud Services : S3, SQS."
+  },
+  "aboutAlternative": {
+    "text": "FORMATION :\n2011 – 2014 Licence Appliquée en informatique\n- Ecole supérieur de technologie et d’informatique (ESTI)\n- Spécialité : Systèmes informatiques et logiciels\n\n2014 – 2016 Master professionnel en informatique\n- Ecole National d’ingénieurs de Carthage (ENICAR)\n- Spécialité : Ingénierie des systèmes informatiques\n\nEXPERIENCE PROFESSIONNELLE:\n* Stage PFE Licence : Conception et réalisation d’un site web pour une agence immobilière avec (Symfony2.5 et MySQL) au sien de la société Digital Power Consulting (DPC).\n- Du 15/1/2014 jusqu’à 15/05/2014\n\n* Stage PFE Mastère: Conception et réalisation d’un outil de surveillance des réseaux sociaux au sien de la société MDWEB avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/02/2016 jusqu’à 20/06/2016\n\n* Développeur Web chez MDWEB : Développement d’un outil de surveillance des réseaux sociaux avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/07/2016 jusqu’à 14/01/2017.\n\n* Développeur Web chez ABSHORE : Développement des nouveaux modules d'un grand projet lié à l'industrie de la lunetterie.(Symfony2.3, Mysql, Amazon(S3,SQS)).\n- Depuis fevrier 2017 .\n\nDOMAINE DE COMPETANCES:\n- Développement Web (PHP, Python, AngularJS).\n- Big Data (MongoDB et CassandraDB).\n\nINFORMATIQUE:\nServeurs: Apache, Tomcat, WAMP.\nOS: Windows, Linux, MacOs.\nArchitecture: MVC\nConception: UML.\nDéveloppement: Java, PHP5,HTML5, XML, CSS3, JavaScript, AJAX, jQuery,\nEnvironnement de Développement: PhpStorm , Pycharm ,Eclipse, Netbeans.\nFrameworks PHP: Symfony (2.0, 2.3, 2.5, 2.8 , 3.1).\nFrameworks Python: Django.\nFrameworks JAVASCRIPT: AngularJs.\nOutils de travail collaboratif: SVN, GIT.\nOutils de gestion de projet : Redmine, Jira, Confluence.\nSystème Base de données: MySQL, MongoDB, CassandraDB.\nORM: Doctrine.\nProgrammation BD: SQL, Big Data (Nosql).\nFacebook API's : Graph Api, Insights Api.\nAmazon Cloud Services : S3, SQS."
+  },
+  "positions": [
+    {
+      "title": "Ingénieur logiciels",
+      "companyName": "WEVIOO",
+      "location": "Technopole el ghazala",
+      "date1": "sept. 2018 – Aujourd’hui",
+      "date2": "1 an 6 mois"
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "ABSHORE",
+      "location": "Tunis Monplaisir",
+      "description": "Développeur web (Symfony2 +AngularJS+ Mysql + Amazon(S3 , SQS)):\nDéveloppement des nouveaux modules d'un grand projet lié à l'industrie de la lunetterie.",
+      "date1": "févr. 2017 – sept. 2018",
+      "date2": "1 an 8 mois"
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "MDWEB",
+      "location": "Monplaisir Avenue abderahmen azzem",
+      "description": "Développeur Web (Symfony/Python/MongoDB):\nDéveloppement d’un outil de surveillance des réseaux sociaux.",
+      "date1": "févr. 2016 – janv. 2017",
+      "date2": "1 an"
+    },
+    {
+      "title": "Stage de fin d'étude licence",
+      "companyName": "Digital Power Consulting",
+      "location": "Gouvernorat de Nabeul, Tunisia",
+      "description": "Conception et réalisation d'un site web pour une agence immobilière avec le framework PHP (Symfony2) et Mysql.",
+      "date1": "janv. 2014 – juin 2014",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "companyName": "Nom du diplôme\nMaster en informatique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "degree": "Master en informatique",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2011",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "php",
+      "count": "3"
+    },
+    {
+      "title": "Python",
+      "count": "2"
+    },
+    {
+      "title": "JavaScript",
+      "count": "2"
+    },
+    {
+      "title": "Big data"
+    },
+    {
+      "title": "Marketing Facebook"
+    },
+    {
+      "title": "MySQL",
+      "count": "2"
+    },
+    {
+      "title": "jQuery",
+      "count": "1"
+    },
+    {
+      "title": "NoSQL"
+    },
+    {
+      "title": "API Facebook"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/laffet-houssem-82080b134/",
+      "text": "Développeur Web Full Stack (PHP / SYMFONY ANGULAR 7/8)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ahmed-mehrez-657062160/",
+      "text": "Ingénieur développeur FULLSTACK PHP(SYMFONY 2 & 3 & 4)/ ANGULAR"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yosri-kchaou-26034516a/",
+      "text": "Développeur Web chez ABSHORE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amira-azouz-b91822a5/",
+      "text": "Ingénieur développement chez WEVIOO"
+    },
+    {
+      "user": "https://www.linkedin.com/in/inched-chalbi-881900141/",
+      "text": "Développeur web"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yassine-hajji-16b04ab0/",
+      "text": "Développeur Java / JEE / Angular chez Groupe Adaming Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/lamia-aloui-5001a2116/",
+      "text": "Ingénieure en Informatique - À la recherche d'une nouvelle opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ahmed-wahabi-psm%C2%AE-83970290/",
+      "text": "Ingénieur d'études et développement PHP/Symfony chez WEVIOO"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sondes-trabelsi-04b185114/",
+      "text": "Software developer at VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ziedsfaxi/",
+      "text": "Développeur web chez ABSHORE"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Hamza Boudhrioua",
+    "headline": "Développeur Web Full Stack PHP/SYMFONY ANGULAR 7/8",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEjRDffjUSYCQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=YVqunKoSdHZz7NZQbOiOSW50m93cqOLIpzfPYBg9UgI",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "FORMATION :\n2011 – 2014 Licence Appliquée en informatique\n- Ecole supérieur de technologie et d’informatique (ESTI)\n- Spécialité : Systèmes informatiques et logiciels\n\n2014 – 2016 Master professionnel en informatique\n- Ecole National d’ingénieurs de Carthage (ENICAR)\n- Spécialité : Ingénierie des systèmes informatiques\n\nEXPERIENCE PROFESSIONNELLE:\n* Stage PFE Licence : Conception et réalisation d’un site web pour une agence immobilière avec (Symfony2.5 et MySQL) au sien de la société Digital Power Consulting (DPC).\n- Du 15/1/2014 jusqu’à 15/05/2014\n\n* Stage PFE Mastère: Conception et réalisation d’un outil de surveillance des réseaux sociaux au sien de la société MDWEB avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/02/2016 jusqu’à 20/06/2016\n\n* Développeur Web chez MDWEB : Développement d’un outil de surveillance des réseaux sociaux avec (Symfony2.8, Python3.5 et MongoDB).\n- Du 01/07/2016 jusqu’à 14/01/2017.\n\n* Développeur Web chez ABSHORE : Développement des nouveaux modules d'un grand projet lié à l'industrie de la lunetterie.(Symfony2.3, Mysql, Amazon(S3,SQS)).\n- Depuis fevrier 2017 .\n\nDOMAINE DE COMPETANCES:\n- Développement Web (PHP, Python, AngularJS).\n- Big Data (MongoDB et CassandraDB).\n\nINFORMATIQUE:\nServeurs: Apache, Tomcat, WAMP.\nOS: Windows, Linux, MacOs.\nArchitecture: MVC\nConception: UML.\nDéveloppement: Java, PHP5,HTML5, XML, CSS3, JavaScript, AJAX, jQuery,\nEnvironnement de Développement: PhpStorm , Pycharm ,Eclipse, Netbeans.\nFrameworks PHP: Symfony (2.0, 2.3, 2.5, 2.8 , 3.1).\nFrameworks Python: Django.\nFrameworks JAVASCRIPT: AngularJs.\nOutils de travail collaboratif: SVN, GIT.\nOutils de gestion de projet : Redmine, Jira, Confluence.\nSystème Base de données: MySQL, MongoDB, CassandraDB.\nORM: Doctrine.\nProgrammation BD: SQL, Big Data (Nosql).\nFacebook API's : Graph Api, Insights Api.\nAmazon Cloud Services : S3, SQS."
+  }
+}

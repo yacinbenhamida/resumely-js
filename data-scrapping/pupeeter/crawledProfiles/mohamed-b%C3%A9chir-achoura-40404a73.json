@@ -1,0 +1,209 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Mohamed Béchir Achoura",
+    "headline": "Développeur Full Stack (React/React Native/Node.JS) chez ADN EXPERTISE",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations",
+    "summary": "améliorer mes compétences"
+  },
+  "aboutAlternative": {
+    "text": "améliorer mes compétences"
+  },
+  "positions": [
+    {
+      "title": "Développeur Full Stack (React/React Native/Node.JS)",
+      "companyName": "ADN EXPERTISE",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "sept. 2019 – Aujourd’hui",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nsatoripop",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "juil. 2019 – sept. 2019",
+      "date2": "3 mois",
+      "roles": [
+        {
+          "title": "Développeur Front End(React/React Native)",
+          "date1": "juil. 2019 – sept. 2019",
+          "date2": "3 mois",
+          "location": "Gouvernorat de Sousse, Tunisia"
+        },
+        {
+          "title": "Stage de projet de fin d'études",
+          "date1": "janv. 2019 – sept. 2019",
+          "date2": "9 mois"
+        }
+      ]
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "Sogea Environnement",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "oct. 2017 – déc. 2018",
+      "date2": "1 an 3 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nMSK Technologies Services",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "août 2018 – oct. 2018",
+      "date2": "3 mois",
+      "roles": [
+        {
+          "title": "Responsable Marketing et Communication",
+          "date1": "août 2018 – oct. 2018",
+          "date2": "3 mois",
+          "location": "Gouvernorat de Sousse, Tunisia"
+        },
+        {
+          "title": "Stage d’été",
+          "date1": "juil. 2018 – sept. 2018",
+          "date2": "3 mois",
+          "location": "Gouvernorat de Sousse, Tunisia"
+        }
+      ]
+    },
+    {
+      "title": "Stage d’été",
+      "companyName": "GPRO Consulting",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "mai 2018 – juin 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage d’été",
+      "companyName": "Diamond Services Web Solutions",
+      "location": "Tunisie",
+      "date1": "juin 2017 – juil. 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage de projet de fin d'études",
+      "companyName": "Univers Technologies et Services Informatiques",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Conception et développement d'une application Web et Mobile \"Système de navigation et de géolocalisation à la ville de Monastir \"​ \"Monastir Navigator\"",
+      "date1": "févr. 2015 – juin 2015",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Polytechnique Sousse",
+      "companyName": "Nom du diplôme\nIngénieur informatique, Génie informatique"
+    },
+    {
+      "title": "ISIMM | Institut Supérieur d'Informatique et de Mathématiques de l’Université de Monastir",
+      "companyName": "Nom du diplôme\nLicence Fondamentale en Sciences de l'informatique"
+    },
+    {
+      "title": "ingénieur bénévole",
+      "companyName": "Un enfant un rêve Un vieillard une relève",
+      "date1": "oct. 2016 – juin 2017"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Polytechnique Sousse",
+      "degree": "Ingénieur informatique, Génie informatique",
+      "fieldofstudy": "Informatique",
+      "date1": "2016",
+      "date2": "2019"
+    },
+    {
+      "title": "ISIMM | Institut Supérieur d'Informatique et de Mathématiques de l’Université de Monastir",
+      "degree": "Licence Fondamentale en Sciences de l'informatique",
+      "fieldofstudy": "Informatique",
+      "date1": "2012",
+      "date2": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Node.js",
+      "count": "5"
+    },
+    {
+      "title": "MongoDB",
+      "count": "1"
+    },
+    {
+      "title": "AngularJS",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Allemand",
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/sami-ayed-27b863a8/",
+      "text": "Software Engineer and Tech Lead at LaTech"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabersaid/",
+      "text": "Développeur web Symfony / PHP / Angular / Javascript"
+    },
+    {
+      "user": "https://www.linkedin.com/in/iyadhsayahi/",
+      "text": "Founder & President at Tunbeta Tunisia"
+    },
+    {
+      "user": "https://www.linkedin.com/in/dhiasaadlaui/",
+      "text": "Software Developer chez VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-akrouti/",
+      "text": "Developpeur web PHP/ Symfony Altran"
+    },
+    {
+      "user": "https://www.linkedin.com/in/slim-ben-hadj-8b395652/",
+      "text": "Ingénieur développement Full Stack (Java/Angular/React)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/pixels-trade-07525362/",
+      "text": "Pixels Trade Tunis"
+    },
+    {
+      "user": "https://www.linkedin.com/in/it-academy-tunisia-30b93632/",
+      "text": "Directeur des études chez International IT Academy"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sami-chandoul-aa3b6b140/",
+      "text": "Ingénieur Java JEE (Efficacité & Autonomie)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/issam-a-166696167/",
+      "text": "Cofondateur d'Axeane"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "ingénieur bénévole",
+      "experience": "Un enfant un rêve Un vieillard une relève",
+      "description": "Services sociaux",
+      "date1": "oct. 2016 – juin 2017",
+      "date2": "9 mois"
+    }
+  ],
+  "profile": {
+    "name": "Mohamed Béchir Achoura",
+    "headline": "Développeur Full Stack (React/React Native/Node.JS) chez ADN EXPERTISE",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations",
+    "summary": "améliorer mes compétences"
+  }
+}

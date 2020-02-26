@@ -1,0 +1,158 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Oussama ben abdallah",
+    "headline": "Développeur web front-end angular chez Seit consulting",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFZvfm34AQsxQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=VVvalmEDau277Vg1kzKW1od6XKcp4Tq-bo41xBgOpGA",
+    "location": "Sakiet Ezzit, Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je suis un bosseur je travail beaucoup; je suis ambitieux je veux aller le plus loin possible dans ma carrière professionnelle."
+  },
+  "aboutAlternative": {
+    "text": "Je suis un bosseur je travail beaucoup; je suis ambitieux je veux aller le plus loin possible dans ma carrière professionnelle."
+  },
+  "positions": [
+    {
+      "title": "Développeur web front-end angular",
+      "companyName": "Seit consulting",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "Projet : Le logiciel des Courtiers en Assurances\nPoste occupé: Ingénieur développement front end Angular",
+      "date1": "juin 2019 – Aujourd’hui",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Développeur applications Web et Desktop",
+      "companyName": "CPM",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "Projet : Développement des applications (gestion médicale, gestion dentaire).\nDescription : Implémentation d’une architecture à 3 tiers en utilisant C# et DevExpress.\nMissions chez CPM :\n• Analyse et spécification des besoins.\n• Design application desktop en utilisant DevExpress.\n• Création d'un état avec reportviewer.\n\nProjet : Développement une applications WEB (Educshare ) qui partage des documents entre enseignant et étudiant. Cette plateforme assure la disposition de tous types de documents pour la vente.\nL’utilisation du système de gestion de versions « Git » pour faciliter l’intégration du travail de l’équipe et garder des traces.\nTechniques utilisées : Java, Spring Boot, Spring Security, Angular 7, Bootstrap, MySQL\n\n…\nvoir plus",
+      "date1": "juin 2018 – juin 2019",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Institut Supérieur des Etudes Technologiques de Sfax ( ISET Sfax )",
+      "companyName": "Nom du diplôme\nDIPLÔME DE MASTÈRE PROFESSIONNEL DÉVELOPPEMENT DES SYSTÈMES INFORMATIQUES ET RÉSEAUX"
+    },
+    {
+      "title": "Institut Supérieur des Etudes Technologiques de Sfax ( ISET Sfax )",
+      "companyName": "Nom du diplôme\nLICENCE APPLIQUÉE EN TECHNOLOGIE DE L’INFORMATIQUE"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut Supérieur des Etudes Technologiques de Sfax ( ISET Sfax )",
+      "degree": "DIPLÔME DE MASTÈRE PROFESSIONNEL DÉVELOPPEMENT DES SYSTÈMES INFORMATIQUES ET RÉSEAUX",
+      "fieldofstudy": "Génie Logiciel et Nouvelles Technologies (GLNT)",
+      "date1": "2015",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut Supérieur des Etudes Technologiques de Sfax ( ISET Sfax )",
+      "degree": "LICENCE APPLIQUÉE EN TECHNOLOGIE DE L’INFORMATIQUE",
+      "fieldofstudy": "Développement de systèmes d'information",
+      "date1": "2012",
+      "date2": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "1"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "HTML5"
+    },
+    {
+      "title": "bootstrap"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "UML"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "Feuilles de style en cascade (CSS)"
+    },
+    {
+      "title": "angular"
+    },
+    {
+      "title": "Spring Security"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/nouha-fekih/",
+      "text": "Statistics and Data Processing Engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/houssem-eddine-ben-jemia-35829717a/",
+      "text": "Développeur full stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-abedellahi-sidha-291968197/",
+      "text": "computer science engineer student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saifuddinlouati/",
+      "text": "Développeur FullStack (php/Symfony) chez Hayko"
+    },
+    {
+      "user": "https://www.linkedin.com/in/maamouri-fatma-4b180816b/",
+      "text": "ICT Engineering Student at SUP'COM"
+    },
+    {
+      "user": "https://www.linkedin.com/in/haythem-rzig-013395130/",
+      "text": "Stagiaire chez Digi Dev"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chaima-jaballah-95b006178/",
+      "text": "Pre-engineering student and a young designer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ons-ben-tebra-18a762194/",
+      "text": "Stagiaire en développement Web chez Proxym Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bassem-raouafi/",
+      "text": "Développeur Web Full-stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fedi-trabelsi-8aa0b016b/",
+      "text": "Full stack intern NodeJS/React at Vneuron"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Oussama ben abdallah",
+    "headline": "Développeur web front-end angular chez Seit consulting",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFZvfm34AQsxQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=VVvalmEDau277Vg1kzKW1od6XKcp4Tq-bo41xBgOpGA",
+    "location": "Sakiet Ezzit, Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je suis un bosseur je travail beaucoup; je suis ambitieux je veux aller le plus loin possible dans ma carrière professionnelle."
+  }
+}

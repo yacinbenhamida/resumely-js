@@ -1,0 +1,208 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Braiek Aymen",
+    "headline": "Ingénieur informatique Java/JavaEE/Spring Mvc/Spring boot/Angular 2+ at BIAT",
+    "location": "Cité Ettadhamen, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur informatique Java/JavaEE/Spring Mvc/Spring boot",
+      "companyName": "BIAT",
+      "location": "Tunisia",
+      "date1": "août 2018 – Aujourd’hui",
+      "date2": "1 an 7 mois"
+    },
+    {
+      "title": "Responsable technico-commercial",
+      "companyName": "BITAKA GROUP",
+      "location": "Tunisie",
+      "description": "Mission et taches réalisé :\n• Élaboration du Business Plan de l’activité et lancement du projet .\n• Planification et mise en place de la politique commerciale avec l’opérateur Tunisie Télécom\n• Développement du réseau des points de ventes de l’opérateur Tunisie Telecom.\n• Développement du réseau de franchises de l’opérateur Tunisie Télécom\n• Recrutement, formation, gestion et motivation des collaborateurs\n• Contrôle et optimisation des budgets alloués aux différents projets\n• Coordination des actions stratégiques, suivi des ventes et contrôle des rapports quotidiens.\n• Participation aux lancements des marques sportives Taraji Mobile /CSS Mobile/Etoile Mobile\n• Participation à la mise en place de la stratégie commerciale et événementielle des marques sportives Taraji Mobile / CSS Mobile/ Etoile Mobile.\n• Participation au développement stratégique du groupe sur le marché Africain .\n• Préparation des rapports de vente et d’approvisionnement\n…\nvoir plus",
+      "date1": "janv. 2012 – Aujourd’hui",
+      "date2": "8 ans 2 mois"
+    },
+    {
+      "title": "Stage",
+      "companyName": "Bitaka cards & solutions",
+      "description": "Sujet : Développement d'une application web qui gère l'activité principale de la société safa-distribution distributeur officiel de Tunisie Télécom\nLa solution est permet:\n de gérer les Sims de Tunisie Télécom de réseau direct.\n Contrôle les étapes de distribution du Sims TT\n Une suivie détaillé de l’activation et du remontés des contrats et gérer les stocks et livraisons.\n Reporting,statistiques,charts…\nJ’ai utilisé la plate-forme JAVAEE pour le Développement de cette application web. Mots clés : JSF, PrimeFace, EJB, Postgres,Glassfish,omnifaces,boostfaces.\n\n…\nvoir plus",
+      "date1": "avr. 2018 – août 2018",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT"
+    },
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "companyName": "Nom du diplôme\nLicence",
+      "description": "Durant les trois ans de formation, les cours théoriques permettent au fur et à mesure, de s’orienter vers des exercices davantages pratiques dans l’acquisition de compétences. j' apprendre à développer et concevoir des applications, la programmation et les algorithmes grâce à des enseignements scientifiques. À propos des cours, vous pouvez trouver :\n\nsystèmes d’exploitation\nprogrammation\nconcepts informatiques\ninternet : histoire et outils\nmathématiques\ninterfaces graphiques\nalgorithmique\nbases de données\nprojet professionnel\nlangage informatique\nanglais professionnel"
+    },
+    {
+      "title": "lycée chebbi",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "date1": "2013",
+      "date2": "2017"
+    },
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "degree": "Licence",
+      "fieldofstudy": "Informatique",
+      "date1": "2007",
+      "date2": "2010"
+    },
+    {
+      "title": "lycée chebbi",
+      "degree": "Baccalauréat",
+      "fieldofstudy": "Mathématiques",
+      "date1": "2006",
+      "date2": "2007"
+    }
+  ],
+  "skills": [
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "Automatisation des tests"
+    },
+    {
+      "title": "scrum"
+    },
+    {
+      "title": "Scrum"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "UML"
+    },
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "spring"
+    },
+    {
+      "title": "Modèle MVC de Spring"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "Java Enterprise Edition"
+    },
+    {
+      "title": "Oracle Database"
+    },
+    {
+      "title": "Oracle SQL Developer"
+    },
+    {
+      "title": "Spring MVC"
+    },
+    {
+      "title": "java EE"
+    },
+    {
+      "title": "spring mvc"
+    },
+    {
+      "title": "Spring Security"
+    },
+    {
+      "title": "Spring Webflow"
+    },
+    {
+      "title": "spring security"
+    },
+    {
+      "title": "spring boot"
+    },
+    {
+      "title": "intégration et validation"
+    },
+    {
+      "title": "spring boot"
+    },
+    {
+      "title": "Angular 2+"
+    },
+    {
+      "title": "Unified Modeling Language (UML)"
+    },
+    {
+      "title": "Spring Boot"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/hselmi/",
+      "text": "Développeur Java / Java EE / Angular chez GFI Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mehdi-lamine-594a2811b/",
+      "text": "Développement Java EE / Angular at Sofrecom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khemiri-iheb-774609143/",
+      "text": "Développeur Java/Java EE chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ala-ben-khlifa/",
+      "text": "Développeur Spring & Angular"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yasmin-amara-6b0330172/",
+      "text": "stagiare chez 3B Groupe"
+    },
+    {
+      "user": "https://www.linkedin.com/in/haythem-belhajyoussef/",
+      "text": "Stagiaire chez axefinance"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mounir-ben-romdhane-mounir/",
+      "text": "Développeur Python Django Devops chez SOFINE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/imen-samaali-9b8a2a141/",
+      "text": "Ingénieur support chez Sofrecom"
+    },
+    {
+      "user": "https://www.linkedin.com/in/assala-lahdhiri/",
+      "text": "Embedded Software Engineering Student at National School of Computer Science of Tunisia (a.k.a ENSI)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/benamornader/",
+      "text": "Administrateur Réseaux et Système chez Marabout Technology"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Braiek Aymen",
+    "headline": "Ingénieur informatique Java/JavaEE/Spring Mvc/Spring boot/Angular 2+ at BIAT",
+    "location": "Cité Ettadhamen, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

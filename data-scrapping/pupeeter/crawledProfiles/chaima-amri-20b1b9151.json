@@ -1,0 +1,251 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Student et Intern\n\nVoir tous les détails",
+    "headline": "Stage Ingénieur chez Focus Corporation",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHcAtdhBmwUBg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=a1myaCLhf0RD-2lAhfCkkyHPn32eG6Bc9nKfPzsvqtY"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Stagiaire",
+      "companyName": "Focus Corporation",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "févr. 2020 – Aujourd’hui",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Étudiant",
+      "companyName": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "location": "Tunisie",
+      "date1": "sept. 2017 – févr. 2020",
+      "date2": "2 ans 6 mois"
+    },
+    {
+      "title": "Étudiant stage d’été",
+      "companyName": "WAYCON",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "IPEIT - Institut Préparatoire aux Etudes d'Ingénieurs de Tunis"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Informatique",
+      "date1": "2017",
+      "date2": "2020"
+    },
+    {
+      "title": "IPEIT - Institut Préparatoire aux Etudes d'Ingénieurs de Tunis"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Programmation orientée objet (OOP)",
+      "count": "1"
+    },
+    {
+      "title": "Développement web",
+      "count": "1"
+    },
+    {
+      "title": "Bases de données de gestion de la relation client",
+      "count": "1"
+    },
+    {
+      "title": "Intelligence artificielle",
+      "count": "1"
+    },
+    {
+      "title": "Analyse de données"
+    },
+    {
+      "title": "Data Warehouse"
+    },
+    {
+      "title": "Informatique décisionnelle"
+    },
+    {
+      "title": "Java",
+      "count": "1"
+    },
+    {
+      "title": "C",
+      "count": "2"
+    },
+    {
+      "title": "C#",
+      "count": "1"
+    },
+    {
+      "title": "Linux",
+      "count": "1"
+    },
+    {
+      "title": "Base de données",
+      "count": "1"
+    },
+    {
+      "title": "SQL",
+      "count": "2"
+    },
+    {
+      "title": "MySQL",
+      "count": "1"
+    },
+    {
+      "title": "Oracle Database",
+      "count": "1"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "HTML",
+      "count": "2"
+    },
+    {
+      "title": "JavaScript",
+      "count": "1"
+    },
+    {
+      "title": "HTML5",
+      "count": "1"
+    },
+    {
+      "title": "Feuilles de style en cascade (CSS)",
+      "count": "1"
+    },
+    {
+      "title": "Microsoft Office",
+      "count": "2"
+    },
+    {
+      "title": "UML",
+      "count": "1"
+    },
+    {
+      "title": "XML",
+      "count": "1"
+    },
+    {
+      "title": "Microsoft Excel",
+      "count": "2"
+    },
+    {
+      "title": "Microsoft Word",
+      "count": "2"
+    },
+    {
+      "title": "Python",
+      "count": "1"
+    },
+    {
+      "title": "Android",
+      "count": "1"
+    },
+    {
+      "title": "PHP",
+      "count": "1"
+    },
+    {
+      "title": "Visual Studio",
+      "count": "1"
+    },
+    {
+      "title": "Eclipse",
+      "count": "1"
+    },
+    {
+      "title": "IntelliJ IDEA"
+    },
+    {
+      "title": "Gestion d’équipe",
+      "count": "1"
+    },
+    {
+      "title": "Leadership",
+      "count": "2"
+    },
+    {
+      "title": "Management",
+      "count": "2"
+    },
+    {
+      "title": "Anglais"
+    },
+    {
+      "title": "Français"
+    },
+    {
+      "title": "Arabe",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/ikhlass-dghaies/",
+      "text": "Etudiante en Master Professionnel en Comptabilité \"Révision Comptable\""
+    },
+    {
+      "user": "https://www.linkedin.com/in/nihel-kasmi-077138153/",
+      "text": "Ingénieur de développement .net chez IGA Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-ali-said-456119164/",
+      "text": "Consultant Full-Stack Java/JEE (Spring - Angular 7) chez Amaris"
+    },
+    {
+      "user": "https://www.linkedin.com/in/askri-bilel-86905a157/",
+      "text": "étudiant au école nationale d'ingénieur de Carthage"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hela-boussaidi-1b0b44155/",
+      "text": "CMO & Co-founder chez Souty"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fekih-ramzi/",
+      "text": "Ingénieur en informatique à la recherche d'une première expérience professionnelle"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rahma-akaichi-891878152/",
+      "text": "À la recherche d’un stage de fin d’études"
+    },
+    {
+      "user": "https://www.linkedin.com/in/adly-bacha-5ab9b3108/",
+      "text": "Ingénieur informatique (Cybersécurité / Développeur Java-Jee)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/islam-chaggara-732127162/",
+      "text": "Ingénieur Génie Industriel"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wafa-moumen-ab9654153/",
+      "text": "jeune diplômée de l'IHEC Carthage ( à la recherche d'une opportunité)"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Student et Intern\n\nVoir tous les détails",
+    "headline": "Stage Ingénieur chez Focus Corporation",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHcAtdhBmwUBg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=a1myaCLhf0RD-2lAhfCkkyHPn32eG6Bc9nKfPzsvqtY"
+  }
+}

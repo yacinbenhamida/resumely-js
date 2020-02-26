@@ -1,0 +1,120 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Scrum Master, PHP Web Developer et Functional Analyst\n\nVoir tous les détails",
+    "headline": "Ingénieur Développeur web PHP/SYMFONY/ Certifiée(PSM1)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQF0EfS4J7nX2Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=QQeT2uVp6C3KNADqKC0S6PgCpiE5j38cD4_BPK3fSxI"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur développeur (PHP/Symfony)",
+      "companyName": "Agence nationnale pour l'emploi et travail indépendant (ANETI)",
+      "location": "Tunisie",
+      "date1": "nov. 2004 – Aujourd’hui",
+      "date2": "15 ans 4 mois"
+    },
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "l’IPEIT (Institut Préparatoire aux Etudes d’Ingénieurs de Tunis - Tunisie).",
+      "companyName": "Nom du diplôme\nDeux années préparatoires Maths Physique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2002",
+      "date2": "2004"
+    },
+    {
+      "title": "l’IPEIT (Institut Préparatoire aux Etudes d’Ingénieurs de Tunis - Tunisie).",
+      "degree": "Deux années préparatoires Maths Physique"
+    }
+  ],
+  "skills": [
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "Gestion de projet"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "8",
+      "title": "projets",
+      "items": [
+        "Mise en place d’une collection d’API REST centrée sur les intégrations Internes et de partenaires.",
+        "Extension du système de mandatement : Traçabilité et optimisation des actions d’ajustement monétique par les économes régionaux.",
+        "Mise en place du système de mandatement pour l’ANETI.",
+        "Implémentation des services destinés aux utilisateurs internes de l’ANETI",
+        "Maintenance et extension de site web.",
+        "Migration du système de gestion des bureaux d’emploi d’une version client/serveur au Java Web avec le framework struts 2 dans le cadre d’un projet de coopération Tuniso-Coréen avec KOICA (Korea International Cooperation Agency)",
+        "Innovation du système d’indicateurs : Entrée manipulée par 1400 utilisateurs.",
+        "Innovation et optimisation des applications satellites dans le système d’information de l’ANETI"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/tayma-salti-05401756/",
+      "text": "QA Engineer ISTQB certified"
+    },
+    {
+      "user": "https://www.linkedin.com/in/asmachabbi/",
+      "text": "International Sourcer/Recruiter at ARTEMIS SOURCING"
+    },
+    {
+      "user": "https://www.linkedin.com/in/maaloul-mohamed-zied-162a9b96/",
+      "text": "Développeur web chez Docetis"
+    },
+    {
+      "user": "https://www.linkedin.com/in/siwar-sayahi-7b564880/",
+      "text": "Software QA Engineer, Technical Leader at New Access"
+    },
+    {
+      "user": "https://www.linkedin.com/in/salma-dhifaoui/",
+      "text": "Ingénieur Développement"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wafa-masmoudi-b21537127/",
+      "text": "Ingénieur It système et infrastructures"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yasser-abdrabou/",
+      "text": "Consultant en Ingénierie de Performance Applicative"
+    },
+    {
+      "user": "https://www.linkedin.com/in/thamer-belgacem-550144162/",
+      "text": "ingénieur informatique diplômé , à la recherche d'une offre d'emploi."
+    },
+    {
+      "user": "https://www.linkedin.com/in/haythem-farhati-b673a898/",
+      "text": "full stack developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bilel-touati-%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB-578b90141/",
+      "text": "R&D embedded system at MPSI international"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Scrum Master, PHP Web Developer et Functional Analyst\n\nVoir tous les détails",
+    "headline": "Ingénieur Développeur web PHP/SYMFONY/ Certifiée(PSM1)",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQF0EfS4J7nX2Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=QQeT2uVp6C3KNADqKC0S6PgCpiE5j38cD4_BPK3fSxI"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de DevOps Engineer et Python Developer\n\nVoir tous les détails",
+    "headline": "Développeur Python Django Devops chez SOFINE",
+    "summary": "je suis passionné par les technologie innovante et le développement mobile, j'aime les challenges et de nature curieux,deterniminé. J'aime explorer de nouveaux horizons."
+  },
+  "aboutAlternative": {
+    "text": "je suis passionné par les technologie innovante et le développement mobile, j'aime les challenges et de nature curieux,deterniminé. J'aime explorer de nouveaux horizons."
+  },
+  "positions": [
+    {
+      "title": "Développeur Python Django Devops",
+      "companyName": "SOFINE",
+      "location": "Région de Paris, France",
+      "date1": "janv. 2020 – Aujourd’hui",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Développeur Python Django Devops automation team",
+      "companyName": "NeoXam",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "date1": "juil. 2018 – janv. 2020",
+      "date2": "1 an 7 mois"
+    },
+    {
+      "title": "Développeur back-end , blockchain ethereum",
+      "companyName": "Dar Blockchain",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "Création d'une plateforme RESTFUL API et tokénisé de Dar Blockchain sur la blockchain d'Ethereum.\nCette plateforme sera une Saas (Software As a Service) pour les autres Coworking Spaces qui veulent tokéniser leur services sur la blockchain d'Ethereum.\nCréation de smart contract erc20",
+      "date1": "mars 2018 – déc. 2018",
+      "date2": "10 mois"
+    },
+    {
+      "title": "Stagiaire développeur mobile IOS",
+      "companyName": "DigitUs Tech",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "- Consommation des API , gestion des operations monétaire.\n- Creation&Gestion des portefeuille",
+      "date1": "juin 2017 – août 2017",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Nom du diplôme\nBaccalauréat science d'informatique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Baccalauréat science d'informatique",
+      "fieldofstudy": "développement mobile",
+      "date1": "2013",
+      "date2": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Python",
+      "count": "4"
+    },
+    {
+      "title": "Django",
+      "count": "4"
+    },
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "Développement iOS",
+      "count": "2"
+    },
+    {
+      "title": "Développement pour Android",
+      "count": "1"
+    },
+    {
+      "title": "SQL",
+      "count": "1"
+    },
+    {
+      "title": "Git",
+      "count": "1"
+    },
+    {
+      "title": "Ansible",
+      "count": "1"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "C++"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "Node.js"
+    },
+    {
+      "title": "Android"
+    },
+    {
+      "title": "java"
+    },
+    {
+      "title": "PostgreSQL"
+    },
+    {
+      "title": "Redis",
+      "count": "1"
+    },
+    {
+      "title": "celery",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/marwa-ben-ammar-718346180/",
+      "text": "DevOps Developer chez NeoXam"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arfaoui-sarra-87076bb2/",
+      "text": "developpeur java ee /angular(angular 4+ ,spring boot) chez Daleelteq"
+    },
+    {
+      "user": "https://www.linkedin.com/in/samar-bacouche-66b110118/",
+      "text": "Développeur Full Stack chez APPTINEO"
+    },
+    {
+      "user": "https://www.linkedin.com/in/souhaib-hamdani-80220514b/",
+      "text": "Cloud and DevOps Engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/heazz/",
+      "text": "Ingénieur DevOps"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nour-barkaoui-b60423116/",
+      "text": "Chargée Recrutement IT chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mayssa-baya-chatti-571794150/",
+      "text": "Consultant Junior java EE chez Enedis Paris chez Talan Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ghassen-charfi-356688151/",
+      "text": "Senior Cloud & DevOps Consultant at Devoteam"
+    },
+    {
+      "user": "https://www.linkedin.com/in/salma-bannour-6a701b151/",
+      "text": "Consultant en intelligence décisionnelle chez Mantu"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mouhamed-faouzi-ben-salah-420a4b120/",
+      "text": "Ingénieur Développement PYTHON/DJANGO chez ATS-IM"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de DevOps Engineer et Python Developer\n\nVoir tous les détails",
+    "headline": "Développeur Python Django Devops chez SOFINE",
+    "summary": "je suis passionné par les technologie innovante et le développement mobile, j'aime les challenges et de nature curieux,deterniminé. J'aime explorer de nouveaux horizons."
+  }
+}

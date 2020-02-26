@@ -1,0 +1,173 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Achref Jouini",
+    "headline": "Technicien professionnel infrastructure & Architecture Cloud chez Ooredoo Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEJJNLHXxXnGw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=l1xC2dxQLItAAwhYLBVNvB4Oqpq4R-kHHQEXrAuLI9w",
+    "location": "El Omrane Supérieur, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Technicien Architecture Cloud",
+      "companyName": "Ooredoo Tunisie",
+      "date1": "avr. 2019 – Aujourd’hui",
+      "date2": "11 mois"
+    },
+    {
+      "title": "TEK-UP",
+      "companyName": "Nom du diplôme\ncycle ingénieur"
+    },
+    {
+      "title": "faculté des sciences économiques et gestion de tunis",
+      "companyName": "Nom du diplôme\nlicence fondamentale en informatique appliquée à la gestion"
+    },
+    {
+      "title": "Bénévole",
+      "companyName": "aide moi à apprendre",
+      "date1": "janv. 2017 – Aujourd’hui"
+    }
+  ],
+  "educations": [
+    {
+      "title": "TEK-UP",
+      "degree": "cycle ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2019",
+      "date2": "2022"
+    },
+    {
+      "title": "faculté des sciences économiques et gestion de tunis",
+      "degree": "licence fondamentale en informatique appliquée à la gestion",
+      "fieldofstudy": "informatique"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Ansible"
+    },
+    {
+      "title": "CentOS"
+    },
+    {
+      "title": "Docker"
+    },
+    {
+      "title": "Big Data"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "Amazon Web Services"
+    },
+    {
+      "title": "Hadoop"
+    },
+    {
+      "title": "Oracle Database"
+    },
+    {
+      "title": "Base de données"
+    },
+    {
+      "title": "Jenkins"
+    },
+    {
+      "title": "Français"
+    },
+    {
+      "title": "Anglais"
+    },
+    {
+      "title": "DevOps"
+    },
+    {
+      "title": "Oracle RAC"
+    },
+    {
+      "title": "container"
+    },
+    {
+      "title": "Orchestration"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "2",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/mouadh-aboud-36b88413b/",
+      "text": "Technicien professionnel architecture cloud at Ooredoo Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/raed-mouelhi/",
+      "text": "Technicien Supervision chez Ooredoo Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-nefzi-457198190/",
+      "text": "Technical Professional at Ooredoo Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jouini-marwa-047569157/",
+      "text": "Étudiant(e) (Essect)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/gallali-oussama-0824aa121/",
+      "text": "Spécialiste web chez Hébergement Web Canada"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yassine-ben-attaya-a918b9133/",
+      "text": "Étudiant(e) (Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/salahdhamer/",
+      "text": "Motion Graphic Designer at GRJ Immigration"
+    },
+    {
+      "user": "https://www.linkedin.com/in/balti-hamza-662398118/",
+      "text": "BI, Big Data chez Carrefour"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hamza-abdennadher/",
+      "text": "Développeur Full Stack chez Jet Multimedia Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fethi-taieb-95642919a/",
+      "text": "Maître Technologue chez ISET_de_RADES"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "Bénévole",
+      "experience": "aide moi à apprendre",
+      "description": "Aide humanitaire et secours en cas de catastrophes",
+      "date1": "janv. 2017 – Aujourd’hui",
+      "date2": "3 ans 2 mois"
+    }
+  ],
+  "profile": {
+    "name": "Achref Jouini",
+    "headline": "Technicien professionnel infrastructure & Architecture Cloud chez Ooredoo Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEJJNLHXxXnGw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=l1xC2dxQLItAAwhYLBVNvB4Oqpq4R-kHHQEXrAuLI9w",
+    "location": "El Omrane Supérieur, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

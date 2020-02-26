@@ -1,0 +1,231 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Monjia Ben Zbiba",
+    "headline": "Ingénieure en informatique",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGyZJmW5wNaHA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=Rgj1m3qM6m-M4N-JodbKneqx4bH0AUsyFuxZbbAQoqA",
+    "location": "Gouvernorat de Bizerte, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Ingénieure en informatique et en Télécommunications, passionnée par l'informatique, particulièrement par le développement web et les nouveaux techniques du machine learning, autonome, motivée, capable de travailler en équipe, résoudre des problèmes, et déterminée à décrocher la réussite de ce que j'entame."
+  },
+  "aboutAlternative": {
+    "text": "Ingénieure en informatique et en Télécommunications, passionnée par l'informatique, particulièrement par le développement web et les nouveaux techniques du machine learning, autonome, motivée, capable de travailler en équipe, résoudre des problèmes, et déterminée à décrocher la réussite de ce que j'entame."
+  },
+  "positions": [
+    {
+      "title": "Stagiaire",
+      "companyName": "Smart2do Technologies",
+      "location": "Sousse",
+      "description": "Développement d’un système de détection et de reconnaissance du texte de scène pour aider les malvoyants",
+      "date1": "févr. 2019 – juil. 2019",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Tunisie Télécom",
+      "location": "Lac 1 Tunis",
+      "description": "Mise en place d'un système de gestion du réseau\nmobile de Tunisie Télécom",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Sagemcom Tunisie",
+      "location": "Gouvernorat de Ben Arous, Tunisia",
+      "description": "Mise en place d'une application de surveillance des badgeuses",
+      "date1": "févr. 2015 – mai 2015",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Tunisie Télécom",
+      "location": "La marsa Tunis",
+      "description": "Installation et configuration des équipements\nnécessaire dans ce domaine",
+      "date1": "juil. 2014",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "La société Tunisienne des industries de raffinage (STIR)",
+      "location": "Gouvernorat de Bizerte, Tunisia",
+      "description": "Maintenance des équipements",
+      "date1": "juin 2013",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Institut supérieur d'informatique et des techniques de communication (IsitCom)",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Faculté des sciences de Bizerte",
+      "companyName": "Nom du diplôme\nLicence"
+    },
+    {
+      "title": "Lycée Farhat Hached Bizerte",
+      "companyName": "Domaine d’études\nMathématiques"
+    },
+    {
+      "title": "Membre",
+      "companyName": "Google IsitCom",
+      "date1": "sept. 2017 – Aujourd’hui"
+    },
+    {
+      "title": "Membre",
+      "companyName": "JCI (Junior Chamber International)",
+      "date1": "sept. 2015 – juil. 2016"
+    },
+    {
+      "title": "Membre",
+      "companyName": "Data science IsitCom",
+      "date1": "oct. 2018 – Aujourd’hui"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut supérieur d'informatique et des techniques de communication (IsitCom)",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Téléinformatique"
+    },
+    {
+      "title": "Faculté des sciences de Bizerte",
+      "degree": "Licence",
+      "fieldofstudy": "science et technologie de l'information et communication"
+    },
+    {
+      "title": "Lycée Farhat Hached Bizerte",
+      "degree": "Mathématiques",
+      "fieldofstudy": "Mathématiques",
+      "date1": "2008",
+      "date2": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Python"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "HTML5"
+    },
+    {
+      "title": "Machine Learning"
+    },
+    {
+      "title": "Intelligence artificielle"
+    },
+    {
+      "title": "Vision par ordinateur"
+    },
+    {
+      "title": "Scrum"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "MATLAB"
+    },
+    {
+      "title": "UML"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "Feuilles de style en cascade (CSS)"
+    },
+    {
+      "title": "XML"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "NoSQL"
+    },
+    {
+      "title": "Sérieuse et dynamique",
+      "count": "2"
+    },
+    {
+      "title": "S’organiser efficacement",
+      "count": "2"
+    },
+    {
+      "title": "capacité d'adaptation",
+      "count": "2"
+    },
+    {
+      "title": "Tensorflow"
+    },
+    {
+      "title": "keras"
+    },
+    {
+      "title": "Deep Learning"
+    },
+    {
+      "title": "Merise"
+    },
+    {
+      "title": "OpenCV"
+    },
+    {
+      "title": "Talend"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Espagnol",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [],
+  "volunteerExperience": [
+    {
+      "title": "Membre",
+      "experience": "Google IsitCom",
+      "description": "Éducation",
+      "date1": "sept. 2017 – Aujourd’hui",
+      "date2": "2 ans 6 mois"
+    },
+    {
+      "title": "Membre",
+      "experience": "JCI (Junior Chamber International)",
+      "description": "Services sociaux",
+      "date1": "sept. 2015 – juil. 2016",
+      "date2": "11 mois"
+    },
+    {
+      "title": "Membre",
+      "experience": "Data science IsitCom",
+      "date1": "oct. 2018 – Aujourd’hui",
+      "date2": "1 an 5 mois"
+    }
+  ],
+  "profile": {
+    "name": "Monjia Ben Zbiba",
+    "headline": "Ingénieure en informatique",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGyZJmW5wNaHA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=Rgj1m3qM6m-M4N-JodbKneqx4bH0AUsyFuxZbbAQoqA",
+    "location": "Gouvernorat de Bizerte, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Ingénieure en informatique et en Télécommunications, passionnée par l'informatique, particulièrement par le développement web et les nouveaux techniques du machine learning, autonome, motivée, capable de travailler en équipe, résoudre des problèmes, et déterminée à décrocher la réussite de ce que j'entame."
+  }
+}

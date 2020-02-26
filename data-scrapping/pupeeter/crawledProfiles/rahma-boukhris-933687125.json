@@ -1,0 +1,254 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Rahma Boukhris",
+    "headline": "Ingénieur Test & Automatisation chez Proxym Group",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEc3jm8d9R3Lg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=_W8P6ZNxuW7XxvdTaB0t2Bi2QimJdmS7RshB0PleQAU",
+    "location": "Monastir, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur Test & Automatisation",
+      "companyName": "Proxym Group",
+      "location": "Gouvernorat de Sousse",
+      "description": "Technologie/Environnement :\n• Sélénium Webdriver, Appium , katalon, Groovy ,TestNG,,Maven,ExtentReports,POM ,TestLink,Java,Android,IOS,,Xcode,Mac Os",
+      "date1": "août 2018 – Aujourd’hui",
+      "date2": "1 an 7 mois"
+    },
+    {
+      "title": "Ingénieur test et validation",
+      "companyName": "Mobelite",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Missions ou tâches réalisées:\n• Rédaction des scénarios de test pour des applications web et mobiles (iOS et Android)\n• Suivi du bon déroulement des sprints\n• Rédaction des conditions d'acceptation des demandes sur JIRA.\n• Analyser et comprendre les spécifications fonctionnelles et techniques des applications à valider\n• Exécuter des campagnes de tests manuels et de non-régression\n• Suivi des anomalies et des évolutions\n• Suivi de mise en production et du déploiement\n\nMéthode:\n• Agile/Scrum\n…\nvoir plus",
+      "date1": "nov. 2017 – juil. 2018",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Conception et développement d’une application mobile d’imagerie ophtalmologique",
+      "companyName": "LabTIM (Laboratoire d’imagerie et technologie médicale) faculté de medecine de Monastir",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Technologie/Environnement : Android, OpenCv ,Sqllite,HTML5,CSS3,UML.",
+      "date1": "févr. 2017 – juin 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Développement d'une application web de petites annonces.",
+      "companyName": "pinkooSoft",
+      "location": "Gouvernorat de Mahdia, Tunisia",
+      "description": "Technologie/Environnement : PHP, HTML,CSS,JavaScript,UML",
+      "date1": "juil. 2015 – août 2015",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Réalisation d’une application de gestion de services",
+      "companyName": "Transmédical Informatique",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "description": "Technologie/Environnement : C#, MYSQL,UML",
+      "date1": "janv. 2014 – avr. 2014",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Ecole polytechnique sousse",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "institut supérieur de gestion de sousse",
+      "companyName": "Nom du diplôme\nmaster de recherche"
+    },
+    {
+      "title": "Institut Supérieur de Gestion de Sousse",
+      "companyName": "Nom du diplôme\nLicence fondamentale en informatique de gestion"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole polytechnique sousse",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Genie informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "institut supérieur de gestion de sousse",
+      "degree": "master de recherche",
+      "fieldofstudy": "Systeme d'information et aide a la decision (SIAD)",
+      "date1": "2016",
+      "date2": "2018"
+    },
+    {
+      "title": "Institut Supérieur de Gestion de Sousse",
+      "degree": "Licence fondamentale en informatique de gestion",
+      "date1": "2011",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Android",
+      "count": "2"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "JEE"
+    },
+    {
+      "title": "Développement iOS",
+      "count": "1"
+    },
+    {
+      "title": "Scrum",
+      "count": "2"
+    },
+    {
+      "title": "Tests fonctionnels",
+      "count": "2"
+    },
+    {
+      "title": "Tests de régression",
+      "count": "2"
+    },
+    {
+      "title": "Automatisation des tests",
+      "count": "2"
+    },
+    {
+      "title": "c"
+    },
+    {
+      "title": "C++"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "Arduino"
+    },
+    {
+      "title": "Oracle Database"
+    },
+    {
+      "title": "Microsoft SQL Server"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "css"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "Sélénium",
+      "count": "1"
+    },
+    {
+      "title": "JIRA",
+      "count": "1"
+    },
+    {
+      "title": "android"
+    },
+    {
+      "title": "Maven",
+      "count": "1"
+    },
+    {
+      "title": "Modèle MVC de Spring",
+      "count": "1"
+    },
+    {
+      "title": "Symfony"
+    },
+    {
+      "title": "Appium",
+      "count": "1"
+    },
+    {
+      "title": "Tests d’acceptation",
+      "count": "1"
+    },
+    {
+      "title": "testng",
+      "count": "1"
+    },
+    {
+      "title": "TestNG"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Allemand",
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/amal-ben-taher-479145125/",
+      "text": "Ingénieur développement & validation embarqué chez Altran"
+    },
+    {
+      "user": "https://www.linkedin.com/in/balkis-younes/",
+      "text": "Software Engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yosr-hentati-519050176/",
+      "text": "Automotive software tester at Primatec engineering on behalf of BMW group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nihed-jazzar-912261159/",
+      "text": "Stagiaire chez Genext-IT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khaoula-trabelsi-5b57a996/",
+      "text": "Looking for the opportunity of my life"
+    },
+    {
+      "user": "https://www.linkedin.com/in/el-akel-sarra-08b47312a/",
+      "text": "Ingénieur automatisation des tests chez Telnet-Softathome"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rawia-hakima-3129a4150/",
+      "text": "Developer (React+Node Js)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sondes-kacem-istqb%C2%AE-psmi%C2%AE-3a58a324/",
+      "text": "QA Manager chez Sofia Technologies"
+    },
+    {
+      "user": "https://www.linkedin.com/in/farah-b%C3%A9doui-a4a619156/",
+      "text": "Software Engineering Student & Mobile Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-cherif-%E2%98%81-094733134/",
+      "text": "Salesforce developper"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Rahma Boukhris",
+    "headline": "Ingénieur Test & Automatisation chez Proxym Group",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEc3jm8d9R3Lg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=_W8P6ZNxuW7XxvdTaB0t2Bi2QimJdmS7RshB0PleQAU",
+    "location": "Monastir, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

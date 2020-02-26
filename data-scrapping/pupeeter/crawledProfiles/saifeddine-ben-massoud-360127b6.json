@@ -1,0 +1,185 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Saifeddine Ben Massoud",
+    "headline": "Full Stack Engineer - Java/Java EE/Angular @Sofrecom - Part of Orange Group",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFKYLx2S99Emw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=3ds5pqg2tlatqs6fBkcx_KINk23LWs0EX10aXfBoinA",
+    "location": "M’Saken, Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur Développement Full Stack",
+      "companyName": "Sofrecom Tunisie",
+      "location": "Les Berges du Lac, Tunis, Tunisie",
+      "date1": "févr. 2019 – Aujourd’hui",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Ingénieur Développement Embarqué",
+      "companyName": "Sofia Holding",
+      "location": "Charguia II, Tunis, Tunisia",
+      "description": "Comme étant développeur embarqué au sein de l’équipe Innovation SOFIA Technologies, ma mission était de participer au réalisation des projets clients et internes innovants avec les nouvelles technologies qui sont autour de : IOT (LoRaWAN), Chatbot Intelligent(AI), Machine Learning, Smart Agriculture, Blockchain, Robotique (Robot Assistant OGY).",
+      "date1": "oct. 2018 – janv. 2019",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Ingénieur développement embarqué, stage PFE",
+      "companyName": "Sofrecom Tunisie",
+      "location": "Les Berges du Lac, Tunis, Tunisie",
+      "description": "Mise en place d’une solution robotique intelligente avec la reconnaissance faciale et vocale.\n\nDescriptif du projet :\nIl s'agit de mettre en œuvre un robot intelligent et autonome ayant les fonctionnalités ci-dessous :\n- Reconnaissance faciale : Le robot doit être capable de reconnaître et catégoriser les objets et les personnes avec qui il communique.\n- Reconnaissance vocale : On parle bien ici de « reconnaissance vocale » et non de « commandes vocales ». Cela signifie que le système est capable de reconnaître une phrase prononcée par l’utilisateur et de la traduire sous forme de texte. Celui-ci va ensuite pouvoir être exploitable par un backend. Le robot doit aussi pouvoir faire de la synthèse vocale pour interagir avec les acteurs « humains ».\n- Un ChatBot : Le ChatBot est un module indépendant permettant au robot de dialoguer avec les\npersonnes moyennant un algorithme de machine learning.\n…\nvoir plus",
+      "date1": "févr. 2018 – juil. 2018",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Ingénieur systéme embarqué, stage d'ingénieur",
+      "companyName": "Micro-Device Tunisie",
+      "location": "Hammam Sousse, Tunisie",
+      "description": "- Réalisation d’une solution IOT pour la surveillance en temps réel de l'état de disponibilité des places de stationnement du parking de la startup Micro Device.\n- Outils : Python 3.6, OpenCV 3.1, Flask 0.12, Jquery 3.2, MongoDB 3.4, Carte Raspberry PI 3, Caméra IP (Référence : TC-IPC-20B-300)",
+      "date1": "juil. 2017 – août 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Développeur web, stage d'initiation",
+      "companyName": "Société SMC",
+      "location": "Sousse, Tunisie",
+      "description": "- Conception et développement d’un site web dynamique de vente des produits métallurgiques et sidérurgiques.\n- Outils : Symfony3, PHP 5.6, Twig, Doctrine",
+      "date1": "juil. 2016 – août 2016",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Développeur système embarqué, Stage de fin d’études",
+      "companyName": "Institut supérieur d’informatique Mahdia",
+      "location": "Mahdia, Tunisie",
+      "description": "- Développement d’une solution domotique pour le contrôle à distance d’une Maison Intelligente\n- Outils : Arduino, C, PHP3, Bootstrap, Ajax, Jquery 3.2, SQL, Carte Arduino Mega 2560",
+      "date1": "janv. 2015 – juin 2015",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Sousse",
+      "companyName": "Nom du diplôme\nDiplome d'ingenieur en informatique appliquée",
+      "description": ""
+    },
+    {
+      "title": "Institut supérieur d'informatique Mahdia",
+      "companyName": "Nom du diplôme\nLicence fondamentale en science informatique",
+      "description": ""
+    },
+    {
+      "title": "Lycée Farhat Hached M’saken",
+      "companyName": "Nom du diplôme\nBaccalauréat scientifique, Section: Mathématiques"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Sousse",
+      "degree": "Diplome d'ingenieur en informatique appliquée",
+      "date1": "2015"
+    },
+    {},
+    {
+      "title": "Institut supérieur d'informatique Mahdia",
+      "degree": "Licence fondamentale en science informatique",
+      "date1": "2012",
+      "date2": "2015"
+    },
+    {},
+    {
+      "title": "Lycée Farhat Hached M’saken",
+      "degree": "Baccalauréat scientifique, Section: Mathématiques",
+      "date1": "2011",
+      "date2": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "1"
+    },
+    {
+      "title": "C",
+      "count": "1"
+    },
+    {
+      "title": "C#",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "8",
+      "title": "projets",
+      "items": [
+        "Machine Learning : Conception et développement d’un système intelligent qui permet le contrôle en temps réel d’une voiture connectée",
+        "Développement web : Création d’une application ASP.Net MVC de gestion bancaire.",
+        "IOT : Implémentation d’une application web permet la supervision en temps réel des données météorologiques retournées par une station météo connectée à domicile.",
+        "M2M : Réalisation d’un robot d’entrepôt permettant le contrôle et la gestion des stocks.",
+        "Robotique : Développement d’une application Android permet la commande d’un robot mini Segway à deux roues via une liaison Bluetooth.",
+        "Aéronautique : Mise en place d’une application mobile Android permet le contrôle d’un drone quadrirotor via une liaison Bluetooth.",
+        "Programmation de jeux : Développement d’un jeu 2D (Flappy Bird) en JavaScript.",
+        "Programmation mobile : Conception d’une application Android permettant le contrôle et la gestion d’un système Domotique.",
+        "Anglais",
+        "Arabe",
+        "Français",
+        "Comité d’organisation du Forum ENISO"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/marwa-ben-ammar-718346180/",
+      "text": "DevOps Developer chez NeoXam"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amal-ben-khalifa-966670107/",
+      "text": "Ingénieur développeur Java\\J2EE chez SAB"
+    },
+    {
+      "user": "https://www.linkedin.com/in/makram-ouejhani-7828512/",
+      "text": "Teams Manager at NeoXam"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sondes-trabelsi-04b185114/",
+      "text": "Software developer at VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mbarki-mohamed-8897b8130/",
+      "text": "Développeur Android chez Mobile Powered"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aziza-mathlouthi-4ab7795a/",
+      "text": "Responsable recrutement et Stages chez Sagemcom Software & Technologies"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jawher-sghaier-2462a3156/",
+      "text": "Développeur (Angular+2 & React Js & React native)chez Dot-IT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mahmoud-abdelhamid-5b1467174/",
+      "text": "Ingénieur systèmes électroniques embarqués à la recherche d'une nouvelle opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mehdi-khelifa/",
+      "text": "Cloud Engineer at CloudShift Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rania-ben-mahjoub-2a7805117/",
+      "text": "Intitulée d'un : MP en commande des systèmes industriels et MR en automatique robotique et traitement de l'information."
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Saifeddine Ben Massoud",
+    "headline": "Full Stack Engineer - Java/Java EE/Angular @Sofrecom - Part of Orange Group",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFKYLx2S99Emw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=3ds5pqg2tlatqs6fBkcx_KINk23LWs0EX10aXfBoinA",
+    "location": "M’Saken, Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de DevOps Engineer et DevOps Consultant\n\nVoir tous les détails",
+    "headline": "ingénieur devops",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGMLXZns5oXqA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=K1LBsds6gqjg9ngT-ySvSIrYzK-eb5RXqlkai8zj8hg",
+    "summary": "je suis fraîchement diplômée en génie télécommunications option système réseaux . je suis actuellement à la recherche d'une première expérience professionnelle dans le domaine devops. vous pouvez consulter mon cv ci-dessous."
+  },
+  "aboutAlternative": {
+    "text": "je suis fraîchement diplômée en génie télécommunications option système réseaux . je suis actuellement à la recherche d'une première expérience professionnelle dans le domaine devops. vous pouvez consulter mon cv ci-dessous."
+  },
+  "positions": [
+    {
+      "title": "mise en place d'une plateforme devops (projet fin d'étude)",
+      "companyName": "wlconsulting",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "Automatisation du processus du développement/déploiement d’une\n\napplication :\n\nMise en place d’une infrastructure à base kubernetes : déploiement de\njenkins,nexus,registre privé locale et un tableau de bord sur le cluster\nkubernetes.\nRéalisation d’une pipeline CI/CD d’une application : packager l’application ,\ngénérer un artefact jar, envoyer l’artefact au serveur nexus, construire une\nimage docker à l’aide d’un dockerfile, envoyer l’image au registre privé locale\net déployer l’application sur le cluster kubernetes.\nNoter bien que le déclenchement de la pipeline est suite à un « pull request »\ncrée par le développeur sur le git\nSupervision : Superviser le cluster kubernetes à l’aide d’un tableau de bord\nTechnologies utilisés : vagrant,kubernetes,docker,jenkins,nexus,ansible,git,maven\n…\nvoir plus",
+      "date1": "mars 2019 – oct. 2019",
+      "date2": "8 mois"
+    },
+    {
+      "title": "Stage étudiant",
+      "companyName": "CNI(centre national d'informatique)",
+      "location": "Tunisie,tunis",
+      "description": "mise en place d'un outil de supervision libre(nagios)",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs d'El Manar (IPEIEM)",
+      "companyName": "Nom du diplôme\nadmission au concours national des ingénieurs"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "date1": "2017",
+      "date2": "2019"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs d'El Manar (IPEIEM)",
+      "degree": "admission au concours national des ingénieurs",
+      "fieldofstudy": "MP (math physique)",
+      "date1": "2014",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "script shell",
+      "count": "2"
+    },
+    {
+      "title": "python",
+      "count": "3"
+    },
+    {
+      "title": "cisco",
+      "count": "2"
+    },
+    {
+      "title": "javaEE",
+      "count": "1"
+    },
+    {
+      "title": "Linux",
+      "count": "1"
+    },
+    {
+      "title": "Jenkins",
+      "count": "1"
+    },
+    {
+      "title": "ansible",
+      "count": "1"
+    },
+    {
+      "title": "git",
+      "count": "1"
+    },
+    {
+      "title": "vagrant",
+      "count": "2"
+    },
+    {
+      "title": "DevOps",
+      "count": "1"
+    },
+    {
+      "title": "nexus",
+      "count": "1"
+    },
+    {
+      "title": "services des réseaux",
+      "count": "1"
+    },
+    {
+      "title": "environnement Linux",
+      "count": "1"
+    },
+    {
+      "title": "service web:rest",
+      "count": "1"
+    },
+    {
+      "title": "kubernetes",
+      "count": "1"
+    },
+    {
+      "title": "yaml",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "projets",
+      "items": [
+        "Automatisation du processus du développement/déploiement d’une application",
+        "Mise en place d’une solution de supervision libre",
+        "projet intégration systéme&réseaux"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/fekih-ramzi/",
+      "text": "Ingénieur en informatique à la recherche d'une première expérience professionnelle"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ellafi/",
+      "text": "software engineer chez Sagemcom"
+    },
+    {
+      "user": "https://www.linkedin.com/in/kharroubi-takoua-075591147/",
+      "text": "Devops engineer looking for first job opportunity"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ismail-abdellaoui-932253133/",
+      "text": "Cloud and Devops Engineer ( AWS SysOps Certified )"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aicha-dridi-222275145/",
+      "text": "Cloud Computing & DevOps Engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nour-barkaoui-b60423116/",
+      "text": "Chargée Recrutement IT chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mounir-ben-romdhane-mounir/",
+      "text": "Développeur Python Django Devops chez SOFINE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oumayma-zeddini/",
+      "text": "Looking for a graduation internship 2020"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ketata-mohamed-356b9894/",
+      "text": "DevOps, cloud computing and systems engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/eyet-chida-00780612b/",
+      "text": "Responsable recrutement et affaires administratives chez Groupe ADAMING"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de DevOps Engineer et DevOps Consultant\n\nVoir tous les détails",
+    "headline": "ingénieur devops",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGMLXZns5oXqA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=K1LBsds6gqjg9ngT-ySvSIrYzK-eb5RXqlkai8zj8hg",
+    "summary": "je suis fraîchement diplômée en génie télécommunications option système réseaux . je suis actuellement à la recherche d'une première expérience professionnelle dans le domaine devops. vous pouvez consulter mon cv ci-dessous."
+  }
+}

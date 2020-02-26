@@ -1,0 +1,192 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Azmi Ben Helal",
+    "headline": "Développeur PHP / Symfony",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEjJgCGAD4bLA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=P5FXB9-SO8gQCl7PsRQmLDFtkOycrm-vm7A64UGeN_w",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Sérieux, dynamique, créatif, flexible... Je suis une personne qui a toujours de nouvelles idées et qui est passionné par les nouvelles technologies. Je suis capable aussi de m'adapter à l'évolution des priorités et Multi-tâches dans un environnement de travail dynamique."
+  },
+  "aboutAlternative": {
+    "text": "Sérieux, dynamique, créatif, flexible... Je suis une personne qui a toujours de nouvelles idées et qui est passionné par les nouvelles technologies. Je suis capable aussi de m'adapter à l'évolution des priorités et Multi-tâches dans un environnement de travail dynamique."
+  },
+  "positions": [
+    {
+      "title": "Développeur PHP / Symfony",
+      "companyName": "Talan Tunisie",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "avr. 2019 – juil. 2019",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Education Training",
+      "companyName": "Go My Code",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": ". Programme intensif de 12 SEMAINES Full Stack PHP/Symfony dans le cadre du programme 1000 Coders :\nHTML, CSS, Bootstrap, JavaScript, JQuery,PHP, Symfony ...",
+      "date1": "oct. 2018 – janv. 2019",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Administrateur Systèmes et Réseaux",
+      "companyName": "Service Informatique Multimedia (SIM)",
+      "location": "Tunisie",
+      "description": ". Installation des systèmes de Sécurité électronique.\n. Assurer la maintenance de différents services réseaux et leurs équipements et périphériques liés.\n. Politique de sauvegarde et restauration : S’assurer que les procédures de sauvegarde soient correctement paramétrées.\n. Répondre aux rapports d’incidents réseaux.\n. Gestion de parc : inventaire et mise à jour des licences logiciels.\n. Interconnexion Internet et messagerie, site central, sites distants :\n- Solution DSL\n- VPN : TUNISIA TRADENET , SINDA-Douane\n…\nvoir plus",
+      "date1": "juil. 2016 – oct. 2018",
+      "date2": "2 ans 4 mois"
+    },
+    {
+      "title": "Télévendeur à l'activité FREE",
+      "companyName": "Teleperformance",
+      "location": "Gouvernorat de Ben Arous, Tunisia",
+      "description": ". Vente des produits du fournisseur d'accès internet FREE (ADSL , fibre optique …).\n. Techniques commerciales(Ecole de vente interne)",
+      "date1": "févr. 2016 – juil. 2016",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Dessinateur industriel",
+      "companyName": "Key Technology",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": ". Élaboration de plans Autocad des systèmes anti-intrusions et des systèmes de pointage.",
+      "date1": "juin 2015 – déc. 2015",
+      "date2": "7 mois"
+    },
+    {
+      "title": "Chercheur/ingénieur (PFE)",
+      "companyName": "Société Tunisienne de l'Electricité et du Gaz (STEG)",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": ". Amélioration de la détection des fuites de gaz du véhicule de surveillance réseaux de la STEG par des caméras thermiques et le traitement des images thermiques par les outils de l’intelligence artificielle.",
+      "date1": "févr. 2013 – févr. 2014",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "École Nationale Supérieure d'ingénieurs de Tunis (ENSIT)",
+      "companyName": "Nom du diplôme\nMaster de recherche en génie électrique spécialité Automatisme, Informatique Industrielle (AII)"
+    },
+    {
+      "title": "École Nationale Supérieure d'ingénieurs de Tunis (ENSIT)",
+      "companyName": "Nom du diplôme\nLicence Fondamentale en Électronique, Électrotechnique et Automatique (EEA)"
+    }
+  ],
+  "educations": [
+    {
+      "title": "École Nationale Supérieure d'ingénieurs de Tunis (ENSIT)",
+      "degree": "Master de recherche en génie électrique spécialité Automatisme, Informatique Industrielle (AII)",
+      "fieldofstudy": "Ingénieur / technicien en technologie d''automatisation",
+      "date1": "2011",
+      "date2": "2014"
+    },
+    {
+      "title": "École Nationale Supérieure d'ingénieurs de Tunis (ENSIT)",
+      "degree": "Licence Fondamentale en Électronique, Électrotechnique et Automatique (EEA)",
+      "fieldofstudy": "Ingénierie électrique et électronique",
+      "date1": "2008",
+      "date2": "2011"
+    }
+  ],
+  "skills": [
+    {
+      "title": "HTML5",
+      "count": "4"
+    },
+    {
+      "title": "JavaScript",
+      "count": "4"
+    },
+    {
+      "title": "Symfony",
+      "count": "4"
+    },
+    {
+      "title": "CSS",
+      "count": "3"
+    },
+    {
+      "title": "C#",
+      "count": "1"
+    },
+    {
+      "title": "PHP",
+      "count": "3"
+    },
+    {
+      "title": "Management",
+      "count": "3"
+    },
+    {
+      "title": "Leadership d'équipe",
+      "count": "2"
+    },
+    {
+      "title": "Team Building",
+      "count": "2"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "1",
+      "title": "cours",
+      "items": [
+        "Préparation Métier Développeur Web ASP .NET",
+        "Arabe . Francais . Anglais"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/sana-ben-hammamia/",
+      "text": "Développeur PHP/ Symfony chez OpenBee"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mouna-m-barki-5189a926/",
+      "text": "développeur Java/J2ee chez Arabsoft"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rym-jebri-79905214a/",
+      "text": "Développeur web chez E-novationduweb.com"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arfaoui-slim-49080512a/",
+      "text": "Développeur web PHP/Symfony chez Talan Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/abir-ben-smaya-449b1853/",
+      "text": "Ingénieur Développement Web PHP/Symfony"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jihen-belabed-054125136/",
+      "text": "PHP Developer at Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zaki-zayen-a0bb2b57/",
+      "text": "Développeur PHP/Symfony chez Tritux"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khaled-ben-slama-75088394/",
+      "text": "Ingénieur Etudes et Développement PHP/Symfony"
+    },
+    {
+      "user": "https://www.linkedin.com/in/anismechri/",
+      "text": "Ingénieur & Développeur Full Stack PHP"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jarray-mosbah/",
+      "text": "Développeur PHP(symfony) chez DataBiz"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Azmi Ben Helal",
+    "headline": "Développeur PHP / Symfony",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEjJgCGAD4bLA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=P5FXB9-SO8gQCl7PsRQmLDFtkOycrm-vm7A64UGeN_w",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Sérieux, dynamique, créatif, flexible... Je suis une personne qui a toujours de nouvelles idées et qui est passionné par les nouvelles technologies. Je suis capable aussi de m'adapter à l'évolution des priorités et Multi-tâches dans un environnement de travail dynamique."
+  }
+}

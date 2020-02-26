@@ -1,0 +1,176 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Tarek Dhibi",
+    "headline": "Développeur C#.NET Junior",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFuCX8bds6K7A/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=zUwq_0ETuJNQdr1mokJZpeV6a91XNmpPTnYyaIZYlS8",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Passionné de développement et l’apprentissage des nouvelles technologies, je suis particulièrement intéressé par les frameworks modernes mettant en avant les bonnes pratiques de code. J'apprécie le travail en équipe, injecter de l'énergie positive et mener à bien mes projets."
+  },
+  "aboutAlternative": {
+    "text": "Passionné de développement et l’apprentissage des nouvelles technologies, je suis particulièrement intéressé par les frameworks modernes mettant en avant les bonnes pratiques de code. J'apprécie le travail en équipe, injecter de l'énergie positive et mener à bien mes projets."
+  },
+  "positions": [
+    {
+      "title": "Développeur C#.NET",
+      "companyName": "Tunisie Systèmes d'Information (TSI)",
+      "location": "Tunisie",
+      "date1": "sept. 2019 – Aujourd’hui",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Stagiaire développeur C#.NET (PFE)",
+      "companyName": "Open Bee",
+      "location": "Tunisie",
+      "description": "Intégration d'une recherche avancée dans l'outil Open Bee™ Search qui lance une recherche dans la GED Portal Open Bee™. Cette recherche est basée sur des profils de recherche à configurer et elle est intégrable dans n'importe quel logiciel par un bouton qui lance la recherche dans la GED.\n\n+ Responsabilité:\n- Analyse Fonctionnelle\n- Documentation\n- Développement\n- Test\n\n+Environnement technique:\nC#, WPF, Microsoft UI Automation, REST, JIRA / Scrum, MVVM, UML, TDD\n…\nvoir plus",
+      "date1": "févr. 2019 – juin 2019",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire développeur C#.NET",
+      "companyName": "AraniaCom",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "description": "Conception et réalisation d’une application de gestion des rappels(C# WPF)",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Participant",
+      "companyName": "Sofrecom IOT challenge for environment",
+      "location": "Gouvernorat de Gabès, Tunisia",
+      "description": "Réalisation d’un système de brumisation IOT (Arduino shield wifi, dht11, C, php, jQuery, MySQL).",
+      "date1": "mars 2018",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Développeur web freelance",
+      "companyName": "Yazaki Gafsa",
+      "location": "Gouvernorat de Gafsa, Tunisia",
+      "description": "Réalisation d’une application web de gestion de production et d’ absentéisme (php, jQuery, MySQL).",
+      "date1": "août 2017 – oct. 2017",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "CPG",
+      "location": "Gouvernorat de Gafsa, Tunisia",
+      "description": "Conception d’une application de vente et embarquement",
+      "date1": "juin 2017 – juil. 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Développeur web freelance",
+      "companyName": "Club CyberSec de l’ESIP",
+      "location": "Gouvernorat de Gafsa, Tunisia",
+      "description": "Réalisation d’une application web (php, jQuery, MySQL).",
+      "date1": "nov. 2016 – janv. 2017",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Stagiaire développeur C#.NET (PFA)",
+      "companyName": "Faculté des sciences de Gafsa",
+      "location": "Gouvernorat de Gafsa, Tunisia",
+      "description": "Conception et réalisation d’une application de gestion de la production assistée par ordinateur basée sur l’architecture client/serveur et les technologies : C#(WPF), MySQL",
+      "date1": "févr. 2016 – mai 2016",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Ecole Superieure d'ingénieurs Privée de Gafsa",
+      "companyName": "Nom du diplôme\nIngénierie du logiciel et systèmes d’information"
+    },
+    {
+      "title": "Faculté des sciences de Gafsa",
+      "companyName": "Nom du diplôme\nLicence fondamentale en sciences de l'informatique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Superieure d'ingénieurs Privée de Gafsa",
+      "degree": "Ingénierie du logiciel et systèmes d’information",
+      "fieldofstudy": "Informatique",
+      "date1": "2016",
+      "date2": "2019"
+    },
+    {
+      "title": "Faculté des sciences de Gafsa",
+      "degree": "Licence fondamentale en sciences de l'informatique",
+      "fieldofstudy": "Informatique",
+      "date1": "2013",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "C#",
+      "count": "2"
+    },
+    {
+      "title": "PHP",
+      "count": "2"
+    },
+    {
+      "title": "JavaScript"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/nesrine-meki-7612b8a9/",
+      "text": "Ingénieur Dév. & Intégration .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chedya-abbassi-851305119/",
+      "text": "Ingénieur informatique à la recherche d'une opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hedi-manai/",
+      "text": "Développeur Business Intelligence chez Tunisian Cloud"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bouhouch-chaker-336049135/",
+      "text": "Développeur Dot Net chez TSI"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sadok-bani-744a10167/",
+      "text": "Développeur Full Stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohsen-f%C3%A9ki-a41896164/",
+      "text": "Spring Boot Developer chez Mobelite Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wala-ben-messaoud-b91357110/",
+      "text": "Full-stack C# .Net Developer chez YESSS ELECTRIQUE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hayder-ons-010545160/",
+      "text": "Développeur .NET"
+    },
+    {
+      "user": "https://www.linkedin.com/in/imen-jammeli-630aab145/",
+      "text": "Human Resources Business Partner chez Linedata"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wajdi-ferjani-a1013111b/",
+      "text": "C# .Net Developer chez NEOSYS"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Tarek Dhibi",
+    "headline": "Développeur C#.NET Junior",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFuCX8bds6K7A/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=zUwq_0ETuJNQdr1mokJZpeV6a91XNmpPTnYyaIZYlS8",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Passionné de développement et l’apprentissage des nouvelles technologies, je suis particulièrement intéressé par les frameworks modernes mettant en avant les bonnes pratiques de code. J'apprécie le travail en équipe, injecter de l'énergie positive et mener à bien mes projets."
+  }
+}

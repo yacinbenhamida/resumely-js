@@ -1,0 +1,168 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Development Engineer, Software Quality Assurance Test Engineer, Quality Assurance Engineer, Engineer Java Javaee et Software Engineer\n\nVoir tous les détails",
+    "headline": "A la recherche d'une nouvelle opportunité",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFKv2e1J5PzsQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=9k9bx4cPnK03zNw2i_jlvwyRG7jAWlDhyImYEmkSMxc",
+    "summary": "A la recherche d'un emploi"
+  },
+  "aboutAlternative": {
+    "text": "A la recherche d'un emploi"
+  },
+  "positions": [
+    {
+      "title": "Développeur web",
+      "companyName": "IBS",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "Conception et Développement des applications web de gestion: CakePHP 2/3, jQuery, Javascript, Bootstrap, CSS, MySQL.",
+      "date1": "déc. 2017 – juin 2018",
+      "date2": "7 mois"
+    },
+    {
+      "title": "Stagiaire en Référencement Web",
+      "companyName": "SOPAL",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "date1": "sept. 2016 – janv. 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Projet de fin d'études",
+      "companyName": "SiFAST",
+      "location": "Sfax, Tunisie",
+      "description": "Développement d’une applicationWeb d’échange de services entre particuliers: Symfony 2, Javascipt, CSS, HTML.",
+      "date1": "févr. 2014 – juin 2014",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Institut Supérieur d'informatique et Multimédia de Sfax, Tunisie",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur d'Informatique, Web et Multimédia"
+    },
+    {
+      "title": "CTIG",
+      "companyName": "Nom du diplôme\nformation certifiante ISTQB",
+      "description": "Fondamentaux des tests, Modèles de développement logiciels, Tests statiques, Techniques de test, Gestion des test, Outils de support aux tests."
+    },
+    {
+      "title": "G2C",
+      "companyName": "Nom du diplôme\nFormation Java/JEE",
+      "description": "Architectures et composantes J2EE, Modélisation et conception Orientée objet, les bonnes pratiques Java, JDBC, JSP, Servlets, Conteneurs et Services, annotations, Mapping Objet/Relationnel, JPA/Hibernate, Serveurs applications Web, XML, Maven, Jboss, Apache, Eclipse.."
+    },
+    {
+      "title": "Ecole Supérieur de Technologie et d'Informatique Carthage Tunisie",
+      "companyName": "Nom du diplôme\nLicence Fondamentale en Sciences de l'Informatique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut Supérieur d'informatique et Multimédia de Sfax, Tunisie",
+      "degree": "Diplôme d'ingénieur d'Informatique, Web et Multimédia",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2011",
+      "date2": "2014"
+    },
+    {
+      "title": "CTIG",
+      "degree": "formation certifiante ISTQB",
+      "date1": "2019",
+      "date2": "2019"
+    },
+    {
+      "title": "G2C",
+      "degree": "Formation Java/JEE",
+      "date1": "2019",
+      "date2": "2019"
+    },
+    {
+      "title": "Ecole Supérieur de Technologie et d'Informatique Carthage Tunisie",
+      "degree": "Licence Fondamentale en Sciences de l'Informatique",
+      "date1": "2008",
+      "date2": "2011"
+    }
+  ],
+  "skills": [
+    {
+      "title": "SYMFONY2",
+      "count": "6"
+    },
+    {
+      "title": "Java",
+      "count": "9"
+    },
+    {
+      "title": "MySQL",
+      "count": "9"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "1",
+    "given": [
+      {
+        "user": "https://www.linkedin.com/in/aymen-rahmani-285a5079/",
+        "text": "J’ai été particulièrement impressionné par la capacité de Rim à prendre les décisions, proposer les solutions de conception des systems d'information. Cette compétence prend souvent des années à se développer chez les jeunes diplôme, mais il semblait parfaitement naturel pour elle."
+      }
+    ],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Espagnol",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/rawia-hakima-3129a4150/",
+      "text": "Developer (React+Node Js)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ghada-trabelsi/",
+      "text": "Consultant QA chez Gfi Tunisie,"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mariem-gharbi-850a4614a/",
+      "text": "Ingénieur informatique chez Clediss s.a.r.l"
+    },
+    {
+      "user": "https://www.linkedin.com/in/omaima-benramdhane-8a40b3141/",
+      "text": "Intelligence décisionnelle chez Finlogik Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/monjia-ben-zbiba-23b8a0154/",
+      "text": "Ingénieure en informatique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-akrouti/",
+      "text": "Developpeur web PHP/ Symfony Altran"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wafazitouna/",
+      "text": "Full Stack Developer (Angular/Ionic/Node Js)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/emna-bouali-47903386/",
+      "text": "Consultante RPO (Recruitment Process Outsourcing) / IT Recruiter chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/cyrine-trigui-337b08bb/",
+      "text": "HR-recruiter chez Primatec Engineering"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zaafouri-ibtihel-949321176/",
+      "text": "Ingénieur électrique (à la recherche active d'une opportunité)"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "À l’écoute des opportunités d’emploi\n\nRôles de Development Engineer, Software Quality Assurance Test Engineer, Quality Assurance Engineer, Engineer Java Javaee et Software Engineer\n\nVoir tous les détails",
+    "headline": "A la recherche d'une nouvelle opportunité",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFKv2e1J5PzsQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=9k9bx4cPnK03zNw2i_jlvwyRG7jAWlDhyImYEmkSMxc",
+    "summary": "A la recherche d'un emploi"
+  }
+}

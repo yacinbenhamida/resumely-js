@@ -1,0 +1,207 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Rihab Mabrouk",
+    "headline": "Ingénieur informatique chez HRDatabank",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFcKJr3ojpacw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=e4XBoArS3XcHgMoctWD4Op5ANUGYyy73MEEk4XZD37I",
+    "location": "Monastir, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Développeur Java/Java EE",
+      "companyName": "HRDatabank",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Mots clés : Java, J2EE, JSF, Spring Boot, AngularJs, Line API, Messenger API, JavaScript, CSS, HTML5, PostgreSQL, JPA, GIT",
+      "date1": "sept. 2016 – Aujourd’hui",
+      "date2": "3 ans 6 mois"
+    },
+    {
+      "title": "Stage PFE",
+      "companyName": "DECADE",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Réalisation d’un middle office d’administration de magasin dans un site E-Commerce basé sur le progiciel SAP Hybris.\nMots clés: E-commerce, Hybris, JAVA, JEE, Spring MVC, Bootstrap, AngularJS",
+      "date1": "févr. 2016 – juin 2016",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stage d'été",
+      "companyName": "UTSI",
+      "location": "Gouvernorat de Monastir, Tunisia",
+      "description": "Conception et développement d’une application desktop permettant la gestion commerciale d’une entreprise.\n\nMots clés: C#, .NET, MySql",
+      "date1": "juin 2015 – août 2015",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Projet de conception et développement",
+      "companyName": "ENSI - Ecole Nationale des Sciences de l'Informatique",
+      "location": "Gouvernorat de la Manouba, Tunisia",
+      "description": "Réalisation d’une application d’aide au secourisme.\n\nMots clés: C#, ASP.Net, Android, Sql Server",
+      "date1": "janv. 2015 – mai 2015",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Mini Projet",
+      "companyName": "ENSI - Ecole Nationale des Sciences de l'Informatique",
+      "location": "Gouvernorat de la Manouba, Tunisia",
+      "description": "Conception et réalisation d’une Application android intitulée « Super Pointeuse », permettant à l’employé de compter les heures de travail au sein de l’entreprise.\n\nMots clés: Java, XML, Android",
+      "date1": "juin 2014 – août 2014",
+      "date2": "3 mois"
+    },
+    {
+      "title": "ENSI - Ecole Nationale des Sciences de l'Informatique",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieur de Monastir (IPEIM)"
+    }
+  ],
+  "educations": [
+    {
+      "title": "ENSI - Ecole Nationale des Sciences de l'Informatique",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Génie Logicielle",
+      "date1": "2013",
+      "date2": "2016"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieur de Monastir (IPEIM)",
+      "date1": "2011",
+      "date2": "2013"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "JEE",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "Services web"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "HTML5"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "PostgreSQL"
+    },
+    {
+      "title": "Git"
+    },
+    {
+      "title": "JavaServer Faces (JSF)"
+    },
+    {
+      "title": "Framework Sping"
+    },
+    {
+      "title": "JPA"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "Feuilles de style en cascade (CSS)"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "UML"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "jQuery"
+    },
+    {
+      "title": "Français"
+    },
+    {
+      "title": "Anglais"
+    },
+    {
+      "title": "Arabe"
+    },
+    {
+      "title": "Allemand"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/essedik-noura-30272627/",
+      "text": "Senior JAVA/J2EE Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/asma-fradi-79066413a/",
+      "text": "Software Engineer at Proxym Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-ben-hammamia/",
+      "text": "Développeur PHP/ Symfony chez OpenBee"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rym-jebri-79905214a/",
+      "text": "Développeur web chez E-novationduweb.com"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ghafer-baccouche-b482249a/",
+      "text": "Ingénieur développement logiciels chez imbus"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rahma-boukhris-933687125/",
+      "text": "Ingénieur Test & Automatisation chez Proxym Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/najla-ennaifer-68a50b39/",
+      "text": "DRH"
+    },
+    {
+      "user": "https://www.linkedin.com/in/youssef-chouikhi-b421a0171/",
+      "text": "Software Designer chez ARDIA"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ines-ben-sedrine-%F0%9F%8E%AF-0016307b/",
+      "text": "Chargée de recrutement chez Quantylix"
+    },
+    {
+      "user": "https://www.linkedin.com/in/syrine-slimene-b53913127/",
+      "text": "Ingénieur JAVA/JEE chez ARDIA"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Rihab Mabrouk",
+    "headline": "Ingénieur informatique chez HRDatabank",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFcKJr3ojpacw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=e4XBoArS3XcHgMoctWD4Op5ANUGYyy73MEEk4XZD37I",
+    "location": "Monastir, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Wièm Haj Mabrouk",
+    "headline": "Ingénieur en développement de logiciels chez Linedata",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQG_4cUdab0Reg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=VSe2iYWsCRmOmH56qh2-seqyYiCChBv3pNwX2BfLd9w",
+    "location": "Bekalta, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur en développement de logiciels",
+      "companyName": "Linedata",
+      "location": "Tunisie",
+      "date1": "oct. 2019 – Aujourd’hui",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Talan Tunisie",
+      "location": "Tunisie",
+      "date1": "févr. 2019 – juin 2019",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "SFM Telecom-SFM Technologies",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "juin 2018 – août 2018",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "WIND consulting",
+      "location": "Tunisie",
+      "date1": "juin 2017 – août 2017",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Saisonniére",
+      "companyName": "Tunisie Télécom",
+      "location": "Gouvernorat de Mahdia, Tunisia",
+      "date1": "juin 2015 – juin 2016",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "faculté des sciences mathematiques physiques et naturelles de Tunis"
+    },
+    {
+      "title": "Institut Préparatoire aux Etudes d'Ingénieurs de Monastir IPEIM",
+      "companyName": "Domaine d’études\nPhysique Technologie"
+    },
+    {
+      "title": "Lycée Ibn Sina de Mahdia",
+      "companyName": "Nom du diplôme\nBaccalauréat Sciences Techniques"
+    },
+    {
+      "title": "Membre/Formatrice",
+      "companyName": "ATCCM: Tunisian Association of Competitions and Mathematical Culture",
+      "description": "Je suis actuellement une formatrice des enfants de differents ages afin de les preparer pour participer aux olympiades des jeux mathématiques et les competitions de logique et d'intelligence.",
+      "date1": "oct. 2018 – Aujourd’hui"
+    },
+    {
+      "title": "Membre de l'equipe dans Hult Prize Tunis El Manar",
+      "companyName": "Hult Prize Foundation",
+      "date1": "déc. 2017"
+    },
+    {
+      "title": "Membre sénior",
+      "companyName": "CLLFST",
+      "date1": "sept. 2016 – Aujourd’hui"
+    }
+  ],
+  "educations": [
+    {
+      "title": "faculté des sciences mathematiques physiques et naturelles de Tunis",
+      "date1": "2016",
+      "date2": "2019"
+    },
+    {
+      "title": "Institut Préparatoire aux Etudes d'Ingénieurs de Monastir IPEIM",
+      "degree": "Physique Technologie",
+      "fieldofstudy": "Physique Technologie",
+      "date1": "2014",
+      "date2": "2016"
+    },
+    {
+      "title": "Lycée Ibn Sina de Mahdia",
+      "degree": "Baccalauréat Sciences Techniques",
+      "fieldofstudy": "Sciences Techniques",
+      "date1": "2013",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Linux",
+      "count": "6"
+    },
+    {
+      "title": "Java",
+      "count": "5"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "6"
+    },
+    {
+      "title": "javaScript",
+      "count": "5"
+    },
+    {
+      "title": "HTML 5",
+      "count": "4"
+    },
+    {
+      "title": "PHP",
+      "count": "4"
+    },
+    {
+      "title": "MySQL",
+      "count": "4"
+    },
+    {
+      "title": "C",
+      "count": "4"
+    },
+    {
+      "title": "git",
+      "count": "3"
+    },
+    {
+      "title": "Python",
+      "count": "3"
+    },
+    {
+      "title": "Django",
+      "count": "3"
+    },
+    {
+      "title": "PL/SQL",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "3"
+    },
+    {
+      "title": "XML",
+      "count": "2"
+    },
+    {
+      "title": "Drupal",
+      "count": "2"
+    },
+    {
+      "title": "Android",
+      "count": "1"
+    },
+    {
+      "title": "CSS 3",
+      "count": "1"
+    },
+    {
+      "title": "Oracle SQL Developer"
+    },
+    {
+      "title": "Oracle"
+    },
+    {
+      "title": "Angular 5",
+      "count": "3"
+    },
+    {
+      "title": "Spring boot",
+      "count": "1"
+    },
+    {
+      "title": "java RMI",
+      "count": "5"
+    },
+    {
+      "title": "Talend",
+      "count": "3"
+    },
+    {
+      "title": "Apache Cordova",
+      "count": "3"
+    },
+    {
+      "title": "JHipster",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français",
+        "Club des Logiciels Libres CLLFST",
+        "Club Epsilon Interactive Ipeim",
+        "Site web d'une marque des produits cosmetiques Karesse Paris"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/eya-jelassi-929a5a125/",
+      "text": "Développeur Full Stack chez Marabout Technology (Angular/ Node Js)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hela-irmani-9070b2139/",
+      "text": "Human Resources Recruiter at \"EPPM\""
+    },
+    {
+      "user": "https://www.linkedin.com/in/wiem-chouchani-0bbb40166/",
+      "text": "Stage de fin d’études chez Institut de Chimie des Milieux et Matériaux de Poitiers (IC2MP)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ourabi-rahma-73b308131/",
+      "text": "Ingénieur développement logiciels chez DECADE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mariamcheikh/",
+      "text": "Software Engineer | Looking for a new challenge"
+    },
+    {
+      "user": "https://www.linkedin.com/in/asma-thabet/",
+      "text": "Analyst - Software Development Engineer at Linedata"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sameh-methnani/",
+      "text": "Data Scientist at Arion Technologies"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ameni-kilani-24a0b7131/",
+      "text": "Software Development Engineer chez Talan Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wiem-sanekli-84b69264/",
+      "text": "HR Manager"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ichrak-sioud-7203aa12a/",
+      "text": "Ingénieure d'étude et développement chez Talan Tunisie"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "Membre/Formatrice",
+      "experience": "ATCCM: Tunisian Association of Competitions and Mathematical Culture",
+      "description": "Éducation",
+      "date1": "oct. 2018 – Aujourd’hui",
+      "date2": "1 an 5 mois"
+    },
+    {
+      "title": "Membre de l'equipe dans Hult Prize Tunis El Manar",
+      "experience": "Hult Prize Foundation",
+      "description": "Services sociaux",
+      "date1": "déc. 2017",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Membre sénior",
+      "experience": "CLLFST",
+      "description": "Éducation",
+      "date1": "sept. 2016 – Aujourd’hui",
+      "date2": "3 ans 6 mois"
+    }
+  ],
+  "profile": {
+    "name": "Wièm Haj Mabrouk",
+    "headline": "Ingénieur en développement de logiciels chez Linedata",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQG_4cUdab0Reg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=VSe2iYWsCRmOmH56qh2-seqyYiCChBv3pNwX2BfLd9w",
+    "location": "Bekalta, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

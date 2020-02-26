@@ -1,0 +1,189 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Salma Dhifaoui",
+    "headline": "Ingénieur Développement",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQFV39ban5-DQQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=-p_HlnhupCwwFV6OcvA10PVZTKZnBKoyTP_VG9XsjfI",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Ingénieur développement",
+      "companyName": "Sagemcom Tunisie",
+      "date1": "janv. 2020 – Aujourd’hui",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage PFE",
+      "companyName": "E.S.A.T",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "description": "Développement et implémentation d’un radar\n24GHz d’aide à la conduite automobile\nDetails :\n• Couplage du radar avec la Raspberry Pi en\nutilisant l’SPI comme un protocole de\ncommunication.\n• Développement d’un software Python pour\nla Raspberry Pi.\n• Création d’une interface graphique à base\nde Qt Designer.\nMots clés : Automobile, Radar, Raspberry Pi3,\nPython, SPI, Qt Designer.\n…\nvoir plus",
+      "date1": "févr. 2019 – juin 2019",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stage ingénieur",
+      "companyName": "SOTACIB",
+      "location": "Gouvernorat de Kairouan, Tunisia",
+      "description": "Automatisation de système d’arrosage de\nl’atelier Pet-Coke\nMots clés : API, Grafcet, Step7, Excel.",
+      "date1": "juil. 2018",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Stage d'initiation",
+      "companyName": "Manufacture des Tabacs de Kairouan",
+      "location": "Gouvernorat de Kairouan, Tunisia",
+      "description": "Découvrir le monde professionnel et s’y intégrer.\nEtude de cycle de fabrication de tabacs.",
+      "date1": "juil. 2017",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Gabès (E.N.I.G)",
+      "companyName": "Nom du diplôme\nIngenieure en electrique-automatique"
+    },
+    {
+      "title": "Faculté des Sciences de monastir",
+      "companyName": "Nom du diplôme\nCycle Préparatoire aux Etudes d’Ingénieurs"
+    },
+    {
+      "title": "Secrétaire général WIE et IAS",
+      "companyName": "IEEE ENIG SB",
+      "date1": "sept. 2016 – Aujourd’hui"
+    },
+    {
+      "title": "Ressources humaines",
+      "companyName": "Hult Prize ENIG",
+      "date1": "sept. 2018 – Aujourd’hui"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d'Ingénieurs de Gabès (E.N.I.G)",
+      "degree": "Ingenieure en electrique-automatique",
+      "fieldofstudy": "electrique-automatique",
+      "date1": "2017",
+      "date2": "2019"
+    },
+    {
+      "title": "Faculté des Sciences de monastir",
+      "degree": "Cycle Préparatoire aux Etudes d’Ingénieurs",
+      "fieldofstudy": "Physique-Chimie (PC)",
+      "date1": "2014",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "MATLAB",
+      "count": "4"
+    },
+    {
+      "title": "Microsoft Office",
+      "count": "3"
+    },
+    {
+      "title": "C",
+      "count": "2"
+    },
+    {
+      "title": "Suite des protocoles Internet (TCP/IP)"
+    },
+    {
+      "title": "Simulations"
+    },
+    {
+      "title": "Électronique"
+    },
+    {
+      "title": "C++"
+    },
+    {
+      "title": "Arduino"
+    },
+    {
+      "title": "VHDL"
+    },
+    {
+      "title": "Raspberry Pi"
+    },
+    {
+      "title": "Qt Creator"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/abdouli-wahida-4a3178162/",
+      "text": "python developper"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chayma-brouk-542685171/",
+      "text": "Ingénieur développement Test et validation chez Sagemcom"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ilhem-ben-abdessalem/",
+      "text": "Software Engineer E chez FIS"
+    },
+    {
+      "user": "https://www.linkedin.com/in/omayma-mbarek-602963160/",
+      "text": "Ingénieur développement"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hammedi-wiem-bb3721176/",
+      "text": "Ingénieur qualité projet"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-smiti-14a9a0133/",
+      "text": "Ingénieur développement et test &validation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/meriemabdesslem/",
+      "text": "Ingénieur en génie électrique-automatique- à la recherche d'une première opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/daoudi627/",
+      "text": "Ingénieur électrique et automatique chez SOTIM sarl"
+    },
+    {
+      "user": "https://www.linkedin.com/in/roua-benney-57a71a168/",
+      "text": "ingénieur en développement de tests"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ouerghi-oussama-b70905153/",
+      "text": "Ingénieur développement Embarqué chez INNOV-ALLIANCE-TECH"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "Secrétaire général WIE et IAS",
+      "experience": "IEEE ENIG SB",
+      "description": "Science et technologie",
+      "date1": "sept. 2016 – Aujourd’hui",
+      "date2": "3 ans 6 mois"
+    },
+    {
+      "title": "Ressources humaines",
+      "experience": "Hult Prize ENIG",
+      "description": "Services sociaux",
+      "date1": "sept. 2018 – Aujourd’hui",
+      "date2": "1 an 6 mois"
+    }
+  ],
+  "profile": {
+    "name": "Salma Dhifaoui",
+    "headline": "Ingénieur Développement",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQFV39ban5-DQQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=-p_HlnhupCwwFV6OcvA10PVZTKZnBKoyTP_VG9XsjfI",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations"
+  }
+}

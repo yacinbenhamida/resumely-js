@@ -1,0 +1,187 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Ameni Ben Hadj Mbarek",
+    "headline": "Développeur front-end chez imbus",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQE3lv2HmggpTA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=afCSXFFEVOGIDVkPMA8nldd2uVZ4HIlKEwvs3b-AefY",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Ingénieur informatique jeune diplômée de l'école nationale d'ingénieurs de Sousse 《ENISo》\nPassionnée par les nouvelles technologies de développement. Je suis toujours prête à révéler de nouveaux défis et challenges.\n\nFortement motivée, dynamique et passionnée. Ma formation et mon expériences professionnelle m'ont permis d'être autonome et de travailler et d'interagir avec des membres d'une équipe."
+  },
+  "aboutAlternative": {
+    "text": "Ingénieur informatique jeune diplômée de l'école nationale d'ingénieurs de Sousse 《ENISo》\nPassionnée par les nouvelles technologies de développement. Je suis toujours prête à révéler de nouveaux défis et challenges.\n\nFortement motivée, dynamique et passionnée. Ma formation et mon expériences professionnelle m'ont permis d'être autonome et de travailler et d'interagir avec des membres d'une équipe."
+  },
+  "positions": [
+    {
+      "title": "Développeur front-end",
+      "companyName": "imbus",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "févr. 2019 – Aujourd’hui",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "HRDatabank",
+      "location": "Tunisie",
+      "description": "JAVA / JEE / FRONT-END",
+      "date1": "janv. 2018 – Aujourd’hui",
+      "date2": "2 ans 2 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nDev -IT",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "juin 2017 – sept. 2017",
+      "date2": "4 mois",
+      "roles": [
+        {
+          "title": "Développeur web",
+          "date1": "juin 2017 – sept. 2017",
+          "date2": "4 mois",
+          "location": "Gouvernorat de Sousse, Tunisia"
+        },
+        {
+          "title": "Développeur web",
+          "date1": "juin 2017 – sept. 2017",
+          "date2": "4 mois",
+          "location": "Gouvernorat de Sousse, Tunisia"
+        }
+      ]
+    },
+    {
+      "title": "téléconseillère",
+      "companyName": "Alpha Call",
+      "location": "Gouvernorat de sousse, Tunisie",
+      "date1": "juil. 2016 – sept. 2016",
+      "date2": "3 mois"
+    },
+    {
+      "title": "ecole national d'ingenieur sousse"
+    },
+    {
+      "title": "Institut Préparatoire aux études d'ingénieur MOUNASTIR",
+      "companyName": "Domaine d’études\nPhysique-Technologie"
+    },
+    {
+      "title": "Lycée Ali Bourguiba Kâlaa Kebira",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "ecole national d'ingenieur sousse",
+      "date1": "2015",
+      "date2": "2018"
+    },
+    {
+      "title": "Institut Préparatoire aux études d'ingénieur MOUNASTIR",
+      "degree": "Physique-Technologie",
+      "fieldofstudy": "Physique-Technologie",
+      "date1": "2012",
+      "date2": "2015"
+    },
+    {
+      "title": "Lycée Ali Bourguiba Kâlaa Kebira",
+      "degree": "Baccalauréat",
+      "date1": "2008",
+      "date2": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "SQL",
+      "count": "2"
+    },
+    {
+      "title": "HTML",
+      "count": "2"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "Angular"
+    },
+    {
+      "title": "Framework Spring"
+    },
+    {
+      "title": "PostgreSQL"
+    },
+    {
+      "title": "DevOps"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français",
+        "ENISo Google Club"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/souha-mihoubi-95462616a/",
+      "text": "Développeur front-end ANGULAR chez Arion Technologies"
+    },
+    {
+      "user": "https://www.linkedin.com/in/omaima-benramdhane-8a40b3141/",
+      "text": "Intelligence décisionnelle chez Finlogik Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sirine-gobji-464b02141/",
+      "text": "software engineering student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nour-barkaoui-b60423116/",
+      "text": "Chargée Recrutement IT chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jalloul-sirine-467990176/",
+      "text": "Approvisionneuse SAGEMcom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/elyes-maamouri-32a686168/",
+      "text": "Développeur Angular 7/NodeJs"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-chatbouri-085937138/",
+      "text": "Software Engineer at be-softilys"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amani-ochi-a3350513a/",
+      "text": "IT Consultant , Scrum Master & Web Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zouaghi-maha-514a21148/",
+      "text": "Ingénieur informatique chez Kromberg & Schubert"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bennoureddine-zouhour-061655168/",
+      "text": "Ingénieur électrique spécialité électronique et technologie avancée"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Ameni Ben Hadj Mbarek",
+    "headline": "Développeur front-end chez imbus",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQE3lv2HmggpTA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=afCSXFFEVOGIDVkPMA8nldd2uVZ4HIlKEwvs3b-AefY",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Ingénieur informatique jeune diplômée de l'école nationale d'ingénieurs de Sousse 《ENISo》\nPassionnée par les nouvelles technologies de développement. Je suis toujours prête à révéler de nouveaux défis et challenges.\n\nFortement motivée, dynamique et passionnée. Ma formation et mon expériences professionnelle m'ont permis d'être autonome et de travailler et d'interagir avec des membres d'une équipe."
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Nabil Bejar",
+    "headline": "Développeur Full-Stack Chez Groupe Hammami",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEZUP5It2-wxA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=k0QytFY2Skkls79QWciARIiNfLQRBLSbycc4x57FmJk",
+    "location": "Sakiet Ezzit, Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je m'appelle Nabil Bejar, je suis un développeur informatique très dynamique, indépendant et créatif pour trouver des solutions informatiques fiables aux clients, j'aime le métier de développement.\n\nTitulaire d’un développeur web et actuellement un étudiant ingénieur en génie logiciel, j’ai acquis une expérience professionnelle très formatrice en travaillant dans le secteur pendant 3 années. C’est avec sérieux et autonomie dont j’ai mené à bien les missions de satisfaction de leurs clients qui m’étaient alors confiées. J’ai apprécié le contact avec la clientèle et aimé développer mon sens du service en adaptant les prestations à chaque situation particulière.\n\nAttentif, disponible et à l'écoute, je m'investis pleinement et avec créativité dans chaque challenge confié.\nJe me permets ainsi de solliciter un organisme professionnel et créatif où je pourrai non seulement appréhender tout le métier de développement informatique mais également bénéficier de l'expérience des autres.\n\nJ'ai l'honneur de travailler jusqu'à aujourd'hui dans le groupe de sociétés \"Groupe Hammami'\" en tant que responsable de développement web où j'avais appris et appliqué mes compétences et mes expériences dans le développement web et l'E-commerce dans le marché internationnel et tunisien et apprendre toutes les techniques du web mastering et l-emarketing.\n\nMes différentes expériences m’ont permis de m’adapter à différents environnements culturels et professionnels et de développer des qualités d’ouverture d’esprit et d’organisation.\nMotivé et persévérant, j’ai aussi le souci du travail bien fait et j’ai également la capacité de m’investir et d’être disponible. J'aime les formations diverses en programmation et le marketing pour être à jour dans mon domaine, ainsi que les voyages et la pêche."
+  },
+  "aboutAlternative": {
+    "text": "Je m'appelle Nabil Bejar, je suis un développeur informatique très dynamique, indépendant et créatif pour trouver des solutions informatiques fiables aux clients, j'aime le métier de développement.\n\nTitulaire d’un développeur web et actuellement un étudiant ingénieur en génie logiciel, j’ai acquis une expérience professionnelle très formatrice en travaillant dans le secteur pendant 3 années. C’est avec sérieux et autonomie dont j’ai mené à bien les missions de satisfaction de leurs clients qui m’étaient alors confiées. J’ai apprécié le contact avec la clientèle et aimé développer mon sens du service en adaptant les prestations à chaque situation particulière.\n\nAttentif, disponible et à l'écoute, je m'investis pleinement et avec créativité dans chaque challenge confié.\nJe me permets ainsi de solliciter un organisme professionnel et créatif où je pourrai non seulement appréhender tout le métier de développement informatique mais également bénéficier de l'expérience des autres.\n\nJ'ai l'honneur de travailler jusqu'à aujourd'hui dans le groupe de sociétés \"Groupe Hammami'\" en tant que responsable de développement web où j'avais appris et appliqué mes compétences et mes expériences dans le développement web et l'E-commerce dans le marché internationnel et tunisien et apprendre toutes les techniques du web mastering et l-emarketing.\n\nMes différentes expériences m’ont permis de m’adapter à différents environnements culturels et professionnels et de développer des qualités d’ouverture d’esprit et d’organisation.\nMotivé et persévérant, j’ai aussi le souci du travail bien fait et j’ai également la capacité de m’investir et d’être disponible. J'aime les formations diverses en programmation et le marketing pour être à jour dans mon domaine, ainsi que les voyages et la pêche."
+  },
+  "positions": [
+    {
+      "title": "Responsable développement web",
+      "companyName": "Groupe Hammami",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "date1": "févr. 2019 – Aujourd’hui",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Étudiant ingénieur (logiciels)",
+      "companyName": "Institut International de Technologie Sfax",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "Institut International de Technologie Sfax : https://www.facebook.com/iit.tunisia / http://www.iit-nau.com/index",
+      "date1": "sept. 2018 – févr. 2019",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "SCPC-Comptoir Hammami",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "date1": "févr. 2018 – févr. 2019",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Développeur web front-end",
+      "companyName": "Logicom Solutions",
+      "date1": "juin 2015 – déc. 2016",
+      "date2": "1 an 7 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Global Consult Engineering Ltd. - Web Design & Development Studio",
+      "location": "Tunis",
+      "date1": "juin 2014 – août 2014",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Institut International de Technologie Sfax",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur",
+      "description": "https://www.facebook.com/iit.tunisia\nhttp://www.iit-nau.com/index"
+    },
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax",
+      "companyName": "Nom du diplôme\nLicence",
+      "description": "http://www.isimsf.rnu.tn/"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut International de Technologie Sfax",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Programmation informatique",
+      "date1": "2018",
+      "date2": "2021"
+    },
+    {},
+    {},
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax",
+      "degree": "Licence",
+      "fieldofstudy": "Informatique",
+      "date1": "2011",
+      "date2": "2015"
+    },
+    {},
+    {}
+  ],
+  "skills": [
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "Framework Spring"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "Applications web"
+    },
+    {
+      "title": "Programmation web"
+    },
+    {
+      "title": "Développement pour Android"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "WordPress"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "Python"
+    },
+    {
+      "title": "C++"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "ActionScript"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "HTML5"
+    },
+    {
+      "title": "jQuery"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "Drupal"
+    },
+    {
+      "title": "ASP.NET"
+    },
+    {
+      "title": "CSS 3"
+    },
+    {
+      "title": "GitHub"
+    },
+    {
+      "title": "XML"
+    },
+    {
+      "title": "Node.js"
+    },
+    {
+      "title": "Anglais"
+    },
+    {
+      "title": "Français"
+    },
+    {
+      "title": "Arabe"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/rania-soltani-529a04b8/",
+      "text": "Ingénieur développement .net chez ODDO BHF"
+    },
+    {
+      "user": "https://www.linkedin.com/in/haithem-mrad-064345b0/",
+      "text": "Développeur web chez Web reflexe"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mouna-gmati/",
+      "text": "Software Development Engineer chez ACTIA Engineering Services"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bouaziz-ali/",
+      "text": "JAVA EE | Angular Developer at Cover Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-bedoui-26167212b/",
+      "text": "Développeur Full Stack Angular Node.js chez DnD Serv"
+    },
+    {
+      "user": "https://www.linkedin.com/in/tayari-wafa-40b667111/",
+      "text": "étudiante en cycle ingénieur informatique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jabri-raouf/",
+      "text": "Full-stack JS Developer / Python / Odoo Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bassem-raouafi/",
+      "text": "Développeur Web Full-stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sofyen-trabelsi-97a31a140/",
+      "text": "Junior Android Engineer at HELLO DATI"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sahraoui-mondher-11377495/",
+      "text": "Développeur Web Java chez ITSS GLOBAL \"Information Technology Solutions & Services\""
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Nabil Bejar",
+    "headline": "Développeur Full-Stack Chez Groupe Hammami",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEZUP5It2-wxA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=k0QytFY2Skkls79QWciARIiNfLQRBLSbycc4x57FmJk",
+    "location": "Sakiet Ezzit, Gouvernorat de Sfax, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je m'appelle Nabil Bejar, je suis un développeur informatique très dynamique, indépendant et créatif pour trouver des solutions informatiques fiables aux clients, j'aime le métier de développement.\n\nTitulaire d’un développeur web et actuellement un étudiant ingénieur en génie logiciel, j’ai acquis une expérience professionnelle très formatrice en travaillant dans le secteur pendant 3 années. C’est avec sérieux et autonomie dont j’ai mené à bien les missions de satisfaction de leurs clients qui m’étaient alors confiées. J’ai apprécié le contact avec la clientèle et aimé développer mon sens du service en adaptant les prestations à chaque situation particulière.\n\nAttentif, disponible et à l'écoute, je m'investis pleinement et avec créativité dans chaque challenge confié.\nJe me permets ainsi de solliciter un organisme professionnel et créatif où je pourrai non seulement appréhender tout le métier de développement informatique mais également bénéficier de l'expérience des autres.\n\nJ'ai l'honneur de travailler jusqu'à aujourd'hui dans le groupe de sociétés \"Groupe Hammami'\" en tant que responsable de développement web où j'avais appris et appliqué mes compétences et mes expériences dans le développement web et l'E-commerce dans le marché internationnel et tunisien et apprendre toutes les techniques du web mastering et l-emarketing.\n\nMes différentes expériences m’ont permis de m’adapter à différents environnements culturels et professionnels et de développer des qualités d’ouverture d’esprit et d’organisation.\nMotivé et persévérant, j’ai aussi le souci du travail bien fait et j’ai également la capacité de m’investir et d’être disponible. J'aime les formations diverses en programmation et le marketing pour être à jour dans mon domaine, ainsi que les voyages et la pêche."
+  }
+}

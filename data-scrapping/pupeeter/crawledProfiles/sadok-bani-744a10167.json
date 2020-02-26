@@ -1,0 +1,141 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Sadok Bani",
+    "headline": "Développeur Full Stack",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEmCC2vLYvKXg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=9p7qKopoJPddMrjtdiagBR5lbEcpNYxW4LAcB_qdZs4",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "je suis un ingénieur en génie informatique , Passionné par les technologies de l'information, je suis en veille permanente. J'ai acquis une expertise d'internet appliquée au développement de projets web et je suis actuellement, à la recherche de stage de fin d'année."
+  },
+  "aboutAlternative": {
+    "text": "je suis un ingénieur en génie informatique , Passionné par les technologies de l'information, je suis en veille permanente. J'ai acquis une expertise d'internet appliquée au développement de projets web et je suis actuellement, à la recherche de stage de fin d'année."
+  },
+  "positions": [
+    {
+      "title": "Développeur Full Stack",
+      "companyName": "WAZOLAB",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "Back-office de l'application mobile « 90 » c'est une application\ninnovante de vente en ligne utilisant des coupons de réduction.\nle back-office gère les catégories , les sous catégories, les\npromotions, les clients, les commerçants et les coupons.\n- Technologies et Outils :Angular7, Angular Material, NodeJS,\nExpressJS, MongoDB, Scrum, Git",
+      "date1": "juin 2019 – août 2019",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Développeur Full Stack",
+      "companyName": "BUSINESS TECHNOSOFT",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "Développer un prototype d'une application web de gestion commerciale des produits\ninformatique\n- Technologies et Outils :Angular 7 , Angular Material, Spring Boot\n, MySQL.",
+      "date1": "juin 2018 – août 2018",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Preparatory Institute for Engineering Studies of Nabeul (IPEIN)",
+      "companyName": "Nom du diplôme\nPreparatory, Physics-Technical"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2017",
+      "date2": "2020"
+    },
+    {
+      "title": "Preparatory Institute for Engineering Studies of Nabeul (IPEIN)",
+      "degree": "Preparatory, Physics-Technical",
+      "date1": "2015",
+      "date2": "2017"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Programmation web",
+      "count": "2"
+    },
+    {
+      "title": "HTML5",
+      "count": "2"
+    },
+    {
+      "title": "Css3",
+      "count": "2"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français",
+        "Italian",
+        "404 web site page",
+        "IT Product Management Website",
+        "Free Software Club"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/nesrine-meki-7612b8a9/",
+      "text": "Ingénieur Dév. & Intégration .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rim-jra%C3%AFed-b1b14b11b/",
+      "text": "Responsable agence chez Wissal Technology"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-hadj-sassi/",
+      "text": "Ingénieur Développeur .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saifeddine-ben-massoud-360127b6/",
+      "text": "Full Stack Engineer - Java/Java EE/Angular @Sofrecom - Part of Orange Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jihene-siala-4460a948/",
+      "text": "Owner CEO / Consultant / Soft Skills Trainer chez International Consulting Firm"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rawia-hakima-3129a4150/",
+      "text": "Developer (React+Node Js)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saidamef/",
+      "text": "Junior Data Scientist looking for new opportunities"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ben-ali-zouhair-4238a5154/",
+      "text": "Recherche de stage de fin d'étude en développement web, full-stack( Java/JEE- angular. Janvier 2020."
+    },
+    {
+      "user": "https://www.linkedin.com/in/rim-hafsi-570448159/",
+      "text": "Chargée avant vente chez Talys Consulting"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ridha-khorbi-a16b0213a/",
+      "text": "Ingénieur web MEAN stack (Angular ,ReactJS, React Native Express JS ,Node JS , MongoDB) chez AzertySoft"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Sadok Bani",
+    "headline": "Développeur Full Stack",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEmCC2vLYvKXg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=9p7qKopoJPddMrjtdiagBR5lbEcpNYxW4LAcB_qdZs4",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "je suis un ingénieur en génie informatique , Passionné par les technologies de l'information, je suis en veille permanente. J'ai acquis une expertise d'internet appliquée au développement de projets web et je suis actuellement, à la recherche de stage de fin d'année."
+  }
+}

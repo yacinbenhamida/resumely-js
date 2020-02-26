@@ -1,0 +1,215 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Sana Ben Hammamia",
+    "headline": "Développeur PHP/ Symfony chez OpenBee",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Symfony/php Developer",
+      "companyName": "Open Bee",
+      "location": "Nabeul Governorate, Tunisia",
+      "date1": "2018 – Aujourd’hui",
+      "date2": "2 ans"
+    },
+    {
+      "title": "Développeur web : php/ cakePhp/ angular js",
+      "companyName": "Amy Evolution plus",
+      "location": "Nabeul Governorate, Tunisia",
+      "date1": "oct. 2017 – juin 2018",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Développeur web et mobile",
+      "companyName": "PFE",
+      "location": "Tunisie",
+      "description": "Développement d'un site web e-commerce avec codeIgniter et une application mobile (Android),pilotés par la méthodologie SCRUM",
+      "date1": "janv. 2017 – juin 2017",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Développeur web",
+      "companyName": "Elite",
+      "location": "Tunisie",
+      "description": "Développement application web(Stage)",
+      "date1": "janv. 2016 – févr. 2016",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage",
+      "companyName": "Tunisie Télécom",
+      "location": "Tunisie",
+      "date1": "2014",
+      "date2": "moins d’un an"
+    },
+    {
+      "title": "Institut supérieur des études technologiques de Nabeul",
+      "companyName": "Nom du diplôme\nlicence appliqué en développement des sytèmes d'informations"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut supérieur des études technologiques de Nabeul",
+      "degree": "licence appliqué en développement des sytèmes d'informations",
+      "fieldofstudy": "Technologie informatique / technologie des systèmes d'information/ développement /programmation",
+      "date1": "2014",
+      "date2": "2017"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Android",
+      "count": "3"
+    },
+    {
+      "title": "php5",
+      "count": "3"
+    },
+    {
+      "title": "C#",
+      "count": "2"
+    },
+    {
+      "title": "Développement de logiciel",
+      "count": "1"
+    },
+    {
+      "title": "Programmation web",
+      "count": "1"
+    },
+    {
+      "title": "Programmation orientée objet (OOP)",
+      "count": "1"
+    },
+    {
+      "title": "JavaScript",
+      "count": "1"
+    },
+    {
+      "title": "MySQL",
+      "count": "1"
+    },
+    {
+      "title": "React.js",
+      "count": "1"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "WordPress"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "CodeIgniter"
+    },
+    {
+      "title": "Ajax"
+    },
+    {
+      "title": "JQuery"
+    },
+    {
+      "title": "php7"
+    },
+    {
+      "title": "Oracle SQL Developer"
+    },
+    {
+      "title": "Oracle Database"
+    },
+    {
+      "title": "Symfony",
+      "count": "1"
+    },
+    {
+      "title": "Frameworks PHP",
+      "count": "1"
+    },
+    {
+      "title": "CakePhp",
+      "count": "1"
+    },
+    {
+      "title": "Scripts HTML"
+    },
+    {
+      "title": "SQL PL"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Espagnol",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/ghofrane-hadhri-5540a4a9/",
+      "text": "Développeur web (Front-end/Back-end) symfony/php"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wiem-benkraiem/",
+      "text": "Lead Developer PHP/Symfony at DataBiz"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nesrine-meki-7612b8a9/",
+      "text": "Ingénieur Dév. & Intégration .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fadoua-belhabib-103808110/",
+      "text": "Développeur php chez DataBiz"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chrifa-tlig-5b743517b/",
+      "text": "Développeur web php/symfony chez STE-Tuntech"
+    },
+    {
+      "user": "https://www.linkedin.com/in/awatef-bouajaja-a37834a6/",
+      "text": "Développeur PHP/Symfony chez Decade tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ayari-dhouha-ba365350/",
+      "text": "ingénieur recherche et développement"
+    },
+    {
+      "user": "https://www.linkedin.com/in/imen-mani-26722a171/",
+      "text": "Java Spring Development Engineer at 2CS"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amine-fekih/",
+      "text": "Développeur PHP et Symfony chez Mobelite"
+    },
+    {
+      "user": "https://www.linkedin.com/in/abir-ben-smaya-449b1853/",
+      "text": "Ingénieur Développement Web PHP/Symfony"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Sana Ben Hammamia",
+    "headline": "Développeur PHP/ Symfony chez OpenBee",
+    "location": "Gouvernorat de Nabeul, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

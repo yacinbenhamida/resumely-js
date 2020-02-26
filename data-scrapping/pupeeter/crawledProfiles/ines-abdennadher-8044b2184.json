@@ -1,0 +1,174 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Ines Abdennadher",
+    "headline": "Stage ingénieur chez FIS",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQH9FUGRKaW3gA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=aALgd_dQGvvEkWxXrCx8z_n6G_gxtnYB2rOk1GJKuYw",
+    "location": "Gouvernorat de Ben Arous, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Actuellement je suis étudiante à « l’école Nationale supérieure des ingénieurs de Tunis » niveau troisième année génie électrique sous la spécialité électronique et technologie avancée.\nJe suis à la recherche d'un stage de fin d'études dans le domaine de l'électronique embarquée d'une durée de 4 à 6 mois à compter du Février 2020.\nJe reste à votre entière disposition pour tous renseignements complémentaires."
+  },
+  "aboutAlternative": {
+    "text": "Actuellement je suis étudiante à « l’école Nationale supérieure des ingénieurs de Tunis » niveau troisième année génie électrique sous la spécialité électronique et technologie avancée.\nJe suis à la recherche d'un stage de fin d'études dans le domaine de l'électronique embarquée d'une durée de 4 à 6 mois à compter du Février 2020.\nJe reste à votre entière disposition pour tous renseignements complémentaires."
+  },
+  "positions": [
+    {
+      "title": "Stage en ingénierie",
+      "companyName": "FIS",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "date1": "janv. 2020 – Aujourd’hui",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage technicien",
+      "companyName": "Sagemcom Tunisie",
+      "location": "Borj ghorbel",
+      "description": "Développement d’une application de test diélectrique du compteur électrique sous l’environnement LabVIEW",
+      "date1": "juil. 2019 – août 2019",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage ouvrier",
+      "companyName": "Sagemcom Tunisie",
+      "location": "Zone industrielle Borj Ghorbel ,tunis",
+      "description": "Processus de la fabrication des cartes électroniques",
+      "date1": "juil. 2018",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Ecole nationale supérieure des ingénieurs de Tunis",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "IPEIK- Institut preparatoire aux Études d'Ingénieur de kairouen",
+      "companyName": "Domaine d’études\nMathématique et physique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole nationale supérieure des ingénieurs de Tunis",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Genie Electrique",
+      "date1": "2018",
+      "date2": "2020"
+    },
+    {
+      "title": "IPEIK- Institut preparatoire aux Études d'Ingénieur de kairouen",
+      "degree": "Mathématique et physique",
+      "fieldofstudy": "Mathématique et physique",
+      "date1": "2016",
+      "date2": "2017"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Embedded C",
+      "count": "1"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "C",
+      "count": "1"
+    },
+    {
+      "title": "Ingénierie"
+    },
+    {
+      "title": "Arduino"
+    },
+    {
+      "title": "LabView"
+    },
+    {
+      "title": "MATLAB"
+    },
+    {
+      "title": "Microsoft Office"
+    },
+    {
+      "title": "Python"
+    },
+    {
+      "title": "National Instruments LabVIEW"
+    },
+    {
+      "title": "VHDL"
+    },
+    {
+      "title": "ISIS"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "5",
+      "title": "projets",
+      "items": [
+        "Réalisation d’un jeu 2D \"Basketball\" (C++, OpenGL)",
+        "Réalisation d’un prototype d’un tableau de bord à base d’un STM32f407 (STM32F407, LabVIEW)",
+        "Réalisation d’un système de reconnaissance faciale (Raspberry PI3, Python)",
+        "Développement d’une application de test diélectrique du compteur électrique sous l’environnement LabVIEW",
+        "Mesure des paramètres de la météo dans une smart house (Arduino, ISIS, SolidWorks)"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/amal-lahmar-b0714a153/",
+      "text": "Stagiaire chez Focus Corporation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/behjet-boussofara-198161/",
+      "text": "CEO TALAN TUNISIE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mouna-makni-b3a46114/",
+      "text": "Responsable Talan Academy chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aymen-fradi-4949a83a/",
+      "text": "Chef de service exploitation centrale éolienne chez STE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ibrahim-heddi-3ba00211a/",
+      "text": "Élève ingénieur chez ensit"
+    },
+    {
+      "user": "https://www.linkedin.com/in/israa-bargui-b2b671151/",
+      "text": "Engineer at Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arfaoui-samar-795b23176/",
+      "text": "Embedded software Engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zeineb-lamine-b6409b194/",
+      "text": "Membre étudiant chez IEEE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/marwa-boumaiza-42b222152/",
+      "text": "élève ingénieur industriel spécialité logistique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/meriemabdesslem/",
+      "text": "Ingénieur en génie électrique-automatique- à la recherche d'une première opportunité"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Ines Abdennadher",
+    "headline": "Stage ingénieur chez FIS",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQH9FUGRKaW3gA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=aALgd_dQGvvEkWxXrCx8z_n6G_gxtnYB2rOk1GJKuYw",
+    "location": "Gouvernorat de Ben Arous, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Actuellement je suis étudiante à « l’école Nationale supérieure des ingénieurs de Tunis » niveau troisième année génie électrique sous la spécialité électronique et technologie avancée.\nJe suis à la recherche d'un stage de fin d'études dans le domaine de l'électronique embarquée d'une durée de 4 à 6 mois à compter du Février 2020.\nJe reste à votre entière disposition pour tous renseignements complémentaires."
+  }
+}

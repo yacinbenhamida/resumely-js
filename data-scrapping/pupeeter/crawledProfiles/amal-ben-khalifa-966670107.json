@@ -1,0 +1,213 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Amal BEN KHALIFA",
+    "headline": "Ingénieur développeur Java\\J2EE chez SAB",
+    "location": "Ghar El Meleh, Gouvernorat de Bizerte, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Nom de l’entreprise\nSAB - éditeur de progiciels pour les banques / Software solutions for banks",
+      "location": "Tunisie",
+      "description": "Développement de solutions pour les institutions financières sous plate-forme Java / JEE.\n\nDéveloppement du module de gestion des financements \" ILF\" traitant les demandes de financement multi-lignes orienté principalement vers les entreprises et les entrepreneurs individuels qui englobe toutes les étapes comme :\n- Les produits de financement, lescommissions, assurances, garantie...\n- Description des interfaces des « web services » de la solution.\n- Rédaction des DIS (Document interne de spécification technique).\n- Elaboration et validation des Spécifications fonctionnelles.\n\nEnvironnement Technique:\nJAVA/JEE, EJB 3.0, SQL, XML, JUNIT, UML, WebSphere, Maven, Webservices SOAP CXF, SoapUI, SCRUM ,Oracle et DB2.\n…\nvoir plus",
+      "date1": "juil. 2017 – Aujourd’hui",
+      "date2": "2 ans 8 mois",
+      "roles": [
+        {
+          "title": "Ingénieur développeur Java\\J2EE",
+          "description": "Développement de solutions pour les institutions financières sous plate-forme Java / JEE.\n\nDéveloppement du module de gestion des financements \" ILF\" traitant les demandes de financement multi-lignes orienté principalement vers les entreprises et les entrepreneurs individuels qui englobe toutes les étapes comme :\n- Les produits de financement, lescommissions, assurances, garantie...\n- Description des interfaces des « web services » de la solution.\n- Rédaction des DIS (Document interne de spécification technique).\n- Elaboration et validation des Spécifications fonctionnelles.\n\nEnvironnement Technique:\nJAVA/JEE, EJB 3.0, SQL, XML, JUNIT, UML, WebSphere, Maven, Webservices SOAP CXF, SoapUI, SCRUM ,Oracle et DB2.\n…\nvoir plus",
+          "date1": "juil. 2017 – Aujourd’hui",
+          "date2": "2 ans 8 mois",
+          "location": "Tunisie"
+        },
+        {
+          "title": "Stagiaire PFE",
+          "description": "Développement de solutions pour les institutions financières sous la plate-forme Java / JEE.\n- Projet VUC (Vue Unique Client) : module permettant à l’établissement bancaire de remonter de façon régulière au FGDR (Fonds de Garantie des Dépôts) des informations sur les avoirs indemnisables et non indemnisables d’un échantillon représentatif de leur clientèle. En cas de défaillance d’un établissement bancaire, la FGDR s’occupe du remboursement des clients.\n\nTechnologies et outils : Java / J2EE , Hibernate , EJB3 , X3S , X3 , DB2 , ORACLE, SQL , Websphere ,\nTomcat , XML , RAD, Talend.\n▪ X3 : cadre interne pour le développement d'interfaces utilisateur graphiques.\n▪ X3S : plate-forme d'hébergement interne des services d'affaires de SAB, basé sur EJB 3.0\n…\nvoir plus",
+          "date1": "févr. 2017 – juin 2017",
+          "date2": "5 mois",
+          "location": "Tunisie"
+        }
+      ]
+    },
+    {
+      "title": "STAGE PFE",
+      "companyName": "SONEDE TUNIS",
+      "location": "Tunisie",
+      "date1": "févr. 2014 – juin 2014",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Institut supérieur d'informatique de Mahdia",
+      "companyName": "Nom du diplôme\nlicence appliqué",
+      "description": "3 ans d'études avec le titre majeur de promotion c'est une fierté pour moi ."
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut supérieur d'informatique de Mahdia",
+      "degree": "licence appliqué",
+      "fieldofstudy": "en sytéme informatique et logiciel",
+      "date1": "2011",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "4"
+    },
+    {
+      "title": "Oracle Database",
+      "count": "4"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "3"
+    },
+    {
+      "title": "Scrum",
+      "count": "1"
+    },
+    {
+      "title": "Architecture orientée services (SOA)",
+      "count": "1"
+    },
+    {
+      "title": "Développement pour Android"
+    },
+    {
+      "title": "Maven",
+      "count": "2"
+    },
+    {
+      "title": "Modèle MVC de Spring",
+      "count": "1"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "XML"
+    },
+    {
+      "title": "JavaServer Faces (JSF)"
+    },
+    {
+      "title": "c/c++"
+    },
+    {
+      "title": "UML"
+    },
+    {
+      "title": "SVN"
+    },
+    {
+      "title": "WebSphere"
+    },
+    {
+      "title": "AS400"
+    },
+    {
+      "title": "Crystal Reports"
+    },
+    {
+      "title": ".NET framework"
+    },
+    {
+      "title": "LaTeX"
+    },
+    {
+      "title": "Visual Basic .NET (VB.NET)"
+    },
+    {
+      "title": "Prezi"
+    },
+    {
+      "title": "3D Studio Max"
+    },
+    {
+      "title": "SQL DB2",
+      "count": "1"
+    },
+    {
+      "title": "Talend Open Studio"
+    },
+    {
+      "title": "Primefaces"
+    },
+    {
+      "title": "HQL"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/aymen-hosni-928223ab/",
+      "text": "Ingénieur d’études et développement Java/J2EE chez OWLIANCE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yassine-hajji-16b04ab0/",
+      "text": "Développeur Java / JEE / Angular chez Groupe Adaming Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/maha-bejaoui-48b99158/",
+      "text": "Ingénieur en électromécanique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/messaoudi-lamia-667958152/",
+      "text": "Intern FullStack(Spring,Angular)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hemrit-mohamed-yassine-67057312a/",
+      "text": "Ingénieur mécatronique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zouhour-limem-9a5875152/",
+      "text": "SAP Consultant (SAPUI5/SAP FIORI/ABAP/ODATA) at Focus Corporation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jalloul-sirine-467990176/",
+      "text": "Approvisionneuse SAGEMcom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ziedsfaxi/",
+      "text": "Développeur web chez ABSHORE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saidi-oumayma-7271b7b5/",
+      "text": "Developpeur Full-Stack JS chez Gfi Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mariem-mhamdi-685303166/",
+      "text": "A la recherche d'un stage de PFE"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Amal BEN KHALIFA",
+    "headline": "Ingénieur développeur Java\\J2EE chez SAB",
+    "location": "Ghar El Meleh, Gouvernorat de Bizerte, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

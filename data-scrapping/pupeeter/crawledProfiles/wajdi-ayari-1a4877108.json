@@ -1,0 +1,221 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Wajdi Ayari",
+    "headline": "Ingénieur Industriel et consultant ERP",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEpWvap-2pUZw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=xZquan4J2M-clqPOtVz-9zSEa7d7FsqvNyB17rDjeYI",
+    "location": "Djerba Midoun, Gouvernorat de Médenine, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Bonjour\nJe suis actuellement un consultant ERP (Diavlto) au sein de la société de conseil et solution information de Tunis (SCSI.TN) ,diplômé de l'école nationale des ingénieurs de Tunis Promotion 2017\nEmail : wajdi.ayari1993@gmail.com\nTel: 25625864/52625864"
+  },
+  "aboutAlternative": {
+    "text": "Bonjour\nJe suis actuellement un consultant ERP (Diavlto) au sein de la société de conseil et solution information de Tunis (SCSI.TN) ,diplômé de l'école nationale des ingénieurs de Tunis Promotion 2017\nEmail : wajdi.ayari1993@gmail.com\nTel: 25625864/52625864"
+  },
+  "positions": [
+    {
+      "title": "Consultant ERP Divalto",
+      "companyName": "SCSI.tn",
+      "location": "Tunisie",
+      "description": "Comme étant un consultant ERP, je suis chargé de :\nIdentifier le besoin du client\nAssister le client à établir ses réglées de gestions\nRédiger les documents de cadrage pour la mise en place des différents modules du système ERP\nConcevoir les spécifications du client par rapport au système ERP\nTester les développements spécifiques\nFormer les utilisateurs sur le système\nAssister les utilisateurs à gérer l'ERP\nGérer la budgétisation et l'avancement du projet ainsi que la planification des interventions\n\n\n…\nvoir plus",
+      "date1": "nov. 2017 – Aujourd’hui",
+      "date2": "2 ans 4 mois"
+    },
+    {
+      "title": "Stage projet fin d’étude",
+      "companyName": "Gruner AG",
+      "location": "Gouvernorat de l’Ariana, Tunisia",
+      "description": "Amélioration des lignes de production en appliquant les outils de lean manufacturing",
+      "date1": "janv. 2017 – mai 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire ingénierie",
+      "companyName": "LEONI",
+      "location": "Bizerte mateur",
+      "description": "Application de chantier kata pour améliorer la productivité et l'efficience de la chaine PDB 139 GDX de segment 74.\nDéveloppement d'une application sur Visual Basic en connexion avec une base de données Access , qui permet de gérer les outils de retouche des produits : (Recherche , Modification , Ajout et Suppression dans la base)\n…\nvoir plus",
+      "date1": "juin 2016 – juil. 2016",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stagiaire technicien",
+      "companyName": "DTS MOTORS",
+      "description": "Supervision générale de la mécanique automobile.\nMission: Maintenance générale ,remplacement kit d’embrayage, Diagnostique électronique , remplacement disque frein, …",
+      "date1": "juil. 2015 – août 2015",
+      "date2": "2 mois"
+    },
+    {
+      "title": "École nationale supérieure d'ingénieurs de Tunis",
+      "companyName": "Nom du diplôme\nélevé ingénieur en génie industriel",
+      "description": ""
+    },
+    {
+      "title": "Institut Préparatoire aux Etudes d'Ingénieur de Bizerte",
+      "companyName": "Domaine d’études\nMath-Physique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "École nationale supérieure d'ingénieurs de Tunis",
+      "degree": "élevé ingénieur en génie industriel",
+      "fieldofstudy": "Gestion logistique, des matériaux et de la chaîne d'approvisionnement",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut Préparatoire aux Etudes d'Ingénieur de Bizerte",
+      "degree": "Math-Physique",
+      "fieldofstudy": "Math-Physique",
+      "date1": "2012",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Microsoft Office",
+      "count": "12"
+    },
+    {
+      "title": "Microsoft Excel",
+      "count": "11"
+    },
+    {
+      "title": "Microsoft Word",
+      "count": "11"
+    },
+    {
+      "title": "Lean Manufacturing",
+      "count": "9"
+    },
+    {
+      "title": "Recherche",
+      "count": "8"
+    },
+    {
+      "title": "Gestion de projet",
+      "count": "7"
+    },
+    {
+      "title": "Gestion de la production",
+      "count": "6"
+    },
+    {
+      "title": "Audit interne",
+      "count": "5"
+    },
+    {
+      "title": "Contrôle qualité",
+      "count": "5"
+    },
+    {
+      "title": "Optimisation des processus",
+      "count": "3"
+    },
+    {
+      "title": "Optimisation de la chaine logistique",
+      "count": "3"
+    },
+    {
+      "title": "Matlab",
+      "count": "9"
+    },
+    {
+      "title": "PowerPoint",
+      "count": "8"
+    },
+    {
+      "title": "C++",
+      "count": "8"
+    },
+    {
+      "title": "Java",
+      "count": "7"
+    },
+    {
+      "title": "Microsoft PowerPoint",
+      "count": "7"
+    },
+    {
+      "title": "Microsoft Access",
+      "count": "5"
+    },
+    {
+      "title": "HTML",
+      "count": "5"
+    },
+    {
+      "title": "ERP DIVALTO"
+    },
+    {
+      "title": "Divalto infinity"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Allemand",
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/bedis-ben-fadhel-4757835a/",
+      "text": "directeur d'Agence chez BIAT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aymen-gobji-853a64119/",
+      "text": "Ingénieur Machines Spéciales chez GENOVIA Ingénierie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabersaid/",
+      "text": "Développeur web Symfony / PHP / Angular / Javascript"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ghazi-barkaoui-g%C3%A9nieindustriel/",
+      "text": "QAD Supply chain Consultant"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mbouzidi/",
+      "text": "Ingénieur principal chez Ministère de la santé publique Tunisie وزارة الصحة"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sami-chandoul-aa3b6b140/",
+      "text": "Ingénieur Java JEE (Efficacité & Autonomie)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hachem-ghabi-8b1317110/",
+      "text": "Développeur Mobile"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amel-homrani-aa1962143/",
+      "text": "Freelance Consultant chez Self-Employed"
+    },
+    {
+      "user": "https://www.linkedin.com/in/gharbi-kemel-farhat-07a92aa8/",
+      "text": "P.P MATHS et AUTEUR DES PARASCOLAIRES \" سلسلة \" الثبات في الرياضيات"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-akrouti/",
+      "text": "Developpeur web PHP/ Symfony Altran"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Wajdi Ayari",
+    "headline": "Ingénieur Industriel et consultant ERP",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQEpWvap-2pUZw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=xZquan4J2M-clqPOtVz-9zSEa7d7FsqvNyB17rDjeYI",
+    "location": "Djerba Midoun, Gouvernorat de Médenine, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Bonjour\nJe suis actuellement un consultant ERP (Diavlto) au sein de la société de conseil et solution information de Tunis (SCSI.TN) ,diplômé de l'école nationale des ingénieurs de Tunis Promotion 2017\nEmail : wajdi.ayari1993@gmail.com\nTel: 25625864/52625864"
+  }
+}

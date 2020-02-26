@@ -1,0 +1,130 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Firas Hamdouni",
+    "headline": "Développeur chez Spectrum Groupe",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHVGVWmDLv_Fw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=zZGD-OeV2QCU1pOZlksqgwLc5MSnI32S8DolF3dhXnU",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations",
+    "summary": "* Developed web-site mock-ups for clients to ensure quality control and client satisfaction before project development phase.\n* Assisted senior web developers by supporting design and coding.\n* Promoted from front-end to junior web developer in three months and managed a database using MONGODB .\n* Developed, enhanced and maintained websites using HTML 5 ,CSS 3,and Javascript vanilla\n* Developed and maintained the front end functionality of our website(Edulearn)\n* Modified photos to be used in websites using Adobe Photoshop\n* Assisted in creating the UI of a real estate application\n* Created and executed small programming projects."
+  },
+  "aboutAlternative": {
+    "text": "* Developed web-site mock-ups for clients to ensure quality control and client satisfaction before project development phase.\n* Assisted senior web developers by supporting design and coding.\n* Promoted from front-end to junior web developer in three months and managed a database using MONGODB .\n* Developed, enhanced and maintained websites using HTML 5 ,CSS 3,and Javascript vanilla\n* Developed and maintained the front end functionality of our website(Edulearn)\n* Modified photos to be used in websites using Adobe Photoshop\n* Assisted in creating the UI of a real estate application\n* Created and executed small programming projects."
+  },
+  "positions": [
+    {
+      "title": "Développeur",
+      "companyName": "Spectrum Groupe",
+      "location": "tunis",
+      "date1": "mars 2019 – Aujourd’hui",
+      "date2": "1 an"
+    },
+    {
+      "title": "fullstack dev",
+      "companyName": "FREE!",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "2018 – Aujourd’hui",
+      "date2": "2 ans"
+    },
+    {
+      "title": "Développeur",
+      "companyName": "SDI",
+      "location": "Gouvernorat de Kairouan, Tunisia",
+      "date1": "mai 2018 – Aujourd’hui",
+      "date2": "1 an 10 mois"
+    },
+    {
+      "title": "stagiaire",
+      "companyName": "Go My Code",
+      "location": "sousse",
+      "description": "Programme de Formation Accélérée à Temps Complet de 3 Mois en Développement Web Fullstack : Javascript\nUne expérience d'apprentissage unique trés axée sur les projets et alternant activitées de groupe et coaching.\nCompétences acquises;\nHTML 5, CSS 3, Javascript, node js ,express js, Programmation Orientée Objet,\n…\nvoir plus",
+      "date1": "oct. 2018 – déc. 2018",
+      "date2": "3 mois"
+    },
+    {
+      "title": "EPI",
+      "companyName": "Nom du diplôme\ndiplome d'ingenieur genie logiciel"
+    },
+    {
+      "title": "Institut Supérieur de Gestion",
+      "companyName": "Nom du diplôme\nLicence fondamentale en informatique appliquer a la gestion"
+    }
+  ],
+  "educations": [
+    {
+      "title": "EPI",
+      "degree": "diplome d'ingenieur genie logiciel",
+      "fieldofstudy": "Informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut Supérieur de Gestion",
+      "degree": "Licence fondamentale en informatique appliquer a la gestion",
+      "fieldofstudy": "Informtique",
+      "date1": "2011",
+      "date2": "2014"
+    }
+  ],
+  "skills": [],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/chaima-amri-20b1b9151/",
+      "text": "Stage Ingénieur chez Focus Corporation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amir-doukh-b02a05128/",
+      "text": "developeur mobile"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hazar-arafet-04a25412a/",
+      "text": "Fullstack Developer chez Sofrecom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ben-ali-zouhair-4238a5154/",
+      "text": "Recherche de stage de fin d'étude en développement web, full-stack( Java/JEE- angular. Janvier 2020."
+    },
+    {
+      "user": "https://www.linkedin.com/in/hamza-abdennadher/",
+      "text": "Développeur Full Stack chez Jet Multimedia Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hana-ben-hammouda-520bb3151/",
+      "text": "Ingenieur Développement (Angular + Node Js + Symfony) chez Iotech"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sofien-chaouch-432a64167/",
+      "text": "Software Development graduation intern at Amaris consulting"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hammami-amani-5b9806114/",
+      "text": "Développeur java/JEE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/barsha-technology-83881414b/",
+      "text": "Gérant principal chez barsha.io"
+    },
+    {
+      "user": "https://www.linkedin.com/in/eya-boughzala-07916b139/",
+      "text": "Développeur Web ( à la recherche d'une opportunité)"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Firas Hamdouni",
+    "headline": "Développeur chez Spectrum Groupe",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHVGVWmDLv_Fw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=zZGD-OeV2QCU1pOZlksqgwLc5MSnI32S8DolF3dhXnU",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations",
+    "summary": "* Developed web-site mock-ups for clients to ensure quality control and client satisfaction before project development phase.\n* Assisted senior web developers by supporting design and coding.\n* Promoted from front-end to junior web developer in three months and managed a database using MONGODB .\n* Developed, enhanced and maintained websites using HTML 5 ,CSS 3,and Javascript vanilla\n* Developed and maintained the front end functionality of our website(Edulearn)\n* Modified photos to be used in websites using Adobe Photoshop\n* Assisted in creating the UI of a real estate application\n* Created and executed small programming projects."
+  }
+}

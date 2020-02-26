@@ -1,0 +1,211 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Saad Achraf",
+    "headline": "Software Engineering Student | Deep Learning | Big Data | Game Dev",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4E03AQGON-vD0OvHzw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=2xyghrO-_87jQIFl-jAp0xMnvy6C93NYizEebuPn8WU",
+    "location": "Ben Arous, Gouvernorat de Ben Arous, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Software Developer and data enthusiast always trying to learn as much as possible in the field of game development, machine learning, deep learning and AI."
+  },
+  "aboutAlternative": {
+    "text": "Software Developer and data enthusiast always trying to learn as much as possible in the field of game development, machine learning, deep learning and AI."
+  },
+  "positions": [
+    {
+      "title": "Freelancer",
+      "companyName": "Quokka",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "Design and development for video games, mobile and web application products using different tools and technologies, adding different Machine Learning algorithms implementation for data classification, AI behaviors in video games, and innovative automatized solutions.",
+      "date1": "sept. 2017 – Aujourd’hui",
+      "date2": "2 ans 6 mois"
+    },
+    {
+      "title": "Intern ML Developer",
+      "companyName": "Horizon-Data",
+      "location": "Ariana Governorate, Tunisia",
+      "description": "Algorithm development and implementation for a handwritten Arabic character segmentation by pre-processing data for character segmentation, and building an ad-hoc Convolutional Neural Network model that is elegantly configured for high accuracy.",
+      "date1": "janv. 2018 – sept. 2018",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Nom du diplôme\nEngineer's degree"
+    },
+    {
+      "title": "The Higher Institute of Information Technologies and Communication",
+      "companyName": "Nom du diplôme\nBachelor's Degree in Science and Technology"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Engineer's degree",
+      "fieldofstudy": "Computer Software Engineering",
+      "date1": "2018",
+      "date2": "2021"
+    },
+    {
+      "title": "The Higher Institute of Information Technologies and Communication",
+      "degree": "Bachelor's Degree in Science and Technology",
+      "fieldofstudy": "Computer Science",
+      "date1": "2015",
+      "date2": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Game Development",
+      "count": "4"
+    },
+    {
+      "title": "C++",
+      "count": "3"
+    },
+    {
+      "title": "Java",
+      "count": "2"
+    },
+    {
+      "title": "Machine Learning",
+      "count": "2"
+    },
+    {
+      "title": "Big Data",
+      "count": "2"
+    },
+    {
+      "title": "Android Development",
+      "count": "2"
+    },
+    {
+      "title": "C#",
+      "count": "2"
+    },
+    {
+      "title": "Python",
+      "count": "2"
+    },
+    {
+      "title": "PHP",
+      "count": "2"
+    },
+    {
+      "title": "Unity3D",
+      "count": "2"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "1"
+    },
+    {
+      "title": "JavaScript",
+      "count": "1"
+    },
+    {
+      "title": "HTML5",
+      "count": "1"
+    },
+    {
+      "title": "CSS",
+      "count": "1"
+    },
+    {
+      "title": "jQuery",
+      "count": "1"
+    },
+    {
+      "title": "OpenCV",
+      "count": "1"
+    },
+    {
+      "title": "Flask",
+      "count": "1"
+    },
+    {
+      "title": "Keras",
+      "count": "1"
+    },
+    {
+      "title": "TensorFlow",
+      "count": "1"
+    },
+    {
+      "title": "Unreal Engine 4",
+      "count": "1"
+    },
+    {
+      "title": "Cascading Style Sheets (CSS)",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "prix et distinctions",
+      "items": [
+        "Best 3rd grade project of the year at ESPRIT - Engineering School",
+        "1st place Hackathon by Tayara 2018",
+        "1st Place Global Game Jam Tunisia 2017",
+        "AbjadOCR"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/rafaa-ferid-74a49076/",
+      "text": "Full-stack (ReactJS/NodeJS) Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/alaa-mezni-22569315b/",
+      "text": "Fullstack Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/raouf-ben-ammar-71729713b/",
+      "text": "Full Stack Java Developer & Native Mobile Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nawres-boutabba-677730174/",
+      "text": "fullstack dev|mobile dev|Ds Bertelsmann Udacity scholar|software engineering student searching 2020 summer internship."
+    },
+    {
+      "user": "https://www.linkedin.com/in/yobitrust-yt-20aa44158/",
+      "text": "Data Science for Innovation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sadok-bani-744a10167/",
+      "text": "Développeur Full Stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/majd-zrigui-b5b496158/",
+      "text": "Etudiant"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wael-zaidi/",
+      "text": "Engineering student : IT Graphic designer Photographer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arwa-taleb-034286104/",
+      "text": "Consultante chez Sopra HR Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mouadh-aboud-36b88413b/",
+      "text": "Technicien professionnel architecture cloud at Ooredoo Tunisie"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Saad Achraf",
+    "headline": "Software Engineering Student | Deep Learning | Big Data | Game Dev",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4E03AQGON-vD0OvHzw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=2xyghrO-_87jQIFl-jAp0xMnvy6C93NYizEebuPn8WU",
+    "location": "Ben Arous, Gouvernorat de Ben Arous, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Software Developer and data enthusiast always trying to learn as much as possible in the field of game development, machine learning, deep learning and AI."
+  }
+}

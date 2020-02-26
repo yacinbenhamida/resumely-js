@@ -1,0 +1,231 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Wijden CHAÂBEN",
+    "headline": "DevOps |QA automation engineer at Sagemcom Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFEDVgAirh-5w/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=eX7XG4ycgG9u7kW-y4Kg4_XiEcYq3TiBBL7teI4vnSs",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "DevOps |QA automation engineer",
+      "companyName": "Sagemcom Tunisie",
+      "date1": "août 2019 – Aujourd’hui",
+      "date2": "7 mois"
+    },
+    {
+      "title": "Stage de fin d’études",
+      "companyName": "ACTIA Engineering Services",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "stage de fin d'études",
+      "date1": "févr. 2019 – juin 2019",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire en développement Web",
+      "companyName": "AVENSYS",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "stagiaire en developpement",
+      "companyName": "Banque De L'Habitat",
+      "date1": "juil. 2017",
+      "date2": "1 mois"
+    },
+    {
+      "title": "École nationale d'ingénieur de carthage",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "IPEIN - Institut Préparatoire aux Études d'Ingénieur de Nabeul",
+      "companyName": "Nom du diplôme\nDiplôme de la classe préparatoire"
+    }
+  ],
+  "educations": [
+    {
+      "title": "École nationale d'ingénieur de carthage",
+      "degree": "Diplôme d'ingénieur",
+      "date1": "2016",
+      "date2": "2019"
+    },
+    {
+      "title": "IPEIN - Institut Préparatoire aux Études d'Ingénieur de Nabeul",
+      "degree": "Diplôme de la classe préparatoire",
+      "fieldofstudy": "Physique /chimie",
+      "date1": "2014",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "JavaScript",
+      "count": "10"
+    },
+    {
+      "title": "Java",
+      "count": "10"
+    },
+    {
+      "title": "SQL",
+      "count": "10"
+    },
+    {
+      "title": "Scrum",
+      "count": "3"
+    },
+    {
+      "title": "javaEE",
+      "count": "3"
+    },
+    {
+      "title": "CSS3",
+      "count": "3"
+    },
+    {
+      "title": "HTML5",
+      "count": "3"
+    },
+    {
+      "title": "PHP",
+      "count": "3"
+    },
+    {
+      "title": "NoSQL",
+      "count": "3"
+    },
+    {
+      "title": "Android",
+      "count": "3"
+    },
+    {
+      "title": "AJAX",
+      "count": "3"
+    },
+    {
+      "title": "C++",
+      "count": "3"
+    },
+    {
+      "title": "C",
+      "count": "3"
+    },
+    {
+      "title": "HTML",
+      "count": "3"
+    },
+    {
+      "title": "bootstrap",
+      "count": "3"
+    },
+    {
+      "title": "UML",
+      "count": "3"
+    },
+    {
+      "title": "Framework Spring",
+      "count": "3"
+    },
+    {
+      "title": "angular",
+      "count": "3"
+    },
+    {
+      "title": "Git"
+    },
+    {
+      "title": "Python"
+    },
+    {
+      "title": "Jenkins"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "Bash"
+    },
+    {
+      "title": "Tortoise SVN"
+    },
+    {
+      "title": "Robot Framework"
+    },
+    {
+      "title": "DevOps"
+    },
+    {
+      "title": "TestLink"
+    },
+    {
+      "title": "WS",
+      "count": "3"
+    },
+    {
+      "title": "spring boot",
+      "count": "3"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/asma-miladi-certifi%C3%A9e-istqb%C2%AE-4a6ba184/",
+      "text": "Ingénieur Test & Validation Automatisation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hamdi-hanen-bb5aa4145/",
+      "text": "A la recherche d'une nouvelle opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oumayma-ouerghi-4358b616b/",
+      "text": "quality engineer chez TECHNIPLAST industrie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jalloul-sirine-467990176/",
+      "text": "Approvisionneuse SAGEMcom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amal-bahri-66615a151/",
+      "text": "Chargée recrutement chez Sagemcom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saf%C3%A0a-werghemmi/",
+      "text": "Python/Odoo Developer at Fogits Solutions"
+    },
+    {
+      "user": "https://www.linkedin.com/in/raniahamdi/",
+      "text": "Diplôme d'ingénieur chez Ecole Pluridisciplinaire Internationale EPI Sousse"
+    },
+    {
+      "user": "https://www.linkedin.com/in/feryel-ben-yedder-107745150/",
+      "text": "Analyste Software Engineer JAVA /JEE chez Linedata"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amira-azouz-b91822a5/",
+      "text": "Ingénieur développement chez WEVIOO"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bengaji-nourhen-562117167/",
+      "text": "telecommunication engineer"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Wijden CHAÂBEN",
+    "headline": "DevOps |QA automation engineer at Sagemcom Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFEDVgAirh-5w/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=eX7XG4ycgG9u7kW-y4Kg4_XiEcYq3TiBBL7teI4vnSs",
+    "location": "Tunisie",
+    "connections": "+ de 500 relations"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Yassine Ben hamida",
+    "headline": "Web technologies Student at ESPRIT.",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHvAKZ-63szKA/profile-displayphoto-shrink_200_200/0?e=1588204800&v=beta&t=uggJh4y4bqqeCfGYcdhTcMjLjIcPKBm9XOXS8oBlL_E",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Senior technician specialized in full stack web development having acquired a significant amount of experience in structuring, managing and deploying web application using innovative sustainable technologies. Able to complete projects efficiently and satisfy customers with attractive, user friendly websites.\nmy detailed CV : https://yacinbenhamida.github.io/"
+  },
+  "aboutAlternative": {
+    "text": "Senior technician specialized in full stack web development having acquired a significant amount of experience in structuring, managing and deploying web application using innovative sustainable technologies. Able to complete projects efficiently and satisfy customers with attractive, user friendly websites.\nmy detailed CV : https://yacinbenhamida.github.io/"
+  },
+  "positions": [
+    {
+      "title": "English Language Teacher",
+      "companyName": "Ela Dil Eğitim Merkezi",
+      "location": "Bursa, Turkey",
+      "description": "english communication teacher",
+      "date1": "août 2019 – sept. 2019",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Exchange participant",
+      "companyName": "AIESEC Türkiye",
+      "location": "Bursa (Brousse), Turquie",
+      "description": "By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture’s contribution to sustainable development.\n\n…\nvoir plus",
+      "date1": "juin 2019 – sept. 2019",
+      "date2": "4 mois"
+    },
+    {
+      "title": "My365.tn representative",
+      "companyName": "Microsoft",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "Le ministère de l'enseignement supérieur et de la recherche scientifique, en collaboration avec Microsoft et INSOMEA , fournit à tous les étudiants de l’enseignement supérieur public un pack Office 365 qui leur offre des applications et des outils à même de leur faciliter leurs études tout au long du cursus universitaire, et les préparant au monde du travail.\nTout étudiant aura accès aux services Microsoft Office365 contenant des outils et des applications de collaboration : SharePoint, OneDrive avec plus que 1000 GB de stockage, Suite Office, planner, Teams, ...\nDes cours et des vouchers Microsoft seront mis à disposition au niveau des comptes Office 365 pour tous les étudiants afin qu'ils puissent passer des certifications Microsoft.\n…\nvoir plus",
+      "date1": "févr. 2018 – oct. 2018",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Fullstack Web Application Developer",
+      "companyName": "Centre National de l'Informatique",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "Created a web application that helps tracking and monitoring of the missions done abroad by the gov't officals.\ntechnologies used :\n- Angular including Bootstrap embedded\n- Spring Boot\n- Oracle RDBMS\nthe new technologies employed within the developpement aimed to insure a maximum of responsiveness on any device that was able to access the web application\n…\nvoir plus",
+      "date1": "févr. 2018 – juin 2018",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Web Developer Internship",
+      "companyName": "Centre National de l'Informatique",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "Creating an application aiming to manage and automate the trainings given to the gov't officials.\ntechnologies used\n-Symfony 3\n- Bootstrap 4 including HTML and CSS\n-mysql database\n…\nvoir plus",
+      "date1": "févr. 2017 – mars 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Junior Web Designer",
+      "companyName": "BIAT",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "Designing the front End layout of a web application.\ntechnologies used:\n- Bootstrap including html and CSS\n- Adobe illustrator & Photoshop",
+      "date1": "févr. 2016 – mars 2016",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Nom du diplôme\nEngineer's degree"
+    },
+    {
+      "title": "Institut supérieur des études technologiques de CHARGUIA",
+      "companyName": "Nom du diplôme\nBachelor's degree"
+    },
+    {
+      "title": "Student champion - promoting the my365.tn learning platform",
+      "companyName": "Ministère de l'Enseignement Supérieur",
+      "description": "Promoted the my365.tn program which provided free Microsoft tools for the tunisian students of the public universities.",
+      "date1": "févr. 2018 – Aujourd’hui"
+    },
+    {
+      "title": "Exchange participant",
+      "companyName": "AIESEC in Turkey",
+      "description": "Outgoing global volunteer exchange participant.",
+      "date1": "juil. 2019 – sept. 2019"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Engineer's degree",
+      "fieldofstudy": "Computer Software Engineering",
+      "date1": "2018",
+      "date2": "2021"
+    },
+    {
+      "title": "Institut supérieur des études technologiques de CHARGUIA",
+      "degree": "Bachelor's degree",
+      "fieldofstudy": "Information Technology",
+      "date1": "2016",
+      "date2": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "2"
+    },
+    {
+      "title": "Software Development",
+      "count": "1"
+    },
+    {
+      "title": "Angular",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "5",
+      "title": "projets",
+      "items": [
+        "FixIt",
+        "Sonic traffic monitor mobile",
+        "Sonic.com",
+        "GFORM",
+        "Internspace",
+        "Arabic",
+        "English",
+        "Français",
+        "Spanish",
+        "Bachelor degree of information technology"
+      ]
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "Student champion - promoting the my365.tn learning platform",
+      "experience": "Ministère de l'Enseignement Supérieur",
+      "description": "Éducation",
+      "date1": "févr. 2018 – Aujourd’hui",
+      "date2": "2 ans 1 mois"
+    },
+    {
+      "title": "Exchange participant",
+      "experience": "AIESEC in Turkey",
+      "description": "Éducation",
+      "date1": "juil. 2019 – sept. 2019",
+      "date2": "3 mois"
+    }
+  ],
+  "profile": {
+    "name": "Yassine Ben hamida",
+    "headline": "Web technologies Student at ESPRIT.",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQHvAKZ-63szKA/profile-displayphoto-shrink_200_200/0?e=1588204800&v=beta&t=uggJh4y4bqqeCfGYcdhTcMjLjIcPKBm9XOXS8oBlL_E",
+    "location": "Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Senior technician specialized in full stack web development having acquired a significant amount of experience in structuring, managing and deploying web application using innovative sustainable technologies. Able to complete projects efficiently and satisfy customers with attractive, user friendly websites.\nmy detailed CV : https://yacinbenhamida.github.io/"
+  }
+}

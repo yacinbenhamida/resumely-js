@@ -1,0 +1,188 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Saber Said",
+    "headline": "Développeur web Symfony / PHP / Angular / Javascript",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5103AQGdTqNBJrO1uA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=BcDfwV0i6GzdqasgU4OqL5xt7mHGD5E3Cx4yJde0VbQ",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Développeur web Symfony / PHP / Javascript\nVidéo de démonstration du PFE -----​> https://www.youtube.com/watch?v=7cJngG-xrpc"
+  },
+  "aboutAlternative": {
+    "text": "Développeur web Symfony / PHP / Javascript\nVidéo de démonstration du PFE -----​> https://www.youtube.com/watch?v=7cJngG-xrpc"
+  },
+  "positions": [
+    {
+      "title": "Angular Developer",
+      "companyName": "Integration Objects",
+      "date1": "sept. 2019 – Aujourd’hui",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Expert marketing digital",
+      "companyName": "3ooloom.com",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "description": "I am the founder of 3ooloom.com, and that help me to expert the domain of digital marketing:\n-Search Engine Optimization (SEO)\n-Search Engine Marketing: Pay-per-click (SEM:PPC)\n-Digital Display Advertising (DDA)\n-Email marketing\n-Social Media Marketing\n-Mobile Marketing\n-Strategy & Planning\n…\nvoir plus",
+      "date1": "janv. 2015 – Aujourd’hui",
+      "date2": "5 ans 2 mois"
+    },
+    {
+      "title": "Ingénieur Études Développement Web",
+      "companyName": "ABSHORE",
+      "location": "Tunisie",
+      "date1": "févr. 2019 – août 2019",
+      "date2": "7 mois"
+    },
+    {
+      "title": "Développeur Web et SEO Specialist",
+      "companyName": "Essia",
+      "location": "Gouvernorat de Sfax, Tunisia",
+      "description": "Développeur Symfony (Full stack) : PHP, jQuery,Mysql,Bootstrap,Photoshop.",
+      "date1": "févr. 2018 – janv. 2019",
+      "date2": "1 an"
+    },
+    {
+      "title": "Specialized engineer (Ingénieur d'études)",
+      "companyName": "Mediterranean Flight School",
+      "location": "Tunisie",
+      "date1": "juin 2016 – mars 2017",
+      "date2": "10 mois"
+    },
+    {
+      "title": "Google",
+      "companyName": "Nom du diplôme\nonline marketing fundamentals qualification",
+      "description": ""
+    },
+    {
+      "title": "Oracle University",
+      "companyName": "Nom du diplôme\nOracle Certified Associate, Java SE 8 Programmer",
+      "description": ""
+    },
+    {
+      "title": "M-dev Tunisia",
+      "description": "Formation Android et création d’une application durant le programme M-dev Tunisia par Le Ministère des Technologies de la Communication et de l'Economie Numérique (février-septembre 2016)."
+    },
+    {
+      "title": "human",
+      "companyName": "humanity",
+      "date1": "mai 1989"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Google",
+      "degree": "online marketing fundamentals qualification",
+      "fieldofstudy": "digital marketing",
+      "date1": "2017",
+      "date2": "2017"
+    },
+    {},
+    {
+      "title": "Oracle University",
+      "degree": "Oracle Certified Associate, Java SE 8 Programmer",
+      "fieldofstudy": "Programmation informatique",
+      "date1": "2016",
+      "date2": "2017"
+    },
+    {},
+    {
+      "title": "M-dev Tunisia",
+      "date1": "2016",
+      "date2": "2016"
+    }
+  ],
+  "skills": [
+    {
+      "title": "C++",
+      "count": "+ de 99"
+    },
+    {
+      "title": "C",
+      "count": "73"
+    },
+    {
+      "title": "Matlab",
+      "count": "61"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français",
+        "Arnox Engineering",
+        "مدونة العلوم سبيلنا",
+        "automated guided vehicle and elevator",
+        "Saber Said"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/oussama-akrouti/",
+      "text": "Developpeur web PHP/ Symfony Altran"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sami-ayed-27b863a8/",
+      "text": "Software Engineer and Tech Lead at LaTech"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hachem-ghabi-8b1317110/",
+      "text": "Développeur Mobile"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mbouzidi/",
+      "text": "Ingénieur principal chez Ministère de la santé publique Tunisie وزارة الصحة"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khaled-masmoudi-92529911b/",
+      "text": "Administrateur Système et DBA chez ArabSoft"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jamelaloui/",
+      "text": "Administrateur Conseiller au sein du CCK (Ministère de l'Enseignement Supérieur et de la Recherche Scientifique Tunisie)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aymen-gobji-853a64119/",
+      "text": "Ingénieur Machines Spéciales chez GENOVIA Ingénierie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sami-chandoul-aa3b6b140/",
+      "text": "Ingénieur Java JEE (Efficacité & Autonomie)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wajdi-ayari-1a4877108/",
+      "text": "Ingénieur Industriel et consultant ERP"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khoubeib-rahali-4b5326123/",
+      "text": "Directeur des opérations chez Terranova food"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "human",
+      "experience": "humanity",
+      "description": "Droits de l’homme",
+      "date1": "mai 1989",
+      "date2": "1 mois"
+    }
+  ],
+  "profile": {
+    "name": "Saber Said",
+    "headline": "Développeur web Symfony / PHP / Angular / Javascript",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5103AQGdTqNBJrO1uA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=BcDfwV0i6GzdqasgU4OqL5xt7mHGD5E3Cx4yJde0VbQ",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Développeur web Symfony / PHP / Javascript\nVidéo de démonstration du PFE -----​> https://www.youtube.com/watch?v=7cJngG-xrpc"
+  }
+}

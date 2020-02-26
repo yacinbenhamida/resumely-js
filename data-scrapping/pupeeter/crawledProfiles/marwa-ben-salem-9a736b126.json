@@ -1,0 +1,203 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "marwa ben salem",
+    "headline": "Développeur Android chez Renault Digital",
+    "location": "Mahdia, Gouvernorat de Mahdia, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Développeur Android",
+      "companyName": "Renault Digital",
+      "location": "Région de Paris, France",
+      "date1": "oct. 2019 – Aujourd’hui",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Développeur Android",
+      "companyName": "Digit-U",
+      "location": "Tunisie",
+      "date1": "nov. 2017 – Aujourd’hui",
+      "date2": "2 ans 4 mois"
+    },
+    {
+      "title": "Développeur front-end",
+      "companyName": "Tekos",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "juin 2017 – oct. 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Freelance",
+      "companyName": "Upwork",
+      "date1": "janv. 2017 – avr. 2017",
+      "date2": "4 mois"
+    },
+    {
+      "title": "developpeur application mobile",
+      "companyName": "Alpha Computing",
+      "date1": "août 2016 – déc. 2016",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stage de projet de fin d’études",
+      "companyName": "Proxym-IT",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "date1": "janv. 2016 – juin 2016",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Stage Technicien pour la réalisation d’un module de gestion openERP Odoo",
+      "companyName": "Alfa Computers & Consultings",
+      "location": "Gouvernorat de Mahdia, Tunisia",
+      "description": "Installation et administration d’OpenERP, Développement de nouveaux modules d’OpenERP, postgreSQL, Python",
+      "date1": "août 2015 – sept. 2015",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage ouvrier à Tunisie Telecom Mahdia",
+      "companyName": "Tunisie Télécom",
+      "location": "Gouvernorat de Mahdia, Tunisia",
+      "description": "Missions : Réalisation d’une application en Java « Gestion de parc informatique».  Compétences Fonctionnelles : réseau NGN, transmission de données  Compétences Techniques : drive test",
+      "date1": "août 2014",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Institut Supérieur des Sciences Appliquées et de Technologie de Sousse",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "lycée mixte",
+      "companyName": "Nom du diplôme\nDiplôme du baccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut Supérieur des Sciences Appliquées et de Technologie de Sousse",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Informatique(Génie logiciel)",
+      "date1": "2012",
+      "date2": "2016"
+    },
+    {
+      "title": "lycée mixte",
+      "degree": "Diplôme du baccalauréat",
+      "fieldofstudy": "Mathématiques",
+      "date1": "2008",
+      "date2": "2011"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Android",
+      "count": "6"
+    },
+    {
+      "title": "C",
+      "count": "5"
+    },
+    {
+      "title": "Java",
+      "count": "5"
+    },
+    {
+      "title": "C#",
+      "count": "3"
+    },
+    {
+      "title": "C++",
+      "count": "3"
+    },
+    {
+      "title": "PHP",
+      "count": "2"
+    },
+    {
+      "title": "Services Web J2EE",
+      "count": "2"
+    },
+    {
+      "title": "angular2",
+      "count": "2"
+    },
+    {
+      "title": "kotlin",
+      "count": "2"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "7",
+      "title": "projets",
+      "items": [
+        "gestion de voiture",
+        "LEOCARE",
+        "BeeTheMove",
+        "beauty website",
+        "cooking chef",
+        "chat with",
+        "Whoozapp",
+        "Anglais",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/leila-baccouche-178183a4/",
+      "text": "Développeur Android chez Proxym-Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nissaf-ayadi-5b6945157/",
+      "text": "Développeur Android chez CLINISYS"
+    },
+    {
+      "user": "https://www.linkedin.com/in/saoussen-ben-hadj-hammouda-92a8b3124/",
+      "text": "Senior Android developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/anis-ben-betta%C3%AEeb-768a65164/",
+      "text": "Développeur Android chez Anypli"
+    },
+    {
+      "user": "https://www.linkedin.com/in/abdennasser-abidi-0561a3119/",
+      "text": "Développeur Android chez Digit-U"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mbarki-mohamed-8897b8130/",
+      "text": "Développeur Android chez Mobile Powered"
+    },
+    {
+      "user": "https://www.linkedin.com/in/taher-ayadi-052b0386/",
+      "text": "Développeur Android chez INNOVI.TECH"
+    },
+    {
+      "user": "https://www.linkedin.com/in/zayneb-hjiri/",
+      "text": "Android Developer at ouiCoding"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-bayounes-b65789106/",
+      "text": "Développeur Android chez DigiConstat"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-chahed/",
+      "text": "Développeur Android chez Mobile Powered"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "marwa ben salem",
+    "headline": "Développeur Android chez Renault Digital",
+    "location": "Mahdia, Gouvernorat de Mahdia, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

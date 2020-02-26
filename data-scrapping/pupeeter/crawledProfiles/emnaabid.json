@@ -1,0 +1,330 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Emna Abid",
+    "headline": "Business Intelligence Intern at Gfi Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEpQIiFYKdvvA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=elptS0kL94kyMdsN45-lXSTfxHAu4PHhB9hRyY_haF8",
+    "location": "Soukra, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Business Intelligence Intern",
+      "companyName": "Gfi Tunisie",
+      "location": "Tunisia",
+      "date1": "janv. 2020 – Aujourd’hui",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Human Resources Manager",
+      "companyName": "Inceptum Junior Entreprise Espr/it",
+      "date1": "juil. 2018 – juil. 2019",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Member",
+      "companyName": "INCEPTUM_Junior Entreprise_Esprit",
+      "description": "Member in the communication pole",
+      "date1": "mars 2018 – juil. 2019",
+      "date2": "1 an 5 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nODDO BHF",
+      "location": "Tunisia",
+      "date1": "sept. 2018 – déc. 2018",
+      "date2": "4 mois",
+      "roles": [
+        {
+          "title": "Trainee alternating in Business intelligence",
+          "date1": "sept. 2018 – déc. 2018",
+          "date2": "4 mois"
+        },
+        {
+          "title": "Business Intelligence trainee",
+          "date1": "août 2018 – sept. 2018",
+          "date2": "2 mois",
+          "location": "Tunisia"
+        }
+      ]
+    },
+    {
+      "title": "Web development EngineeringTrainee",
+      "companyName": "Medianet",
+      "location": "Ariana Governorate, Tunisia",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Member",
+      "companyName": "club rotaract sfax doyen , centre d'affaire de sfax",
+      "date1": "oct. 2015",
+      "date2": "1 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Domaine d’études\nComputer Science"
+    },
+    {
+      "title": "Institut Préparatoire Aux Etudes d'Ingénieurs de Sfax (IPEIS)"
+    },
+    {
+      "title": "Lycée Majida Boulila Sfax",
+      "companyName": "Nom du diplôme\nBaccalaureate"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Computer Science",
+      "fieldofstudy": "Computer Science",
+      "date1": "2017"
+    },
+    {
+      "title": "Institut Préparatoire Aux Etudes d'Ingénieurs de Sfax (IPEIS)",
+      "date1": "2013",
+      "date2": "2016"
+    },
+    {
+      "title": "Lycée Majida Boulila Sfax",
+      "degree": "Baccalaureate",
+      "fieldofstudy": "Technique",
+      "date1": "2009",
+      "date2": "2013"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Business Intelligence",
+      "count": "5"
+    },
+    {
+      "title": "Cognos",
+      "count": "5"
+    },
+    {
+      "title": "JIRA",
+      "count": "4"
+    },
+    {
+      "title": "Social Media Marketing",
+      "count": "6"
+    },
+    {
+      "title": "Editing",
+      "count": "2"
+    },
+    {
+      "title": "Photography",
+      "count": "3"
+    },
+    {
+      "title": "Web Development",
+      "count": "2"
+    },
+    {
+      "title": "Agile Methodologies",
+      "count": "2"
+    },
+    {
+      "title": "Scrum",
+      "count": "2"
+    },
+    {
+      "title": "Adobe Photoshop",
+      "count": "4"
+    },
+    {
+      "title": "WordPress",
+      "count": "3"
+    },
+    {
+      "title": "InDesign",
+      "count": "3"
+    },
+    {
+      "title": "Microsoft Word",
+      "count": "2"
+    },
+    {
+      "title": "Microsoft PowerPoint",
+      "count": "2"
+    },
+    {
+      "title": "C",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "Java",
+      "count": "2"
+    },
+    {
+      "title": "JavaScript",
+      "count": "2"
+    },
+    {
+      "title": "SQL",
+      "count": "3"
+    },
+    {
+      "title": "sqlserver",
+      "count": "3"
+    },
+    {
+      "title": "Oracle Database",
+      "count": "2"
+    },
+    {
+      "title": "jQuery",
+      "count": "2"
+    },
+    {
+      "title": "MySQL",
+      "count": "2"
+    },
+    {
+      "title": "Linux",
+      "count": "2"
+    },
+    {
+      "title": "CodeIgniter",
+      "count": "2"
+    },
+    {
+      "title": "PHP",
+      "count": "3"
+    },
+    {
+      "title": "HTML",
+      "count": "3"
+    },
+    {
+      "title": "ASP.NET",
+      "count": "2"
+    },
+    {
+      "title": "C#",
+      "count": "2"
+    },
+    {
+      "title": "JavaEE",
+      "count": "2"
+    },
+    {
+      "title": "JavaServer Faces (JSF)",
+      "count": "2"
+    },
+    {
+      "title": "Git",
+      "count": "2"
+    },
+    {
+      "title": ".NET Framework",
+      "count": "2"
+    },
+    {
+      "title": "SQL Server Integration Services (SSIS)",
+      "count": "3"
+    },
+    {
+      "title": "Management",
+      "count": "2"
+    },
+    {
+      "title": "Symfony",
+      "count": "1"
+    },
+    {
+      "title": "Symfony Framework",
+      "count": "1"
+    },
+    {
+      "title": "Cascading Style Sheets (CSS)",
+      "count": "1"
+    },
+    {
+      "title": "Unified Modeling Language (UML)",
+      "count": "1"
+    },
+    {
+      "title": "Extract, Transform, Load (ETL)",
+      "count": "1"
+    },
+    {
+      "title": "Enterprise JavaBeans (EJB)",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Arabic",
+        "English",
+        "French",
+        "Norwegian"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/yosra-krimi-088633141/",
+      "text": "Ingénieur Business Intelligence chez ODDO BHF"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rimennour/",
+      "text": "Projet fin d'études chez Wimbee"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rahma-akaichi-891878152/",
+      "text": "À la recherche d’un stage de fin d’études"
+    },
+    {
+      "user": "https://www.linkedin.com/in/marwa-riahi-65965113a/",
+      "text": "Testing engineer chez Gfi Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/wissal-hamzaoui/",
+      "text": "A software engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/myriam-moumni-713052147/",
+      "text": "Treasurer - Fondateur chez BlockchainHub Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/tarek-boussarsar-66998a142/",
+      "text": "Full-Stack JAVA-JEE/Angular Developer chez VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sarah-daadaa-1a6a3a143/",
+      "text": "Consultant en Business Intelligence"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ahlem-jerbi-68671696/",
+      "text": "Junior Business Intelligence Consultant chez Keyrus"
+    },
+    {
+      "user": "https://www.linkedin.com/in/maroua-haddad/",
+      "text": "Business Analyst/Data Scientist chez ODDO BHF"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Emna Abid",
+    "headline": "Business Intelligence Intern at Gfi Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQEpQIiFYKdvvA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=elptS0kL94kyMdsN45-lXSTfxHAu4PHhB9hRyY_haF8",
+    "location": "Soukra, Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

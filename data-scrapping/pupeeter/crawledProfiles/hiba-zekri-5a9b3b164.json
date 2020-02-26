@@ -1,0 +1,210 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "hiba zekri",
+    "headline": "Etudiante en M2 Data science à la recherche d'un stage de fin d'étude",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQH1KXtg8sHzkg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=pqZKKPkRHP1Fz8eCUxV98EMJyE7F4NVet7icGvbqp70",
+    "location": "Cité El Khadhra, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Étudiante en 5ème année Data Science à l’École supérieure privée d’ingénierie et de technologie ESPRIT à la recherche d'un stage pfe"
+  },
+  "aboutAlternative": {
+    "text": "Étudiante en 5ème année Data Science à l’École supérieure privée d’ingénierie et de technologie ESPRIT à la recherche d'un stage pfe"
+  },
+  "positions": [
+    {
+      "title": "Data Scientist",
+      "companyName": "Logis",
+      "location": "Tunisia",
+      "description": "•Création d’un générateur de texte naturel pour des annonces immobilières\n• Réalisation d’un script de web scraping,nettoyage des données récupérées, élaboration\nd’un modèle prédictif , réalisation d’un Dashboard",
+      "date1": "juil. 2019 – sept. 2019",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Data Analyst",
+      "companyName": "PARENIN",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "•Nettoyage des données :\n-Supprimer les données bruitées ou non pertinentes\n-Traitement des données manquantes\n-Traitement des données aberentes",
+      "date1": "juil. 2018 – août 2018",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stage Developpement",
+      "companyName": "Talan",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "•Mettre en marche un environnement Alfresco avec la toute dernière version sous Tomcat et java 8.\n•restaurer les données GED Byblos à partir d'un sauvegarde l'environnement actuel Alfresco (JBoss,java 6).\n•Proposer un mécanisme de Backup",
+      "date1": "juil. 2017 – août 2017",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT"
+    },
+    {
+      "title": "lycée père blanc",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "date1": "2015",
+      "date2": "2020"
+    },
+    {
+      "title": "lycée père blanc",
+      "degree": "Baccalauréat",
+      "fieldofstudy": "Mathématiques",
+      "date1": "2012",
+      "date2": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Python",
+      "count": "3"
+    },
+    {
+      "title": "Machine Learning",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "1"
+    },
+    {
+      "title": "Big Data"
+    },
+    {
+      "title": "MySQL"
+    },
+    {
+      "title": "Java"
+    },
+    {
+      "title": "R"
+    },
+    {
+      "title": "Microsoft SQL Server"
+    },
+    {
+      "title": "Tableau"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "PL/SQL"
+    },
+    {
+      "title": "NoSQL"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "HTML5"
+    },
+    {
+      "title": "css"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "Symfony"
+    },
+    {
+      "title": "Deep Learning",
+      "count": "1"
+    },
+    {
+      "title": "C (Programming Language)"
+    },
+    {
+      "title": "Microsoft Power BI"
+    },
+    {
+      "title": "Qlik Sense"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "8",
+      "title": "projets",
+      "items": [
+        "Projet Data Science (Mitakus)",
+        "Projet d’Entreprise Business Intelligence",
+        "Projet Police d'assurance sur Caravane",
+        "Analyse des données d'un réseau social",
+        "Projet analyse de la flotte",
+        "Projet multi plateform(Zanimo)",
+        "Applicatin web E-commerce",
+        "Application Desktop (SmartTransport)",
+        "Arabic",
+        "English",
+        "French",
+        "Spanish"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/wiem-chebbi/",
+      "text": "Data Science Engineering Student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/aicha-ferchichi-b03119160/",
+      "text": "Data science engineering student | Looking for a graduation internship"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mahatouati/",
+      "text": "A la recherche d'un projet de fin d’étude"
+    },
+    {
+      "user": "https://www.linkedin.com/in/noujoud-abidi-b3817314b/",
+      "text": "Data Scientist | Machine learning| software engineer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-bouarrouj/",
+      "text": "Étudiant en Ingénierie Data Science"
+    },
+    {
+      "user": "https://www.linkedin.com/in/farah-hamdi/",
+      "text": "Data Science Intern chez Sentinel Data"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yasmine-mejri-650562113/",
+      "text": "Responsable Capital Humain"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fenina-malek-655994110/",
+      "text": "Étudiant à ESPRIT , option ERP-BI à la recherche d'un stage PFE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/yobitrust-yt-20aa44158/",
+      "text": "Data Science for Innovation"
+    },
+    {
+      "user": "https://www.linkedin.com/in/noursene-ben-hssen-05b540126/",
+      "text": "Marketing Communications Specialist at U-Accelerator"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "hiba zekri",
+    "headline": "Etudiante en M2 Data science à la recherche d'un stage de fin d'étude",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQH1KXtg8sHzkg/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=pqZKKPkRHP1Fz8eCUxV98EMJyE7F4NVet7icGvbqp70",
+    "location": "Cité El Khadhra, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Étudiante en 5ème année Data Science à l’École supérieure privée d’ingénierie et de technologie ESPRIT à la recherche d'un stage pfe"
+  }
+}

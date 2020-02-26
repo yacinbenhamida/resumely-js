@@ -1,0 +1,198 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Mohamed Ali Riahi",
+    "headline": "ingénieur études et développement full stack at SCOR",
+    "location": "Teboulba, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "ingénieur études et développement full stack",
+      "companyName": "Berexia",
+      "location": "Paris, France",
+      "description": "Consultant FullStack chez SCOR\ntechnologies : Java, JEE, Spring, Angular, SqlServer",
+      "date1": "juin 2018 – Aujourd’hui",
+      "date2": "1 an 9 mois"
+    },
+    {
+      "title": "Ingénieur de développement Java/Java EE",
+      "companyName": "eXo Platform",
+      "location": "Tunisie",
+      "description": "→ Travaillant dans un environnement agile\n→ Maintenance des applications éditées par l’entreprise (Java/J2EE).\n→ Participer au Développement des \"Portlets\" spécifiques aux clients d'eXo (Java/J2EE).\n→ Fournir du support technique aux clients d'eXo.\n\nTechnologies :\n- Java/J2EE, REST, JSON, JavaScript, Hibernate, Git, Maven, LDAP.\n\n…\nvoir plus",
+      "date1": "juil. 2017 – juin 2018",
+      "date2": "1 an"
+    },
+    {
+      "title": "Stage PFE",
+      "companyName": "Talan Tunisie",
+      "location": "Tunisie",
+      "description": "Objets connectés sur la blockchain privée TalanCoin (un distributeur intelligent, automatique en payant des sommes de monnaies\ndigitales <<talancoin : la monnaie interne de Talan>>via une application Web et à l’aide de la Blockchain privée.\n- Étudier les usages possibles des objets connectés déjà disponible au sein de Talan pouvant faire l'objet d'une application\nBlockchain\n- Choisir d’un ou plusieurs usage et estimation de la charge nécessaire à leur mise en place\n- Conception du connecteur TalanCoin pour ces objets et des smart contracts associés\n- Conception d’un nouvelle IHM à base d’Angular 2 permettant le suivi de l’exécution des contrats et le reporting\n- Développement des composants et web services conçus à base de Node.JS\n- Déploiement de la solution\nMots clés: Blockchain, Ethereum, Solidity, Node.js, Angular 2, oauth2, Truffle\n…\nvoir plus",
+      "date1": "févr. 2017 – juin 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nUniversité de Tunis El Manar",
+      "location": "FST , unversité de Tunis El Manar",
+      "description": "Réalisation d'un système NFC pour contrôler et visualiser la présence des ouvriers\n- Carte Arduino, RFID,Shield Ehternet\n- Application web développer à base de l’architecture distribuée JEE (EJB)\nMots clés : Java/JEE, PHP, NFC, RFID, Arduino, mysql",
+      "date1": "sept. 2014 – janv. 2017",
+      "date2": "2 ans 5 mois",
+      "roles": [
+        {
+          "title": "etudiant",
+          "date1": "sept. 2014 – janv. 2017",
+          "date2": "2 ans 5 mois"
+        },
+        {
+          "title": "PFA",
+          "description": "Réalisation d'un système NFC pour contrôler et visualiser la présence des ouvriers\n- Carte Arduino, RFID,Shield Ehternet\n- Application web développer à base de l’architecture distribuée JEE (EJB)\nMots clés : Java/JEE, PHP, NFC, RFID, Arduino, mysql",
+          "date1": "mars 2016 – juin 2016",
+          "date2": "4 mois",
+          "location": "FST , unversité de Tunis El Manar"
+        },
+        {
+          "title": "summer project",
+          "description": "Développement d’une application java d’optimisation multi- objectif (Trajectoire, Consommation) l’aide d’algorithme évolutionnaire pour l’optimisation multi-objectif.\n- Algorithme évolutionnaire NSGA II\n- Application Java",
+          "date1": "août 2015 – sept. 2015",
+          "date2": "2 mois",
+          "location": "avec thésarde à ENIT"
+        }
+      ]
+    },
+    {
+      "title": "summer internship",
+      "companyName": "Proxym Group",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "description": "Développement d’une site web (E-commerce)\n- Back-end développer à base de Laravel 5.1\n- Front-end développer à base Angular2\nMots clés : Laraval 5.1, Angular2, Mysql",
+      "date1": "juin 2016 – juil. 2016",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Université de Tunis El Manar",
+      "companyName": "Nom du diplôme\ningénieur"
+    },
+    {
+      "title": "IPEIM",
+      "companyName": "Nom du diplôme\nAdmission au concours nationale de classe préparatoires aux grandes écoles"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Université de Tunis El Manar",
+      "degree": "ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "IPEIM",
+      "degree": "Admission au concours nationale de classe préparatoires aux grandes écoles",
+      "date1": "2011",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java Enterprise Edition",
+      "count": "2"
+    },
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "AngularJS",
+      "count": "2"
+    },
+    {
+      "title": "Laravel",
+      "count": "2"
+    },
+    {
+      "title": "C"
+    },
+    {
+      "title": "C++"
+    },
+    {
+      "title": "Node.js"
+    },
+    {
+      "title": "Blockchain"
+    },
+    {
+      "title": "Ethereum"
+    },
+    {
+      "title": "Solidity"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Arabe",
+        "Français",
+        "Stage PFE à Talan Tunisie, Objets connectés sur la blockchain privée TalanCoin"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/farah-b%C3%A9doui-a4a619156/",
+      "text": "Software Engineering Student & Mobile Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/me-sabrine/",
+      "text": "Ingénieur front-end chez WEVIOO"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ghada-ben-boubaker/",
+      "text": "Webmaster - Intégrateur/Développeur Web"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rania-kallel-5a78b610/",
+      "text": "Directeur Stratégie & Développement Chez NUMERYX"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sabra-tliche-8587b87b/",
+      "text": "Team Leader chez Sofrecom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/marwa-salma-zamzam/",
+      "text": "DBA Engineer at UIB - Groupe Société Générale"
+    },
+    {
+      "user": "https://www.linkedin.com/in/najeh-techini-b91494110/",
+      "text": "Développeur FullStack springBoot angular 7"
+    },
+    {
+      "user": "https://www.linkedin.com/in/raafa-amri-024315102/",
+      "text": "Graphic Designer | Élève Ingénieure en informatique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-hadj-sassi/",
+      "text": "Ingénieur Développeur .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/raedmkacher/",
+      "text": "Développeur web chez JWS Group"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Mohamed Ali Riahi",
+    "headline": "ingénieur études et développement full stack at SCOR",
+    "location": "Teboulba, Gouvernorat de Monastir, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Ben yaala amir",
+    "headline": "Développeur Full Stack",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFDxEdKhmvjmw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=5WIowjdA2U1M4cEoxH5s82sBo1L1J722n_LIYG-F4Jo",
+    "location": "Gouvernorat de Médenine, Tunisia",
+    "connections": "+ de 500 relations"
+  },
+  "aboutAlternative": {},
+  "positions": [
+    {
+      "title": "Développeur Full Stack",
+      "companyName": "Mediterranea Software Solutions",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "août 2016 – déc. 2018",
+      "date2": "2 ans 5 mois"
+    },
+    {
+      "title": "Faculté des Sciences de Tunis",
+      "companyName": "Nom du diplôme\nDiplôme d'ingénieur"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs de Monastir"
+    },
+    {
+      "title": "lycée el may djerba",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Faculté des Sciences de Tunis",
+      "degree": "Diplôme d'ingénieur",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2013",
+      "date2": "2016"
+    },
+    {
+      "title": "Institut préparatoire aux études d'ingénieurs de Monastir",
+      "date1": "2011",
+      "date2": "2013"
+    },
+    {
+      "title": "lycée el may djerba",
+      "degree": "Baccalauréat",
+      "date1": "2010",
+      "date2": "2011"
+    }
+  ],
+  "skills": [
+    {
+      "title": "JavaScript",
+      "count": "9"
+    },
+    {
+      "title": "Node.js",
+      "count": "6"
+    },
+    {
+      "title": "angular4",
+      "count": "4"
+    },
+    {
+      "title": "Programmation",
+      "count": "5"
+    },
+    {
+      "title": "Développement pour Android",
+      "count": "2"
+    },
+    {
+      "title": "Web Services",
+      "count": "5"
+    },
+    {
+      "title": "Script Shell"
+    },
+    {
+      "title": "Gestion de projet"
+    },
+    {
+      "title": "AngularJS",
+      "count": "6"
+    },
+    {
+      "title": "Ionic Framework",
+      "count": "7"
+    },
+    {
+      "title": "CodeIgniter",
+      "count": "6"
+    },
+    {
+      "title": "PHP",
+      "count": "8"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "3"
+    },
+    {
+      "title": "PhpMyAdmin",
+      "count": "5"
+    },
+    {
+      "title": "HTML5",
+      "count": "6"
+    },
+    {
+      "title": "CSS",
+      "count": "7"
+    },
+    {
+      "title": "C",
+      "count": "1"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "Oracle",
+      "count": "2"
+    },
+    {
+      "title": "Java",
+      "count": "6"
+    },
+    {
+      "title": "Services Web RESTful",
+      "count": "5"
+    },
+    {
+      "title": "MongoDB",
+      "count": "4"
+    },
+    {
+      "title": "Linux",
+      "count": "1"
+    },
+    {
+      "title": "jQuery"
+    },
+    {
+      "title": "MySQL",
+      "count": "1"
+    },
+    {
+      "title": "SQL"
+    },
+    {
+      "title": "couchdb"
+    },
+    {
+      "title": "couchdb lucene"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "2",
+      "title": "langues",
+      "items": [
+        "Anglais",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/alaeddinne-makhlouf/",
+      "text": "Full-Stack Engineer (Angular, NodeJS, JavaScript)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nour-barkaoui-b60423116/",
+      "text": "Chargée Recrutement IT chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bilel-chahed/",
+      "text": "Full Stack Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/bilel-oueslati-23b501132/",
+      "text": "Ingénieur développement fullstack (PHP/Symfony)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sadok-bani-744a10167/",
+      "text": "Développeur Full Stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hazar-arafet-04a25412a/",
+      "text": "Fullstack Developer chez Sofrecom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/emna-khmissi-9357126/",
+      "text": "Resources Manager at Cynapsys"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hachem-ghabi-8b1317110/",
+      "text": "Développeur Mobile"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mohamed-amine-hadj-sassi/",
+      "text": "Ingénieur Développeur .Net"
+    },
+    {
+      "user": "https://www.linkedin.com/in/azmannai/",
+      "text": "Master's degree in Pervasive Computing"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Ben yaala amir",
+    "headline": "Développeur Full Stack",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQFDxEdKhmvjmw/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=5WIowjdA2U1M4cEoxH5s82sBo1L1J722n_LIYG-F4Jo",
+    "location": "Gouvernorat de Médenine, Tunisia",
+    "connections": "+ de 500 relations"
+  }
+}

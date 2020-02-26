@@ -1,0 +1,205 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Bassem RAOUAFI",
+    "headline": "Développeur Web Full-stack",
+    "location": "Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je suis passionné par le web,mobile et les nouvelles technologies, j'ai eu la chance de pouvoir développer mes compétences au sein de l'entreprise AUDAXIS dans le cadre de mon PFE. Actuellement étudiant en école d'ingénieur, je souhaite à terme devenir développeur web && mobile.\n✔Rigoureux ✔Travail d'équipe ✔Fast learner\n\nJe souhaite intervenir à l'occasion des différentes étapes d'un projet web :\n► L'analyse et la compréhension du besoin\n► La conception\n► Le maquettage\n► Le développement logiciel, l'intégration HTML/CSS et l'écriture des tests unitaires\n► La configuration et la sécurisation du serveur, ainsi que la mise en production\n\nGrâce à mes différentes expériences, j'ai pu développer ces dernières années des compétences en terme de :\n► Développement Web\n► Développement Mobile\n► Tests unitaires\n► Mise en place\n\nJ'ai également développé des soft skills telles que :\n► Une grande capacité d'apprentissage\n► Une grande capacité d'adaptation\n\nJe cherche à mettre ces savoir-faire et savoir-être au profit d'une entreprise correspondant à mes valeurs."
+  },
+  "aboutAlternative": {
+    "text": "Je suis passionné par le web,mobile et les nouvelles technologies, j'ai eu la chance de pouvoir développer mes compétences au sein de l'entreprise AUDAXIS dans le cadre de mon PFE. Actuellement étudiant en école d'ingénieur, je souhaite à terme devenir développeur web && mobile.\n✔Rigoureux ✔Travail d'équipe ✔Fast learner\n\nJe souhaite intervenir à l'occasion des différentes étapes d'un projet web :\n► L'analyse et la compréhension du besoin\n► La conception\n► Le maquettage\n► Le développement logiciel, l'intégration HTML/CSS et l'écriture des tests unitaires\n► La configuration et la sécurisation du serveur, ainsi que la mise en production\n\nGrâce à mes différentes expériences, j'ai pu développer ces dernières années des compétences en terme de :\n► Développement Web\n► Développement Mobile\n► Tests unitaires\n► Mise en place\n\nJ'ai également développé des soft skills telles que :\n► Une grande capacité d'apprentissage\n► Une grande capacité d'adaptation\n\nJe cherche à mettre ces savoir-faire et savoir-être au profit d'une entreprise correspondant à mes valeurs."
+  },
+  "positions": [
+    {
+      "title": "freelance developer",
+      "companyName": "Travailleur Indépendant",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "oct. 2017 – Aujourd’hui",
+      "date2": "2 ans 5 mois"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Nuage Technologies Tunisia (NUATN)",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "date1": "juil. 2019 – août 2019",
+      "date2": "2 mois"
+    },
+    {
+      "title": "Stagiaire en développement Web",
+      "companyName": "Audaxis",
+      "location": "Tunisie",
+      "description": "stage PFE",
+      "date1": "févr. 2017 – juin 2017",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Université Libre de Tunis (ULT)",
+      "companyName": "Nom du diplôme\nDiplome d'ingénieur génie informatique",
+      "description": "L’objectif principal de la spécialité Génie Informatique est de former des ingénieurs\npolyvalents qui soient des concepteurs, des développeurs et des intégrateurs de systèmes et\nd’applications liés aux nouvelles technologies de l’information et de la communication."
+    },
+    {
+      "title": "institut supérieur d'informatique Mahdia",
+      "companyName": "Nom du diplôme\nsystème d'informatique et logiciel",
+      "description": "Système informatique et logiciel\n=> Génie Logiciel\n=> Programmation Orientée Objet\n=> Sécurité Informatique"
+    },
+    {
+      "title": "lycée El Manar",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Université Libre de Tunis (ULT)",
+      "degree": "Diplome d'ingénieur génie informatique",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2018"
+    },
+    {
+      "title": "institut supérieur d'informatique Mahdia",
+      "degree": "système d'informatique et logiciel",
+      "fieldofstudy": "système informatique",
+      "date1": "2014",
+      "date2": "2017"
+    },
+    {
+      "title": "lycée El Manar",
+      "degree": "Baccalauréat",
+      "fieldofstudy": "Informatique",
+      "date1": "2010",
+      "date2": "2014"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "JavaScript",
+      "count": "3"
+    },
+    {
+      "title": "css",
+      "count": "2"
+    },
+    {
+      "title": "Développement pour Android"
+    },
+    {
+      "title": "Développement de logiciels"
+    },
+    {
+      "title": "PHP"
+    },
+    {
+      "title": "C#"
+    },
+    {
+      "title": "Python",
+      "count": "1"
+    },
+    {
+      "title": "Android"
+    },
+    {
+      "title": "Linux"
+    },
+    {
+      "title": "AngularJS"
+    },
+    {
+      "title": "Framework Spring"
+    },
+    {
+      "title": "JPA"
+    },
+    {
+      "title": "Apache Cordova"
+    },
+    {
+      "title": "programmation mobile"
+    },
+    {
+      "title": "Flask"
+    },
+    {
+      "title": "Symfony"
+    },
+    {
+      "title": "spring boot"
+    },
+    {
+      "title": "Spring Security"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {
+      "count": "3",
+      "title": "projets",
+      "items": [
+        "RESRV-Y",
+        "Porte intelligente via reconnaissance faciale",
+        "Développement d'un module d'achat en JSF en interaction avec l'ERP Compiere",
+        "Arabe",
+        "Français"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/elagas-amel-42ab3415a/",
+      "text": "Teleinformatics engineering student 📚 Diplôme national d'ingénieur"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rim-regaieg-624133106/",
+      "text": "A la recherche d'une nouvelle opportunité"
+    },
+    {
+      "user": "https://www.linkedin.com/in/haythem-belhajyoussef/",
+      "text": "Stagiaire chez axefinance"
+    },
+    {
+      "user": "https://www.linkedin.com/in/anouar-guetat-%E2%9C%85-b3953a107/",
+      "text": "Ingénieur Web Full Stack"
+    },
+    {
+      "user": "https://www.linkedin.com/in/alaeddinne-makhlouf/",
+      "text": "Full-Stack Engineer (Angular, NodeJS, JavaScript)"
+    },
+    {
+      "user": "https://www.linkedin.com/in/dhiasaadlaui/",
+      "text": "Software Developer chez VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/chaima-soui-591740197/",
+      "text": "Embeded systems and automation engineering student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ouday-lazaar-931ab514b/",
+      "text": "Développeur web back-end chez Parcus Digital Solutions"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sirine-ben-hamida-86436813/",
+      "text": "Full-stack Developer chez FabSkill"
+    },
+    {
+      "user": "https://www.linkedin.com/in/oussama-ben-abdallah-7a4a29135/",
+      "text": "Développeur web front-end angular chez Seit consulting"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Bassem RAOUAFI",
+    "headline": "Développeur Web Full-stack",
+    "location": "Gouvernorat de l’Ariana, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je suis passionné par le web,mobile et les nouvelles technologies, j'ai eu la chance de pouvoir développer mes compétences au sein de l'entreprise AUDAXIS dans le cadre de mon PFE. Actuellement étudiant en école d'ingénieur, je souhaite à terme devenir développeur web && mobile.\n✔Rigoureux ✔Travail d'équipe ✔Fast learner\n\nJe souhaite intervenir à l'occasion des différentes étapes d'un projet web :\n► L'analyse et la compréhension du besoin\n► La conception\n► Le maquettage\n► Le développement logiciel, l'intégration HTML/CSS et l'écriture des tests unitaires\n► La configuration et la sécurisation du serveur, ainsi que la mise en production\n\nGrâce à mes différentes expériences, j'ai pu développer ces dernières années des compétences en terme de :\n► Développement Web\n► Développement Mobile\n► Tests unitaires\n► Mise en place\n\nJ'ai également développé des soft skills telles que :\n► Une grande capacité d'apprentissage\n► Une grande capacité d'adaptation\n\nJe cherche à mettre ces savoir-faire et savoir-être au profit d'une entreprise correspondant à mes valeurs."
+  }
+}

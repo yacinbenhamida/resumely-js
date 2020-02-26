@@ -1,0 +1,252 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Ghafer Baccouche",
+    "headline": "Ingénieur développement logiciels chez imbus",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "ingénieur développeur en informatique\nTravaillé en tant que développeur ASP.Net ,Angular2 ...\nLa langage de développement n'a pas d'importance, l'essentiel est l'esprit de savoir faire.\nje veux être part des grands projets et sur tous j'aime bien les défi ."
+  },
+  "aboutAlternative": {
+    "text": "ingénieur développeur en informatique\nTravaillé en tant que développeur ASP.Net ,Angular2 ...\nLa langage de développement n'a pas d'importance, l'essentiel est l'esprit de savoir faire.\nje veux être part des grands projets et sur tous j'aime bien les défi ."
+  },
+  "positions": [
+    {
+      "title": "Ingénieur développement logiciels",
+      "companyName": "imbus",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "description": "En Cours de Développement d'une application pour Siemens (planning accounting\nmetrics).\nOutils utilisés : Tortoisehg, Mercurial, Photoshop.\nLangages : Angular2, TypeScript, Bootstrap, CSS3, JavaScript, Ajax, JQuery, HTML5, Karma-\nJasmine, Cypress..",
+      "date1": "févr. 2017 – Aujourd’hui",
+      "date2": "3 ans 1 mois"
+    },
+    {
+      "title": "Freelancer",
+      "companyName": "Upwork",
+      "description": "SEO: Searching Engine Optimization,\nWebMaster,\nDéveloppeur et correcteurs des applications : web, mobile et Desktop.",
+      "date1": "juin 2013 – 2018",
+      "date2": "5 ans"
+    },
+    {
+      "title": "Ingénieur développement logiciels",
+      "companyName": "SAMCOM",
+      "location": "Sahloul Sousse, Tunisie",
+      "description": " Développement d'une application du Gestion de la relation client (CRM).\n Développement d’un site web de voyance et de tirage au sort.\n Développement d’une application web : annuaire esthétique.\n Développement d’une application web : messagerie instantanée pour discussion interne\nd'une société.\nOutils utilisés : SQL Server, Dreamweaver, Photoshop.\nLangages : ASP.Net, Razor, EF, JavaScript, MySQL, CSS3, C#, Ajax, JQuery, HTML5.\n…\nvoir plus",
+      "date1": "juil. 2015 – févr. 2017",
+      "date2": "1 an 8 mois"
+    },
+    {
+      "title": "Enseignant vacataire",
+      "companyName": "Institut des Hautes études Commerciales & Institut Supérieur des Beaux Arts Sousse",
+      "location": "Gouvernorat de Sousse, Tunisia",
+      "description": "Matières enseignées :\n- TIC ( technologies d'information et de communication).\n- C2i ( certification informatique et internet ) .",
+      "date1": "sept. 2015 – janv. 2016",
+      "date2": "5 mois"
+    },
+    {
+      "title": "Stagiaire (stage ingénieur)",
+      "companyName": "ETIC EUROPE",
+      "location": "Sahline Monastir , Tunisie",
+      "description": "Développement d’une application Web intitulé le suivi des Commandes en temps réel\nsous le nom « EticNet »\nLes outils utilisés : SQL Server, Dreamweaver, Photoshop,\nLes langages : ASP.Net, Razor, EF, JavaScript, MySQL, CSS3, C#, Ajax, JQuery, HTML5.",
+      "date1": "févr. 2015 – mai 2015",
+      "date2": "4 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nSIMA+",
+      "location": "Souassi Mahdia , Tunisie",
+      "description": "Développement application ressource humain\nLes outils utilisés : Easy-PHP, Dreamweaver,\nLes langages : PHP, Symfony2, JavaScript, MySQL, CSS.",
+      "date1": "juil. 2014",
+      "date2": "1 mois",
+      "roles": [
+        {
+          "title": "Stagiaire (stage technicien)",
+          "description": "Développement application ressource humain\nLes outils utilisés : Easy-PHP, Dreamweaver,\nLes langages : PHP, Symfony2, JavaScript, MySQL, CSS.",
+          "date1": "juil. 2014",
+          "date2": "1 mois",
+          "location": "Souassi Mahdia , Tunisie"
+        },
+        {
+          "title": "Stagiaire (stage ouvrier)",
+          "description": "Stage Ouvrier:\nMaintenance informatique",
+          "date1": "juin 2014",
+          "date2": "1 mois",
+          "location": "Souassi Mahdia, Tunisie"
+        }
+      ]
+    },
+    {
+      "title": "Institut Supèrieur des Sciences Appliquées et de Technologie de Sousse - ISSAT Sousse",
+      "companyName": "Nom du diplôme\nDiplôme National D'ingénieur en informatique"
+    },
+    {
+      "title": "Institut Supèrieur des Sciences Appliquées et de Technologie de Sousse - ISSAT Sousse",
+      "companyName": "Nom du diplôme\nCycle Préparatoire"
+    },
+    {
+      "title": "Lycée Souassi",
+      "companyName": "Nom du diplôme\nBac"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Institut Supèrieur des Sciences Appliquées et de Technologie de Sousse - ISSAT Sousse",
+      "degree": "Diplôme National D'ingénieur en informatique",
+      "fieldofstudy": "Ingénierie Informatique; Génie Logiciel",
+      "date1": "2012",
+      "date2": "2015"
+    },
+    {
+      "title": "Institut Supèrieur des Sciences Appliquées et de Technologie de Sousse - ISSAT Sousse",
+      "degree": "Cycle Préparatoire",
+      "date1": "2010",
+      "date2": "2012"
+    },
+    {
+      "title": "Lycée Souassi",
+      "degree": "Bac",
+      "fieldofstudy": "Informatique"
+    }
+  ],
+  "skills": [
+    {
+      "title": "SQL",
+      "count": "5"
+    },
+    {
+      "title": "CSS",
+      "count": "4"
+    },
+    {
+      "title": "AngularJS",
+      "count": "4"
+    },
+    {
+      "title": "Programmation web",
+      "count": "3"
+    },
+    {
+      "title": "Développement de logiciel",
+      "count": "2"
+    },
+    {
+      "title": "Gestion de projet",
+      "count": "2"
+    },
+    {
+      "title": "Java",
+      "count": "3"
+    },
+    {
+      "title": "Eclipse",
+      "count": "3"
+    },
+    {
+      "title": "HTML5",
+      "count": "3"
+    },
+    {
+      "title": "ASP.NET",
+      "count": "3"
+    },
+    {
+      "title": "jQuery",
+      "count": "3"
+    },
+    {
+      "title": "JavaScript",
+      "count": "2"
+    },
+    {
+      "title": "C++",
+      "count": "2"
+    },
+    {
+      "title": "PHP",
+      "count": "1"
+    },
+    {
+      "title": "ASP.NET AJAX",
+      "count": "1"
+    },
+    {
+      "title": "C",
+      "count": "1"
+    },
+    {
+      "title": "C#",
+      "count": "1"
+    },
+    {
+      "title": "Anglais",
+      "count": "1"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "1",
+    "receivedCount": "1",
+    "given": [
+      {
+        "user": "https://www.linkedin.com/in/jdidi-hamdi-200010bb/",
+        "text": "Ghafer is very smart person, very motivated and organized! I enjoyed working with him I would highly recommend his technical knowledge . and I will not hesitate to recontact him for other needs."
+      }
+    ],
+    "received": [
+      {
+        "user": "https://www.linkedin.com/in/jdidi-hamdi-200010bb/",
+        "text": "Each team leader have his own method to manage his team but Hamdi make you love each work that assign to you.He focalise in many details and he have a clear view from the start to avoid wasting time  and energy. \ni wish to have some other work with him again.\n\n... Voir plus"
+      }
+    ]
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/zouhair-sassi/",
+      "text": "iOS developer chez NoStatik Media"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sirine-gobji-464b02141/",
+      "text": "software engineering student"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-ben-hammamia/",
+      "text": "Développeur PHP/ Symfony chez OpenBee"
+    },
+    {
+      "user": "https://www.linkedin.com/in/abdelkarim-mars-66165411b/",
+      "text": "Full-Stack Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nizar-jenzri/",
+      "text": "Project Technical Manager chez eNano-Tech"
+    },
+    {
+      "user": "https://www.linkedin.com/in/rihab-mabrouk-6b5898105/",
+      "text": "Ingénieur informatique chez HRDatabank"
+    },
+    {
+      "user": "https://www.linkedin.com/in/ben-yahya-zeineb-13ba9370/",
+      "text": "Doctorante en informatique chez ENSI - Ecole Nationale des Sciences de l'Informatique"
+    },
+    {
+      "user": "https://www.linkedin.com/in/maissa-secref-92a2a8109/",
+      "text": "Frontend Developer chez Proxym Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/balkis-mahfoudh-284588151/",
+      "text": "Ingénieur d'étude et de développement chez Gymind Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/jarrarjaw/",
+      "text": "Analyste software development engineer at Linedata"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Ghafer Baccouche",
+    "headline": "Ingénieur développement logiciels chez imbus",
+    "location": "Gouvernorat de Sousse, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "ingénieur développeur en informatique\nTravaillé en tant que développeur ASP.Net ,Angular2 ...\nLa langage de développement n'a pas d'importance, l'essentiel est l'esprit de savoir faire.\nje veux être part des grands projets et sur tous j'aime bien les défi ."
+  }
+}

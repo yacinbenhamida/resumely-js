@@ -1,0 +1,333 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Wassim Mahersi",
+    "headline": "Ingénieur Développement Java/JEE chez Lyance",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHu0GTYqqnGIQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=0y577vOROWJQ-elzeoxG3vJZZApa5pHEdp8TuahaEjU",
+    "location": "La Marsa, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je me considère comme étant indépendant, passionné et innovant.\nGrâce à mes divers projets et mes premières expériences professionnelles, j’ai pu développer des capacités d’analyse, un esprit d’initiative ainsi qu’une autonomie et une aisance de travailler en équipe."
+  },
+  "aboutAlternative": {
+    "text": "Je me considère comme étant indépendant, passionné et innovant.\nGrâce à mes divers projets et mes premières expériences professionnelles, j’ai pu développer des capacités d’analyse, un esprit d’initiative ainsi qu’une autonomie et une aisance de travailler en équipe."
+  },
+  "positions": [
+    {
+      "title": "Ingénieur Développement Java/JEE",
+      "companyName": "Lyance",
+      "location": "Tunis Governorate, Tunisia",
+      "description": "La mise en place d’un projet nommé GAYA qui est un CRM dédié pour les centres d’appels à l’echelle national et l’international. Cette solution permet à nos clients de gérer et d’étendre facilement leurs campagnes, tout en ajoutant la possibilité de superviser leurs agents. Elle permet également de donner la main pour visualiser et analyser leurs raport de données. Cette solution se repose sur une architecture multi-tenant.\n\n-Stack Technologique :\nJava, Spring boot (Spring Security, Spring Data, Spring MVC, ...), AngularJs, Docker, OAuth2, RabbitMQ, JavaScript, Apache Maven, SQL, Git, Jitsi, Elasticsearch, Kibana, Selenium, Liquibase...\n\n-Méthodologie Agile : SCRUM\n…\nvoir plus",
+      "date1": "févr. 2019 – Aujourd’hui",
+      "date2": "1 an 1 mois"
+    },
+    {
+      "title": "Nom de l’entreprise\nSopra HR Software",
+      "location": "Gouvernorat de Tunis, Tunisia",
+      "description": "La mise en place d’un projet nommé ’SHR 4YOU’ qui présente une nouvelle génération de solutions HR 3.0 offrant un espace RH individualisé, participatif et collaboratif plaçant le collaborateur au coeur de la RH Digitale.\n\n-Stack Technologique :\nJava/JEE, RESTful, JavaScript, RequireJS , Fullcalendar, Alpaca Forms, Log4j, Maven, Karaf OSGI, Activiti, JavaScript, jQuery, Apache Maven, Bootstrap, Nexus, SonarQube, SQL, Git...\n\n-Méthodologie Agile : SCRUM\n…\nvoir plus",
+      "date1": "juil. 2018 – janv. 2019",
+      "date2": "7 mois",
+      "roles": [
+        {
+          "title": "Ingénieur Développement Java/JEE",
+          "description": "La mise en place d’un projet nommé ’SHR 4YOU’ qui présente une nouvelle génération de solutions HR 3.0 offrant un espace RH individualisé, participatif et collaboratif plaçant le collaborateur au coeur de la RH Digitale.\n\n-Stack Technologique :\nJava/JEE, RESTful, JavaScript, RequireJS , Fullcalendar, Alpaca Forms, Log4j, Maven, Karaf OSGI, Activiti, JavaScript, jQuery, Apache Maven, Bootstrap, Nexus, SonarQube, SQL, Git...\n\n-Méthodologie Agile : SCRUM\n…\nvoir plus",
+          "date1": "juil. 2018 – janv. 2019",
+          "date2": "7 mois",
+          "location": "Gouvernorat de Tunis, Tunisia"
+        },
+        {
+          "title": "Stagiaire en développement Web (Stage PFE)",
+          "description": "La conception et l’implémentation d’une application web d’embauche et d’intégration pour les nouveaux employés.\n\n-Stack Technologique :\nJava, Spring Boot (Spring Security, Spring MVC, Spring Data, . . . ), Jackson, Apache Maven, Liquibase, Swagger, Activiti, Thymeleaf, Angular 5, Bootstrap, JWT, SQL, Yarn, Apache Tomcat, Git...\n\n-Méthodologie Agile : SCRUM\n…\nvoir plus",
+          "date1": "janv. 2018 – juil. 2018",
+          "date2": "7 mois",
+          "location": "Gouvernorat de Tunis, Tunisia"
+        }
+      ]
+    },
+    {
+      "title": "Stagiaire en développement Web",
+      "companyName": "ASM - All Soft Multimedia",
+      "location": "Sfax Governorate, Tunisia",
+      "description": "-La conception et l'implementation d'un nouveau site web responsive pour l'entreprise, pour\nmoderniser et introduire une nouvelle approche mobile.\n-La participation dans le développement et la maintenance des projets existants.\n\n+Compétances technique : Java/JEE, JSP, PrimeFaces, Hibernate, JPA, JAX-RS, Websphere, HTML5, CSS3, PHP, JavaScript, Bootstrap, jQuery, CakePHP, SQL, XAMPP, Git.\n+Méthodologie agile : XP\n…\nvoir plus",
+      "date1": "juin 2014 – août 2014",
+      "date2": "3 mois"
+    },
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "companyName": "Nom du diplôme\nDiplôme d'Ingénieur"
+    },
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax (ISIMSf)",
+      "companyName": "Nom du diplôme\nDiplôme Master"
+    },
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax (ISIMSf)",
+      "companyName": "Nom du diplôme\nLicence"
+    },
+    {
+      "title": "15 November 1955 High School",
+      "companyName": "Nom du diplôme\nBaccalauréat"
+    },
+    {
+      "title": "Election Observer",
+      "companyName": "Instance Supérieure Indépendante pour les Élections",
+      "date1": "nov. 2014"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+      "degree": "Diplôme d'Ingénieur",
+      "fieldofstudy": "Génie Logiciel",
+      "date1": "2016",
+      "date2": "2018"
+    },
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax (ISIMSf)",
+      "degree": "Diplôme Master",
+      "fieldofstudy": "Ingenierie des Systemes d'Informations",
+      "date1": "2015",
+      "date2": "2017"
+    },
+    {
+      "title": "Institut Supérieur d'Informatique et de Multimédia de Sfax (ISIMSf)",
+      "degree": "Licence",
+      "fieldofstudy": "Technologies Multimédia & Web",
+      "date1": "2012",
+      "date2": "2015"
+    },
+    {
+      "title": "15 November 1955 High School",
+      "degree": "Baccalauréat",
+      "fieldofstudy": "Sciences de l’informatique",
+      "date1": "2011",
+      "date2": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "38"
+    },
+    {
+      "title": "Spring Framework",
+      "count": "35"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "35"
+    },
+    {
+      "title": "Web Development",
+      "count": "37"
+    },
+    {
+      "title": "Project Management",
+      "count": "32"
+    },
+    {
+      "title": "Agile Methodologies",
+      "count": "33"
+    },
+    {
+      "title": "Database Administration",
+      "count": "14"
+    },
+    {
+      "title": "Hibernate",
+      "count": "34"
+    },
+    {
+      "title": "JPA",
+      "count": "27"
+    },
+    {
+      "title": "Angular",
+      "count": "33"
+    },
+    {
+      "title": "HTML5",
+      "count": "34"
+    },
+    {
+      "title": "SQL",
+      "count": "29"
+    },
+    {
+      "title": "ASP.NET MVC",
+      "count": "26"
+    },
+    {
+      "title": "C",
+      "count": "24"
+    },
+    {
+      "title": "C#",
+      "count": "23"
+    },
+    {
+      "title": "JavaScript",
+      "count": "37"
+    },
+    {
+      "title": "Unix",
+      "count": "23"
+    },
+    {
+      "title": "Maven",
+      "count": "26"
+    },
+    {
+      "title": "AngularJS",
+      "count": "26"
+    },
+    {
+      "title": "jQuery",
+      "count": "26"
+    },
+    {
+      "title": "Oracle Database",
+      "count": "25"
+    },
+    {
+      "title": "RESTful WebServices",
+      "count": "27"
+    },
+    {
+      "title": "Git",
+      "count": "22"
+    },
+    {
+      "title": "XML",
+      "count": "10"
+    },
+    {
+      "title": "Spring Boot",
+      "count": "5"
+    },
+    {
+      "title": "Enterprise JavaBeans (EJB)",
+      "count": "29"
+    },
+    {
+      "title": "OSGi",
+      "count": "2"
+    },
+    {
+      "title": "Liquibase",
+      "count": "23"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "1",
+    "receivedCount": "6",
+    "given": [
+      {
+        "user": "https://www.linkedin.com/in/dhia-eddine-chelly-919008172/",
+        "text": "wassim c'est un vrai meneur d'homme .Il se caractérise par une carisme incontestable , une intégration fluide et une capacité de gérer les situations compliquées exceptionnelle. Bien évidemment techniquement il est surclassé .c'est le genre des développeurs qui aiment pas seulement achever mais avec perfection ... Voir plus"
+      },
+      {
+        "user": "https://www.linkedin.com/in/abderrahmen-hammami/",
+        "text": "Having studied and worked with Wassim on various projects, I would definetly recommend him for his soft and tachnical skills. Nevertheless, his project management style is very effective."
+      },
+      {
+        "user": "https://www.linkedin.com/in/fayrouz-ben-arfa-istqb-%C2%AE-certified-86209b104/",
+        "text": "I've studied and worked with Wassim, and I can honestly say that he is a great developer and team member to have with you. He is intelligent, highly motivated and a leader by nature. He is always willing to offer the helping hand to his team members and coworkers."
+      },
+      {
+        "user": "https://www.linkedin.com/in/m-ba/",
+        "text": "Le travail avec Wassim est une expérience très fructueuse tant sur le plan humain que sur le plan professionnel. En effet, les qualités techniques de Wassim ont retenu l'attention de tous ceux qui l'ont cotoyé au sein de Sopra HR Software mais ce qui m'a le plus étonné, c'est son sens du collectif , c'est un \"Team playe... Voir plus"
+      },
+      {
+        "user": "https://www.linkedin.com/in/mhdaloux2/",
+        "text": "In many projects we've worked on. Wassim was a great support and a challenger in terms of management, hard work and productivity. He is one of the few who can simply get the job done."
+      },
+      {
+        "user": "https://www.linkedin.com/in/riahi-mourad/",
+        "text": "Wassim est très serieux quand il s'agit de travail, c'est un bon chef de groupe surtout quand il s'agit de problème entre les membres de l'équipe, il est persévérant dans ses tâches et plus encore quand il s'agit d'inconvénient."
+      }
+    ],
+    "received": [
+      {
+        "user": "https://www.linkedin.com/in/dhia-eddine-chelly-919008172/",
+        "text": "Given that I worked with Dhia in the same company for a period of time, I highly recommend him. He is not only a hard worker, but a bright and a motivated one. He is a teamplayer and highly professional.\n\n... Voir plus"
+      }
+    ]
+  },
+  "accomplishments": [
+    {
+      "count": "4",
+      "title": "langues",
+      "items": [
+        "Arabic",
+        "English",
+        "French",
+        "Italian",
+        "WeAreOne",
+        "CarMate",
+        "PassOrFail",
+        "Web Site for ASM - All Soft Multimedia",
+        "Best piSys project",
+        "Tunisian Scouts Club"
+      ]
+    }
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/mechergui-mohamed-haythem-0a6753110/",
+      "text": "Développeur Fullstack Java-JEE / Angular"
+    },
+    {
+      "user": "https://www.linkedin.com/in/fakher-saafi-016a28161/",
+      "text": "Full Stack Engineer at Lyance"
+    },
+    {
+      "user": "https://www.linkedin.com/in/takwa-zouaoui-88341b139/",
+      "text": "Ingénieur développement JEE/JAVA"
+    },
+    {
+      "user": "https://www.linkedin.com/in/seif-edinne-hannachi-8628a214a/",
+      "text": "Developpeur JAVA JEE chez Tessi"
+    },
+    {
+      "user": "https://www.linkedin.com/in/marwen-hemden-34106314a/",
+      "text": "Ingénieur Java/JEE Junior"
+    },
+    {
+      "user": "https://www.linkedin.com/in/houssembenali/",
+      "text": "Ingénieur (B.I) Java\\J2EE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/sana-mejri-60098ba9/",
+      "text": "Software Engineer at VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/arfaouialaeddine/",
+      "text": "Développeur Full-Stack JAVA/JEE chez TriTUX"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amal-regaieg-4aab2a15a/",
+      "text": "Ingénieur développement chez Minduos"
+    },
+    {
+      "user": "https://www.linkedin.com/in/mayssa-abbes/",
+      "text": "Ingénieur Full Stack Java/JEE, Angular"
+    }
+  ],
+  "volunteerExperience": [
+    {
+      "title": "Election Observer",
+      "experience": "Instance Supérieure Indépendante pour les Élections",
+      "description": "Politique",
+      "date1": "nov. 2014",
+      "date2": "1 mois"
+    }
+  ],
+  "profile": {
+    "name": "Wassim Mahersi",
+    "headline": "Ingénieur Développement Java/JEE chez Lyance",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C5603AQHu0GTYqqnGIQ/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=0y577vOROWJQ-elzeoxG3vJZZApa5pHEdp8TuahaEjU",
+    "location": "La Marsa, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Je me considère comme étant indépendant, passionné et innovant.\nGrâce à mes divers projets et mes premières expériences professionnelles, j’ai pu développer des capacités d’analyse, un esprit d’initiative ainsi qu’une autonomie et une aisance de travailler en équipe."
+  }
+}

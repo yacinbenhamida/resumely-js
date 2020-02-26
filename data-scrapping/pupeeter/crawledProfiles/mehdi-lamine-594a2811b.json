@@ -1,0 +1,230 @@
+{
+  "contact": {},
+  "profileAlternative": {
+    "name": "Mehdi Lamine",
+    "headline": "Développement Java EE / Angular at Sofrecom Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGuP4uEsrbV8Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=QpAYK_08f3vQt1hGYUEf0incBs4Qw-2imm7iXYmFS0w",
+    "location": "La Marsa, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Développement Java EE / Angular at Sofrecom Tunisie"
+  },
+  "aboutAlternative": {
+    "text": "Développement Java EE / Angular at Sofrecom Tunisie"
+  },
+  "positions": [
+    {
+      "title": "Développement Java EE / Angular",
+      "companyName": "Sofrecom Tunisie",
+      "location": "Tunis Governorate, Tunisia",
+      "date1": "juin 2019 – Aujourd’hui",
+      "date2": "9 mois"
+    },
+    {
+      "title": "Développeur",
+      "companyName": "Focus Corporation",
+      "location": "Tunisie",
+      "date1": "juil. 2018 – juin 2019",
+      "date2": "1 an"
+    },
+    {
+      "title": "Stagiaire",
+      "companyName": "Sopra HR Software",
+      "location": "Tunisia",
+      "date1": "févr. 2018 – juil. 2018",
+      "date2": "6 mois"
+    },
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "companyName": "Domaine d’études\nIngénierie informatique"
+    }
+  ],
+  "educations": [
+    {
+      "title": "Ecole Nationale d’Ingénieurs de Carthage ENICarthage",
+      "degree": "Ingénierie informatique",
+      "fieldofstudy": "Ingénierie informatique",
+      "date1": "2015",
+      "date2": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Java",
+      "count": "8"
+    },
+    {
+      "title": "Java Enterprise Edition",
+      "count": "5"
+    },
+    {
+      "title": "angular",
+      "count": "7"
+    },
+    {
+      "title": "Développement pour Android",
+      "count": "3"
+    },
+    {
+      "title": "Administration système Linux",
+      "count": "3"
+    },
+    {
+      "title": "C",
+      "count": "5"
+    },
+    {
+      "title": "C++",
+      "count": "5"
+    },
+    {
+      "title": "PL/SQL",
+      "count": "2"
+    },
+    {
+      "title": "Hibernate",
+      "count": "4"
+    },
+    {
+      "title": "Modèle MVC de Spring",
+      "count": "3"
+    },
+    {
+      "title": "XML",
+      "count": "4"
+    },
+    {
+      "title": "PHP",
+      "count": "2"
+    },
+    {
+      "title": "Oracle Database",
+      "count": "3"
+    },
+    {
+      "title": "MySQL",
+      "count": "7"
+    },
+    {
+      "title": "SQLite",
+      "count": "4"
+    },
+    {
+      "title": "R",
+      "count": "2"
+    },
+    {
+      "title": "PostgreSQL",
+      "count": "2"
+    },
+    {
+      "title": "Services Web RESTful",
+      "count": "3"
+    },
+    {
+      "title": "UML",
+      "count": "3"
+    },
+    {
+      "title": "JavaServer Faces (JSF)",
+      "count": "2"
+    },
+    {
+      "title": "AngularJS",
+      "count": "4"
+    },
+    {
+      "title": "SAP ERP"
+    },
+    {
+      "title": "ABAP",
+      "count": "1"
+    },
+    {
+      "title": "JavaScript"
+    },
+    {
+      "title": "Schéma XML",
+      "count": "4"
+    },
+    {
+      "title": "Spring Boot",
+      "count": "5"
+    },
+    {
+      "title": "Representational State Transfer (REST)",
+      "count": "4"
+    },
+    {
+      "title": "Spring Data"
+    },
+    {
+      "title": "Spring Security"
+    },
+    {
+      "title": "ABAP-OO"
+    },
+    {
+      "title": "SAPUI5"
+    }
+  ],
+  "recommendations": {
+    "givenCount": "0",
+    "receivedCount": "0",
+    "given": [],
+    "received": []
+  },
+  "accomplishments": [
+    {}
+  ],
+  "peopleAlsoViewed": [
+    {
+      "user": "https://www.linkedin.com/in/imen-mechri-74a8a9b3/",
+      "text": "Développeur J2EE/Angular & liferay chez OWLIANCE"
+    },
+    {
+      "user": "https://www.linkedin.com/in/nederbelmabrouk/",
+      "text": "Développeur Fullstack JS (React /Node) chez WeReact"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khemiri-iheb-774609143/",
+      "text": "Développeur Java/Java EE chez Talan"
+    },
+    {
+      "user": "https://www.linkedin.com/in/tarek-boussarsar-66998a142/",
+      "text": "Full-Stack JAVA-JEE/Angular Developer chez VERMEG for Banking & Insurance Software"
+    },
+    {
+      "user": "https://www.linkedin.com/in/amin-chelly/",
+      "text": "Consultant Java JEE / Angular chez Spark-it Group"
+    },
+    {
+      "user": "https://www.linkedin.com/in/hamza-dhahri/",
+      "text": "★ Full-Stack JAVA-JEE/Angular Developer"
+    },
+    {
+      "user": "https://www.linkedin.com/in/braiek-aymen-b36b21125/",
+      "text": "Ingénieur informatique Java/JavaEE/Spring Mvc/Spring boot/Angular 2+ at BIAT"
+    },
+    {
+      "user": "https://www.linkedin.com/in/youssef-bourbia-34929310a/",
+      "text": "Ingénieur informatique chez Sofrecom Tunisie"
+    },
+    {
+      "user": "https://www.linkedin.com/in/samir-maazaoui-753212159/",
+      "text": "Développeur Full Stack( Java/JEE, Angular) chez Altiad"
+    },
+    {
+      "user": "https://www.linkedin.com/in/khemiri-emna-2974a112b/",
+      "text": "Alternante chez Sofrecom Tunisie"
+    }
+  ],
+  "volunteerExperience": [],
+  "profile": {
+    "name": "Mehdi Lamine",
+    "headline": "Développement Java EE / Angular at Sofrecom Tunisie",
+    "imageurl": "https://media-exp1.licdn.com/dms/image/C4D03AQGuP4uEsrbV8Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=QpAYK_08f3vQt1hGYUEf0incBs4Qw-2imm7iXYmFS0w",
+    "location": "La Marsa, Gouvernorat de Tunis, Tunisia",
+    "connections": "+ de 500 relations",
+    "summary": "Développement Java EE / Angular at Sofrecom Tunisie"
+  }
+}
