@@ -1,0 +1,19 @@
+{
+  "email": "fixitnoreply2019@gmail.com",
+  "password": "Yassinassil23",
+  "cookiesFile": "",
+  "relatedProfilesKeywords": ["ingénieur","tunisie","data science","développeur","coder","job","stage","opportunité","full stack"],
+  "maxConcurrentCrawlers": 1,
+  "profileLoadWaitTime": 5000,
+  "saveDirectory": "./crawledProfiles",
+  "puppeteerArgs": { "args": ["--no-sandbox"] },
+  "isHeadless": true,
+  "hasToLog": true,
+  "proxyAddress": null,
+  "rootProfiles": [
+    "https://www.linkedin.com/in/user1/",
+    "https://www.linkedin.com/in/profile/",
+    "https://www.linkedin.com/in/view/",
+    "https://www.linkedin.com/in/user2/"
+  ]
+}
