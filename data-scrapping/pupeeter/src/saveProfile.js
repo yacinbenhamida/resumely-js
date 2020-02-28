@@ -10,6 +10,6 @@ module.exports = (profileId, content, injection) => {
     fs.mkdirSync(config.saveDirectory, { recursive: true })
   }
   console.log('extracted data '+ JSON.stringify(content))
-  if (content.peopleAlsoViewed) delete content.peopleAlsoViewed;
+//  if (content.peopleAlsoViewed) delete content.peopleAlsoViewed;
   return fs.writeFileSync(`${config.saveDirectory}/${profileId}.json`, JSON.stringify(content, undefined, 2))
 }
