@@ -25,6 +25,9 @@ connection.once('open', () => {
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
+const predictionRouter = require('./routes/prediction');
+app.use('/prediction', predictionRouter);
+
 // Start
 
 app.listen(port, () => {
