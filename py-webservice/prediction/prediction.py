@@ -24,8 +24,6 @@ MODELS_DIR = BASE_DIR / 'shared' / 'models'
 
 profiles_csv_path = DATA_DIR / "tn_profiles" / "new_tn_profiles.csv"
 
-real_row_count = -1
-fn_dict, ln_dict = {}, {}
 model = None
 encoder = None
 le = None
@@ -58,52 +56,36 @@ def levenshtein_distance(seq1, seq2):
 def prepare_input(fn_x_new = None, ln_x_new = None):
     if fn_x_new is None or ln_x_new is None: return
     
-    global fn_dict, ln_dict, real_row_count
-
-    fn_oh = np.zeros(shape = len(fn_dict))
-    ln_oh = np.zeros(shape = len(ln_dict))
+    global encoder
 
     # Start with first name reverse hot encoding
     
     # Handling first name
     min_dist = 9999
-    method = 2 # 1
-    use_trunk = 0 # 1
-    
-    for fname in fn_dict:
+    closestFname = fn_x_new
+
+    for fname in encoder.categories_[0]:
         dist = levenshtein_distance(fn_x_new, fname)
-        if method == 1:
-            if(dist < min_dist):
-                min_dist = dist
-                fn_oh = fn_dict[fname]
-
-        if method == 2:
-            fn_oh = [(a + b / (1 + (dist * 10))) for a, b in zip(fn_oh, fn_dict[fname])]
+        if(dist < min_dist):
+            min_dist = dist
+            closestFname = fname
         
-    if use_trunk:
-        fn_oh = [int(a) for a in fn_oh]
-
     # Handling last name
     min_dist = 9999
-    method = 2 # 1
-    use_trunk = 0 # 1
+    closestLname = ln_x_new
     
-    for lname in ln_dict:
+    # print(encoder.categories_)
+
+    for lname in encoder.categories_[1]:
         dist = levenshtein_distance(ln_x_new, lname)
-        if method == 1:
-            if(dist < min_dist):
-                min_dist = dist
-                ln_oh = ln_dict[lname]
+        if(dist < min_dist):
+            min_dist = dist
+            closestLname = lname
 
-        if method == 2:
-            ln_oh = [(a + b / (1 + (dist * 10))) for a, b in zip(ln_oh, ln_dict[lname])]
-        
-    if use_trunk:
-        ln_oh = [int(a) for a in ln_oh]
-
-    x_1 = np.array(fn_oh).reshape(-1, len(fn_dict))
-    x_2 = np.array(ln_oh).reshape(-1, len(ln_dict))
-    X_input = np.concatenate((x_1, x_2), axis=1)
+    X_input = encoder.transform([[closestFname, closestLname]]).toarray()
+    
+    print('\n', 'Final closest name:', closestFname, closestLname)
+    # print(X_input)
 
     return X_input
 
@@ -112,7 +94,7 @@ class Predictor(Resource):
         global model, encoder, le
 
         X_input = prepare_input(fname, lname)
-        print(X_input.shape)
+        # print(X_input.shape)
         y_pred = model.predict(X_input)
         # make predictions for test data
         # evaluate predictions
@@ -128,22 +110,11 @@ class Predictor(Resource):
         }
 api.add_resource(Predictor, '/<string:fname>/<string:lname>')
 
-def load_train_info():
-    global real_row_count, fn_dict, ln_dict
-    with open(MODELS_DIR / 'train_info.json', 'r') as ti:
-        train_info = json.load(ti)
-
-        real_row_count = train_info['real_row_count']
-        fn_dict = train_info['fn_dict']
-        ln_dict = train_info['ln_dict']
-
 def main():
     global model, encoder, le
     model = pickle.load(open(MODELS_DIR / "model.pickle.dat", "rb"))
     encoder = pickle.load(open(MODELS_DIR / "encoder.pickle.dat", "rb"))
     le = pickle.load(open(MODELS_DIR / "label_encoder.pickle.dat", "rb"))
-    
-    load_train_info()
     
     app.run(debug=True, port=5555)
 

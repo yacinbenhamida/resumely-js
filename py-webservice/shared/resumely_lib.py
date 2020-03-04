@@ -42,6 +42,7 @@ class Resumely:
          # Minimal distance to consider current name as first name.
          self.__min_is_firstname_dist = 5 
           
+   # https://medium.com/@ertuodaba/string-matching-using-machine-learning-with-python-matching-products-of-getir-and-carrefoursa-f8ce29d2959f
    # Return similarity distance between two strings.
    @staticmethod
    def levenshtein_distance(seq1, seq2):
@@ -69,6 +70,43 @@ class Resumely:
                   )
       return (matrix[size_x - 1, size_y - 1])
       
+   @staticmethod
+   def sorted_levenshtein_rate(seq1, seq2):
+      seq1 = ''.join(sorted(seq1))
+      seq2 = ''.join(sorted(seq2))
+      return Resumely.levenshtein_rate(seq1, seq2)
+
+   @staticmethod
+   def levenshtein_rate(seq1, seq2):
+      distance = levenshtein_distance(seq1, seq2)
+      max_len = max(len(seq1), len(seq2))
+      return 1 - (distance / max_len)
+
+   @staticmethod
+   def sorted_levenshtein_apply(str):
+      seq1 = ''.join(sorted(str))
+      seq2 = ''.join(sorted(row['last_name']))
+      distance = Resumely.levenshtein_distance(seq1, seq2)
+      return distance
+
+   @staticmethod
+   def sorted_levenshtein_rate_apply(row):
+      seq1 = ''.join(sorted(row['first_name']))
+      seq2 = ''.join(sorted(row['last_name']))
+      distance = Resumely.levenshtein_distance(seq1, seq2)
+      max_len = max(len(seq1), len(seq2))
+      return 1 - (distance / max_len)
+
+   @staticmethod
+   def test_levenshtein():
+      met1 = 'Achraf'
+      met2 = 'Chrif'
+      print('Levenshtein Distance: {}, MatchScore: {} '.\
+            format(Resumely.levenshtein_distance(met1, met2), Resumely.levenshtein_rate(met1, met2)))
+      # print('Sorted Levenshtein Distance: ', sorted_levenshtein(met1, met2))
+      print('Sorted Levenshtein Distance: {}, MatchScore: {} '.\
+            format(Resumely.sorted_levenshtein(met1, met2), Resumely.sorted_levenshtein_rate(met1, met2)))
+
    # Returns a DataFrame object from a file(s) (could be *) of a specified path.
    # Can concatenate found files of similar structure.
    @staticmethod
@@ -136,7 +174,7 @@ class Resumely:
    @staticmethod
    def print_unique_vals_and_count(arr):
       print('\n')
-      print('Original Numpy Array : ' , arr)
+      #print('Original Numpy Array : ' , arr)
       # Get a tuple of unique values & their frequency in numpy array
       uniqueValues, occurCount = np.unique(arr, return_counts=True)
       print("Unique Values : " , uniqueValues)

@@ -22,7 +22,6 @@ driver_path = CHROME_DRIVERS_DIR / 'chromedriver_80.exe'
 print(driver_path)
 driver_path = str(driver_path)
 
-
 urls = [
     'http://www.top-names.info/names.php?S=M&P=TUN',
     'http://www.top-names.info/names.php?S=F&P=TUN'
