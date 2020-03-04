@@ -1,9 +1,13 @@
 {
   "name": "resumely-express",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets env"
+    "start": "nodemon server.js --exec babel-node --presets env",
+    "release": "npm run clean && npm run build && npm run serve", 
+    "clean": "rm -rf dist && mkdir dist", 
+    "build": "babel . -s -D -d dist --presets env --ignore node_modules", 
+    "serve": "node dist/server.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
