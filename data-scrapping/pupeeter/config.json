@@ -2,19 +2,15 @@
   "email": "fixitnoreply2019@gmail.com",
   "password": "Yassinassil23",
   "cookiesFile": "",
-  "relatedProfilesKeywords": ["ingénieur","tunisie","data science","développeur","coder","job","stage","opportunité","full stack"],
+  "relatedProfilesKeywords": ["ingénieur","morocco","data science","développeur","coder","job","stage","opportunité","full stack"],
   "maxConcurrentCrawlers": 2,
-  "profileLoadWaitTime": 8000,
+  "profileLoadWaitTime": 20000,
   "saveDirectory": "./crawledProfiles",
   "puppeteerArgs": { "args": ["--no-sandbox"] },
   "isHeadless": false,
   "hasToLog": true,
   "proxyAddress": null,
   "rootProfiles": [
-    "https://www.linkedin.com/in/yosra-miladi/",
-    "https://www.linkedin.com/in/ahlem-attia-188735134/",
-    "https://www.linkedin.com/in/yossra-gharbi/",
-    "https://www.linkedin.com/in/jalloul-sirine-467990176/",
-    "https://www.linkedin.com/in/fedi-lahbib/"
+    "https://www.linkedin.com/in/noussair-oulhaj/"
   ]
 }
