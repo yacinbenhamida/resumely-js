@@ -1,53 +1,48 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
-var dotenv = require('dotenv');
-var mongoose = require('mongoose');
-// routes
-var indexR = require('./routes/index');
-var usersR = require('./routes/users');
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import routes from './routes/routing.js';
+require('dotenv').config();
 
-var app = express();
-dotenv.config();
+const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+/**
+    * Connect to the database
+    * Supress deprecation warnings for babel usage
+    */
 
-app.use(logger('dev'));
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+mongoose.connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useNewUrlParser : true,
+    useFindAndModify : true,
+    useCreateIndex : true
+  });
 
-const uri = process.env.DB_URI;
-mongoose.connect(uri,{useNewUrlParser : true,useCreateIndex : true});
-const connection = mongoose.connection;
-connection.once('open',()=>{
-  console.log('Resumely connected to remote atlas DB');
+/**
+    * Middlewares
+*/
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// catch 400
+app.use((err, req, res, next) => {
+    console.log(err.stack);
+    res.status(400).send(`Error: ${res.originUrl} not found`);
+    next();
 });
 
-app.use('/', indexR);
-app.use('/users', usersR);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+// catch 500
+app.use((err, req, res, next) => {
+    console.log(err.stack)
+    res.status(500).send(`Error: ${err}`);
+    next();
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+/**
+    * Register the routes
+*/
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+routes(app);
+export default app;

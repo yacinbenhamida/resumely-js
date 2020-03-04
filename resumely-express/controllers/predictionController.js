@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const request = require('request');
+import mongoose from 'mongoose'; 
+import request from 'request';
 
 const headers = {
     "Content-Type": "application/json"
@@ -7,12 +7,12 @@ const headers = {
 
 const py_url = "http://localhost:5555";
 
-
-router.route('/').get((req, res) => {
+// placeholder page
+exports.RootPage = (req, res) => {
     res.send('Listing your old predictions...')
-});
-
-router.route('/predict').post((req, res) => {
+};
+// method name used in routing.js
+exports.doPredict = (req, res) => {
     console.log('????');
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -32,7 +32,4 @@ router.route('/predict').post((req, res) => {
 
     // Save last predictions?
     // Call python API
-
-});
-
-module.exports = router;
+};
