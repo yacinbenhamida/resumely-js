@@ -1,5 +1,5 @@
 import numpy as np
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -112,9 +112,9 @@ api.add_resource(Predictor, '/<string:fname>/<string:lname>')
 
 def main():
     global model, encoder, le
-    model = pickle.load(open(MODELS_DIR / "model.pickle.dat", "rb"))
-    encoder = pickle.load(open(MODELS_DIR / "encoder.pickle.dat", "rb"))
-    le = pickle.load(open(MODELS_DIR / "label_encoder.pickle.dat", "rb"))
+    model = pickle.load(open(str(MODELS_DIR / "model.pickle.dat"), "rb"))
+    encoder = pickle.load(open(str(MODELS_DIR / "encoder.pickle.dat"), "rb"))
+    le = pickle.load(open(str(MODELS_DIR / "label_encoder.pickle.dat"), "rb"))
     
     app.run(debug=True, port=5555)
 
