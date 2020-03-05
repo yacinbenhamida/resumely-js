@@ -1,0 +1,1 @@
+mongoimport --host Resumely-shard-0/resumely-shard-00-00-g5wzc.mongodb.net:27017,resumely-shard-00-01-g5wzc.mongodb.net:27017,resumely-shard-00-02-g5wzc.mongodb.net:27017 --ssl --username ybh --password ybh --authenticationDatabase admin --db resumelydb --collection profiles --type json --file data.json
