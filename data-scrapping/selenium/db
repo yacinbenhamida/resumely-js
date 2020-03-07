@@ -1,0 +1,29 @@
+db.profiles.aggregate(
+    {"$group" : { "_id": "$lastName", "count": { "$sum": 1 } } },
+    {"$match": {"_id" :{ "$ne" : null } , "count" : {"$gt": 1} } }, 
+    {"$sort": {"count" : -1} },
+    {"$project": {"name" : "$_id", "_id" : 0} }     
+)
+ db.profiles.distinct("lastName").forEach((num)=>{
+      var i = 0;
+      db.collection.find({key: num}).forEach((doc)=>{
+        if (i)   db.collection.remove({key: num}, { justOne: true })
+        i++
+      })
+    });
+
+db.candidates.aggregate([
+{
+
+    $match: {"profile.name": {$nin:[null]}}  
+},
+{
+    $group: { "_id": "$profile.name", "doc" : {"$first": "$$ROOT"}}
+},
+{
+    $replaceRoot: { "newRoot": "$doc"}
+}
+],
+{allowDiskUse:true})
+
+mongo "mongodb+srv://resumely-g5wzc.mongodb.net/resumelydb"  --username ybh

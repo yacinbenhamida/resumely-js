@@ -11,21 +11,22 @@ def validate_field(field):
         field = 'No results'
     return field
 
-extracted_data = {}
-extracted_data['candidates'] = []
+
 driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "maroc"
-potential_title = "developer"
+country = "turkey"
+potential_title = "analyst"
 search_query = driver.find_element_by_name('q')
-search_query.send_keys(parameters.search_query+' AND "'+potential_title+'" AND "'+country+'"')
+search_query.send_keys(parameters.search_query+' "'+potential_title+'" AND "'+country+'"')
+#search_query.send_keys(parameters.search_query+' AND "'+potential_title)
+
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(100)
+sleep(150)
 
 
 pages=driver.find_elements_by_xpath("//*[@id='nav']/tbody/tr/td/a")
