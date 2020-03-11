@@ -14,8 +14,8 @@ export default (app) => {
     // prediction
     app.route('/predict')
         .get(predict.RootPage); 
-    app.route('/predict/add')
-        .get(predict.doPredict)
+    app.route('/predict')
+        .post(predict.doPredict)
 
     /* every model should have a get, post put & 
         delete methods to reduce the route calls in this file */

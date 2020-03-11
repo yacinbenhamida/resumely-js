@@ -14,7 +14,7 @@ class Prediction extends React.Component {
         this.handleChange_FirstName = this.handleChange_FirstName.bind(this);
         this.handleChange_LastName = this.handleChange_LastName.bind(this);
         
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit_Prediction = this.handleSubmit_Prediction.bind(this);
     }
 
     handleChange_FirstName(event) {
@@ -29,7 +29,7 @@ class Prediction extends React.Component {
         });
     }
 
-    async handleSubmit(event) {
+    async handleSubmit_Prediction(event) {
         // alert('Le nom a été soumis : ' + this.state.firstName + ' ' + this.state.lastName);
         
         try {
@@ -63,7 +63,7 @@ class Prediction extends React.Component {
                 <input type="text" value={this.state.lastName} onChange={this.handleChange_LastName} />
                 <br/>
                 </label>
-                <input type="button" onClick={this.handleSubmit} value="Predict" />
+                <input type="button" onClick={this.handleSubmit_Prediction} value="Predict" />
                 {predOutput}
             </div>
         );

@@ -9,7 +9,7 @@ const burl = "http://localhost:5000";
 export default {
   Predict: function(firstName, lastName) {
     return axios.post(
-      `${burl}/prediction/predict/`,
+      `${burl}/predict/`,
       {
         firstName,
         lastName

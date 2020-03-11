@@ -17,8 +17,10 @@ mongoose.connect(process.env.DB_URI, {
     useNewUrlParser : true,
     useFindAndModify : true,
     useCreateIndex : true
-  },(c)=>{
-      console.log(c)
+  },(err)=>{
+      if(err) console.log('Error during mongoose connection: ' + err);
+        else
+      console.log('Successful mongoose connection.');
   });
 
 /**
