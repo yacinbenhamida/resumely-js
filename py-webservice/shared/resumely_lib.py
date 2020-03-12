@@ -34,6 +34,19 @@ class Resumely:
       else:
          Resumely.__instance = self
 
+   ### PATHS ###
+   @staticmethod
+   def get_base_dir():
+      return BASE_DIR;
+
+   @staticmethod
+   def get_data_dir():
+      return DATA_DIR;
+
+   @staticmethod
+   def get_shared_dir():
+      return SHARED_DIR;
+
    ### PREPROCESSING ###
    def __load_data_preprocess(self):
          # Used as a dictionnary to compare for first names.

@@ -9,54 +9,32 @@ from flask import Flask
 from flask_restful import Resource, Api
 
 import pandas as pd
-import os, glob
+import os, glob, sys
 from pathlib import Path
 
 import pickle
 import json
 
-app = Flask(__name__)
-api = Api(app)
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / 'shared' / 'data'
-MODELS_DIR = BASE_DIR / 'shared' / 'models'
+SHARED_DIR = BASE_DIR / 'shared'
+DATA_DIR = SHARED_DIR / 'data'
+MODELS_DIR = SHARED_DIR / 'models'
 
 profiles_csv_path = DATA_DIR / "tn_profiles" / "new_tn_profiles.csv"
+
+sys.path.append(str(SHARED_DIR))
+
+from resumely_lib import *
 
 model = None
 encoder = None
 le = None
 
-def levenshtein_distance(seq1, seq2):
-    size_x = len(seq1) + 1
-    size_y = len(seq2) + 1
-    matrix = np.zeros ((size_x, size_y))
-    for x in list(range(size_x)):
-        matrix [x, 0] = x
-    for y in list(range(size_y)):
-        matrix [0, y] = y
-
-    for x in list(range(1, size_x)):
-        for y in list(range(1, size_y)):
-            if seq1[x-1] == seq2[y-1]:
-                matrix [x,y] = min(
-                    matrix[x-1, y] + 1,
-                    matrix[x-1, y-1],
-                    matrix[x, y-1] + 1
-                )
-            else:
-                matrix [x,y] = min(
-                    matrix[x-1,y] + 1,
-                    matrix[x-1,y-1] + 1,
-                    matrix[x,y-1] + 1
-                )
-    return (matrix[size_x - 1, size_y - 1])
-
 def prepare_input(fn_x_new = None, ln_x_new = None):
     if fn_x_new is None or ln_x_new is None: return
     
     global encoder
+    resumely = Resumely.get()
 
     # Start with first name reverse hot encoding
     
@@ -65,7 +43,7 @@ def prepare_input(fn_x_new = None, ln_x_new = None):
     closestFname = fn_x_new
 
     for fname in encoder.categories_[0]:
-        dist = levenshtein_distance(fn_x_new, fname)
+        dist = resumely.levenshtein_distance(fn_x_new, fname)
         if(dist < min_dist):
             min_dist = dist
             closestFname = fname
@@ -74,10 +52,8 @@ def prepare_input(fn_x_new = None, ln_x_new = None):
     min_dist = 9999
     closestLname = ln_x_new
     
-    # print(encoder.categories_)
-
     for lname in encoder.categories_[1]:
-        dist = levenshtein_distance(ln_x_new, lname)
+        dist = resumely.levenshtein_distance(ln_x_new, lname)
         if(dist < min_dist):
             min_dist = dist
             closestLname = lname
@@ -85,7 +61,6 @@ def prepare_input(fn_x_new = None, ln_x_new = None):
     X_input = encoder.transform([[closestFname, closestLname]]).toarray()
     
     print('\n', 'Final closest name:', closestFname, closestLname)
-    # print(X_input)
 
     return X_input
 
@@ -108,7 +83,6 @@ class Predictor(Resource):
             'Prediction': str(pred[0])
             ,'Accuracy': str(accuracy)
         }
-api.add_resource(Predictor, '/<string:fname>/<string:lname>')
 
 def main():
     global model, encoder, le
@@ -116,6 +90,10 @@ def main():
     encoder = pickle.load(open(str(MODELS_DIR / "encoder.pickle.dat"), "rb"))
     le = pickle.load(open(str(MODELS_DIR / "label_encoder.pickle.dat"), "rb"))
     
+    app = Flask(__name__)
+    api = Api(app)
+    api.add_resource(Predictor, '/<string:fname>/<string:lname>')
+
     app.run(debug=True, port=5555)
 
 if __name__ == '__main__':
