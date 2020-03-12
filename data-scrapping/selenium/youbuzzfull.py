@@ -17,8 +17,8 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "turkey"
-potential_title = "analyst"
+country = "germany"
+potential_title = "developer"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' "'+potential_title+'" AND "'+country+'"')
 #search_query.send_keys(parameters.search_query+' AND "'+potential_title)

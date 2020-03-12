@@ -51,4 +51,9 @@ for url in urls:
             outfile.write("\n")
 driver.quit()
 
+table = sel.xpath('//*[@class="table"]').extract_first()
+with open('filename.csv', 'w', newline='') as csvfile:
+    wr = csv.writer(csvfile)
+    for row in table.find_elements_by_css_selector('tr'):
+        wr.writerow([d.text for d in row.find_elements_by_css_selector('td')])
 

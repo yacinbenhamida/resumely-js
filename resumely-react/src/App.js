@@ -1,40 +1,42 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { Component } from 'react';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-import Prediction from './components/prediction'
+// Externals
+import { Chart } from 'react-chartjs-2';
 
-// import logo from './logo.svg';
-import './App.css';
+// Material helpers
+import { ThemeProvider } from '@material-ui/styles';
 
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/prediction">Prediction</Link>
-            </li>
-          </ul>
-        </nav>
+// ChartJS helpers
+import { chartjs } from './helpers';
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/prediction">
-            <Prediction />
-          </Route>
-        </Switch>
+// Theme
+import theme from './theme';
 
-      </div>
-    </Router>
-  );
+// Styles
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import './assets/scss/index.scss';
+
+// Routes
+import Routes from './Routes';
+
+// Browser history
+const browserHistory = createBrowserHistory();
+
+// Configure ChartJS
+Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
+  draw: chartjs.draw
+});
+
+export default class App extends Component {
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Router history={browserHistory}>
+          <Routes />
+        </Router>
+      </ThemeProvider>
+    );
+  }
 }
