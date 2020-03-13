@@ -1,6 +1,10 @@
 import usersc from '../controllers/usersController';
 import predict from '../controllers/predictionController';
-
+import forgotPassword from '../controllers/userManagement/forgotPasswordController'
+/**
+ * every model should have a get, post put & 
+ * delete methods to reduce the route calls in this file
+*/
 export default (app) => {
     // users
     app.route('/users')
@@ -15,9 +19,14 @@ export default (app) => {
     app.route('/predict')
         .get(predict.RootPage); 
     app.route('/predict')
-        .post(predict.doPredict)
+        .post(predict.doPredict);
 
-    /* every model should have a get, post put & 
-        delete methods to reduce the route calls in this file */
-    
+  
+    // user management, auth sign up & account management
+    app.route('/user/forgotPassword')
+        .post(forgotPassword.forgotPassword);
+    app.route('/user/reset')
+        .get(forgotPassword.resetPassword);
+    app.route('/user/updatePasswordviaEmail')
+        .post(forgotPassword.updatePasswordViaEmail)
 };

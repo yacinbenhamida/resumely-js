@@ -10,6 +10,12 @@ const userSchema = new Schema({
         trim: true,
         minlength: 3
     },
+    email: {
+        type: String,
+        require: true,
+        trim: true,
+        minlength: 9
+    },
     firstName: {
         type: String,
         require: true,
@@ -21,7 +27,7 @@ const userSchema = new Schema({
         require: true,
         unique: true,
         minlength: 3
-    },
+    }
 }, {
     timestamps: true
 });
