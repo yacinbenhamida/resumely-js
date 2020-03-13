@@ -1,14 +1,55 @@
 import React from 'react'
 import predictionService from '../services/prediction.service';
 
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+
+const useStyles = theme => ({
+    paper: {
+      marginTop: theme.spacing(8),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    form: {
+      width: '100%', // Fix IE 11 issue.
+      marginTop: theme.spacing(1),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+    },
+  });
+
 class Prediction extends React.Component {
+
+     Copyright() {
+        return (
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <Link color="inherit" href="https://material-ui.com/">
+                    Your Website
+                </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        );
+    }
 
     constructor(props) {
         super(props);
+
         this.state = {
             firstName: '',
             lastName: '',
-            prediction: ''
+            prediction: '',
+            showPrediction: false
         };
 
         this.handleChange_FirstName = this.handleChange_FirstName.bind(this);
@@ -19,56 +60,121 @@ class Prediction extends React.Component {
 
     handleChange_FirstName(event) {
         this.setState({
-            firstName: event.target.value
+            firstName: event.target.value,
+            showPrediction: false
         });
     }
 
     handleChange_LastName(event) {
         this.setState({
-            lastName: event.target.value
+            lastName: event.target.value,
+            showPrediction: false
         });
     }
 
     async handleSubmit_Prediction(event) {
-        // alert('Le nom a été soumis : ' + this.state.firstName + ' ' + this.state.lastName);
-        
+        event.preventDefault();
+
+        if (this.state.showPrediction) 
+        {
+            event.persist();
+            return;
+        }
+
+        this.setState({
+            showPrediction: true,
+            prediction: 'Loading...',
+        });
+
         try {
             const { data } = await predictionService.Predict(this.state.firstName, this.state.lastName);
             this.setState({
-                prediction: data.Prediction
+                prediction: data.Prediction,
             });
         } catch (error) {
             this.setState({
-                prediction: '????'
+                prediction: 'Unrecognized.',
             });
             console.error(error);
+        } finally {
+  
         }
 
         event.persist();
     }
 
     render() {
-        let predOutput = <h6> Fill in first and last names. </h6>
+        const { classes } = this.props;
 
-        if(this.state.firstName.length > 0 && this.state.lastName.length > 0)
-            predOutput = <h4> Predicted Country: {this.state.prediction} </h4>
+        let predictionContent = this.state.showPrediction ?
+        <div> <h2> Predicted Country: </h2> <h1> {this.state.prediction} </h1> </div> 
+            :
+        <h2> Country Prediction </h2>
+        
+        let predictionSkull = 
+            <div>
+                {predictionContent}
+            </div>
 
         return (
-            <div>
-                <label>
-                First name:
-                <input type="text" value={this.state.firstName} onChange={this.handleChange_FirstName} />
-                <br/>
-                Last name:
-                <input type="text" value={this.state.lastName} onChange={this.handleChange_LastName} />
-                <br/>
-                </label>
-                <input type="button" onClick={this.handleSubmit_Prediction} value="Predict" />
-                {predOutput}
-            </div>
+            <Grid container className={classes.root}>
+                <Grid item xs={7}>
+                    <Container component="main" >
+                    <div className={classes.paper}>
+                        <form onSubmit={this.handleSubmit_Prediction} className={classes.form}>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="firstName"
+                            label="First name"
+                            name="firstName"
+                            autoComplete="firstName"
+                            autoFocus
+                            value={this.state.firstName}
+                            onChange={this.handleChange_FirstName}
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="lastName"
+                            label="Last name"
+                            name="lastName"
+                            autoComplete="lastName"
+                            value={this.state.lastName}
+                            onChange={this.handleChange_LastName}
+                        />
+
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            onSubmit={this.props.handleSubmit}
+                            className={classes.submit}
+                        >
+                            Predict
+                        </Button>
+                        </form>
+                    </div>
+                    <Box mt={8}>
+                    </Box>
+                </Container>
+                </Grid>
+                <Grid item xs={5}>
+                    <Container component="main">
+                        <div className={classes.paper}>
+                            {predictionSkull}
+                        </div>
+                    </Container>
+                </Grid>
+            </Grid>
         );
     }
 
 }
 
-export default Prediction
+export default withStyles(useStyles)(Prediction)

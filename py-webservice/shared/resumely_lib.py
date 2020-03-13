@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
-import os, glob, sys
+import pycountry
+import os, glob, sys, re
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SHARED_DIR = BASE_DIR / 'shared'
@@ -48,6 +49,38 @@ class Resumely:
       return SHARED_DIR;
 
    ### PREPROCESSING ###
+
+   @staticmethod
+   def augment_data(df = None, max_ln_iter = -1):
+      if df is None: return None;
+      
+      by = ['first_name', 'last_name', 'country']
+      
+      all_cats = df['country'].unique()
+
+      first_names_col = []
+      last_names_col = []
+      country_col = []
+
+      for _, cat in enumerate(all_cats):
+         print('Cat: ' + cat)
+         loop_df = df.loc[df['country'] == cat]
+
+         for index, row in loop_df.iterrows():
+               for scnd_index, scnd_row in loop_df.iterrows():
+                  if max_ln_iter > 0 and scnd_index >= max_ln_iter: break
+                  first_names_col.append(row['first_name'])
+                  last_names_col.append(scnd_row['last_name'])
+                  country_col.append(cat)
+
+      df = pd.DataFrame()
+
+      df['first_name'] = first_names_col
+      df['last_name'] = last_names_col
+      df['country'] = country_col
+
+      return df
+
    def __load_data_preprocess(self):
          # Used as a dictionnary to compare for first names.
          self.__first_names_df = pd.concat(map(pd.read_csv, glob.glob(os.path.join(dict_path, "*.csv"))))
@@ -59,6 +92,12 @@ class Resumely:
    # Return similarity distance between two strings.
    @staticmethod
    def levenshtein_distance(seq1, seq2):
+      seq1 = seq1.lower()
+      seq2 = seq2.lower()
+
+      seq1 = re.sub(r'\W+', '', seq1)
+      seq2 = re.sub(r'\W+', '', seq2)
+
       size_x = len(seq1) + 1
       size_y = len(seq2) + 1
       matrix = np.zeros ((size_x, size_y))
@@ -91,7 +130,7 @@ class Resumely:
 
    @staticmethod
    def levenshtein_rate(seq1, seq2):
-      distance = levenshtein_distance(seq1, seq2)
+      distance = Resumely.levenshtein_distance(seq1, seq2)
       max_len = max(len(seq1), len(seq2))
       return 1 - (distance / max_len)
 
@@ -119,6 +158,36 @@ class Resumely:
       # print('Sorted Levenshtein Distance: ', sorted_levenshtein(met1, met2))
       print('Sorted Levenshtein Distance: {}, MatchScore: {} '.\
             format(Resumely.sorted_levenshtein(met1, met2), Resumely.sorted_levenshtein_rate(met1, met2)))
+
+   @staticmethod
+   def get_closest_country_to_name(name = 'None', use_ratio = False):
+      distance = 9999
+      
+      name = re.sub(r'\W+', '', name)
+
+      # Split an example 'TunisTunisTunisie' to ['Tunis' 'Tunis' 'Tunisie'] array
+      name = re.sub( r"([A-Z])", r" \1", name)
+
+      outName = name
+      
+      for country in pycountry.countries:
+         countryName = country.name
+         # print(countryName)
+
+         for subname in name.split():
+            curDist = 9999
+
+            if use_ratio:
+               curDist = Resumely.levenshtein_rate(subname, countryName)
+            else:
+               curDist = Resumely.levenshtein_distance(subname, countryName)
+
+            if(distance > curDist):
+               distance = curDist
+               outName = countryName
+      
+      print('From', name, 'to', outName, 'with Distance:', distance)
+      return outName, distance
 
    # Returns a DataFrame object from a file(s) (could be *) of a specified path.
    # Can concatenate found files of similar structure.
@@ -190,8 +259,7 @@ class Resumely:
       #print('Original Numpy Array : ' , arr)
       # Get a tuple of unique values & their frequency in numpy array
       uniqueValues, occurCount = np.unique(arr, return_counts=True)
-      print("Unique Values : " , uniqueValues)
-      print("Occurrence Count : ", occurCount)
-      print('\n')
+      for i in range(len(uniqueValues)):
+         print(uniqueValues[i], ':', occurCount[i])
 
 Resumely.get()
