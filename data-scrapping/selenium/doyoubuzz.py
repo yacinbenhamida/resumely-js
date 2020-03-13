@@ -1,4 +1,3 @@
-# import web driver
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys
@@ -11,24 +10,25 @@ def validate_field(field):
         field = 'No results'
     return field
 
-
+extracted_data = {}
+extracted_data['candidates'] = []
 driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "russian"
-potential_title = "developer"
+country = "wales"
+potential_title = "consultant"
 search_query = driver.find_element_by_name('q')
-search_query.send_keys(parameters.search_query+' "'+potential_title+'" AND "'+country+'"')
-
+search_query.send_keys(parameters.search_query+' AND "'+potential_title+'" AND "'+country+'"')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(10)
+sleep(20)
 
 
-pages=driver.find_elements_by_xpath("//*[@id='nav']/tbody/tr/td/a")
+pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
+print(pages)
 youbuzz_urls = []
 for page in pages:
     href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
@@ -103,5 +103,3 @@ for youbuzz_url in youbuzz_urls:
 
   
 driver.quit()
-
-
