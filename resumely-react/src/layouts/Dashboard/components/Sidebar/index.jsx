@@ -83,19 +83,19 @@ class Sidebar extends Component {
           component="div"
           disablePadding
         >
-        <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/prediction"
-          >
-            <ListItemIcon className={classes.InfoIcon}>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="prediction"
-            />
+          <ListItem
+              activeClassName={classes.activeListItem}
+              className={classes.listItem}
+              component={NavLink}
+              to="/prediction"
+            >
+              <ListItemIcon className={classes.InfoIcon}>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText
+                classes={{ primary: classes.listItemText }}
+                primary="Prediction"
+              />
           </ListItem>
           <ListItem
             activeClassName={classes.activeListItem}

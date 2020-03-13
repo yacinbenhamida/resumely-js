@@ -11,7 +11,7 @@ import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
-import Prediction from './components/prediction'
+import Prediction from './views/Prediction'
 import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 
