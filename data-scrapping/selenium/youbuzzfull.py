@@ -17,16 +17,15 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "turkey"
-potential_title = "analyst"
+country = "russian"
+potential_title = "developer"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' "'+potential_title+'" AND "'+country+'"')
-#search_query.send_keys(parameters.search_query+' AND "'+potential_title)
 
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(150)
+sleep(10)
 
 
 pages=driver.find_elements_by_xpath("//*[@id='nav']/tbody/tr/td/a")

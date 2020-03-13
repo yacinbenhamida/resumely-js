@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon server.js --exec babel-node --presets env",
-    "release": "npm run clean && npm run build && npm run serve", 
-    "clean": "rm -rf dist && mkdir dist", 
-    "build": "babel . -s -D -d dist --presets env --ignore node_modules", 
+    "release": "npm run clean && npm run build && npm run serve",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "babel . -s -D -d dist --presets env --ignore node_modules",
     "serve": "node dist/server.js"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "mongoose": "^5.2.8",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
     "request": "^2.88.2"
   }
 }
