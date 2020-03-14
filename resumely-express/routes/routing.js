@@ -1,32 +1,33 @@
-import usersc from '../controllers/usersController';
-import predict from '../controllers/predictionController';
+// Controllers
+import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
+import predict from '../controllers/predictionController';
+
 /**
- * every model should have a get, post put & 
+ * Every model should have a get, post, put & 
  * delete methods to reduce the route calls in this file
 */
 export default (app) => {
-    // users
-    app.route('/users')
-        .get(usersc.getAllUsers)
-        .post(usersc.createUser);
 
-    app.route('/users/:userId')
-        .get(usersc.getUser)
-        .put(usersc.updateUser)
-        .delete(usersc.deleteUser);
-    // prediction
-    app.route('/predict')
-        .get(predict.RootPage); 
-    app.route('/predict')
-        .post(predict.doPredict);
-
-  
-    // user management, auth sign up & account management
+    // User management, Auth, Sign-Up & Account management
     app.route('/user/forgotPassword')
         .post(forgotPassword.forgotPassword);
     app.route('/user/reset')
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
         .post(forgotPassword.updatePasswordViaEmail)
+        
+    app.route('/signup')
+        .post(usersController.signup)
+
+    app.route('/login')
+        .post(usersController.login)
+
+    // app.route('/profile') => In secure-routing.js
+
+    // Prediction
+    app.route('/predict')
+        .get(predict.RootPage); 
+    app.route('/predict')
+        .post(predict.doPredict);
 };
