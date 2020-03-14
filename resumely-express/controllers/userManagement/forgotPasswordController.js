@@ -13,7 +13,7 @@ const BCRYPT_SALT_ROUNDS = 12;
 exports.initPassword = (req, res) => {
     res.send('forgot password page ')
 };
-// POST /reset/forgotPassword
+// POST /user/forgotPassword
 exports.forgotPassword = (req,res) => {
     if(req.body.email){
         User.findOne({

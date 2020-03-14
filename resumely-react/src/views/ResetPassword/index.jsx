@@ -30,13 +30,13 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
+import axios from 'axios';
+
 // Service methods
-const signIn = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(true);
-    }, 1500);
-  });
+const sendEmail = (target) => {
+  return axios.post(process.env.REACT_APP_BACKEND+'/user/forgotPassword',{
+    email : target
+  })
 };
 
 class ResetPassword extends Component {
@@ -83,22 +83,44 @@ class ResetPassword extends Component {
     this.setState(newState, this.validateForm);
   };
 
-  handleSignIn = async () => {
+  handleSendEmail = async () => {
     try {
-      const { history } = this.props;
+      //const { history } = this.props;
       const { values } = this.state;
-
-      this.setState({ isLoading: true });
-
-      await signIn(values.email, values.password);
-
-      localStorage.setItem('isAuthenticated', true);
-
-      history.push('/dashboard');
+      if(values.email === ''){
+        this.setState({
+          isLoading: false,
+          submitError: 'email is invalid'
+        });
+      }else{
+        this.setState({ isLoading: true });    
+        await sendEmail(values.email).then(res=>{
+          console.log(res.data)
+          if(res.data === 'email not registerd'){
+            this.setState({
+              isLoading: false,
+              submitError: 'email not found'
+            });
+          }
+          else if(res.data === 'recovery email sent'){
+            this.setState({
+              isLoading: false,
+              submitError: 'recovery email sent'
+            });
+          }
+        }).catch(err=>{
+          this.setState({
+            isLoading: false,
+            submitError: 'email not found'
+          });
+        });
+        //history.push('/dashboard');
+      }
+      
     } catch (error) {
       this.setState({
         isLoading: false,
-        serviceError: error
+        submitError: error
       });
     }
   };
@@ -213,7 +235,7 @@ class ResetPassword extends Component {
                       className={classes.signInButton}
                       color="primary"
                       disabled={!isValid}
-                      onClick={this.handleSignIn}
+                      onClick={this.handleSendEmail}
                       size="large"
                       variant="contained"
                     >
