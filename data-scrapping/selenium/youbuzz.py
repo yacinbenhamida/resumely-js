@@ -40,5 +40,10 @@ if lives_in:
     lives_in = lives_in.strip()
 print(lives_in)
 
+image_url = sel.xpath('//*[starts-with(@class,"widgetAvatar__avatar")]').extract_first()
+if image_url:
+    image_url = image_url.strip()
+    
+print(image_url)
 driver.quit()
     

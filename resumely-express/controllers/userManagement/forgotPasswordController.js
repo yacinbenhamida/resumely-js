@@ -17,22 +17,21 @@ exports.initPassword = (req, res) => {
 exports.forgotPassword = (req,res) => {
     if(req.body.email){
         User.findOne({
-            where : {
-                email : req.body.email
-            }
+            email : req.body.email    
         }).then((user)=>{
+            console.log(user)
             if(user){
                 const token = crypto.randomBytes(20).toString('hex')
                 user.update({
                     resetPasswordToken : token,
-                    resetPasswordExpires : Date().now() + 3600000
+                    resetPasswordExpires : Date.now() + 3600000
                 })
                 //sending email information
                 const tranporter = nodemailer.createTransport({
                     service : 'gmail',
                     auth : {
                         user : `${process.env.EMAIL_ADRESS}`,
-                        pass : `${process.env.PASSWORD}`
+                        pass : `${process.env.EMAIL_PASSWORD}`
                     }
                 })
                 const mailOptions = {
@@ -41,8 +40,8 @@ exports.forgotPassword = (req,res) => {
                     subject : 'Resumely - Reset your password',
                     text : 'You requested a password change (or someone else), to do so please click on the following link \n'
                     +' or paste it to your web browser to complete the password reset process within one hour of recieving it \n'
-                    + ` link http://localhost:5000/reset/${token}`
-                    + 'resumely team'
+                    + ` link http://localhost:3000/reset/${token}`
+                    + '\n <b> Resumely team </b>'
                 };
                 console.log('sending email')
                 tranporter.sendMail(mailOptions , (err,response)=>{

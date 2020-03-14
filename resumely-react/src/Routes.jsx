@@ -14,6 +14,7 @@ import SignIn from './views/SignIn';
 import Prediction from './views/Prediction'
 import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
+import ResetPassword from 'views/ResetPassword';
 
 export default class Routes extends Component {
   render() {
@@ -73,6 +74,11 @@ export default class Routes extends Component {
           component={SignIn}
           exact
           path="/sign-in"
+        />
+        <Route
+          component={ResetPassword}
+          exact
+          path="/reset-password"
         />
         <Route
           component={UnderDevelopment}

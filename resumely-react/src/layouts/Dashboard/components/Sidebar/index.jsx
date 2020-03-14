@@ -50,9 +50,9 @@ class Sidebar extends Component {
             to="/"
           >
             <img
-              alt="Brainalytica logo"
+              alt="Resumely logo"
               className={classes.logoImage}
-              src="/images/logos/brainalytica_logo.svg"
+              src="/images/logos/resumely-small.png"
             />
           </Link>
         </div>
@@ -122,7 +122,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Users"
+              primary="Dataset"
             />
           </ListItem>
           <ListItem
