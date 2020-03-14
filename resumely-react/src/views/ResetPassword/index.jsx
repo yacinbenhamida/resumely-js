@@ -23,8 +23,6 @@ import {
 // Material icons
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 
-// Shared components
-import { Facebook as FacebookIcon, Google as GoogleIcon } from 'icons';
 
 // Component styles
 import styles from './styles';
@@ -41,19 +39,16 @@ const signIn = () => {
   });
 };
 
-class SignIn extends Component {
+class ResetPassword extends Component {
   state = {
     values: {
       email: '',
-      password: ''
     },
     touched: {
       email: false,
-      password: false
     },
     errors: {
       email: null,
-      password: null
     },
     isValid: false,
     isLoading: false,
@@ -120,7 +115,6 @@ class SignIn extends Component {
     } = this.state;
 
     const showEmailError = touched.email && errors.email;
-    const showPasswordError = touched.password && errors.password;
 
     return (
       <div className={classes.root}>
@@ -139,16 +133,15 @@ class SignIn extends Component {
                   className={classes.quoteText}
                   variant="h1"
                 >
-                  all your resumes, one platform
+                 digitize your candidates
                 </Typography>
                 <div className={classes.person}>
                   <Typography
                     className={classes.name}
                     variant="body1"
                   >
-                    Resumely
+                    Brackets.js
                   </Typography>
-                  
                 </div>
               </div>
             </div>
@@ -174,39 +167,15 @@ class SignIn extends Component {
                     className={classes.title}
                     variant="h2"
                   >
-                    Sign in
+                    Reset your password
                   </Typography>
                   <Typography
                     className={classes.subtitle}
                     variant="body1"
                   >
-                    Sign in with social media
+                    Having trouble logging in ?
                   </Typography>
-                  <Button
-                    className={classes.facebookButton}
-                    color="primary"
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <FacebookIcon className={classes.facebookIcon} />
-                    Login with Facebook
-                  </Button>
-                  <Button
-                    className={classes.googleButton}
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <GoogleIcon className={classes.googleIcon} />
-                    Login with Google
-                  </Button>
-                  <Typography
-                    className={classes.sugestion}
-                    variant="body1"
-                  >
-                    or login with email address
-                  </Typography>
+                  
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}
@@ -227,25 +196,7 @@ class SignIn extends Component {
                         {errors.email[0]}
                       </Typography>
                     )}
-                    <TextField
-                      className={classes.textField}
-                      label="Password"
-                      name="password"
-                      onChange={event =>
-                        this.handleFieldChange('password', event.target.value)
-                      }
-                      type="password"
-                      value={values.password}
-                      variant="outlined"
-                    />
-                    {showPasswordError && (
-                      <Typography
-                        className={classes.fieldError}
-                        variant="body2"
-                      >
-                        {errors.password[0]}
-                      </Typography>
-                    )}
+                    
                   </div>
                   {submitError && (
                     <Typography
@@ -266,7 +217,7 @@ class SignIn extends Component {
                       size="large"
                       variant="contained"
                     >
-                      Sign in now
+                      reset password
                     </Button>
                   )}
                   <Typography
@@ -281,18 +232,6 @@ class SignIn extends Component {
                       Sign up
                     </Link>
                   </Typography>
-                  <Typography
-                    className={classes.signUp}
-                    variant="body1"
-                  >
-                    Forgot your password ?{' '}
-                    <Link
-                      className={classes.signUpUrl}
-                      to="/reset-password"
-                    >
-                      Change it
-                    </Link>
-                  </Typography>
                 </form>
               </div>
             </div>
@@ -303,7 +242,7 @@ class SignIn extends Component {
   }
 }
 
-SignIn.propTypes = {
+ResetPassword.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired
@@ -312,4 +251,4 @@ SignIn.propTypes = {
 export default compose(
   withRouter,
   withStyles(styles)
-)(SignIn);
+)(ResetPassword);

@@ -17,14 +17,14 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "wales"
-potential_title = "consultant"
+country = "india"
+potential_title = "indian"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+potential_title+'" AND "'+country+'"')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(20)
+sleep(150)
 
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
@@ -63,11 +63,10 @@ for youbuzz_url in youbuzz_urls:
         current_title = current_title.strip()
 
 
-
     lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
     if lives_in:
         lives_in = lives_in.strip()
-
+        
     youbuzz_url = driver.current_url
 
     firstName = validate_field(firstName)
@@ -89,17 +88,19 @@ for youbuzz_url in youbuzz_urls:
         print('\n')
     except:
         pass
-    with open('data.json',mode='a', encoding='utf-8') as outfile:
-        res = {        
-            'currentPosition' : current_title,
-            'livesIn' : lives_in,
-            'country' : country,
-            'profile' : youbuzz_url,
-            'firstName': firstName,
-            'lastName' : lastName,
-        }
-        json.dump(res, outfile, indent=2) 
-
+    if firstName != 'No results' and lastName != 'No results':       
+        with open('data.json',mode='a', encoding='utf-8') as outfile:
+            res = {        
+                'currentPosition' : current_title,
+                'livesIn' : lives_in,
+                'country' : country,
+                'profile' : youbuzz_url,
+                'firstName': firstName,
+                'lastName' : lastName,
+            }
+            json.dump(res, outfile, indent=2) 
+    else:
+        print('skipping...')
 
   
 driver.quit()
