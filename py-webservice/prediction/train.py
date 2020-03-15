@@ -68,7 +68,7 @@ encoder = None          # To save the OHE encoder for future inverse_transforms 
 le = None               # To save the Label encoder for future inverse_transforms during predictions.
 do_shuffle_df = False   # Whether to shuffle the data upon read.
 group_samples = -1      # Whether to group rows by existing labels, make sure you specify a number >= to the least label count.
-rem_cat_frequency = 1  # Whether to remove rows with above or equal to specified frequency
+rem_cat_frequency = 1   # Whether to remove rows with above or equal to specified frequency
 
 def get_df(path = None):
     if path is None: return

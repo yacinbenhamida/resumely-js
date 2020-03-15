@@ -19,9 +19,6 @@ const modelcvSchema = new mongoose.Schema({
         type: String
       },
       phone:{
-          type: String
-      },
-      phone:{
         type: String
     },
     DateNaissance:{

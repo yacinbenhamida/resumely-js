@@ -1,5 +1,4 @@
 import numpy as np
-#from xgboost import XGBClassifier
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -26,14 +25,10 @@ sys.path.append(str(SHARED_DIR))
 
 from resumely_lib import *
 
-model = None
-encoder = None
-le = None
-
-def prepare_input(fn_x_new = None, ln_x_new = None):
+def prepare_input(fn_x_new = None, ln_x_new = None, encoder = None):
     if fn_x_new is None or ln_x_new is None: return
+    if encoder is None: return
     
-    global encoder
     resumely = Resumely.get()
 
     # Start with first name reverse hot encoding
@@ -66,35 +61,17 @@ def prepare_input(fn_x_new = None, ln_x_new = None):
 
 class Predictor(Resource):
     def get(self, fname, lname):
-        global model, encoder, le
-
-        X_input = prepare_input(fname, lname)
-        # print(X_input.shape)
+        model = pickle.load(open(str(MODELS_DIR / "model.pickle.dat"), "rb"))
+        encoder = pickle.load(open(str(MODELS_DIR / "encoder.pickle.dat"), "rb"))
+        le = pickle.load(open(str(MODELS_DIR / "label_encoder.pickle.dat"), "rb"))
+        
+        X_input = prepare_input(fname, lname, encoder)
         y_pred = model.predict(X_input)
-        # make predictions for test data
-        # evaluate predictions
-
-        accuracy = 'Not Calculated' #accuracy_score([2], y_pred)
-        #print("Accuracy: %.2f%%" % (accuracy * 100.0))
-
+        
+        accuracy = 'Not Calculated'
         pred = le.inverse_transform(y_pred)
 
         return {
             'Prediction': str(pred[0])
             ,'Accuracy': str(accuracy)
         }
-
-def main():
-    global model, encoder, le
-    model = pickle.load(open(str(MODELS_DIR / "model.pickle.dat"), "rb"))
-    encoder = pickle.load(open(str(MODELS_DIR / "encoder.pickle.dat"), "rb"))
-    le = pickle.load(open(str(MODELS_DIR / "label_encoder.pickle.dat"), "rb"))
-    
-    app = Flask(__name__)
-    api = Api(app)
-    api.add_resource(Predictor, '/<string:fname>/<string:lname>')
-
-    app.run(debug=True, port=5555)
-
-if __name__ == '__main__':
-    main()

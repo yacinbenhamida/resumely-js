@@ -1,7 +1,9 @@
 // Controllers
 import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
-import predict from '../controllers/predictionController';
+import predictionController from '../controllers/predictionController';
+import parsingController from '../controllers/parsingController'
+
 
 /**
  * Every model should have a get, post, put & 
@@ -27,7 +29,14 @@ export default (app) => {
 
     // Prediction
     app.route('/predict')
-        .get(predict.RootPage); 
+        .get(predictionController.RootPage); 
     app.route('/predict')
-        .post(predict.doPredict);
+        .post(predictionController.doPredict);
+
+    // Parsing of Resumes
+    app.route('/parsing')
+        .get(parsingController.RootPage);
+
+    app.route('/parsing/predict')
+        .post(parsingController.insert);
 };
