@@ -15,6 +15,7 @@ import Prediction from './views/Prediction'
 import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 import ResetPassword from 'views/ResetPassword';
+import redirectResetPassword from 'views/ResetPassword/redirect-reset-password';
 
 export default class Routes extends Component {
   render() {
@@ -79,6 +80,11 @@ export default class Routes extends Component {
           component={ResetPassword}
           exact
           path="/reset-password"
+        />
+        <Route
+          component={redirectResetPassword}
+          exact
+          path="/reset/:token"
         />
         <Route
           component={UnderDevelopment}
