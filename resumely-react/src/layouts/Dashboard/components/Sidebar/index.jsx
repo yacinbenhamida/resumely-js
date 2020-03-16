@@ -89,7 +89,7 @@ class Sidebar extends Component {
               component={NavLink}
               to="/prediction"
             >
-              <ListItemIcon className={classes.InfoIcon}>
+              <ListItemIcon className={classes.listItemIcon}>
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText

@@ -25,8 +25,15 @@ const UserSchema = new Schema({
     },
     lastName: {
         type: String,
-        unique: true,
+        required: true,
         minlength: 3
+    },
+    provider: {
+        type: String,
+        default: 'local',
+        enum: ['local', 'facebook', 'google'],
+        // If it's facebook, google, or other trusted third party
+        // Then password would be the granted token
     }
 });
 
@@ -35,12 +42,17 @@ const UserSchema = new Schema({
 UserSchema.pre('save', async function (next) {
     // 'this' refers to the current document about to be saved
     const user = this;
-    // Hash the password with a salt round of 10, the higher the rounds the more secure, but the slower
-    // your application becomes.
-    const hash = await bcrypt.hash(this.password, 10);
-    // Replace the plain text password with the hash and then store it
-    this.password = hash;
-    // Indicates we're done and moves on to the next middleware
+
+    if(user.provider === 'local')
+    {
+        // Hash the password with a salt round of 10, the higher the rounds the more secure, but the slower
+        // your application becomes.
+        const hash = await bcrypt.hash(this.password, 10);
+        // Replace the plain text password with the hash and then store it
+        this.password = hash;
+        // Indicates we're done and moves on to the next middleware
+    }
+    
     next();
 });
 

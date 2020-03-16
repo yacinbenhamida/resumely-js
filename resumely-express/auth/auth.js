@@ -13,10 +13,11 @@ passport.use('signup', new localStrategy({
     passReqToCallback: true
 }, async (req, email, password, done) => {
     try {
-        // Find the user associated with the email provided by the user
+        // Find the user associated with the username provided by the user
         const existUser = await UserModel.findOne({
             username: req.body.username
         });
+        
         if (existUser) {
             // If the user is found in the database, return a message
             return done(null, false, {
@@ -32,7 +33,7 @@ passport.use('signup', new localStrategy({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
         });
-        
+
         // Send the user information to the next middleware
         return done(null, user, {
             message: 'User created Successfully'
