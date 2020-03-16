@@ -17,8 +17,8 @@ export default (app) => {
     app.route('/user/reset')
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
-        .post(forgotPassword.updatePasswordViaEmail)
-
+        .put(forgotPassword.updatePasswordViaEmail)
+        
     app.route('/signup')
         .post(usersController.signup)
 

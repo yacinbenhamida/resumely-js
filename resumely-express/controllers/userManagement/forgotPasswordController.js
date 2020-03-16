@@ -20,11 +20,18 @@ exports.forgotPassword = (req,res) => {
             email : req.body.email    
         }).then((user)=>{
             console.log(user)
+            console.log(req.body.email)
+
             if(user){
                 const token = crypto.randomBytes(20).toString('hex')
-                user.update({
+                User.updateOne({
+                    email : req.body.email
+                },{
                     resetPasswordToken : token,
                     resetPasswordExpires : Date.now() + 3600000
+                },(error,res)=>{
+                    if(error) console.log(error)
+                    console.log('res is '+res)
                 })
                 //sending email information
                 const tranporter = nodemailer.createTransport({
@@ -41,7 +48,7 @@ exports.forgotPassword = (req,res) => {
                     text : 'You requested a password change (or someone else), to do so please click on the following link \n'
                     +' or paste it to your web browser to complete the password reset process within one hour of recieving it \n'
                     + ` link http://localhost:3000/reset/${token}`
-                    + '\n <b> Resumely team </b>'
+                    + '\n Resumely team '
                 };
                 console.log('sending email')
                 tranporter.sendMail(mailOptions , (err,response)=>{
@@ -61,14 +68,13 @@ exports.forgotPassword = (req,res) => {
     }
     else res.status(400).send('email required');
 };
-// resetting the password
+// resetting the password GET /user/reset
 exports.resetPassword = (req, res) => {
     User.findOne({
-        where : {
-            resetPasswordToken : req.query.resetPasswordToken,
-            resetPasswordExpires : { $gt : Date.now() }
-        }
+        resetPasswordToken : req.query.resetPasswordToken,
+        resetPasswordExpires : { $gt : Date.now() }
     }).then(user => {
+        console.log(user)
         if(user){
             res.status(200).send({
                 username : user.username,
@@ -84,18 +90,19 @@ exports.resetPassword = (req, res) => {
 exports.updatePasswordViaEmail = (req, res) => {
     if(req.body.username){
         User.findOne({
-            where : {
-                username : req.body.username
-            }
+            username : req.body.username
         }).then(user => {
             if(user){
                 console.log('user found ')   
                 bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS)
                 .then(hashedPassword => {
-                    user.update({
+                    User.updateOne({username : req.body.username},{
                         password : hashedPassword,
                         resetPasswordToken : null,
                         resetPasswordExpires : null
+                    },(error,res)=>{
+                        if(error) console.log(error)
+                        console.log('res is '+res)
                     })
                 }).then(()=>{
                     console.log('password updated')

@@ -34,6 +34,12 @@ const UserSchema = new Schema({
         enum: ['local', 'facebook', 'google'],
         // If it's facebook, google, or other trusted third party
         // Then password would be the granted token
+    },
+    resetPasswordToken : {
+        type: String,
+    },
+    resetPasswordExpires : {
+        type: String,
     }
 });
 
