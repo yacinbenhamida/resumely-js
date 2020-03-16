@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 // Services
 import usersService from 'services/users.service';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+import GoogleLogin from 'react-google-login';
 
 // Externals
 import PropTypes from 'prop-types';
@@ -139,6 +140,22 @@ class SignIn extends Component {
     history.push('/dashboard');
   }
 
+  responseGoogle = async (response) => {
+    const { history } = this.props;
+    
+    console.log(response);
+    if(!response?.tokenObj) return;
+
+    const { data } = await usersService.notifyGoogleLogin(response);
+    console.log(data);
+    if(data.error) return;
+
+    localStorage.setItem('isAutenticated', true);
+    localStorage.setItem('token', response);
+
+    history.push('/dashboard');
+  }
+
   render() {
     const { classes } = this.props;
     const {
@@ -215,7 +232,7 @@ class SignIn extends Component {
                   </Typography>
                   <FacebookLogin
                     appId = "631341827412897"
-                    autoLoad = {true}
+                    autoLoad = {false}
                     fields="name,email,picture,first_name, last_name, short_name"
                     callback={this.responseFacebook}
                     render={renderProps => (
@@ -232,15 +249,26 @@ class SignIn extends Component {
                     )}
                   />
 
-                  <Button
-                    className={classes.googleButton}
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <GoogleIcon className={classes.googleIcon} />
-                    Login with Google
-                  </Button>
+                <GoogleLogin
+                    clientId="168031260511-suqku20g2abluojak1thha52redr8639.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <Button
+                        className={classes.googleButton}
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        size="large"
+                        variant="contained"
+                      >
+                        <GoogleIcon className={classes.googleIcon} />
+                        Login with Google
+                      </Button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={this.responseGoogle}
+                    onFailure={this.responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                  />
+
                   <Typography
                     className={classes.sugestion}
                     variant="body1"

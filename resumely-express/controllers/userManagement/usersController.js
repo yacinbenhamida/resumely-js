@@ -79,6 +79,29 @@ exports.notifyFacebookLogin = async (req, res, next) => {
     );
 }
 
+exports.notifyGoogleLogin = async (req, res, next) => {
+    const data = req.body;
+    console.log(data)
+
+    res.json({
+        message: 'Google login authorized',
+        user: req.user
+    });
+
+    const {
+        googleId,
+        tokenObj,
+        profileObj,
+    } = data.data;
+
+    const user = getEnsuredThirdPartyUser(
+        {
+            firstName: profileObj.givenName, lastName: profileObj.familyName, email: profileObj.email, token: tokenObj.access_token 
+        },
+        'google'
+    );
+}
+
 // Profile (Secure Route)
 exports.profile = (req, res, next) => {
     // We'll just send back the user details and the token
@@ -108,7 +131,7 @@ const getEnsuredThirdPartyUser = async (user, provider) => {
     
     // Save the information provided by the user to the the database
     const createdUser = await UserModel.create({
-        username: user.email, // getNewUsername(user.firstName),
+        username: getNewUsername(user.email),
         email: user.email,
         password: user.token,
         provider: provider,
@@ -120,6 +143,6 @@ const getEnsuredThirdPartyUser = async (user, provider) => {
 }
 
 // TODO: Create a unique username upon third party login
-const getNewUsername = (name) => {
-    return name;
+const getNewUsername = (email) => {
+    return email;
 }

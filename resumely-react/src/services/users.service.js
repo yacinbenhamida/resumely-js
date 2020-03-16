@@ -36,4 +36,18 @@ export default {
       }
     );
   },
+
+  notifyGoogleLogin: function(data) {
+    console.log(`${burl}/oauth/google`);
+
+    return axios.post(
+        `${burl}/oauth/google`,
+      {
+        data
+      },
+      {
+        headers: headers
+      }
+    );
+  },
 };

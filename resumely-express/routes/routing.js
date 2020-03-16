@@ -31,6 +31,8 @@ export default (app) => {
     // source: https://stackoverflow.com/questions/49588692/using-passport-facebook-with-reactjs-and-node-js
     app.route('/oauth/facebook')
         .post(usersController.notifyFacebookLogin)
+    app.route('/oauth/google')
+        .post(usersController.notifyGoogleLogin)
 
     // When logout, redirect to client
     app.route('/logout')
