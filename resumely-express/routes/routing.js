@@ -4,10 +4,12 @@ import forgotPassword from '../controllers/userManagement/forgotPasswordControll
 import predict from '../controllers/predictionController';
 import parser from '../controllers/parsingController';
 
+
+
 /**
  * Every model should have a get, post, put & 
  * delete methods to reduce the route calls in this file
-*/
+ */
 export default (app) => {
 
     // User management, Auth, Sign-Up & Account management
@@ -16,7 +18,7 @@ export default (app) => {
     app.route('/user/reset')
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
-        .post(forgotPassword.updatePasswordViaEmail)
+        .put(forgotPassword.updatePasswordViaEmail)
         
     app.route('/signup')
         .post(usersController.signup)
@@ -24,12 +26,31 @@ export default (app) => {
     app.route('/login')
         .post(usersController.login)
 
+    /**
+     * Facebook Login
+     */
+    // source: https://stackoverflow.com/questions/49588692/using-passport-facebook-with-reactjs-and-node-js
+    app.route('/oauth/facebook')
+        .post(usersController.notifyFacebookLogin)
+    app.route('/oauth/google')
+        .post(usersController.notifyGoogleLogin)
+
+    // When logout, redirect to client
+    app.route('/logout')
+        .get(
+            (req, res) => {
+                req.logout();
+                res.redirect(CLIENT_HOME_PAGE_URL);
+            }
+        )
+
     // app.route('/profile') => In secure-routing.js
 
     // Prediction
     app.route('/predict')
-        .get(predict.RootPage); 
+        .get(predict.RootPage);
     app.route('/predict')
+
         .post(predict.doPredict);
 
         app.route('/parsing')
@@ -37,5 +58,6 @@ export default (app) => {
 
     app.route('/parsing/database')
         .post(parser.insert);
+
 
 };

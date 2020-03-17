@@ -1,5 +1,4 @@
 
-var users = require('./routes/users');
 var path = require('path')
 import express from 'express';
 import mongoose from 'mongoose';
@@ -47,7 +46,7 @@ mongoose.connect(process.env.DB_URI, {
  * Middlewares
  */
 
-app.use('/users', users);
+
 
 app.use(bodyParser.urlencoded({
     extended: true

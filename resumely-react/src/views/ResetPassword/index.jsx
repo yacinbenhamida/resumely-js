@@ -52,6 +52,7 @@ class ResetPassword extends Component {
     },
     isValid: false,
     isLoading: false,
+    sentRequest : false,
     submitError: null
   };
 
@@ -105,7 +106,8 @@ class ResetPassword extends Component {
           else if(res.data === 'recovery email sent'){
             this.setState({
               isLoading: false,
-              submitError: 'recovery email sent'
+              submitError: 'recovery email sent',
+              sentRequest : true
             });
           }
         }).catch(err=>{
@@ -133,11 +135,12 @@ class ResetPassword extends Component {
       errors,
       isValid,
       submitError,
-      isLoading
+      isLoading,
+      sentRequest
     } = this.state;
 
     const showEmailError = touched.email && errors.email;
-
+    if(!sentRequest){
     return (
       <div className={classes.root}>
         <Grid
@@ -261,6 +264,75 @@ class ResetPassword extends Component {
         </Grid>
       </div>
     );
+    }
+    else if(sentRequest){
+      return (
+        <div className={classes.root}>
+          <Grid
+            className={classes.grid}
+            container
+          >
+            <Grid
+              className={classes.quoteWrapper}
+              item
+              lg={5}
+            >
+              <div className={classes.quote}>
+                <div className={classes.quoteInner}>
+                  <Typography
+                    className={classes.quoteText}
+                    variant="h1"
+                  >
+                   digitize your candidates
+                  </Typography>
+                  <div className={classes.person}>
+                    <Typography
+                      className={classes.name}
+                      variant="body1"
+                    >
+                      Brackets.js
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid
+              className={classes.content}
+              item
+              lg={7}
+              xs={12}
+            >
+              <div className={classes.content}>
+                <div className={classes.contentHeader}>
+                  <IconButton
+                    className={classes.backButton}
+                    onClick={this.handleBack}
+                  >
+                    <ArrowBackIcon />
+                  </IconButton>
+                </div>
+                <div className={classes.contentBody}>
+                  <form className={classes.form}>
+                    <Typography
+                      className={classes.title}
+                      variant="h2"
+                    >
+                      An email has been sent to this address.
+                    </Typography>
+                    <Typography
+                      className={classes.subtitle}
+                      variant="body1"
+                    >
+                      Check your inbox for further details.
+                    </Typography>
+                  </form>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      );
+    }
   }
 }
 

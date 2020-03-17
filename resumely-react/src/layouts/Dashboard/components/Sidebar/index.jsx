@@ -37,10 +37,25 @@ import {
 import styles from './styles';
 
 class Sidebar extends Component {
+  constructor(props)
+  {
+    super(props);
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    this.state = {
+      firstName: user.firstName,
+      lastName: user.lastName
+    }
+
+  }
+
   render() {
     const { classes, className } = this.props;
 
     const rootClassName = classNames(classes.root, className);
+    const user = localStorage.getItem('user');
+    const { firstName, lastName } = this.state;
 
     return (
       <nav className={rootClassName}>
@@ -69,13 +84,13 @@ class Sidebar extends Component {
             className={classes.nameText}
             variant="h6"
           >
-            Roman Kutepov
+            {firstName + ' ' + lastName}
           </Typography>
           <Typography
             className={classes.bioText}
             variant="caption"
           >
-            Brain Director
+            {/*Brain Director*/}
           </Typography>
         </div>
         <Divider className={classes.profileDivider} />
@@ -89,7 +104,7 @@ class Sidebar extends Component {
               component={NavLink}
               to="/prediction"
             >
-              <ListItemIcon className={classes.InfoIcon}>
+              <ListItemIcon className={classes.listItemIcon}>
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText

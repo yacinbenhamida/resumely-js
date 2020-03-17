@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import PrivateRoute from 'components/PrivateRoute';
 
 // Views
 import Dashboard from './views/Dashboard';
@@ -15,6 +16,7 @@ import Prediction from './views/Prediction'
 import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 import ResetPassword from 'views/ResetPassword';
+import redirectResetPassword from 'views/ResetPassword/redirect-reset-password';
 
 export default class Routes extends Component {
   render() {
@@ -25,15 +27,11 @@ export default class Routes extends Component {
           from="/"
           to="/dashboard"
         />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <Route
         component={Prediction}
         exact
         path="/prediction"
-        />
-        <Route
-          component={Dashboard}
-          exact
-          path="/dashboard"
         />
         <Route
           component={UserList}
@@ -79,6 +77,11 @@ export default class Routes extends Component {
           component={ResetPassword}
           exact
           path="/reset-password"
+        />
+        <Route
+          component={redirectResetPassword}
+          exact
+          path="/reset/:token"
         />
         <Route
           component={UnderDevelopment}

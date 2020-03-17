@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+// Services
+import usersService from 'services/users.service';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+import GoogleLogin from 'react-google-login';
+
 // Externals
 import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
@@ -32,33 +37,31 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
-// Service methods
-const signIn = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(true);
-    }, 1500);
-  });
-};
-
 class SignIn extends Component {
-  state = {
-    values: {
-      email: '',
-      password: ''
-    },
-    touched: {
-      email: false,
-      password: false
-    },
-    errors: {
-      email: null,
-      password: null
-    },
-    isValid: false,
-    isLoading: false,
-    submitError: null
-  };
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      values: {
+        email: '',
+        password: ''
+      },
+      touched: {
+        email: false,
+        password: false
+      },
+      errors: {
+        email: null,
+        password: null
+      },
+      isValid: false,
+      isLoading: false,
+      submitError: null
+    };
+  }
+
+  // Local Functions
 
   handleBack = () => {
     const { history } = this.props;
@@ -91,13 +94,25 @@ class SignIn extends Component {
   handleSignIn = async () => {
     try {
       const { history } = this.props;
-      const { values } = this.state;
+      // const { values } = this.state;
 
       this.setState({ isLoading: true });
 
-      await signIn(values.email, values.password);
+      const { data } = await usersService.Login(this.state.values.email, this.state.values.password);
+      const token = data.token;
+      const error = data.error;
+
+      if(error || !token)
+      {
+        this.setState({ isLoading: false });
+        return;
+      }
+
+      const user = data.user;
 
       localStorage.setItem('isAuthenticated', true);
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
 
       history.push('/dashboard');
     } catch (error) {
@@ -107,6 +122,47 @@ class SignIn extends Component {
       });
     }
   };
+
+  responseFacebook = async (response) => {
+    const { history } = this.props;
+
+    console.log(response.accessToken)
+    if(!response.accessToken) return;
+
+    // Notify backend to create if this is a new account.
+    const { data } = await usersService.notifyFacebookLogin(response);
+    if(data.error) return;
+
+    const user = data.user;
+    console.log(user.firstName)
+    console.log(user)
+
+    localStorage.setItem('isAuthenticated', true);
+    localStorage.setItem('token', response.accessToken);
+    localStorage.setItem('user', JSON.stringify(user));
+
+    history.push('/dashboard');
+  }
+
+  responseGoogle = async (response) => {
+    const { history } = this.props;
+    
+    if(!response?.tokenObj) return;
+
+
+    const { data } = await usersService.notifyGoogleLogin(response);
+    console.log(data);
+    if(data.error) return;
+
+    const token = response.tokenObj.access_token;
+    const user = data.user;
+    
+    localStorage.setItem('isAuthenticated', true);
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
+
+    history.push('/dashboard');
+  }
 
   render() {
     const { classes } = this.props;
@@ -148,7 +204,7 @@ class SignIn extends Component {
                   >
                     Resumely
                   </Typography>
-                  
+
                 </div>
               </div>
             </div>
@@ -182,25 +238,46 @@ class SignIn extends Component {
                   >
                     Sign in with social media
                   </Typography>
-                  <Button
-                    className={classes.facebookButton}
-                    color="primary"
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <FacebookIcon className={classes.facebookIcon} />
-                    Login with Facebook
-                  </Button>
-                  <Button
-                    className={classes.googleButton}
-                    onClick={this.handleSignIn}
-                    size="large"
-                    variant="contained"
-                  >
-                    <GoogleIcon className={classes.googleIcon} />
-                    Login with Google
-                  </Button>
+                  <FacebookLogin
+                    appId = "631341827412897"
+                    autoLoad = {false}
+                    fields="name,email,picture,first_name, last_name, short_name"
+                    callback={this.responseFacebook}
+                    render={renderProps => (
+                      <Button
+                      className={classes.facebookButton}
+                      color="primary"
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                      size="large"
+                      variant="contained"
+                    >
+                      <FacebookIcon className={classes.facebookIcon} />
+                      Login with Facebook
+                    </Button>
+                    )}
+                  />
+
+                <GoogleLogin
+                    clientId="168031260511-suqku20g2abluojak1thha52redr8639.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <Button
+                        className={classes.googleButton}
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        size="large"
+                        variant="contained"
+                      >
+                        <GoogleIcon className={classes.googleIcon} />
+                        Login with Google
+                      </Button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={this.responseGoogle}
+                    onFailure={this.responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                  />
+
                   <Typography
                     className={classes.sugestion}
                     variant="body1"
@@ -258,17 +335,17 @@ class SignIn extends Component {
                   {isLoading ? (
                     <CircularProgress className={classes.progress} />
                   ) : (
-                    <Button
-                      className={classes.signInButton}
-                      color="primary"
-                      disabled={!isValid}
-                      onClick={this.handleSignIn}
-                      size="large"
-                      variant="contained"
-                    >
-                      Sign in now
-                    </Button>
-                  )}
+                      <Button
+                        className={classes.signInButton}
+                        color="primary"
+                        disabled={!isValid}
+                        onClick={this.handleSignIn}
+                        size="large"
+                        variant="contained"
+                      >
+                        Sign in now
+                      </Button>
+                    )}
                   <Typography
                     className={classes.signUp}
                     variant="body1"
