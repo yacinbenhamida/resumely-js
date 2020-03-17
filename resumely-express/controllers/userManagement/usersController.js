@@ -37,6 +37,9 @@ exports.login = async (req, res, next) => {
                 const token = jwt.sign({
                     user: body
                 }, 'top_secret');
+
+                user.password = null;
+                
                 // Send back the token to the user
                 return res.json({
                     token,
@@ -76,6 +79,8 @@ exports.notifyFacebookLogin = async (req, res, next) => {
 
     console.log('Sending user:', user);
 
+    user.password = null;
+
     res.json({
         message: 'Facebook login authorized',
         user: user
@@ -98,6 +103,8 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         },
         'google'
     );
+
+    user.password = null;
 
     res.json({
         message: 'Google login authorized',

@@ -112,7 +112,7 @@ class SignIn extends Component {
 
       localStorage.setItem('isAuthenticated', true);
       localStorage.setItem('token', token);
-      localStorage.setItem('user', user);
+      localStorage.setItem('user', JSON.stringify(user));
 
       history.push('/dashboard');
     } catch (error) {
@@ -131,14 +131,15 @@ class SignIn extends Component {
 
     // Notify backend to create if this is a new account.
     const { data } = await usersService.notifyFacebookLogin(response);
-    console.log(data)
     if(data.error) return;
 
     const user = data.user;
+    console.log(user.firstName)
+    console.log(user)
 
     localStorage.setItem('isAuthenticated', true);
-    localStorage.setItem('user', user);
     localStorage.setItem('token', response.accessToken);
+    localStorage.setItem('user', JSON.stringify(user));
 
     history.push('/dashboard');
   }
@@ -148,17 +149,17 @@ class SignIn extends Component {
     
     if(!response?.tokenObj) return;
 
-    const token = response.tokenObj.access_token;
 
     const { data } = await usersService.notifyGoogleLogin(response);
     console.log(data);
     if(data.error) return;
 
+    const token = response.tokenObj.access_token;
     const user = data.user;
     
     localStorage.setItem('isAuthenticated', true);
-    localStorage.setItem('user', user);
-    localStorage.setItem('token', response.accessToken);
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
 
     history.push('/dashboard');
   }
