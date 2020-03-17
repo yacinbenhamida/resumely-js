@@ -1,4 +1,4 @@
-var index = require('./routes/index');
+
 var users = require('./routes/users');
 var path = require('path')
 import express from 'express';
@@ -46,7 +46,7 @@ mongoose.connect(process.env.DB_URI, {
 /**
  * Middlewares
  */
-app.use('/', index);
+
 app.use('/users', users);
 
 app.use(bodyParser.urlencoded({

@@ -2,6 +2,7 @@
 import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
 import predict from '../controllers/predictionController';
+import parser from '../controllers/parsingController';
 
 /**
  * Every model should have a get, post, put & 
@@ -30,4 +31,11 @@ export default (app) => {
         .get(predict.RootPage); 
     app.route('/predict')
         .post(predict.doPredict);
+
+        app.route('/parsing')
+        .post(parser.RootPage);
+
+    app.route('/parsing/database')
+        .post(parser.insert);
+
 };

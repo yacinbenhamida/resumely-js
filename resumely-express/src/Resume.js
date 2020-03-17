@@ -50,7 +50,7 @@ Resume.prototype.jsoned = function() {
   //json = json.replace(this.parts.adresse,addressit(this.parts.adresse))
   if(this.parts.adresse!=undefined)
   {
-   var n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan)/);
+   var n = this.parts.adresse.toLowerCase().match(/(tunis|ariana|béja|ben arous|bizerte|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan)(?!tunisie)/);
      if(n!=null)
      {
       this.parts.adresse=String(n[0]+" Tunisie");

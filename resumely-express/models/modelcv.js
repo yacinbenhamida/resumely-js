@@ -26,7 +26,10 @@ const modelcvSchema = new mongoose.Schema({
     },
     DateNaissance:{
         type: String
-    } 
+    },
+    age:{
+      type: String
+  } 
 
 }, {collection : 'datatset'}) 
 
