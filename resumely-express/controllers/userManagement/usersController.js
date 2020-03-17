@@ -39,7 +39,8 @@ exports.login = async (req, res, next) => {
                 }, 'top_secret');
                 // Send back the token to the user
                 return res.json({
-                    token
+                    token,
+                    user
                 });
             });
         } catch (error) {
@@ -51,11 +52,6 @@ exports.login = async (req, res, next) => {
 // FB Login
 exports.notifyFacebookLogin = async (req, res, next) => {
     const data = req.body;
-
-    res.json({
-        message: 'Facebook login authorized',
-        user: req.user
-    });
 
     const {
         id,
@@ -71,22 +67,24 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         data_access_expiration_time
     } = data.data;
 
-    const user = getEnsuredThirdPartyUser(
+    const user = await getEnsuredThirdPartyUser(
         {
             firstName: first_name, lastName: last_name, email, token: accessToken 
         },
         'facebook'
     );
-}
 
-exports.notifyGoogleLogin = async (req, res, next) => {
-    const data = req.body;
-    console.log(data)
+    console.log('Sending user:', user);
 
     res.json({
-        message: 'Google login authorized',
-        user: req.user
+        message: 'Facebook login authorized',
+        user: user
     });
+}
+
+// Google Login
+exports.notifyGoogleLogin = async (req, res, next) => {
+    const data = req.body;
 
     const {
         googleId,
@@ -94,12 +92,17 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         profileObj,
     } = data.data;
 
-    const user = getEnsuredThirdPartyUser(
+    const user = await getEnsuredThirdPartyUser(
         {
             firstName: profileObj.givenName, lastName: profileObj.familyName, email: profileObj.email, token: tokenObj.access_token 
         },
         'google'
     );
+
+    res.json({
+        message: 'Google login authorized',
+        user
+    });
 }
 
 // Profile (Secure Route)

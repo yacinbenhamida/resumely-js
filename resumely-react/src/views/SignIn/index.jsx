@@ -37,34 +37,31 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
-// Service methods
-// const signIn = () => {
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve(true);
-//     }, 1500);
-//   });
-// };
-
 class SignIn extends Component {
 
-  state = {
-    values: {
-      email: '',
-      password: ''
-    },
-    touched: {
-      email: false,
-      password: false
-    },
-    errors: {
-      email: null,
-      password: null
-    },
-    isValid: false,
-    isLoading: false,
-    submitError: null
-  };
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      values: {
+        email: '',
+        password: ''
+      },
+      touched: {
+        email: false,
+        password: false
+      },
+      errors: {
+        email: null,
+        password: null
+      },
+      isValid: false,
+      isLoading: false,
+      submitError: null
+    };
+  }
+
+  // Local Functions
 
   handleBack = () => {
     const { history } = this.props;
@@ -111,8 +108,11 @@ class SignIn extends Component {
         return;
       }
 
+      const user = data.user;
+
       localStorage.setItem('isAuthenticated', true);
       localStorage.setItem('token', token);
+      localStorage.setItem('user', user);
 
       history.push('/dashboard');
     } catch (error) {
@@ -134,7 +134,10 @@ class SignIn extends Component {
     console.log(data)
     if(data.error) return;
 
+    const user = data.user;
+
     localStorage.setItem('isAuthenticated', true);
+    localStorage.setItem('user', user);
     localStorage.setItem('token', response.accessToken);
 
     history.push('/dashboard');
@@ -143,15 +146,19 @@ class SignIn extends Component {
   responseGoogle = async (response) => {
     const { history } = this.props;
     
-    console.log(response);
     if(!response?.tokenObj) return;
+
+    const token = response.tokenObj.access_token;
 
     const { data } = await usersService.notifyGoogleLogin(response);
     console.log(data);
     if(data.error) return;
 
-    localStorage.setItem('isAutenticated', true);
-    localStorage.setItem('token', response);
+    const user = data.user;
+    
+    localStorage.setItem('isAuthenticated', true);
+    localStorage.setItem('user', user);
+    localStorage.setItem('token', response.accessToken);
 
     history.push('/dashboard');
   }
@@ -240,6 +247,7 @@ class SignIn extends Component {
                       className={classes.facebookButton}
                       color="primary"
                       onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
                       size="large"
                       variant="contained"
                     >

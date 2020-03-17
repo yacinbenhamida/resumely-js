@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import PrivateRoute from 'components/PrivateRoute';
 
 // Views
 import Dashboard from './views/Dashboard';
@@ -26,15 +27,11 @@ export default class Routes extends Component {
           from="/"
           to="/dashboard"
         />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <Route
         component={Prediction}
         exact
         path="/prediction"
-        />
-        <Route
-          component={Dashboard}
-          exact
-          path="/dashboard"
         />
         <Route
           component={UserList}
