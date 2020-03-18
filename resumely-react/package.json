@@ -11,6 +11,7 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "history": "^4.7.2",
+    "material-ui-dropzone": "^2.4.9",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.1",

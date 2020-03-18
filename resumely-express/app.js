@@ -11,7 +11,6 @@ import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
 
 import cors from 'cors';
-
 require('dotenv').config();
 require('./auth/auth'); // Middleware for request authentication.
 

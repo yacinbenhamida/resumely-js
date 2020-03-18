@@ -10,5 +10,5 @@ export default (app, passport) => {
     app.use('/profile', passport.authenticate('jwt', {
         session: false
     })).get('/profile', usersController.profile);
-
+    
 };

@@ -1,10 +1,7 @@
-import mongoose from 'mongoose'; 
-import request from 'request';
 import User from '../../models/user.model'
 require('dotenv').config;
 import nodemailer from 'nodemailer';
 import crypto from "crypto";
-import { response } from 'express';
 import bcrypt from 'bcrypt';
 
 const BCRYPT_SALT_ROUNDS = 12;

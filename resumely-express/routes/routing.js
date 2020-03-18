@@ -3,7 +3,7 @@ import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
 import predict from '../controllers/predictionController';
 import parser from '../controllers/parsingController';
-
+import fileUpload from '../controllers/fileUpload/fileUploadController'
 
 
 /**
@@ -19,7 +19,8 @@ export default (app) => {
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
         .put(forgotPassword.updatePasswordViaEmail)
-        
+    app.route('/upload-files')
+        .post(fileUpload.uploadFiles)
     app.route('/signup')
         .post(usersController.signup)
 
