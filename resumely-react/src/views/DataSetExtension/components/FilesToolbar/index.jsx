@@ -26,7 +26,7 @@ import styles from './styles';
 import {DropzoneDialog,SnackbarContentWrapper} from 'components/DropZone/index'
 import Axios from 'axios';
 
-class UsersToolbar extends Component {
+class FilesToolbar extends Component {
  
   constructor(props) {
     super(props);
@@ -75,19 +75,20 @@ class UsersToolbar extends Component {
     this.setState({
         openSnackBar: false,
     });
+
 };
   render() {
-    const { classes, className, selectedUsers } = this.props;
+    const { classes, className, selectedFiles } = this.props;
     const rootClassName = classNames(classes.root, className);
     return (
       <>
       <div className={rootClassName}>
         <div className={classes.row}>
           <span className={classes.spacer} />
-          {selectedUsers.length > 0 && (
+          {selectedFiles.length > 0 && (
             <IconButton
               className={classes.deleteButton}
-              onClick={this.handleDeleteUsers}
+              onClick={this.handleDeletefiles}
             >
               <DeleteIcon />
             </IconButton>
@@ -120,10 +121,9 @@ class UsersToolbar extends Component {
         <div className={classes.row}>
           <SearchInput
             className={classes.searchInput}
-            placeholder="Search user"
+            placeholder="Search file"
           />
-          <span className={classes.spacer} />
-          <DisplayMode mode="list" />
+
         </div>
       </div>
       <div className={classes.font}>
@@ -158,17 +158,17 @@ class UsersToolbar extends Component {
   }
 }
 
-UsersToolbar.propTypes = {
+FilesToolbar.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  selectedUsers: PropTypes.array,
+  selectedFiles: PropTypes.array,
   showAlerts: PropTypes.bool,
 };
 
-UsersToolbar.defaultProps = {
-  selectedUsers: [],
+FilesToolbar.defaultProps = {
+  selectedFiles: [],
   showAlerts: true,
 
 };
 
-export default withStyles(styles)(UsersToolbar);
+export default withStyles(styles)(FilesToolbar);

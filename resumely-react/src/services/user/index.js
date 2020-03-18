@@ -18,7 +18,7 @@ function lookupUser(user) {
   return userCopy;
 }
 
-export const getUsers = (limit = 10) => {
+export const getFiles = (limit = 10) => {
   return new Promise(resolve => {
     setTimeout(() => {
       const usersLookup = users.slice(0, limit).map(lookupUser);

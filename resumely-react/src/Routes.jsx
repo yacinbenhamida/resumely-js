@@ -5,7 +5,7 @@ import PrivateRoute from 'components/PrivateRoute';
 // Views
 import Dashboard from './views/Dashboard';
 import ProductList from './views/ProductList';
-import UserList from './views/UserList';
+import DataSetExtension from './views/DataSetExtension';
 import Typography from './views/Typography';
 import Icons from './views/Icons';
 import Account from './views/Account';
@@ -34,9 +34,9 @@ export default class Routes extends Component {
         path="/prediction"
         />
         <Route
-          component={UserList}
+          component={DataSetExtension}
           exact
-          path="/users"
+          path="/dataset-extension"
         />
         <Route
           component={ProductList}

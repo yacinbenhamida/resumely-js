@@ -130,14 +130,14 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/users"
+            to="/dataset-extension"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <PeopleIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Dataset"
+              primary="Dataset extension"
             />
           </ListItem>
           <ListItem
