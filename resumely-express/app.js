@@ -3,7 +3,9 @@ var path = require('path')
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-
+const esClient = require('./elasticsearch/connection');
+import mongoosastic from 'mongoosastic' 
+const Candidate = require('./models/candidate.model')
 const app = express();
 
 import passport from 'passport';
@@ -40,6 +42,36 @@ mongoose.connect(process.env.DB_URI, {
         // });
     }
 });
+
+/*/** indexing data  */
+let stream = Candidate.synchronize()
+let count = 0;
+
+stream.on('data', function(err, doc){
+count = count +1 ;
+});
+stream.on('close', function(){
+console.log('indexed ' + count + ' documents!');
+});
+stream.on('error', function(err){
+console.log(err);
+});
+
+
+/* ping to elastic search */
+
+
+
+/*esClient.ping({
+    // ping usually has a 3000ms timeout
+        requestTimeout: 1000
+    }, function (error) {
+        if (error) {
+            console.trace('elasticsearch cluster is down!');
+        } else {
+            console.log('All is well');
+        }
+    });
 
 /**
  * Middlewares

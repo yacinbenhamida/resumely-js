@@ -1,9 +1,15 @@
 // Controllers
 import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
+
 import predict from '../controllers/predictionController';
 import parser from '../controllers/parsingController';
 import fileUpload from '../controllers/fileUpload/fileUploadController'
+
+
+import predictionController from '../controllers/predictionController';
+import parsingController from '../controllers/parsingController'
+import dataController from '../controllers/dataController'
 
 
 /**
@@ -60,5 +66,16 @@ export default (app) => {
     app.route('/parsing/database')
         .post(parser.insert);
 
+
+    app.route('/parsing/predict')
+        .post(parsingController.insert);
+
+
+    //match all data
+    app
+    .route('/:count')
+    .get(dataController.getAllData)
+    
+   
 
 };
