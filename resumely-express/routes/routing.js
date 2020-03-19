@@ -83,5 +83,14 @@ export default (app) => {
     .get(fileUpload.getAllUserFiles)
 
     
+    //search autoComplete
+    app
+    .route('/:prefix')
+    .get(dataController.autoComplete )
+
+    //search
+    app
+    .route('/autocomplete/:prefix')
+    .get(dataController.autocompleteMultiMatchNGramsFn)
 
 };
