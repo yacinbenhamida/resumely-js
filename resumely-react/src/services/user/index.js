@@ -1,4 +1,4 @@
-// Mock data
+// Mock data/
 import users from 'data/users';
 import orders from 'data/orders';
 

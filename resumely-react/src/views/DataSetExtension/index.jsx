@@ -21,6 +21,8 @@ import { FilesToolbar, FilesTable } from './components';
 // Component styles
 import styles from './style';
 
+import axios from 'axios';
+
 class FilesList extends Component {
   signal = true;
 
@@ -31,19 +33,23 @@ class FilesList extends Component {
     selectedFiles: [],
     error: null
   };
-
+  
+  getUserFiles = ()=>{
+    return axios.get(process.env.REACT_APP_BACKEND+"/all-files/"
+      +JSON.parse(localStorage.getItem('user'))._id)
+  }
   async getFiles() {
     try {
-      this.setState({ isLoading: true });
-
-      const { limit } = this.state;
-
-      const { users } = await getFiles(limit);
-
+      this.setState({ isLoading: true });      
+      let users = null
+      await this.getUserFiles().then(res=>{
+        users = res.data
+      });
+      console.log(users[0])
       if (this.signal) {
         this.setState({
           isLoading: false,
-          users
+          users : users
         });
       }
     } catch (error) {

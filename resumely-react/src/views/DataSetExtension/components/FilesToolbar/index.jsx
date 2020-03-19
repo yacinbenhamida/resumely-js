@@ -54,6 +54,7 @@ class FilesToolbar extends Component {
     for(var x = 0; x < files.length; x++) {
       data.append('file', files[x])
     }    
+    data.append('user',  localStorage.getItem('user'))
     Axios.post(process.env.REACT_APP_BACKEND+'/upload-files',data,{})
     .then(response => {
       if(response.statusText === "OK"){

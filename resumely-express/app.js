@@ -43,7 +43,7 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
- /*indexing data */
+ /*indexing data
 let stream = Candidate.synchronize()
 let count = 0;
 
@@ -56,7 +56,7 @@ console.log('indexed ' + count + ' documents!');
 stream.on('error', function(err){
 console.log(err);
 });
-
+ */
 
 /* ping to elastic search */
 

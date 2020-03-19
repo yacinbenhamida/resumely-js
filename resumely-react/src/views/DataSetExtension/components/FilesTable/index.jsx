@@ -32,6 +32,7 @@ import { Portlet, PortletContent } from 'components';
 // Component styles
 import styles from './styles';
 
+
 class FilesTable extends Component {
   state = {
     selectedFiles: [],
@@ -45,7 +46,7 @@ class FilesTable extends Component {
     let selectedFiles;
 
     if (event.target.checked) {
-      selectedFiles = users.map(user => user.id);
+      selectedFiles = users.map(user => user._id);
     } else {
       selectedFiles = [];
     }
@@ -135,37 +136,37 @@ class FilesTable extends Component {
                     <TableRow
                       className={classes.tableRow}
                       hover
-                      key={user.id}
-                      selected={selectedFiles.indexOf(user.id) !== -1}
+                      key={user._id}
+                      selected={selectedFiles.indexOf(user._id) !== -1}
                     >
                       <TableCell className={classes.tableCell}>
                         <div className={classes.tableCellInner}>
                           <Checkbox
-                            checked={selectedFiles.indexOf(user.id) !== -1}
+                            checked={selectedFiles.indexOf(user._id) !== -1}
                             color="primary"
                             onChange={event =>
-                              this.handleSelectOne(event, user.id)
+                              this.handleSelectOne(event, user._id)
                             }
                             value="true"
                           />
                           <Avatar
                             className={classes.avatar}
-                            src={user.avatarUrl}
+                            src="../"
                           >
-                            {getInitials(user.name)}
+                            {getInitials(user.filename)}
                           </Avatar>
                           <Link to="#">
                             <Typography
                               className={classes.nameText}
                               variant="body1"
                             >
-                              {user.name}
+                              {user.filename}
                             </Typography>
                           </Link>
                         </div>
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {user.id}
+                        {user.ownerUsername}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                         {moment(user.createdAt).format('DD/MM/YYYY')}

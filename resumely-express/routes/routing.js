@@ -25,8 +25,7 @@ export default (app) => {
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
         .put(forgotPassword.updatePasswordViaEmail)
-    app.route('/upload-files')
-        .post(fileUpload.uploadFiles)
+
     app.route('/signup')
         .post(usersController.signup)
 
@@ -76,6 +75,12 @@ export default (app) => {
     .route('/allData')
     .get(dataController.getAllData)
     
+
+    // files management
+    app.route('/upload-files')
+    .post(fileUpload.uploadFiles)
+    app.route('/all-files/:id')
+    .get(fileUpload.getAllUserFiles)
 
     
 
