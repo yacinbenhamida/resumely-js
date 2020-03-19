@@ -73,9 +73,10 @@ export default (app) => {
 
     //match all data
     app
-    .route('/:count')
+    .route('/allData')
     .get(dataController.getAllData)
     
-   
+
+    
 
 };

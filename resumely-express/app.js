@@ -3,7 +3,7 @@ var path = require('path')
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-const esClient = require('./elasticsearch/connection');
+const client = require('./elasticsearch/connection');
 import mongoosastic from 'mongoosastic' 
 const Candidate = require('./models/candidate.model')
 const app = express();
@@ -43,12 +43,12 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
-/*/** indexing data  */
+ /*indexing data */
 let stream = Candidate.synchronize()
 let count = 0;
 
 stream.on('data', function(err, doc){
-count = count +1 ;
+   count = count +1 ;
 });
 stream.on('close', function(){
 console.log('indexed ' + count + ' documents!');
