@@ -77,6 +77,14 @@ export default (app) => {
     .get(dataController.getAllData)
     
 
-    
+    //search autoComplete
+    app
+    .route('/:prefix')
+    .get(dataController.autoComplete )
+
+    //search
+    app
+    .route('/autocomplete/:prefix')
+    .get(dataController.autocompleteMultiMatchNGramsFn)
 
 };
