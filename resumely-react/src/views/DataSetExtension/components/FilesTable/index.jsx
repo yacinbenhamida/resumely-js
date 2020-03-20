@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import { IconButton } from '@material-ui/core';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -20,9 +21,10 @@ import {
   TableHead,
   TableRow,
   Typography,
-  TablePagination
+  TablePagination,
 } from '@material-ui/core';
 
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 // Shared helpers
 import { getInitials } from 'helpers';
 
@@ -41,12 +43,12 @@ class FilesTable extends Component {
   };
 
   handleSelectAll = event => {
-    const { users, onSelect } = this.props;
+    const { files, onSelect } = this.props;
 
     let selectedFiles;
 
     if (event.target.checked) {
-      selectedFiles = users.map(user => user._id);
+      selectedFiles = files.map(user => user._id);
     } else {
       selectedFiles = [];
     }
@@ -90,7 +92,7 @@ class FilesTable extends Component {
   };
 
   render() {
-    const { classes, className, users } = this.props;
+    const { classes, className, files } = this.props;
     const { activeTab, selectedFiles, rowsPerPage, page } = this.state;
 
     const rootClassName = classNames(classes.root, className);
@@ -104,11 +106,11 @@ class FilesTable extends Component {
                 <TableRow>
                   <TableCell align="left">
                     <Checkbox
-                      checked={selectedFiles.length === users.length}
+                      checked={selectedFiles.length === files.length}
                       color="primary"
                       indeterminate={
                         selectedFiles.length > 0 &&
-                        selectedFiles.length < users.length
+                        selectedFiles.length < files.length
                       }
                       onChange={this.handleSelectAll}
                     />
@@ -116,10 +118,11 @@ class FilesTable extends Component {
                   </TableCell>
                   <TableCell align="left">Owner</TableCell>
                   <TableCell align="left">Upload date</TableCell>
+                  <TableCell align="left">Scan</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {users
+                {files
                   .filter(user => {
                     if (activeTab === 1) {
                       return !user.returning;
@@ -171,6 +174,14 @@ class FilesTable extends Component {
                       <TableCell className={classes.tableCell}>
                         {moment(user.createdAt).format('DD/MM/YYYY')}
                       </TableCell>
+                      <TableCell className={classes.tableCell}>
+                      <IconButton
+                      className={classes.deleteButton}
+                      onClick={ev=>console.log(user._id)}
+                      >
+                      <CloudUploadIcon />
+                    </IconButton>
+                      </TableCell>
                     </TableRow>
                   ))}
               </TableBody>
@@ -181,7 +192,7 @@ class FilesTable extends Component {
               'aria-label': 'Previous Page'
             }}
             component="div"
-            count={users.length}
+            count={files.length}
             nextIconButtonProps={{
               'aria-label': 'Next Page'
             }}
@@ -202,11 +213,11 @@ FilesTable.propTypes = {
   classes: PropTypes.object.isRequired,
   onSelect: PropTypes.func,
   onShowDetails: PropTypes.func,
-  users: PropTypes.array.isRequired
+  files: PropTypes.array.isRequired
 };
 
 FilesTable.defaultProps = {
-  users: [],
+  files: [],
   onSelect: () => {},
   onShowDetails: () => {}
 };

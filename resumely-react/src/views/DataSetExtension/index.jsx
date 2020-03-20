@@ -12,9 +12,6 @@ import { CircularProgress, Typography } from '@material-ui/core';
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 
-// Shared services
-import { getFiles } from 'services/user';
-
 // Custom components
 import { FilesToolbar, FilesTable } from './components';
 
@@ -24,12 +21,21 @@ import styles from './style';
 import axios from 'axios';
 
 class FilesList extends Component {
+  constructor(props){
+    super(props);
+    this.handler = this.handler.bind(this)
+  }
+  handler(updatedList) {
+    this.setState({
+      files : updatedList
+    })
+  }
   signal = true;
 
   state = {
     isLoading: false,
     limit: 10,
-    users: [],
+    files: [],
     selectedFiles: [],
     error: null
   };
@@ -41,15 +47,14 @@ class FilesList extends Component {
   async getFiles() {
     try {
       this.setState({ isLoading: true });      
-      let users = null
+      let files = null
       await this.getUserFiles().then(res=>{
-        users = res.data
+        files = res.data
       });
-      console.log(users[0])
       if (this.signal) {
         this.setState({
           isLoading: false,
-          users : users
+          files : files
         });
       }
     } catch (error) {
@@ -62,7 +67,9 @@ class FilesList extends Component {
     }
   }
 
-  componentDidMount() {
+  
+
+  componentWillMount() {
     this.signal = true;
     this.getFiles();
   }
@@ -75,9 +82,9 @@ class FilesList extends Component {
     this.setState({ selectedFiles });
   };
 
-  renderUsers() {
+  renderfiles() {
     const { classes } = this.props;
-    const { isLoading, users, error } = this.state;
+    const { isLoading, files, error } = this.state;
 
     if (isLoading) {
       return (
@@ -91,27 +98,27 @@ class FilesList extends Component {
       return <Typography variant="h6">{error}</Typography>;
     }
 
-    if (users.length === 0) {
-      return <Typography variant="h6">There are no users</Typography>;
+    if (files.length === 0) {
+      return <Typography variant="h6">There are no files</Typography>;
     }
 
     return (
       <FilesTable
         onSelect={this.handleSelect}
-        users={users}
+        files={files}
       />
     );
   }
 
   render() {
     const { classes } = this.props;
-    const { selectedFiles } = this.state;
-
+    const { selectedFiles,files } = this.state;
+    console.log(files)
     return (
       <DashboardLayout title="File management">
         <div className={classes.root}>
-          <FilesToolbar selectedFiles={selectedFiles} />
-          <div className={classes.content}>{this.renderUsers()}</div>
+          <FilesToolbar reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
+          <div className={classes.content}>{this.renderfiles()}</div>
         </div>
       </DashboardLayout>
     );

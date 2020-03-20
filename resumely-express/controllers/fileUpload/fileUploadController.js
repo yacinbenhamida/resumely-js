@@ -2,7 +2,6 @@ import multer from 'multer';
 import unzipper from 'unzipper';
 import fs from 'fs';
 import UploadedFile from '../../models/uploadedfile.model'
-import mongoose from 'mongoose'
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
     cb(null, 'uploads')
@@ -37,7 +36,8 @@ exports.uploadFiles = (req,res) => {
               var saveToDb = new UploadedFile({
                 filename : fileName,
                 ownerUsername : user.username,
-                ownerId : user._id
+                ownerId : user._id,
+                createdAt : Date.now()
               }).save(function (err,file) {
                 if(err) console.log(err)
                 console.log('file ownership saved to database as '+file)
@@ -48,7 +48,7 @@ exports.uploadFiles = (req,res) => {
             }
           }).on('finish',function(){
             fs.unlink('uploads/'+element.filename,function(err){
-              if(err) return console.log(err);
+              if(err) console.log(err);
               console.log('archive unzipped & deleted successfully');
           });  
           });  
@@ -67,6 +67,18 @@ exports.getAllUserFiles = (req,res) => {
     })
 }
 
-exports.deleteFile = (req,res) =>{
-
+exports.deleteFiles = (req,res) =>{
+  req.body.files.forEach(element => {
+    UploadedFile.deleteOne({
+      _id : element._id
+    },(error,docs)=>{
+      if (error)  res.status(400).send("record not found")
+      else {
+        fs.unlink('uploads/'+element.filename,function(err){
+          if(err) res.status(400).send("error")
+          else res.status(200).send("ok")
+      });
+    }
+    })
+  });
 }

@@ -45,7 +45,9 @@ SearchInput.propTypes = {
 };
 
 SearchInput.defaultProps = {
-  onChange: () => {}
+  onChange: (text) => {
+   // alert(text.target.value)
+  }
 };
 
 export default withStyles(styles)(SearchInput);

@@ -10,7 +10,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 // Material components
 import { Button, IconButton } from '@material-ui/core';
-
+import AutorenewIcon from '@material-ui/icons/Autorenew';
 // Material icons
 import {
   ArrowDownward as ArrowDownwardIcon,
@@ -18,13 +18,14 @@ import {
   Delete as DeleteIcon
 } from '@material-ui/icons';
 // Shared components
-import { DisplayMode, SearchInput } from 'components';
+import {  SearchInput } from 'components';
 
 // Component styles
 import styles from './styles';
 
 import {DropzoneDialog,SnackbarContentWrapper} from 'components/DropZone/index'
 import Axios from 'axios';
+import AlertDialog from './AlertDialog';
 
 class FilesToolbar extends Component {
  
@@ -36,7 +37,15 @@ class FilesToolbar extends Component {
         openSnackBar: false,
         snackbarMessage: '',
         snackbarVariant: 'success',
+        allFiles : [],
+        promptDelete : false,
+        confirmDelete : false
     };
+  }
+  componentDidMount(){
+    this.setState({
+      allFiles : this.props.allFiles
+    })
   }
   handleClose() {
     this.setState({
@@ -76,25 +85,88 @@ class FilesToolbar extends Component {
     this.setState({
         openSnackBar: false,
     });
-
-};
+  };
+  reloadData = () => {
+    this.props.reloadFilesAction().then(x=>{
+      this.setState({
+        allFiles : x.data
+      })
+    })
+    this.props.handler(this.state.allFiles)
+  }
+  filterTable = (content)=>{
+    this.reloadData()
+    if(content.target.value){
+      this.setState({
+        allFiles : this.props.allFiles.filter(f=>f.filename.includes(content.target.value))
+      })
+    }
+    this.props.handler(this.state.allFiles)
+  }
+  showDeleteDialog(){
+    console.log('prompt')
+    this.setState({promptDelete : true})
+  }
+  handleConfirmDelete = (answer) => {
+    if(answer === "ok"){
+      this.handleDeletefiles()
+    }
+      this.setState({promptDelete : false})   
+  }
+  handleDeletefiles = () => {
+    const toBeDeleted = []
+    for(var x = 0; x < this.props.selectedFiles.length; x++) {
+      for(var z = 0; x < this.props.allFiles.length; x++) {
+        if(this.props.allFiles[z]._id ===
+          this.props.selectedFiles[x]){
+         toBeDeleted.push(this.props.allFiles[z])
+       }
+      } 
+    }
+    console.log('data to be sent '+toBeDeleted)
+    Axios
+    .post(process.env.REACT_APP_BACKEND+'/delete-files'
+    ,{files : toBeDeleted})
+    .then(response=>{
+      if(response.status === 200){
+        this.reloadData()
+        this.setState({openSnackBar : true,snackbarMessage: 'file deleted from storage'})
+      }else{
+        this.setState({openSnackBar : true,snackbarMessage: 'error deleting',snackbarVariant : 'error'})
+      }
+    })
+  }
   render() {
     const { classes, className, selectedFiles } = this.props;
     const rootClassName = classNames(classes.root, className);
     return (
       <>
+      <AlertDialog open={this.state.promptDelete}
+       text="are you sure you want to delete these files ?"
+       close="cancel"
+       validate="proceed"
+       title="deleting files"
+       handleConfirmDelete={this.handleConfirmDelete}
+       />
       <div className={rootClassName}>
         <div className={classes.row}>
           <span className={classes.spacer} />
           {selectedFiles.length > 0 && (
             <IconButton
               className={classes.deleteButton}
-              onClick={this.handleDeletefiles}
+              onClick={()=>this.setState({promptDelete : true})}
             >
               <DeleteIcon />
             </IconButton>
           )}
-     
+          <Button
+          className={classes.importButton}
+          size="small"
+          variant="outlined"
+          onClick={this.reloadData}
+        >
+          <AutorenewIcon /> 
+        </Button>
           <Button
             className={classes.importButton}
             size="small"
@@ -111,20 +183,13 @@ class FilesToolbar extends Component {
             <ArrowUpwardIcon className={classes.exportIcon} />
             Export
           </Button>
-          <Button
-            color="primary"
-            size="small"
-            variant="outlined"
-          >
-            Add
-          </Button>
         </div>
         <div className={classes.row}>
           <SearchInput
             className={classes.searchInput}
             placeholder="Search file"
+            onChange={this.filterTable}
           />
-
         </div>
       </div>
       <div className={classes.font}>
@@ -164,12 +229,14 @@ FilesToolbar.propTypes = {
   classes: PropTypes.object.isRequired,
   selectedFiles: PropTypes.array,
   showAlerts: PropTypes.bool,
+  allFiles : PropTypes.array,
+  reloadFilesAction : PropTypes.func,
 };
 
 FilesToolbar.defaultProps = {
   selectedFiles: [],
   showAlerts: true,
-
+  allFiles : []
 };
 
 export default withStyles(styles)(FilesToolbar);

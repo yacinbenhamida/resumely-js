@@ -81,7 +81,8 @@ export default (app) => {
     .post(fileUpload.uploadFiles)
     app.route('/all-files/:id')
     .get(fileUpload.getAllUserFiles)
-
+    app.route('/delete-files')
+    .post(fileUpload.deleteFiles)
     
     //search autoComplete
     app
