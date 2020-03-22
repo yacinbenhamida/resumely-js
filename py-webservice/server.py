@@ -10,11 +10,12 @@ PREDICTION_DIR = BASE_DIR / 'prediction'
 # Import Services
 sys.path.append(str(PREDICTION_DIR))
 from prediction import Predictor
-
+from customscrapping import scrapdata
 # Route your service here
 def routes(api):
     api.add_resource(Predictor, '/<string:fname>/<string:lname>')
-
+    api.add_resource(scrapdata.Scrapper, '/scrap/<string:country>')
+    
 def main():
     app = Flask(__name__)
     api = Api(app)

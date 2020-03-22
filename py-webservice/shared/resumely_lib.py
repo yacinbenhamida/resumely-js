@@ -83,7 +83,7 @@ class Resumely:
 
    def __load_data_preprocess(self):
          # Used as a dictionnary to compare for first names.
-         self.__first_names_df = pd.concat(map(pd.read_csv, glob.glob(os.path.join(dict_path, "*.csv"))))
+         self.__first_names_df = pd.concat(map(pd.read_csv, glob.glob(os.path.join(str(dict_path), "*.csv"))))
          
          # Minimal distance to consider current name as first name.
          self.__min_is_firstname_dist = 5 

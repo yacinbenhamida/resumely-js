@@ -1,7 +1,6 @@
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys
-import parameters
 from parsel import Selector
 import json
 
@@ -10,7 +9,6 @@ def validate_field(field):
         field = 'No results'
     return field
 
-done = set()
 extracted_data = {}
 extracted_data['candidates'] = []
 driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
@@ -18,10 +16,9 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "czech"
-#potential_title = "egyptian"
+country = "egypt"
 search_query = driver.find_element_by_name('q')
-search_query.send_keys(parameters.search_query+' AND "'+country+'"')
+search_query.send_keys('site:visualcv.com AND "'+country+'"')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
@@ -32,7 +29,7 @@ pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
 for page in pages:
-    href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+    href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.visualcv.com/")]')
     for i in href:
         youbuzz_urls.append(i.get_attribute('href'))
     try:
@@ -99,13 +96,9 @@ for youbuzz_url in youbuzz_urls:
                 'firstName': firstName,
                 'lastName' : lastName,
             }
-            if res['lastName'] not in done:
-                print('relevant record, inserting to json file...')
-                done.add(res['lastName']) 
-                json.dump(res, outfile, indent=2) 
-
-            else:
-                print('already scrapped, moving...')
+            json.dump(res, outfile, indent=2) 
     else:
         print('skipping...')
+
+  
 driver.quit()

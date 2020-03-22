@@ -2,6 +2,9 @@ import multer from 'multer';
 import unzipper from 'unzipper';
 import fs from 'fs';
 import UploadedFile from '../../models/uploadedfile.model'
+/**
+ * files management controller
+ */
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
     cb(null, 'uploads')
@@ -39,7 +42,10 @@ exports.uploadFiles = (req,res) => {
                 ownerId : user._id,
                 createdAt : Date.now()
               }).save(function (err,file) {
-                if(err) console.log(err)
+                if(err)  if(err){
+                  console.log("l : 43 stackTrace is "+err)
+                  res.status(400).send("error recording file ownership... to database")
+                 }
                 console.log('file ownership saved to database as '+file)
               })
             }
@@ -48,13 +54,30 @@ exports.uploadFiles = (req,res) => {
             }
           }).on('finish',function(){
             fs.unlink('uploads/'+element.filename,function(err){
-              if(err) console.log(err);
+              if(err){
+                console.log("l 55 stacktrace is : "+err)
+                res.status(400).send("error saving archive file, rar file corrupted or not found...")
+               }
               console.log('archive unzipped & deleted successfully');
           });  
           });  
+      }else{
+        console.log('simple files spotted, saving... '+req.files.originalname)
+        var saveToDb = new UploadedFile({
+          filename : element.fileName,
+          ownerUsername : user.username,
+          ownerId : user._id,
+          createdAt : Date.now()
+        }).save(function (err,file) {
+          if(err){
+             console.log(err)
+             res.status(400).send("error saving single file")
+            }
+          console.log('single file ownership saved to database as '+file)
+        })
       }
     });
-    return res.status(200).send(req.file)
+    res.status(200).send(req.file)
  })
 }
 
