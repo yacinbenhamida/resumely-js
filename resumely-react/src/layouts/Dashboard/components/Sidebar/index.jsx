@@ -25,7 +25,6 @@ import {
   DashboardOutlined as DashboardIcon,
   PeopleOutlined as PeopleIcon,
   ShoppingBasketOutlined as ShoppingBasketIcon,
-  LockOpenOutlined as LockOpenIcon,
   TextFields as TextFieldsIcon,
   ImageOutlined as ImageIcon,
   InfoOutlined as InfoIcon,
@@ -54,7 +53,7 @@ class Sidebar extends Component {
     const { classes, className } = this.props;
 
     const rootClassName = classNames(classes.root, className);
-    const user = localStorage.getItem('user');
+    //const user = localStorage.getItem('user');
     const { firstName, lastName } = this.state;
 
     return (
@@ -154,20 +153,7 @@ class Sidebar extends Component {
               primary="Products"
             />
           </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/sign-in"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <LockOpenIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Authentication"
-            />
-          </ListItem>
+          
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}

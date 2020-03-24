@@ -21,7 +21,8 @@ exports.uploadFiles = (req,res) => {
         } else if (err) {
             return res.status(500).json(err)
         }
-    console.log('uploading file to /uploads '+req.files.originalname)
+    console.log('uploading file to /uploads '+req.files.filename)
+    console.log(req.files);
     var user = JSON.parse(req.body.user)
     req.files.forEach(element => {
       if(element.mimetype === "application/x-zip-compressed"){
@@ -62,9 +63,9 @@ exports.uploadFiles = (req,res) => {
           });  
           });  
       }else{
-        console.log('simple files spotted, saving... '+req.files.originalname)
+        console.log('simple files spotted, saving... '+req.files.filename)
         var saveToDb = new UploadedFile({
-          filename : element.fileName,
+          filename : element.filename,
           ownerUsername : user.username,
           ownerId : user._id,
           createdAt : Date.now()
@@ -91,17 +92,20 @@ exports.getAllUserFiles = (req,res) => {
 }
 
 exports.deleteFiles = (req,res) =>{
+  console.log(req.body)
   req.body.files.forEach(element => {
+    console.log('deleting file inside '+element.filename)
     UploadedFile.deleteOne({
       _id : element._id
     },(error,docs)=>{
-      if (error)  res.status(400).send("record not found")
+      if (error) console.log(error)
       else {
         fs.unlink('uploads/'+element.filename,function(err){
-          if(err) res.status(400).send("error")
-          else res.status(200).send("ok")
+          if(err) console.log(error)
+          else console.log("deleted")
       });
     }
     })
   });
+  res.status(200).send('deleted files')
 }

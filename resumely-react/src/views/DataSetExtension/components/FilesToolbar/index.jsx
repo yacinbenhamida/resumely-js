@@ -86,8 +86,8 @@ class FilesToolbar extends Component {
         openSnackBar: false,
     });
   };
-  reloadData = () => {
-    this.props.reloadFilesAction().then(x=>{
+  reloadData = async () => {
+    await this.props.reloadFilesAction().then(x=>{
       this.setState({
         allFiles : x.data
       })
@@ -113,17 +113,13 @@ class FilesToolbar extends Component {
     }
       this.setState({promptDelete : false})   
   }
-  handleDeletefiles = () => {
-    const toBeDeleted = []
-    for(var x = 0; x < this.props.selectedFiles.length; x++) {
-      for(var z = 0; x < this.props.allFiles.length; x++) {
-        if(this.props.allFiles[z]._id ===
-          this.props.selectedFiles[x]){
-         toBeDeleted.push(this.props.allFiles[z])
-       }
-      } 
-    }
-    console.log('data to be sent '+toBeDeleted)
+  handleDeletefiles = async () => {
+    let toBeDeleted = []
+    await this.props.allFiles.forEach(file=>{
+      for (const iterator of this.props.selectedFiles) {
+        if(iterator === file._id) toBeDeleted.push(file)
+      }
+    })
     Axios
     .post(process.env.REACT_APP_BACKEND+'/delete-files'
     ,{files : toBeDeleted})

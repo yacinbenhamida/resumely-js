@@ -13,7 +13,10 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Custom components
-import { FilesToolbar, FilesTable } from './components';
+import { FilesToolbar, FilesTable, CustomScrapping } from './components';
+
+
+import { Grid } from '@material-ui/core';
 
 // Component styles
 import styles from './style';
@@ -25,12 +28,16 @@ class FilesList extends Component {
     super(props);
     this.handler = this.handler.bind(this)
   }
+  signal = true;
   handler(updatedList) {
     this.setState({
+      isLoading : true,
       files : updatedList
     })
   }
-  signal = true;
+  componentDidUpdate(){
+    setTimeout(() => this.setState({isLoading:false}), 1000);
+  }
 
   state = {
     isLoading: false,
@@ -113,13 +120,30 @@ class FilesList extends Component {
   render() {
     const { classes } = this.props;
     const { selectedFiles,files } = this.state;
-    console.log(files)
     return (
       <DashboardLayout title="File management">
-        <div className={classes.root}>
+      <Grid
+            container
+            spacing={4}
+            className={classes.root}
+          >
+            <Grid
+              item
+              md={4}
+              xs={12}   
+            >
+          <CustomScrapping />
+          </Grid> 
+          <Grid
+              item
+              md={8}
+              xs={12}
+              className={classes.root}
+            >
           <FilesToolbar reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
           <div className={classes.content}>{this.renderfiles()}</div>
-        </div>
+        </Grid>
+        </Grid>
       </DashboardLayout>
     );
   }
