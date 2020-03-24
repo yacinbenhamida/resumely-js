@@ -72,7 +72,7 @@ export default (app) => {
 
     //match all data
     app
-    .route('/allData')
+    .route('/allData/:from')
     .get(dataController.getAllData)
     
 
@@ -85,13 +85,13 @@ export default (app) => {
     .post(fileUpload.deleteFiles)
     
     //search autoComplete
-    app
+    /*app
     .route('/:prefix')
-    .get(dataController.autoComplete )
+    .get(dataController.autoComplete )*/
 
     //search
     app
     .route('/autocomplete/:prefix')
-    .get(dataController.autocompleteMultiMatchNGramsFn)
+    .get(dataController.autoComplete)
 
 };

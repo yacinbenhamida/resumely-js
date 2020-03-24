@@ -5,6 +5,10 @@ const esClient = require('./../elasticsearch/connection');
 
 const CandidateSchema = new mongoose.Schema({
 
+    id :
+    {
+        type: String  
+    },
     firstName:
      {
            type: String
@@ -55,8 +59,8 @@ Candidate.createMapping({
             },
             "filter": {
                 "autocomplete_filter": {
-                    "type": "ngram",
-                    "min_gram": 2,
+                    "type": "edge_ngram",
+                    "min_gram": 1,
                     "max_gram": 50
                 },
                 "trigram_filter": {
@@ -208,6 +212,9 @@ Candidate.createMapping({
                         "token": {
                             "type": "text",
                             "analyzer": "tokenizer"
+                        },
+                        "completion": {
+                          "type": "completion"
                         }
                     }
                 },
@@ -236,6 +243,9 @@ Candidate.createMapping({
                         "token": {
                             "type": "text",
                             "analyzer": "tokenizer"
+                        },
+                        "completion": {
+                          "type": "completion"
                         }
                     }
                 }

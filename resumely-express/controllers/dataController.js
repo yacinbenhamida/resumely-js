@@ -10,13 +10,20 @@ exports.getAllData = async(req ,res)=>{
       const response = await client.search({
         index: "profiles",
         body: {
-         
+          size : 10,
+          from : req.params.from,
           query: {
             match_all: {}
           }
+
         }
       });
-      res.status(200).json(response);
+      var results =response.hits.hits.map(function (hit) {
+        return hit;
+      
+    });
+     
+    res.status(200).json(results);
     } catch (error) {
       res.status(500).json(error);
     }
@@ -40,7 +47,12 @@ exports.getAllData = async(req ,res)=>{
       }
       }
     });
-    res.status(200).json(response);
+    var results =response.hits.hits.map(function (hit) {
+      return hit;
+    
+  });
+   
+  res.status(200).json(results);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -67,7 +79,7 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
 
    
     var results =response.hits.hits.map(function (hit) {
-      return hit._source.firstName + " " + hit._source.lastName;
+      return hit;
     
   });
    
@@ -90,7 +102,7 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
       body: {
        
         "suggest": {
-          "movie-suggest" : {
+          "profile-suggest" : {
               "prefix" : req.params.prefix,
               "completion" : {
                   "field" : "firstName.completion"
@@ -99,7 +111,8 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
       }
       }
     });
-    res.status(200).json(response);
+    res.status(200).json(response['suggest']['profile-suggest'][0]['options']);
+
   } catch (error) {
     res.status(500).json(error);
   }
