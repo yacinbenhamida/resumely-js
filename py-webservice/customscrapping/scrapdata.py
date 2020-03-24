@@ -52,6 +52,11 @@ def scrapper(country,idop):
     sleep(0.5)
     j = 0
     for youbuzz_url in youbuzz_urls:
+        target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1})[0]
+        print(target)
+        if str(target['currentState']) == "stopped":
+            print("scrapping stopped, exiting... ")
+            break;
         driver.get(youbuzz_url)
         # add a 5 second pause loading each URL
         sleep(5)

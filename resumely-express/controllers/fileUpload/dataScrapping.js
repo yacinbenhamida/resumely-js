@@ -27,7 +27,7 @@ exports.scrapData = (req,res)=>{
 exports.checkScrapper = (req,res) => {
     ScrapRequest.find({
         ownerId : req.body.id,
-        currentState : "started"
+        currentState : req.body.currentstate
     },
         (err,docs)=>{
             if(err) res.status(400)
@@ -35,5 +35,8 @@ exports.checkScrapper = (req,res) => {
         })
 }
 exports.cancelScrapping = (req,res) => {
-
+    ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "stopped"},(err,docs)=>{
+        if(err) res.status(404)
+        else res.status(200).send(docs)
+    })
 }

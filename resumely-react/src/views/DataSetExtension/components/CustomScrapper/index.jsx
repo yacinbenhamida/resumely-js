@@ -6,11 +6,11 @@ import classNames from 'classnames';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
-import { CircularProgress } from '@material-ui/core';
-
+import { LinearProgress,IconButton  } from '@material-ui/core';
 // Material components
-import { Button, TextField } from '@material-ui/core';
-
+import { Button, TextField,CircularProgress } from '@material-ui/core';
+import CancelIcon from '@material-ui/icons/Cancel';
+import AlertDialog from '../FilesToolbar/AlertDialog'
 // Shared components
 import {
   Portlet,
@@ -29,20 +29,32 @@ class CustomScrapping extends Component {
     values: {
       country: '',
     },
+    promptCancelScrapping : false,
     isTriggered : false,
     user : JSON.parse(localStorage.getItem('user')),
+    submitted : false,
     scrappingInfo : null
   };
-  componentWillMount(){
-    axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
-    {id : this.state.user._id}).then(d=>{
+  checkStatus = async ()=>{
+    await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
+    {id : this.state.user._id, currentstate : "started"}).then(d=>{
         if(d.status === 200 && d.data.length > 0){
             this.setState({
                 isTriggered : true,
+                submitted : false,
                 scrappingInfo : d.data.sort((a, b) => new Date(...a.createdAt.split('/').reverse()) - new Date(...b.createdAt.split('/').reverse()))
             })
         }
     })
+  }
+  componentWillMount(){
+    this.checkStatus()
+  }
+  componentDidMount(){
+    setInterval(this.checkStatus, 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
   handleFieldChange = (field, value) => {
     const newState = { ...this.state };
@@ -52,45 +64,84 @@ class CustomScrapping extends Component {
     this.setState(newState);
   };
   submitSearch = ()=>{
-    console.log(this.state.country)
+    if(this.state.values.country.trim() !== ""){
+      this.setState({submitted : true})
+      axios
+      .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),
+      {
+          country : this.state.country,
+          username : this.state.user.username,
+          ownerid :  this.state.user._id
+      }).then(x=>{
+          if(x.status === 200){
+              console.log('processing request...')
+              this.checkStatus()
+          }
+          else console.log('error')
+      }).catch(err=>alert('error occured, could not connect to server'))
+    }
+    else alert("country invalid")
+  }
+  cancelScrapping =()=>{
     axios
-    .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),
+    .post(process.env.REACT_APP_BACKEND+'/stop-scrapping?secret_token='+localStorage.getItem('token'),
     {
-        country : this.state.country,
-        username : this.state.user.username,
-        ownerid :  this.state.user._id
+        id : this.state.scrappingInfo[0]._id
     }).then(x=>{
         if(x.status === 200){
-            console.log('processing request...')
-            this.setState({isTriggered : true})
+            console.log('cancelling scrapping...')
+            this.setState({isTriggered : false, scrappingInfo : null})
         }
         else console.log('error')
     })
   }
+  handleConfirm = (answer)=>{
+    if(answer === "ok"){
+      this.cancelScrapping()
+    }
+      this.setState({promptCancelScrapping : false})  
+  }
   render() {
     const { classes, className, ...rest } = this.props;
-    const { isTriggered, scrappingInfo } = this.state;
+    const { isTriggered, scrappingInfo,submitted } = this.state;
     
     const rootClassName = classNames(classes.root, className);
     if (isTriggered) {
       return (
+        <>
+        <AlertDialog open={this.state.promptCancelScrapping}
+          text="are you sure you want to cancel this operation ?"
+          close="abort"
+          validate="proceed"
+          title="cancel scrapping"
+          handleConfirmDelete={this.handleConfirm}
+       />
         <Portlet
         {...rest}
         className={rootClassName}
       >
         <PortletHeader>
           <PortletLabel
-            subtitle="collect data online"
-            title="processing"
+            subtitle="processing..."
+            title="Scrapping"
           />
-          <span>
-            {scrappingInfo[0].currentNoOfRows} / {scrappingInfo[0].expectedNoOfRows}
-          </span>        
+          <IconButton aria-label="stop" onClick={x=>this.setState({promptCancelScrapping : true})}>
+            <CancelIcon />
+          </IconButton>        
           </PortletHeader>
         <PortletContent  className={classes.progressWrapper}>
-          <CircularProgress />
+          <span>
+            {scrappingInfo[0].expectedNoOfRows} useful profiles
+          </span> 
+          <LinearProgress variant="determinate" value={100} />
+          <br/>
+          <span>
+            {scrappingInfo[0].currentNoOfRows} scrapped profiles
+          </span> 
+          <LinearProgress variant="determinate" value={scrappingInfo[0].currentNoOfRows}/>
         </PortletContent>
         </Portlet>
+        </>
       );
     }
     return (
@@ -126,6 +177,9 @@ class CustomScrapping extends Component {
           >
             Search
           </Button>
+          {submitted && 
+          <CircularProgress />
+          }
         </PortletFooter>
       </Portlet>
     );

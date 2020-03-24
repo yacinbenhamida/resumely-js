@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt';
 
 const BCRYPT_SALT_ROUNDS = 12;
 
+
 // get
 exports.initPassword = (req, res) => {
     res.send('forgot password page ')
@@ -42,10 +43,11 @@ exports.forgotPassword = (req,res) => {
                     from : `${process.env.EMAIL_ADRESS}`,
                     to : `${user.email}`,
                     subject : 'Resumely - Reset your password',
-                    text : 'You requested a password change (or someone else), to do so please click on the following link \n'
-                    +' or paste it to your web browser to complete the password reset process within one hour of recieving it \n'
+                    html : '<h1>Resumely account password Reset</h1><p> You requested a password change (or someone else), to do so please click on the following link </p> \n'
+                    +`<a href="http://localhost:3000/reset/${token}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Reset Password</a>` 
+                    +'<p> or paste it to your web browser to complete the password reset process within one hour of recieving it </p>\n'
                     + ` link http://localhost:3000/reset/${token}`
-                    + '\n Resumely team '
+                    + '\n <h3> Resumely team </h3>'
                 };
                 console.log('sending email')
                 tranporter.sendMail(mailOptions , (err,response)=>{

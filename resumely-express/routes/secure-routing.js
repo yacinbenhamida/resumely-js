@@ -16,5 +16,7 @@ export default (app, passport) => {
     app.use('/check-scrapping', passport.authenticate('jwt', {
         session: false
     })).post('/check-scrapping', dataScrapping.checkScrapper);
-    
+    app.use('/stop-scrapping', passport.authenticate('jwt', {
+        session: false
+    })).post('/stop-scrapping', dataScrapping.cancelScrapping);
 };

@@ -13,7 +13,7 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Custom components
-import { FilesToolbar, FilesTable, CustomScrapping } from './components';
+import { FilesToolbar, FilesTable, CustomScrapping, CustomScrappingHistory } from './components';
 
 
 import { Grid } from '@material-ui/core';
@@ -130,13 +130,20 @@ class FilesList extends Component {
             <Grid
               item
               md={4}
-              xs={12}   
+              xs={6}   
             >
           <CustomScrapping />
           </Grid> 
           <Grid
               item
               md={8}
+              xs={6}  
+          >
+          <CustomScrappingHistory />
+          </Grid>
+          <Grid
+              item
+              md={12}
               xs={12}
               className={classes.root}
             >
