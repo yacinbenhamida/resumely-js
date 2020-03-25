@@ -28,8 +28,7 @@ module.exports = {
     additional: ['additional'],
     certification: ['certification', 'certifications'],
     activites: ['interests','CENTRES D’INTERETS','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
-    DateNaissance:['Date de Naissance','Né','birthdate','born'],
-    age:['age','ans']
+    DateNaissance:['Date de Naissance','Né','birthdate','born','date de naissance','Née']
  
   },
  
@@ -85,7 +84,13 @@ module.exports = {
     phone: [
       /((\+|00)216)?([0-9]{8})|((\+|00)212|0)?([ \-_\s]*)(\d[ \-_\s]*){9}|(([(][+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})|(([+]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/
      // /(?:(?:\+?([1-9]|[0-9][0-9]|[0-9][0-9][0-9])\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([0-9][1-9]|[0-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?/
-    ]
+    ],
+    age:
+    [
+      /[2-9][0-9]?(?:[\s]ans)/
+    ],
+    
+   
   }
 };
 

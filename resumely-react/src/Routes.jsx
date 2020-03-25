@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
 
+
 // Views
 import Dashboard from './views/Dashboard';
 import ProductList from './views/ProductList';
@@ -14,10 +15,14 @@ import Settings from './views/Settings';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
 import Prediction from './views/Prediction'
+import Parsing from './views/Parsing'
+import DatasetParsing from './views/DatasetParsing'
 import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 import ResetPassword from 'views/ResetPassword';
 import redirectResetPassword from 'views/ResetPassword/redirect-reset-password';
+
+
 
 export default class Routes extends Component {
   render() {
@@ -34,6 +39,21 @@ export default class Routes extends Component {
         exact
         path="/prediction"
         />
+           <Route
+        component={Parsing}
+        exact
+        path="/Parsing"
+        />
+
+        <Route
+        component={DatasetParsing}
+        exact
+        path="/datasetparsing"
+        />   
+ 
+
+       
+        
         <Route
           component={DataSetList}
           exact

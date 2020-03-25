@@ -58,12 +58,30 @@ export default (app) => {
     app.route('/predict')
 
         .post(predict.doPredict);
+    //Parsing
 
-        app.route('/parsing')
+         app.route('/parsing')
         .post(parser.RootPage);
 
-    app.route('/parsing/database')
+        app.route('/parsing/database')
         .post(parser.insert);
+
+    
+        app.route('/parsing/parsed')
+        .get(parser.parsedresume);
+   
+
+        app.route('/getall')
+        .get(parser.getall);
+        app.route('/delete/:id')
+        .delete(parser.deleteitem)
+
+        
+        app.route('/delete/parsed')
+        .get(parser.deleteparsed);
+
+        app.route('/edit-resume/:id')
+        .get(parser.editresume)
 
 
     app.route('/parsing/predict')
