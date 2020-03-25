@@ -9,6 +9,9 @@ export default theme => ({
   spacer: {
     flexGrow: 1
   },
+  font : {
+    fontFamily : 'Roboto'
+  },
   deleteButton: {
     color: theme.palette.danger.main,
     marginRight: theme.spacing.unit

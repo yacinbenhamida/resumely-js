@@ -6,7 +6,8 @@ import PrivateRoute from 'components/PrivateRoute';
 // Views
 import Dashboard from './views/Dashboard';
 import ProductList from './views/ProductList';
-import UserList from './views/UserList';
+import DataSetList from './views/DataSetList';
+import DataSetExtension from './views/DataSetExtension';
 import Typography from './views/Typography';
 import Icons from './views/Icons';
 import Account from './views/Account';
@@ -54,9 +55,14 @@ export default class Routes extends Component {
        
         
         <Route
-          component={UserList}
+          component={DataSetList}
           exact
-          path="/users"
+          path="/data-list"
+        />
+        <Route
+          component={DataSetExtension}
+          exact
+          path="/dataset-extension"
         />
         <Route
           component={ProductList}

@@ -1,9 +1,15 @@
 // Controllers
 import usersController from '../controllers/userManagement/usersController'
 import forgotPassword from '../controllers/userManagement/forgotPasswordController'
+
 import predict from '../controllers/predictionController';
 import parser from '../controllers/parsingController';
+import fileUpload from '../controllers/fileUpload/fileUploadController'
 
+
+import predictionController from '../controllers/predictionController';
+import parsingController from '../controllers/parsingController'
+import dataController from '../controllers/dataController'
 
 
 /**
@@ -19,7 +25,7 @@ export default (app) => {
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
         .put(forgotPassword.updatePasswordViaEmail)
-        
+
     app.route('/signup')
         .post(usersController.signup)
 
@@ -77,5 +83,33 @@ export default (app) => {
         app.route('/edit-resume/:id')
         .get(parser.editresume)
 
+
+    app.route('/parsing/predict')
+        .post(parsingController.insert);
+
+
+    //match all data
+    app
+    .route('/allData/:from')
+    .get(dataController.getAllData)
+    
+
+    // files management
+    app.route('/upload-files')
+    .post(fileUpload.uploadFiles)
+    app.route('/all-files/:id')
+    .get(fileUpload.getAllUserFiles)
+    app.route('/delete-files')
+    .post(fileUpload.deleteFiles)
+    
+    //search autoComplete
+    /*app
+    .route('/:prefix')
+    .get(dataController.autoComplete )*/
+
+    //search
+    app
+    .route('/autocomplete/:prefix')
+    .get(dataController.autoComplete)
 
 };

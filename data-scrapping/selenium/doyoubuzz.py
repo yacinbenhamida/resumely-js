@@ -10,6 +10,7 @@ def validate_field(field):
         field = 'No results'
     return field
 
+done = set()
 extracted_data = {}
 extracted_data['candidates'] = []
 driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
@@ -17,10 +18,10 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "chile"
-potential_title = ""
+country = "czech"
+#potential_title = "egyptian"
 search_query = driver.find_element_by_name('q')
-search_query.send_keys(parameters.search_query+' AND "'+potential_title+'" AND "'+country+'"')
+search_query.send_keys(parameters.search_query+' AND "'+country+'"')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
@@ -98,9 +99,13 @@ for youbuzz_url in youbuzz_urls:
                 'firstName': firstName,
                 'lastName' : lastName,
             }
-            json.dump(res, outfile, indent=2) 
+            if res['lastName'] not in done:
+                print('relevant record, inserting to json file...')
+                done.add(res['lastName']) 
+                json.dump(res, outfile, indent=2) 
+
+            else:
+                print('already scrapped, moving...')
     else:
         print('skipping...')
-
-  
 driver.quit()

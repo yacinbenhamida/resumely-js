@@ -13,32 +13,32 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Shared services
-import { getUsers } from 'services/user';
+import { getFiles } from 'services/user';
 
 // Custom components
-import { UsersToolbar, UsersTable } from './components';
+import { FilesToolbar, FilesTable } from './components';
 
 // Component styles
 import styles from './style';
 
-class UserList extends Component {
+class FilesList extends Component {
   signal = true;
 
   state = {
     isLoading: false,
     limit: 10,
     users: [],
-    selectedUsers: [],
+    selectedFiles: [],
     error: null
   };
 
-  async getUsers() {
+  async getFiles() {
     try {
       this.setState({ isLoading: true });
 
       const { limit } = this.state;
 
-      const { users } = await getUsers(limit);
+      const { users } = await getFiles(limit);
 
       if (this.signal) {
         this.setState({
@@ -58,15 +58,15 @@ class UserList extends Component {
 
   componentDidMount() {
     this.signal = true;
-    this.getUsers();
+    this.getFiles();
   }
 
   componentWillUnmount() {
     this.signal = false;
   }
 
-  handleSelect = selectedUsers => {
-    this.setState({ selectedUsers });
+  handleSelect = selectedFiles => {
+    this.setState({ selectedFiles });
   };
 
   renderUsers() {
@@ -90,8 +90,7 @@ class UserList extends Component {
     }
 
     return (
-      <UsersTable
-        //
+      <FilesTable
         onSelect={this.handleSelect}
         users={users}
       />
@@ -100,22 +99,23 @@ class UserList extends Component {
 
   render() {
     const { classes } = this.props;
-    const { selectedUsers } = this.state;
+    const { selectedFiles } = this.state;
 
     return (
-      <DashboardLayout title="Users">
+      <DashboardLayout title="File management">
         <div className={classes.root}>
-          <UsersToolbar selectedUsers={selectedUsers} />
-          <div className={classes.content}>{this.renderUsers()}</div>
+          <FilesToolbar selectedFiles={selectedFiles} />
+       
         </div>
       </DashboardLayout>
+   
     );
   }
 }
 
-UserList.propTypes = {
+FilesList.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(UserList);
+export default withStyles(styles)(FilesList);

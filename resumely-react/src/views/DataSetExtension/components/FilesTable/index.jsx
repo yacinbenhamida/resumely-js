@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import { IconButton } from '@material-ui/core';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -20,9 +21,10 @@ import {
   TableHead,
   TableRow,
   Typography,
-  TablePagination
+  TablePagination,
 } from '@material-ui/core';
 
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 // Shared helpers
 import { getInitials } from 'helpers';
 
@@ -32,52 +34,53 @@ import { Portlet, PortletContent } from 'components';
 // Component styles
 import styles from './styles';
 
-class UsersTable extends Component {
+
+class FilesTable extends Component {
   state = {
-    selectedUsers: [],
+    selectedFiles: [],
     rowsPerPage: 10,
     page: 0
   };
 
   handleSelectAll = event => {
-    const { users, onSelect } = this.props;
+    const { files, onSelect } = this.props;
 
-    let selectedUsers;
+    let selectedFiles;
 
     if (event.target.checked) {
-      selectedUsers = users.map(user => user.id);
+      selectedFiles = files.map(user => user._id);
     } else {
-      selectedUsers = [];
+      selectedFiles = [];
     }
 
-    this.setState({ selectedUsers });
+    this.setState({ selectedFiles });
 
-    onSelect(selectedUsers);
+    onSelect(selectedFiles);
   };
 
   handleSelectOne = (event, id) => {
     const { onSelect } = this.props;
-    const { selectedUsers } = this.state;
+    const { selectedFiles } = this.state;
 
-    const selectedIndex = selectedUsers.indexOf(id);
-    let newSelectedUsers = [];
+    const selectedIndex = selectedFiles.indexOf(id);
+    let newselectedFiles = [];
 
     if (selectedIndex === -1) {
-      newSelectedUsers = newSelectedUsers.concat(selectedUsers, id);
+      newselectedFiles = newselectedFiles.concat(selectedFiles, id);
     } else if (selectedIndex === 0) {
-      newSelectedUsers = newSelectedUsers.concat(selectedUsers.slice(1));
-    } else if (selectedIndex === selectedUsers.length - 1) {
-      newSelectedUsers = newSelectedUsers.concat(selectedUsers.slice(0, -1));
+      newselectedFiles = newselectedFiles.concat(selectedFiles.slice(1));
+    } else if (selectedIndex === selectedFiles.length - 1) {
+      newselectedFiles = newselectedFiles.concat(selectedFiles.slice(0, -1));
     } else if (selectedIndex > 0) {
-      newSelectedUsers = newSelectedUsers.concat(
-        selectedUsers.slice(0, selectedIndex),
-        selectedUsers.slice(selectedIndex + 1)
+      newselectedFiles = newselectedFiles.concat(
+        selectedFiles.slice(0, selectedIndex),
+        selectedFiles.slice(selectedIndex + 1)
       );
     }
 
-    this.setState({ selectedUsers: newSelectedUsers });
+    this.setState({ selectedFiles: newselectedFiles });
 
-    onSelect(newSelectedUsers);
+    onSelect(newselectedFiles);
   };
 
   handleChangePage = (event, page) => {
@@ -89,8 +92,8 @@ class UsersTable extends Component {
   };
 
   render() {
-    const { classes, className, users } = this.props;
-    const { activeTab, selectedUsers, rowsPerPage, page } = this.state;
+    const { classes, className, files } = this.props;
+    const { activeTab, selectedFiles, rowsPerPage, page } = this.state;
 
     const rootClassName = classNames(classes.root, className);
 
@@ -103,24 +106,23 @@ class UsersTable extends Component {
                 <TableRow>
                   <TableCell align="left">
                     <Checkbox
-                      checked={selectedUsers.length === users.length}
+                      checked={selectedFiles.length === files.length}
                       color="primary"
                       indeterminate={
-                        selectedUsers.length > 0 &&
-                        selectedUsers.length < users.length
+                        selectedFiles.length > 0 &&
+                        selectedFiles.length < files.length
                       }
                       onChange={this.handleSelectAll}
                     />
-                    Name
+                    File Name
                   </TableCell>
-                  <TableCell align="left">ID</TableCell>
-                  <TableCell align="left">State</TableCell>
-                  <TableCell align="left">Phone</TableCell>
-                  <TableCell align="left">Registration date</TableCell>
+                  <TableCell align="left">Owner</TableCell>
+                  <TableCell align="left">Upload date</TableCell>
+                  <TableCell align="left">Scan</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {users
+                {files
                   .filter(user => {
                     if (activeTab === 1) {
                       return !user.returning;
@@ -137,46 +139,48 @@ class UsersTable extends Component {
                     <TableRow
                       className={classes.tableRow}
                       hover
-                      key={user.id}
-                      selected={selectedUsers.indexOf(user.id) !== -1}
+                      key={user._id}
+                      selected={selectedFiles.indexOf(user._id) !== -1}
                     >
                       <TableCell className={classes.tableCell}>
                         <div className={classes.tableCellInner}>
                           <Checkbox
-                            checked={selectedUsers.indexOf(user.id) !== -1}
+                            checked={selectedFiles.indexOf(user._id) !== -1}
                             color="primary"
                             onChange={event =>
-                              this.handleSelectOne(event, user.id)
+                              this.handleSelectOne(event, user._id)
                             }
                             value="true"
                           />
                           <Avatar
                             className={classes.avatar}
-                            src={user.avatarUrl}
+                            src="../"
                           >
-                            {getInitials(user.name)}
+                            {getInitials(user.filename)}
                           </Avatar>
                           <Link to="#">
                             <Typography
                               className={classes.nameText}
                               variant="body1"
                             >
-                              {user.name}
+                              {user.filename}
                             </Typography>
                           </Link>
                         </div>
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {user.id}
-                      </TableCell>
-                      <TableCell className={classes.tableCell}>
-                        {user.address.state}
-                      </TableCell>
-                      <TableCell className={classes.tableCell}>
-                        {user.phone}
+                        {user.ownerUsername}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                         {moment(user.createdAt).format('DD/MM/YYYY')}
+                      </TableCell>
+                      <TableCell className={classes.tableCell}>
+                      <IconButton
+                      className={classes.deleteButton}
+                      onClick={ev=>console.log(user._id)}
+                      >
+                      <CloudUploadIcon />
+                    </IconButton>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -188,7 +192,7 @@ class UsersTable extends Component {
               'aria-label': 'Previous Page'
             }}
             component="div"
-            count={users.length}
+            count={files.length}
             nextIconButtonProps={{
               'aria-label': 'Next Page'
             }}
@@ -204,18 +208,18 @@ class UsersTable extends Component {
   }
 }
 
-UsersTable.propTypes = {
+FilesTable.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   onSelect: PropTypes.func,
   onShowDetails: PropTypes.func,
-  users: PropTypes.array.isRequired
+  files: PropTypes.array.isRequired
 };
 
-UsersTable.defaultProps = {
-  users: [],
+FilesTable.defaultProps = {
+  files: [],
   onSelect: () => {},
   onShowDetails: () => {}
 };
 
-export default withStyles(styles)(UsersTable);
+export default withStyles(styles)(FilesTable);
