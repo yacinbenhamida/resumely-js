@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 // Externals
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // Material helpers
@@ -12,19 +9,14 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
-  Avatar,
-  Checkbox,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-  Typography,
-  TablePagination
 } from '@material-ui/core';
 
-// Shared helpers
-import { getInitials } from 'helpers';
+
 
 // Shared components
 import { Portlet, PortletContent } from 'components';
@@ -43,18 +35,8 @@ class FilesTable extends Component {
   };
 
 
-  
- /* handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
-  };*/
-
   render() {
-    const { classes, className, users } = this.props;
-    const { activeTab, selectedFiles, rowsPerPage, page,candidates } = this.state;
+    const { classes, className } = this.props;
 
     const rootClassName = classNames(classes.root, className);
 

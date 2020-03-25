@@ -7,12 +7,9 @@ import moment from 'moment';
 
 // Material helpers
 import {
-    Avatar,
-    Checkbox,
     Table,
     TableBody,
     TableCell,
-    TableHead,
     TableRow,
     Typography,
     TablePagination,
@@ -104,7 +101,7 @@ class CustomScrappingHistory extends Component {
         <PortletContent>
         <Table>
             <TableBody>
-            {scrappingAttempts.length == 0 &&
+            {scrappingAttempts.length === 0 &&
                 <Typography
                 className={classes.nameText}
                 variant="body1"
