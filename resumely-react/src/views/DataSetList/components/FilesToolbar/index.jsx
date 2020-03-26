@@ -112,13 +112,13 @@ getautoComplete(ev)
   {
     if (ev.target.value)
      {
-      this.state.search=true;
+      this.setState({search : true});
       this.getautoComplete(ev);
 
     }
     else
     {
-      this.state.search=false;
+      this.setState({search : false});
       this.setState({
         filteredTableData: this.state.candidates     
       });

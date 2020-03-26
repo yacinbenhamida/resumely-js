@@ -72,7 +72,6 @@ class FilesToolbar extends Component {
       else {
         this.setState({openSnackBar : true,snackbarVariant: 'error',snackbarMessage: 'failed to upload'})
       }
-      console.log(response.statusText)
     })
   }
 
@@ -95,12 +94,12 @@ class FilesToolbar extends Component {
     this.props.handler(this.state.allFiles)
   }
   filterTable = (content)=>{
-    this.reloadData()
     if(content.target.value){
       this.setState({
         allFiles : this.props.allFiles.filter(f=>f.filename.includes(content.target.value))
       })
     }
+    else  this.reloadData()
     this.props.handler(this.state.allFiles)
   }
   showDeleteDialog(){

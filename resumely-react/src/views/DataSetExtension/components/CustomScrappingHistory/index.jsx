@@ -38,7 +38,6 @@ class CustomScrappingHistory extends Component {
   getData = async()=>{
     await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
     {id : this.state.user._id , currentstate : "done"}).then(d=>{
-        console.log(d)
         if(d.status === 200){
             this.setState({
                 isLoading : false,
@@ -47,11 +46,9 @@ class CustomScrappingHistory extends Component {
         }
     })
   }
-  componentWillMount(){
-    this.getData()
-  }
+
   componentDidMount(){
-    setInterval(this.getData, 5000);
+    this.interval = setInterval(this.getData, 5000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);

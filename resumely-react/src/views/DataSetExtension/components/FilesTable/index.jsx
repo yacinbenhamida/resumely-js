@@ -38,10 +38,11 @@ import styles from './styles';
 class FilesTable extends Component {
   state = {
     selectedFiles: [],
-    rowsPerPage: 10,
-    page: 0
+    rowsPerPage: 5,
+    page: 0,
+    activeTab : 0,
   };
-
+ 
   handleSelectAll = event => {
     const { files, onSelect } = this.props;
 
@@ -123,32 +124,32 @@ class FilesTable extends Component {
               </TableHead>
               <TableBody>
                 {files
-                  .filter(user => {
+                  .filter(file => {
                     if (activeTab === 1) {
-                      return !user.returning;
+                      return !file.returning;
                     }
 
                     if (activeTab === 2) {
-                      return user.returning;
+                      return file.returning;
                     }
 
-                    return user;
+                    return file;
                   })
                   .slice(0, rowsPerPage)
-                  .map(user => (
+                  .map(file => (
                     <TableRow
                       className={classes.tableRow}
                       hover
-                      key={user._id}
-                      selected={selectedFiles.indexOf(user._id) !== -1}
+                      key={file._id}
+                      selected={selectedFiles.indexOf(file._id) !== -1}
                     >
                       <TableCell className={classes.tableCell}>
                         <div className={classes.tableCellInner}>
                           <Checkbox
-                            checked={selectedFiles.indexOf(user._id) !== -1}
+                            checked={selectedFiles.indexOf(file._id) !== -1}
                             color="primary"
                             onChange={event =>
-                              this.handleSelectOne(event, user._id)
+                              this.handleSelectOne(event, file._id)
                             }
                             value="true"
                           />
@@ -156,28 +157,28 @@ class FilesTable extends Component {
                             className={classes.avatar}
                             src="../"
                           >
-                            {getInitials(user.filename)}
+                            {getInitials(file.filename)}
                           </Avatar>
                           <Link to="#">
                             <Typography
                               className={classes.nameText}
                               variant="body1"
                             >
-                              {user.filename}
+                              {file.filename}
                             </Typography>
                           </Link>
                         </div>
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {user.ownerUsername}
+                        {file.ownerUsername}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {moment(user.createdAt).format('DD/MM/YYYY')}
+                        {moment(file.createdAt).format('DD/MM/YYYY')}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                       <IconButton
                       className={classes.deleteButton}
-                      onClick={ev=>console.log(user._id)}
+                      onClick={ev=>console.log(file._id)}
                       >
                       <CloudUploadIcon />
                     </IconButton>

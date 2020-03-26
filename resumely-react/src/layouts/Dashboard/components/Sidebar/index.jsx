@@ -74,7 +74,7 @@ class Sidebar extends Component {
         <div className={classes.profile}>
           <Link to="/account">
             <Avatar
-              alt="Roman Kutepov"
+              alt="user"
               className={classes.avatar}
               src="/images/avatars/avatar_1.png"
             />
@@ -143,14 +143,14 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/products"
+            to="/datasetparsing"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <ShoppingBasketIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Products"
+              primary="Parse resumees"
             />
           </ListItem>
           
@@ -158,14 +158,14 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/typography"
+            to="/data-list"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <TextFieldsIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Typography"
+              primary="Dataset"
             />
           </ListItem>
           <ListItem

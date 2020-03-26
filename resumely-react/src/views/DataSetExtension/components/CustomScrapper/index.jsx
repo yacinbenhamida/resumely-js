@@ -47,11 +47,8 @@ class CustomScrapping extends Component {
         }
     })
   }
-  componentWillMount(){
-    this.checkStatus()
-  }
   componentDidMount(){
-    setInterval(this.checkStatus, 5000);
+    this.interval = setInterval(this.checkStatus, 5000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -64,7 +61,7 @@ class CustomScrapping extends Component {
     this.setState(newState);
   };
   submitSearch = ()=>{
-    if(this.state.values.country.trim() !== ""){
+    if(this.state.country.trim() !== ""){
       this.setState({submitted : true})
       axios
       .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),

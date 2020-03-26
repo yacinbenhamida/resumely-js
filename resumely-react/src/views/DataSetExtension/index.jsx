@@ -26,9 +26,12 @@ import axios from 'axios';
 class FilesList extends Component {
   constructor(props){
     super(props);
+    this.signal = true;
+    
     this.handler = this.handler.bind(this)
   }
   signal = true;
+  interval = null;
   handler(updatedList) {
     this.setState({
       isLoading : true,
@@ -73,16 +76,14 @@ class FilesList extends Component {
       }
     }
   }
-
-  
-
-  componentWillMount() {
+  componentDidMount() {
     this.signal = true;
-    this.getFiles();
+    this.interval = setInterval(this.getFiles(), 5000);
   }
 
   componentWillUnmount() {
     this.signal = false;
+    clearInterval(this.interval);
   }
 
   handleSelect = selectedFiles => {
