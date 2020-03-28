@@ -1,6 +1,6 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const UserModel = require('../../models/user.model');
+const UserModel = require('../../models/user');
  
 // Registration
 exports.signup = passport.authenticate('signup', {

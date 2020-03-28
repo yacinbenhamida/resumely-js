@@ -1,5 +1,5 @@
 import request from 'request';
-import ScrapRequest from '../../models/scraprequest.model'
+import ScrapRequest from '../../models/scraprequest'
 require('dotenv').config();
 const flask_rest = process.env.PY_URI;
 
@@ -12,7 +12,12 @@ exports.scrapData = (req,res)=>{
         createdAt : Date.now(),
         currentState : "started",
         expectedNoOfRows : 0,
-        currentNoOfRows : 0
+        currentNoOfRows : 0,
+        scrapAge : req.body.scrapAge,
+        scrapEducation : req.body.scrapEducation,
+        scrapImage : req.body.scrapImage,
+        scrapExperience : req.body.scrapExperience,
+        scrapSkills : req.body.scrapSkills
     }).save((err,docs)=>{
         if(err) console.log(err)
         else{

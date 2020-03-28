@@ -1,41 +1,27 @@
 import mongoose from 'mongoose';
-
-const mongoosastic =require('mongoosastic')
-const esClient = require('./../elasticsearch/connection');
+import mongoosastic from 'mongoosastic'
+import esClient from '../elasticsearch/connection'
 
 const CandidateSchema = new mongoose.Schema({
-
-    id :
-    {
-        type: String  
-    },
-    firstName:
-     {
-           type: String
-    },
-    lastName: 
-    {
-            type: String
-    },
-    country: 
-    {
-            type: String
-    }
-    ,
-    currentPosition:
-    {
-        type: String
-    },
-      
-    profile:
-    {
-        type: String
-    } ,
-
-    livesIn:{
-      type:String
-    }
-
+    firstName:  {   type: String },
+    lastName:   {     type: String    },
+    country:    {   type: String    },
+    currentPosition:    {   type: String    },
+    profile:    {   type: String    } ,
+    livesIn:    {   type:String     },
+    image_url:  {   type : String   },
+    experiences : [{
+        job_details : String,
+        job : String,
+        job_date : String
+    }],
+    presentation : {    type : String   },
+    education : [{
+            university : String,
+            date : String,
+            diploma : String
+        }],
+    skills : [String]
 }, {collection : 'profiles'}) 
 
 

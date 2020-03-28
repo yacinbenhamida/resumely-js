@@ -1,7 +1,7 @@
 import multer from 'multer';
 import unzipper from 'unzipper';
 import fs from 'fs';
-import UploadedFile from '../../models/uploadedfile.model'
+import UploadedFile from '../../models/uploadedfile'
 /**
  * files management controller
  */

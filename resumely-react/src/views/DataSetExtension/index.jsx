@@ -78,12 +78,11 @@ class FilesList extends Component {
   }
   componentDidMount() {
     this.signal = true;
-    this.interval = setInterval(this.getFiles(), 5000);
+    this.getFiles()
   }
 
   componentWillUnmount() {
     this.signal = false;
-    clearInterval(this.interval);
   }
 
   handleSelect = selectedFiles => {

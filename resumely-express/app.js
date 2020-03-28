@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 const client = require('./elasticsearch/connection');
 import mongoosastic from 'mongoosastic' 
-const Candidate = require('./models/candidate.model')
+const Candidate = require('./models/candidate')
 const app = express();
 
 import passport from 'passport';

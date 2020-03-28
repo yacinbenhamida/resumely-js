@@ -1,4 +1,4 @@
-import User from '../../models/user.model'
+import User from '../../models/user'
 require('dotenv').config;
 import nodemailer from 'nodemailer';
 import crypto from "crypto";

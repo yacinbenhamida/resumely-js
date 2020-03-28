@@ -24,10 +24,11 @@ def scrapper(country,idop):
     done = set()
     extracted_data = []
     options = Options()
-    #options.add_argument('--headless')
-    #enforcing headless scrapping
-    #driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
-    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe')
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
+    options.add_argument('--disable-gpu')
+    options.add_argument('--headless')
+    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
     driver.maximize_window()
     driver.get('https:www.google.com')
     sleep(3)
@@ -52,8 +53,7 @@ def scrapper(country,idop):
     sleep(0.5)
     j = 0
     for youbuzz_url in youbuzz_urls:
-        target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1})[0]
-        print(target)
+        target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapImage":1,"scrapExperience":1,"scrapSkills":1})[0]
         if str(target['currentState']) == "stopped":
             print("scrapping stopped, exiting... ")
             break;
@@ -65,6 +65,7 @@ def scrapper(country,idop):
         lastName = sel.xpath('//*[starts-with(@class,"userName__lastName")]/text()').extract_first()
         
         if lastName and lastName not in done: 
+            age = ""
             lastName = lastName.strip()           
             firstName = sel.xpath('//*[starts-with(@class,"userName__firstName")]/text()').extract_first()
             if firstName:
@@ -74,30 +75,36 @@ def scrapper(country,idop):
                 current_title = current_title.strip()
             lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
             if lives_in:
-                lives_in = lives_in.strip()    
-            age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
-            if age:
-                age = age.strip()                      
+                lives_in = lives_in.strip()
+            if str(target['scrapAge']) == "true":
+                try:      
+                    age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
+                    if age:
+                        age = age.strip()  
+                except:
+                    pass                   
             experiences = []
             skills = []
             education = []
-            presentation = ""
+            presentation = None
+            image   =  None
             m = 1
-            i = 1
+            k = 1
             #experiences 
-            try:
-                for div in driver.find_elements_by_xpath("//*[@class='widget widget_experiences']//*[@class='widgetElement widgetElement_topInfos']/div["+str(i)+"]"):
-                    job = div.find_element_by_class_name('widgetElement__titleLink').text
-                    job_details = div.find_element_by_class_name('widgetElement__subtitle').text
-                    job_date = div.find_element_by_class_name('widgetElement__subtitleItem_date').text
-                    experiences.append({
-                        'job' : job,
-                        'job_details' : job_details,
-                        'job_date' : job_date
-                    })
-                    i=i+1
-            except:
-                pass
+            if str(target['scrapExperience']) == "true":      
+                try:
+                    for div in driver.find_elements_by_xpath("//*[@class='widget widget_experiences']//*[@class='widgetElement widgetElement_topInfos']/div["+str(k)+"]"):
+                        job = div.find_element_by_class_name('widgetElement__titleLink').text
+                        job_details = div.find_element_by_class_name('widgetElement__subtitle').text
+                        job_date = div.find_element_by_class_name('widgetElement__subtitleItem_date').text
+                        experiences.append({
+                            'job' : job,
+                            'job_details' : job_details,
+                            'job_date' : job_date
+                        })
+                        k=k+1
+                except:
+                    pass
             #presentation
             try:
                 presentation = driver.find_element_by_xpath('//*[@class="widget widget_presentation"]//*[@class="widgetElement__text"]').text
@@ -106,28 +113,39 @@ def scrapper(country,idop):
             except:
                 pass
             #education 
-            try : 
-                for div2 in driver.find_elements_by_xpath("//*[@class='widget widget_educations']//*[@class='widgetElement widgetElement_topInfos']/div["+str(m)+"]"): 
-                    diploma = div2.find_element_by_class_name('widgetElement__titleLink').text
-                    university = div2.find_element_by_class_name('widgetElement__subtitle').text
-                    date = div2.find_element_by_class_name('widgetElement__info').text
-                    education.append({
-                        'diploma ' : diploma,
-                        'university ' : university,
-                        'date' : date
-                    })
-                    m=m+1
-            except:
-                pass 
+            if str(target['scrapEducation']) == "true":
+                try : 
+                    for div2 in driver.find_elements_by_xpath("//*[@class='widget widget_educations']//*[@class='widgetElement widgetElement_topInfos']/div["+str(m)+"]"): 
+                        diploma = div2.find_element_by_class_name('widgetElement__titleLink').text
+                        university = div2.find_element_by_class_name('widgetElement__subtitle').text
+                        date = div2.find_element_by_class_name('widgetElement__info').text
+                        education.append({
+                            'diploma ' : diploma,
+                            'university ' : university,
+                            'date' : date
+                        })
+                        m=m+1
+                except:
+                    pass 
             #skills
-            try:
-                for div in driver.find_elements_by_xpath("//*[@class='widget widget_skills']"): 
-                    for lang in div.find_elements_by_xpath("//*[@class='widget widget_skills']//*[starts-with(@class,'widgetElement__list skillsBulletList')]/li"):  
-                        fetch = lang.text
-                        skills.append(fetch)
-            except:
-                pass     
-            
+            if str(target['scrapSkills']) == "true":
+                try:
+                    for div in driver.find_elements_by_xpath("//*[@class='widget widget_skills']"): 
+                        for lang in div.find_elements_by_xpath("//*[@class='widget widget_skills']//*[starts-with(@class,'widgetElement__list skillsBulletList')]/li"):  
+                            fetch = lang.text
+                            skills.append(fetch)
+                except:
+                    pass     
+            #image scrapping
+            if str(target['scrapImage']) == "true":
+                print('inside ... '+str(driver.find_element_by_xpath("//img[@class='widgetAvatar__avatar']").get_attribute("src")))
+                try:
+                    image = driver.find_element_by_xpath("//img[@class='widgetAvatar__avatar']").get_attribute("src")
+                    print("image found : "+str(image))
+                    if image:
+                        image = image.strip()
+                except:
+                    pass
             youbuzz_url = driver.current_url
             firstName = validate_field(firstName)
             lastName = validate_field(lastName)
@@ -136,7 +154,8 @@ def scrapper(country,idop):
             youbuzz_url = validate_field(youbuzz_url)
             age = validate_field(age)
             presentation = validate_field(presentation)
-            
+            image = validate_field(image)              
+
             if firstName != 'No results' and lastName != 'No results':
                 if lives_in != 'No Results':
                     lives_in = ' '.join(lives_in.split())   
@@ -157,6 +176,7 @@ def scrapper(country,idop):
                     print('lives_in: ' + lives_in)
                     print('age '+str(age))
                     print('youbuzz_url: ' + youbuzz_url)
+                    print('image_url : '+str(image))
                     print('presentation :'+presentation)
                     print('\n')
                 except:
@@ -168,6 +188,7 @@ def scrapper(country,idop):
                         'profile' : youbuzz_url,
                         'firstName': firstName,
                         'lastName' : lastName,
+                        'image_url' : str(image),
                         'age' : age,
                         'skills' : skills,
                         'education' : education,

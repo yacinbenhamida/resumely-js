@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
 import { LinearProgress,IconButton  } from '@material-ui/core';
 // Material components
-import { Button, TextField,CircularProgress } from '@material-ui/core';
+import { Button, TextField,CircularProgress,Checkbox, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AlertDialog from '../FilesToolbar/AlertDialog'
 // Shared components
@@ -26,9 +26,12 @@ import axios from 'axios'
 
 class CustomScrapping extends Component {
     state = {
-    values: {
-      country: '',
-    },
+    country: '',
+    age : true,
+    education : true,
+    career : true,
+    imageUrl  : true,
+    skills  : true,
     promptCancelScrapping : false,
     isTriggered : false,
     user : JSON.parse(localStorage.getItem('user')),
@@ -36,8 +39,8 @@ class CustomScrapping extends Component {
     scrappingInfo : null,
     interval : null
   };
-  checkStatus = async ()=>{
-    await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
+  checkStatus = ()=>{
+    axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
     {id : this.state.user._id, currentstate : "started"}).then(d=>{
         if(d.status === 200 && d.data.length > 0){
             this.setState({
@@ -71,7 +74,12 @@ class CustomScrapping extends Component {
       {
           country : this.state.country,
           username : this.state.user.username,
-          ownerid :  this.state.user._id
+          ownerid :  this.state.user._id,
+          scrapAge : this.state.age,
+          scrapEducation : this.state.education,
+          scrapImage : this.state.imageUrl,
+          scrapExperience : this.state.career,
+          scrapSkills : this.state.skills
       }).then(x=>{
           if(x.status === 200){
               console.log('processing request...')
@@ -86,7 +94,7 @@ class CustomScrapping extends Component {
     axios
     .post(process.env.REACT_APP_BACKEND+'/stop-scrapping?secret_token='+localStorage.getItem('token'),
     {
-        id : this.state.scrappingInfo[0]._id
+        id : this.state.scrappingInfo[0]._id,
     }).then(x=>{
         if(x.status === 200){
             console.log('cancelling scrapping...')
@@ -156,7 +164,9 @@ class CustomScrapping extends Component {
           />
         </PortletHeader>
         <PortletContent>
+         
           <form className={classes.form}>
+          <div className={classes.row}>
             <TextField
               className={classes.textField}
               label="country"
@@ -167,6 +177,44 @@ class CustomScrapping extends Component {
               type="text"
               variant="outlined"
             />
+              <Typography
+                className={classes.groupLabel}
+                variant="h6"
+              >
+                Targeted data
+              </Typography>
+              <div>
+                <Checkbox color="primary" onChange={event =>
+                  this.setState({age : event.target.checked})}
+                  defaultChecked/>
+                age
+                <Checkbox color="primary"onChange={event =>
+                  this.setState({education : event.target.checked})}
+                  defaultChecked
+                />
+                education
+                <Checkbox color="primary" onChange={event =>
+                  this.setState({skills : event.target.checked})}
+                  defaultChecked
+                />
+                skills
+              </div>
+              <div>
+              <Checkbox color="primary"onChange={event =>
+                this.setState({career : event.target.checked})}
+                defaultChecked
+              />
+              experience
+              <Checkbox color="primary" onChange={event =>
+                this.setState({imageUrl : event.target.checked})}
+                defaultChecked
+              />
+              image
+              </div>
+              <div>
+              
+              </div>
+            </div>
           </form>
         </PortletContent>
         <PortletFooter className={classes.portletFooter}>

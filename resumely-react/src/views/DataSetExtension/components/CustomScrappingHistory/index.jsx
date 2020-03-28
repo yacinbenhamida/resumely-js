@@ -23,7 +23,6 @@ import {
   PortletLabel,
   PortletContent,
 } from 'components';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import styles from './styles';
 import axios from 'axios'
 
@@ -78,8 +77,10 @@ class CustomScrappingHistory extends Component {
             title="Scrapping History"
           />        
           </PortletHeader>
-        <PortletContent noPadding>
+        <PortletContent >
+        <div className={classes.progressWrapper}>
           <CircularProgress />
+        </div>
         </PortletContent>
         </Portlet>
       );
@@ -95,7 +96,7 @@ class CustomScrappingHistory extends Component {
           title="History"
           />
         </PortletHeader>
-        <PortletContent>
+        <PortletContent noPadding>
         <Table>
             <TableBody>
             {scrappingAttempts.length === 0 &&
@@ -128,7 +129,6 @@ class CustomScrappingHistory extends Component {
                     <Typography
                               className={classes.nameText}          
                             >
-                    <ArrowRightIcon  fontSize="small" />
                       Scrapped from {sc.country} : loaded {sc.currentNoOfRows} out of {sc.expectedNoOfRows} 
                       </Typography>
                     </TableCell>
