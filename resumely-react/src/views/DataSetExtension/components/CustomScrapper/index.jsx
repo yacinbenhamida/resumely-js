@@ -33,7 +33,8 @@ class CustomScrapping extends Component {
     isTriggered : false,
     user : JSON.parse(localStorage.getItem('user')),
     submitted : false,
-    scrappingInfo : null
+    scrappingInfo : null,
+    interval : null
   };
   checkStatus = async ()=>{
     await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
@@ -48,10 +49,12 @@ class CustomScrapping extends Component {
     })
   }
   componentDidMount(){
-    this.interval = setInterval(this.checkStatus, 5000);
+    if(this.state.isTriggered === true){
+      this.setState({interval : setInterval(this.checkStatus, 5000)});
+    }
   }
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.state.interval);
   }
   handleFieldChange = (field, value) => {
     const newState = { ...this.state };

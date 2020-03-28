@@ -61,47 +61,118 @@ def scrapper(country,idop):
         # add a 5 second pause loading each URL
         sleep(5)
         sel = Selector(text=driver.page_source) 
-        firstName = sel.xpath('//*[starts-with(@class,"userName__firstName")]/text()').extract_first()
-        if firstName:
-            firstName = firstName.strip() 
+        
         lastName = sel.xpath('//*[starts-with(@class,"userName__lastName")]/text()').extract_first()
-        if lastName:
-            lastName = lastName.strip()
-        current_title = sel.xpath('//*[@class="cvTitle"]/text()').extract_first()
-        if current_title:
-            current_title = current_title.strip()
-        lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
-        if lives_in:
-            lives_in = lives_in.strip()       
-        youbuzz_url = driver.current_url
-        firstName = validate_field(firstName)
-        lastName = validate_field(lastName)
-        current_title = validate_field(current_title)
-        lives_in = validate_field(lives_in)
-        youbuzz_url = validate_field(youbuzz_url)
-        if firstName != 'No results' and lastName != 'No results':
-            if lives_in != 'No Results':
-                lives_in = ' '.join(lives_in.split())               
+        
+        if lastName and lastName not in done: 
+            lastName = lastName.strip()           
+            firstName = sel.xpath('//*[starts-with(@class,"userName__firstName")]/text()').extract_first()
+            if firstName:
+                firstName = firstName.strip() 
+            current_title = sel.xpath('//*[@class="cvTitle"]/text()').extract_first()
+            if current_title:
+                current_title = current_title.strip()
+            lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
+            if lives_in:
+                lives_in = lives_in.strip()    
+            age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
+            if age:
+                age = age.strip()                      
+            experiences = []
+            skills = []
+            education = []
+            presentation = ""
+            m = 1
+            i = 1
+            #experiences 
             try:
-                # printing the output to the terminal
-                print('\n')
-                print('First Name: ' + firstName)
-                print('last Name: ' + lastName)
-                print('current_title: ' + current_title)
-                print('lives_in: ' + lives_in)
-                print('youbuzz_url: ' + youbuzz_url)
-                print('\n')
+                for div in driver.find_elements_by_xpath("//*[@class='widget widget_experiences']//*[@class='widgetElement widgetElement_topInfos']/div["+str(i)+"]"):
+                    job = div.find_element_by_class_name('widgetElement__titleLink').text
+                    job_details = div.find_element_by_class_name('widgetElement__subtitle').text
+                    job_date = div.find_element_by_class_name('widgetElement__subtitleItem_date').text
+                    experiences.append({
+                        'job' : job,
+                        'job_details' : job_details,
+                        'job_date' : job_date
+                    })
+                    i=i+1
             except:
                 pass
-            res = {        
-                    'currentPosition' : current_title,
-                    'livesIn' : lives_in,
-                    'country' : country,
-                    'profile' : youbuzz_url,
-                    'firstName': firstName,
-                    'lastName' : lastName,
-                }
-            if res['lastName'] not in done:
+            #presentation
+            try:
+                presentation = driver.find_element_by_xpath('//*[@class="widget widget_presentation"]//*[@class="widgetElement__text"]').text
+                if presentation : 
+                    presentation = presentation.strip()
+            except:
+                pass
+            #education 
+            try : 
+                for div2 in driver.find_elements_by_xpath("//*[@class='widget widget_educations']//*[@class='widgetElement widgetElement_topInfos']/div["+str(m)+"]"): 
+                    diploma = div2.find_element_by_class_name('widgetElement__titleLink').text
+                    university = div2.find_element_by_class_name('widgetElement__subtitle').text
+                    date = div2.find_element_by_class_name('widgetElement__info').text
+                    education.append({
+                        'diploma ' : diploma,
+                        'university ' : university,
+                        'date' : date
+                    })
+                    m=m+1
+            except:
+                pass 
+            #skills
+            try:
+                for div in driver.find_elements_by_xpath("//*[@class='widget widget_skills']"): 
+                    for lang in div.find_elements_by_xpath("//*[@class='widget widget_skills']//*[starts-with(@class,'widgetElement__list skillsBulletList')]/li"):  
+                        fetch = lang.text
+                        skills.append(fetch)
+            except:
+                pass     
+            
+            youbuzz_url = driver.current_url
+            firstName = validate_field(firstName)
+            lastName = validate_field(lastName)
+            current_title = validate_field(current_title)
+            lives_in = validate_field(lives_in)
+            youbuzz_url = validate_field(youbuzz_url)
+            age = validate_field(age)
+            presentation = validate_field(presentation)
+            
+            if firstName != 'No results' and lastName != 'No results':
+                if lives_in != 'No Results':
+                    lives_in = ' '.join(lives_in.split())   
+                try:
+                    if age != 'No Results':
+                        age = ' '.join(age.split())
+                        for a in age.split():
+                            if a.isdigit():
+                                age = int(a)  
+                except:
+                    pass               
+                try:
+                    # printing the output to the terminal
+                    print('\n')
+                    print('First Name: ' + firstName)
+                    print('last Name: ' + lastName)
+                    print('current_title: ' + current_title)
+                    print('lives_in: ' + lives_in)
+                    print('age '+str(age))
+                    print('youbuzz_url: ' + youbuzz_url)
+                    print('presentation :'+presentation)
+                    print('\n')
+                except:
+                    pass
+                res = {        
+                        'currentPosition' : current_title,
+                        'livesIn' : lives_in,
+                        'country' : country,
+                        'profile' : youbuzz_url,
+                        'firstName': firstName,
+                        'lastName' : lastName,
+                        'age' : age,
+                        'skills' : skills,
+                        'education' : education,
+                        'experiences' : experiences                
+                    }
                 j = j+1
                 print('relevant record, inserting to database...')
                 done.add(res['lastName']) 
@@ -109,9 +180,9 @@ def scrapper(country,idop):
                 profiles_collection.insert_one(res)
                 scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentNoOfRows": j } })
             else:
-                print('already scrapped, moving...')
+                print('skipping...')
         else:
-            print('skipping...')
+            print('already scrapped, moving on....')
     scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentState" :"done" } })
     driver.quit()
     return Response(json.dumps({"status" : "done"}),  mimetype='application/json')
