@@ -10,7 +10,6 @@ const ScrapRequest = new Schema({
     currentState : {    type : String   },
     scrapAge    :   {   type : Boolean, default : true  },
     scrapEducation    :   {   type : Boolean, default : true  },
-    scrapImage    :   {   type : Boolean, default : true  },
     scrapExperience    :   {   type : Boolean, default : true  },
     scrapSkills    :   {   type : Boolean , default : true },
     createdAt : {type : Date},

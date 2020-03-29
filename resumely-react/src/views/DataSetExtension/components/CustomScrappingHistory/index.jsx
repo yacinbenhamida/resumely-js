@@ -14,7 +14,7 @@ import {
     Typography,
     TablePagination,
     CircularProgress,
-    withStyles
+    withStyles,Chip
   } from '@material-ui/core';
 // Shared components
 import {
@@ -53,6 +53,8 @@ class CustomScrappingHistory extends Component {
     clearInterval(this.interval);
   }
   handleChangePage = (event, page) => {
+    console.log(page)
+    //this.setState({scrappingAttempts : this.state.scrappingAttempts.slice(this.state.rowsPerPage,this.state.scrappingAttempts.length)})
     this.setState({ page });
   };
 
@@ -131,6 +133,9 @@ class CustomScrappingHistory extends Component {
                             >
                       Scrapped from {sc.country} : loaded {sc.currentNoOfRows} out of {sc.expectedNoOfRows} 
                       </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Chip  color="primary" variant="outlined" size="small" label={sc.currentState} />
                     </TableCell>
                     <TableCell align="right" className={classes.tableCell}>
                       in {moment(sc.createdAt).format('DD/MM/YYYY')} at {moment(sc.createdAt).format('HH:mm')}

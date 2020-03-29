@@ -31,14 +31,14 @@ sleep(2)
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
-for page in pages:
-    href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
-    for i in href:
-        youbuzz_urls.append(i.get_attribute('href'))
-    try:
+try:
+    while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+        for i in href:
+            youbuzz_urls.append(i.get_attribute('href'))
         driver.find_element_by_xpath("//span[text()='Suivant']").click()
-    except:
-        pass
+except:
+    pass
 sleep(0.5)
 for youbuzz_url in youbuzz_urls:
     driver.get(youbuzz_url)

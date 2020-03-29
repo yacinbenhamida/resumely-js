@@ -25,12 +25,12 @@ import styles from './styles';
 import axios from 'axios'
 
 class CustomScrapping extends Component {
+
     state = {
     country: '',
     age : true,
     education : true,
     career : true,
-    imageUrl  : true,
     skills  : true,
     promptCancelScrapping : false,
     isTriggered : false,
@@ -51,10 +51,11 @@ class CustomScrapping extends Component {
         }
     })
   }
+  componentDidUpdate(){
+    setInterval(this.checkStatus(), 5000)
+  }
   componentDidMount(){
-    if(this.state.isTriggered === true){
-      this.setState({interval : setInterval(this.checkStatus, 5000)});
-    }
+    this.checkStatus()
   }
   componentWillUnmount() {
     clearInterval(this.state.interval);
@@ -77,7 +78,6 @@ class CustomScrapping extends Component {
           ownerid :  this.state.user._id,
           scrapAge : this.state.age,
           scrapEducation : this.state.education,
-          scrapImage : this.state.imageUrl,
           scrapExperience : this.state.career,
           scrapSkills : this.state.skills
       }).then(x=>{
@@ -205,11 +205,6 @@ class CustomScrapping extends Component {
                 defaultChecked
               />
               experience
-              <Checkbox color="primary" onChange={event =>
-                this.setState({imageUrl : event.target.checked})}
-                defaultChecked
-              />
-              image
               </div>
               <div>
               

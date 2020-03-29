@@ -15,7 +15,6 @@ exports.scrapData = (req,res)=>{
         currentNoOfRows : 0,
         scrapAge : req.body.scrapAge,
         scrapEducation : req.body.scrapEducation,
-        scrapImage : req.body.scrapImage,
         scrapExperience : req.body.scrapExperience,
         scrapSkills : req.body.scrapSkills
     }).save((err,docs)=>{

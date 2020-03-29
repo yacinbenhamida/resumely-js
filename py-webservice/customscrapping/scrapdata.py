@@ -26,13 +26,11 @@ def scrapper(country,idop):
     options = Options()
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
-    options.add_argument('--disable-gpu')
-    options.add_argument('--headless')
+    '''options.add_argument('--disable-gpu')
+    options.add_argument('--headless')'''
     driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
-    driver.maximize_window()
     driver.get('https:www.google.com')
     sleep(3)
-    #potential_title = "egyptian"
     search_query = driver.find_element_by_name('q')
     search_query.send_keys('site:doyoubuzz.com AND "'+country+'"')
     sleep(0.5)
@@ -40,20 +38,20 @@ def scrapper(country,idop):
     sleep(5)
     pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
     youbuzz_urls = []
-    for page in pages:
-        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
-        for i in href:
-            youbuzz_urls.append(i.get_attribute('href'))
-        try:
+    try:
+        while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+            href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+            for i in href:
+                youbuzz_urls.append(i.get_attribute('href'))
             driver.find_element_by_xpath("//span[text()='Suivant']").click()
-        except:
-            pass
+    except:
+        pass
     print('recording state to database with id '+idop)
     scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "expectedNoOfRows": len(youbuzz_urls) } })
     sleep(0.5)
     j = 0
     for youbuzz_url in youbuzz_urls:
-        target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapImage":1,"scrapExperience":1,"scrapSkills":1})[0]
+        target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapExperience":1,"scrapSkills":1})[0]
         if str(target['currentState']) == "stopped":
             print("scrapping stopped, exiting... ")
             break;
@@ -137,15 +135,13 @@ def scrapper(country,idop):
                 except:
                     pass     
             #image scrapping
-            if str(target['scrapImage']) == "true":
-                print('inside ... '+str(driver.find_element_by_xpath("//img[@class='widgetAvatar__avatar']").get_attribute("src")))
-                try:
-                    image = driver.find_element_by_xpath("//img[@class='widgetAvatar__avatar']").get_attribute("src")
-                    print("image found : "+str(image))
-                    if image:
-                        image = image.strip()
-                except:
-                    pass
+            try:
+                image = driver.find_element_by_xpath("//img[@class='widgetAvatar__avatar']").get_attribute("src")
+                print("image found : "+str(image))
+                if image:
+                    image = image.strip()
+            except:
+                pass
             youbuzz_url = driver.current_url
             firstName = validate_field(firstName)
             lastName = validate_field(lastName)
