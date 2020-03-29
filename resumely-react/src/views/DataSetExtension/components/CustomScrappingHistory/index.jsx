@@ -87,6 +87,27 @@ class CustomScrappingHistory extends Component {
         </Portlet>
       );
     }
+    if(scrappingAttempts.length === 0){
+      return(
+      <Portlet
+      {...rest}
+      className={rootClassName}
+    >
+      <PortletHeader>
+        <PortletLabel
+        subtitle="previous scrapping attempts"
+        title="History"
+        />
+      </PortletHeader>
+      <PortletContent>
+        <Typography
+        className={classes.nameText}
+        variant="body1"
+        > no records
+        </Typography>
+      </PortletContent>
+      </Portlet>)
+    }
     return (
       <Portlet
         {...rest}
@@ -101,13 +122,6 @@ class CustomScrappingHistory extends Component {
         <PortletContent noPadding>
         <Table>
             <TableBody>
-            {scrappingAttempts.length === 0 &&
-                <Typography
-                className={classes.nameText}
-                variant="body1"
-                > no records
-                </Typography>
-            }
             {scrappingAttempts
                 .filter(sc => {
                   if (activeTab === 1) {

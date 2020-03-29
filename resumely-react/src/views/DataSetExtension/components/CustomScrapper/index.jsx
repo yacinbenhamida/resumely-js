@@ -11,6 +11,8 @@ import { LinearProgress,IconButton  } from '@material-ui/core';
 import { Button, TextField,CircularProgress,Checkbox, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AlertDialog from '../FilesToolbar/AlertDialog'
+import MapChart from "./MapChart";
+import ReactTooltip from "react-tooltip";
 // Shared components
 import {
   Portlet,
@@ -19,7 +21,6 @@ import {
   PortletContent,
   PortletFooter
 } from 'components';
-
 // Component styles
 import styles from './styles';
 import axios from 'axios'
@@ -68,7 +69,7 @@ class CustomScrapping extends Component {
     this.setState(newState);
   };
   submitSearch = ()=>{
-    if(this.state.country.trim() !== ""){
+    if(this.state.country && this.state.country.trim() !== ""){
       this.setState({submitted : true})
       axios
       .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),
@@ -109,9 +110,13 @@ class CustomScrapping extends Component {
     }
       this.setState({promptCancelScrapping : false})  
   }
+  getCountrys = ()=>{
+    const url = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+    axios.get(url).then(d=>this.setState({countrys : d.data})).catch(err=>alert('no internet connection'))
+  }
   render() {
     const { classes, className, ...rest } = this.props;
-    const { isTriggered, scrappingInfo,submitted } = this.state;
+    const { isTriggered, scrappingInfo,submitted,content } = this.state;
     
     const rootClassName = classNames(classes.root, className);
     if (isTriggered) {
@@ -167,10 +172,15 @@ class CustomScrapping extends Component {
          
           <form className={classes.form}>
           <div className={classes.row}>
+          <div>
+            <MapChart setInputContent={d=>this.setState({country : d})} setTooltipContent={x=>this.setState({content : x})} />
+            <ReactTooltip>{content}</ReactTooltip>
+          </div>
             <TextField
               className={classes.textField}
               label="country"
               name="country"
+              value={this.state.country}
               onChange={event =>
                 this.setState({country : event.target.value})
               }
@@ -198,13 +208,33 @@ class CustomScrapping extends Component {
                   defaultChecked
                 />
                 skills
+                <Checkbox color="primary"onChange={event =>
+                  this.setState({career : event.target.checked})}
+                  defaultChecked
+                />
+                experience
               </div>
               <div>
-              <Checkbox color="primary"onChange={event =>
-                this.setState({career : event.target.checked})}
+              <Checkbox color="primary"
+                disabled
                 defaultChecked
               />
-              experience
+              image
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              firstname
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              lastname
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              presentation
               </div>
               <div>
               

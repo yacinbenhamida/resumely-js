@@ -129,15 +129,15 @@ class FilesList extends Component {
           >
             <Grid
               item
-              md={4}
-              xs={6}   
+              md={6}
+              xs={4}   
             >
           <CustomScrapping />
           </Grid> 
           <Grid
               item
-              md={8}
-              xs={6}  
+              md={6}
+              xs={8}  
           >
           <CustomScrappingHistory />
           </Grid>
