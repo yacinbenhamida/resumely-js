@@ -5,12 +5,14 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 const client = require('./elasticsearch/connection');
 import mongoosastic from 'mongoosastic' 
-const Candidate = require('./models/candidate')
-const app = express();
-
+import candidate from './models/candidate'
+import fs from 'fs'
 import passport from 'passport';
 import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
+
+const app = express();
+
 
 import cors from 'cors';
 require('dotenv').config();
@@ -110,7 +112,10 @@ app.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err}`);
     next();
 });
-
+// create an uploads folder incase it got deleted
+if (!fs.existsSync('./uploads')){
+    fs.mkdirSync('./uploads');
+}
 /**
  * Register the routes
  */

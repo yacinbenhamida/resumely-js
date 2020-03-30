@@ -1,7 +1,7 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../../models/user');
-
+require('dotenv').config()
 // Registration
 exports.signup = passport.authenticate('signup', {
     session: false

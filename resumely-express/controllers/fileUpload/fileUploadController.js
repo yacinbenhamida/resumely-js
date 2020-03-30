@@ -2,12 +2,21 @@ import multer from 'multer';
 import unzipper from 'unzipper';
 import fs from 'fs';
 import UploadedFile from '../../models/uploadedfile'
+import csv from 'csv-parser'
+import Candidate from '../../models/candidate'
 /**
  * files management controller
  */
+function checkFolder(dir) {
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+    return "created"
+  }
+  return "found"
+}
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-    cb(null, 'uploads')
+    cb(null, 'uploads/files/')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' +file.originalname )
@@ -21,13 +30,12 @@ exports.uploadFiles = (req,res) => {
         } else if (err) {
             return res.status(500).json(err)
         }
-    console.log('uploading file to /uploads '+req.files.filename)
-    console.log(req.files);
+    console.log('uploading file to /uploads/files '+req.files.filename)
     var user = JSON.parse(req.body.user)
     req.files.forEach(element => {
       if(element.mimetype === "application/x-zip-compressed"){
         console.log('archive spotted, extracting... '+req.files.originalname)
-          fs.createReadStream('uploads/'+element.filename)
+          fs.createReadStream('uploads/files/'+element.filename)
           .pipe(unzipper.Parse())
           .on('entry', function (entry) {
             var fileName = entry.path;
@@ -36,7 +44,7 @@ exports.uploadFiles = (req,res) => {
             console.log('name '+fileName+" type " + type +" size "+size )
             if(type === "File"){
               fileName = Date.now() + '-' + fileName      
-              entry.pipe(fs.createWriteStream('uploads/'+fileName ))
+              entry.pipe(fs.createWriteStream('uploads/files/'+fileName ))
               var saveToDb = new UploadedFile({
                 filename : fileName,
                 ownerUsername : user.username,
@@ -54,7 +62,7 @@ exports.uploadFiles = (req,res) => {
               entry.autodrain();
             }
           }).on('finish',function(){
-            fs.unlink('uploads/'+element.filename,function(err){
+            fs.unlink('uploads/files/'+element.filename,function(err){
               if(err){
                 console.log("l 55 stacktrace is : "+err)
                 res.status(400).send("error saving archive file, rar file corrupted or not found...")
@@ -62,7 +70,44 @@ exports.uploadFiles = (req,res) => {
               console.log('archive unzipped & deleted successfully');
           });  
           });  
-      }else{
+      }else if (element.mimetype === "text/csv" || element.mimetype === "application/csv" || 
+        element.mimetype === "application/vnd.ms-excel"){
+        fs.createReadStream('uploads/files/'+element.filename)
+        .pipe(csv({
+          mapHeaders: ({ header, index }) => 
+            header.trim().toLowerCase()
+        }))
+        .on('headers', (headers) => {
+          console.log(`First header: ${headers[0]}`)
+        })
+        .on('data', (row) => {
+          let data = JSON.parse(JSON.stringify(row))
+          console.log(row);
+          let saveCandidate = new Candidate({
+            firstName : row.firstname|| row.first || row.surname  || row.first_name  ||row.nom ||null,
+            lastName : row.lastname || row.last || row.name ||row.lastName || row.last_name  || row.prenom || null,
+            age : row.age  || null,
+            country : row.country || row.pays ,
+            currentPosition :  row.currentposition || row.current || row.current_position || row.poste  || row.job || row.metier || row.titre|| row.current_title|| null,
+            livesIn : row.adresse || row.addr || row.address  || null,
+            imageUrl : row.image || row.image_url || null
+          }).save((err,docs)=>{
+            if(err){
+              console.log(err)
+              res.status(400).send("error saving single file")
+             }
+           console.log('csv file content saved to database as '+docs)
+          })
+        })
+        .on('end', () => {
+          fs.unlink('uploads/files/'+element.filename,function(err){
+            if(err) console.log(error)
+            else console.log("csv deleted")
+        });
+          console.log('CSV file successfully processed');
+        });
+      }
+      else{
         console.log('simple files spotted, saving... '+req.files.filename)
         var saveToDb = new UploadedFile({
           filename : element.filename,
@@ -100,7 +145,7 @@ exports.deleteFiles = (req,res) =>{
     },(error,docs)=>{
       if (error) console.log(error)
       else {
-        fs.unlink('uploads/'+element.filename,function(err){
+        fs.unlink('uploads/files/'+element.filename,function(err){
           if(err) console.log(error)
           else console.log("deleted")
       });
