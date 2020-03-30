@@ -61,7 +61,7 @@ country_col_name = 'country'
 
 # Settings
 
-n_rows = -1             # Used to work on a portion of data, usier for debugging.
+n_rows = -1             # Used to work on a portion of data, easier for debugging.
 seed = 7                # Used to seed train_test splitting.
 model = None            # To save the model for prediction API.
 encoder = None          # To save the OHE encoder for future inverse_transforms during predictions.

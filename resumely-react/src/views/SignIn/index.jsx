@@ -131,6 +131,7 @@ class SignIn extends Component {
 
     // Notify backend to create if this is a new account.
     const { data } = await usersService.notifyFacebookLogin(response);
+    console.log(data);
     if(data.error) return;
 
     const user = data.user;
@@ -138,7 +139,8 @@ class SignIn extends Component {
     console.log(user)
 
     localStorage.setItem('isAuthenticated', true);
-    localStorage.setItem('token', response.accessToken);
+    // localStorage.setItem('token', response.accessToken);
+    localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(user));
 
     history.push('/dashboard');
@@ -154,7 +156,8 @@ class SignIn extends Component {
     console.log(data);
     if(data.error) return;
 
-    const token = response.tokenObj.access_token;
+    // const token = response.tokenObj.access_token;
+    const  token = data.token
     const user = data.user;
     
     localStorage.setItem('isAuthenticated', true);

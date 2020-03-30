@@ -1,7 +1,7 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../../models/user');
- 
+
 // Registration
 exports.signup = passport.authenticate('signup', {
     session: false
@@ -36,10 +36,10 @@ exports.login = async (req, res, next) => {
                 // Sign the JWT token and populate the payload with the user email and id
                 const token = jwt.sign({
                     user: body
-                }, 'top_secret');
+                }, process.env.PASSPORT_SECRET);
 
                 user.password = null;
-                
+
                 // Send back the token to the user
                 return res.json({
                     token,
@@ -70,20 +70,20 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         data_access_expiration_time
     } = data.data;
 
-    const user = await getEnsuredThirdPartyUser(
-        {
-            firstName: first_name, lastName: last_name, email, token: accessToken 
+    const outData = await getEnsuredThirdPartyUser({
+            firstName: first_name,
+            lastName: last_name,
+            email,
+            token: accessToken
         },
         'facebook'
     );
 
-    console.log('Sending user:', user);
+    console.log('Sending data:', outData);
 
-    user.password = null;
-
-    res.json({
-        message: 'Facebook login authorized',
-        user: user
+    return res.json({
+        'token': outData.token,
+        'user': outData.outUser
     });
 }
 
@@ -97,18 +97,20 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         profileObj,
     } = data.data;
 
-    const user = await getEnsuredThirdPartyUser(
-        {
-            firstName: profileObj.givenName, lastName: profileObj.familyName, email: profileObj.email, token: tokenObj.access_token 
+    const outData = await getEnsuredThirdPartyUser({
+            firstName: profileObj.givenName,
+            lastName: profileObj.familyName,
+            email: profileObj.email,
+            token: tokenObj.access_token
         },
         'google'
     );
 
-    user.password = null;
+    console.log('Sending data:', outData);
 
-    res.json({
-        message: 'Google login authorized',
-        user
+    return res.json({
+        'token': outData.token,
+        'user': outData.outUser
     });
 }
 
@@ -129,27 +131,38 @@ exports.profile = (req, res, next) => {
 const getEnsuredThirdPartyUser = async (user, provider) => {
     // Find the user associated with the email provided by the user
 
-    // TODO: Validate the token
-    // source: https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow#checktoken
-
-    const existUser = await UserModel.findOne({
+    let outUser = await UserModel.findOne({
         email: user.email
     });
 
-    if(existUser)
-        return existUser
-    
-    // Save the information provided by the user to the the database
-    const createdUser = await UserModel.create({
-        username: getNewUsername(user.email),
-        email: user.email,
-        password: user.token,
-        provider: provider,
-        firstName: user.firstName,
-        lastName: user.lastName,
-    });
+    if (!outUser) {
+        // Save the information provided by the user to the the database
+        outUser = await UserModel.create({
+            username: getNewUsername(user.email),
+            email: user.email,
+            password: provider,
+            provider: provider,
+            firstName: user.firstName,
+            lastName: user.lastName,
+        });
+    }
 
-    return createdUser;
+    const body = {
+        // _id: outUser._id,
+        email: user.email
+    };
+    // Sign the JWT token and populate the payload with the user email and id
+    const token = jwt.sign({
+        user: body
+    }, process.env.PASSPORT_SECRET);
+
+    user.password = null;
+
+    // Send back the token to the user
+    return {
+        token,
+        outUser
+    };
 }
 
 // TODO: Create a unique username upon third party login

@@ -49,7 +49,7 @@ UserSchema.pre('save', async function (next) {
     // 'this' refers to the current document about to be saved
     const user = this;
 
-    if(user.provider === 'local')
+    if(user.provider === 'local' || true)
     {
         // Hash the password with a salt round of 10, the higher the rounds the more secure, but the slower
         // your application becomes.
