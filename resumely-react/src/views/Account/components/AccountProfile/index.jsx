@@ -21,6 +21,9 @@ class AccountProfile extends Component {
     const { classes, className, ...rest } = this.props;
 
     const rootClassName = classNames(classes.root, className);
+    const user = JSON.parse(localStorage.getItem('user'));
+    const imageUrl = user.imageUrl ?? "/images/avatars/avatar_1.png";
+    console.log(user.imageUrl)
 
     return (
       <Portlet
@@ -46,7 +49,7 @@ class AccountProfile extends Component {
             </div>
             <Avatar
               className={classes.avatar}
-              src="/images/avatars/avatar_1.png"
+              src={imageUrl}
             />
           </div>
           <div className={classes.progressWrapper}>

@@ -56,6 +56,10 @@ class Sidebar extends Component {
     //const user = localStorage.getItem('user');
     const { firstName, lastName } = this.state;
 
+    const user = JSON.parse(localStorage.getItem('user'));
+    const imageUrl = user.imageUrl ?? "/images/avatars/avatar_1.png";
+    console.log(user.imageUrl)
+
     return (
       <nav className={rootClassName}>
         <div className={classes.logoWrapper}>
@@ -76,7 +80,7 @@ class Sidebar extends Component {
             <Avatar
               alt="user"
               className={classes.avatar}
-              src="/images/avatars/avatar_1.png"
+              src={imageUrl}
             />
           </Link>
           <Typography

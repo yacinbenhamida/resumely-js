@@ -28,12 +28,17 @@ const UserSchema = new Schema({
         required: true,
         minlength: 3
     },
+    imageUrl: {
+        type: String,
+        required: false,
+        minlength: 3
+    },
     provider: {
         type: String,
         default: 'local',
         enum: ['local', 'facebook', 'google'],
         // If it's facebook, google, or other trusted third party
-        // Then password would be the granted token
+        // Then password would be ignored, and checked upon trying to connect with an email used with such third party
     },
     resetPasswordToken : {
         type: String,

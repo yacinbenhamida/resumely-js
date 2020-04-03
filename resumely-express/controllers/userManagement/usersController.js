@@ -27,6 +27,14 @@ exports.login = async (req, res, next) => {
                 session: false
             }, async (error) => {
                 if (error) return next(error)
+
+                // Check login provider
+                if (user.provider != 'local') {
+                    const error = 'Not a local account';
+                    return res.json({
+                        error
+                    });
+                }
                 // We don't want to store the sensitive information such as the
                 // user password in the token so we pick only the email and id
                 const body = {
@@ -63,6 +71,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         accessToken,
         userID,
         expiresIn,
+        picture,
         signedRequest,
         graphDomain,
         first_name,
@@ -73,6 +82,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
     const outData = await getEnsuredThirdPartyUser({
             firstName: first_name,
             lastName: last_name,
+            imageUrl: picture.data.url,
             email,
             token: accessToken
         },
@@ -97,9 +107,12 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         profileObj,
     } = data.data;
 
+    console.log(data.data);
+
     const outData = await getEnsuredThirdPartyUser({
             firstName: profileObj.givenName,
             lastName: profileObj.familyName,
+            imageUrl: profileObj.imageUrl,
             email: profileObj.email,
             token: tokenObj.access_token
         },
@@ -142,6 +155,7 @@ const getEnsuredThirdPartyUser = async (user, provider) => {
             email: user.email,
             password: provider,
             provider: provider,
+            imageUrl: user.imageUrl,
             firstName: user.firstName,
             lastName: user.lastName,
         });
