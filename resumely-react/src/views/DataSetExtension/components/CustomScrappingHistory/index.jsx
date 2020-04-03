@@ -31,7 +31,7 @@ class CustomScrappingHistory extends Component {
     isLoading : true,
     user : JSON.parse(localStorage.getItem('user')),
     scrappingAttempts : null,
-    rowsPerPage: 5,
+    rowsPerPage: 10,
     page : 0
   };
   getData = async()=>{

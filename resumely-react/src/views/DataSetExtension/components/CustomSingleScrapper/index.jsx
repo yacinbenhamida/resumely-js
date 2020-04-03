@@ -6,13 +6,11 @@ import classNames from 'classnames';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
-import { LinearProgress,IconButton  } from '@material-ui/core';
+import { IconButton  } from '@material-ui/core';
 // Material components
 import { Button, TextField,CircularProgress,Checkbox, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AlertDialog from '../FilesToolbar/AlertDialog'
-import MapChart from "./MapChart";
-import ReactTooltip from "react-tooltip";
 // Shared components
 import {
   Portlet,
@@ -25,10 +23,10 @@ import {
 import styles from './styles';
 import axios from 'axios'
 
-class CustomScrapping extends Component {
+class CustomSingleScrapper extends Component {
 
     state = {
-    country: '',
+    profileUrl: '',
     age : true,
     education : true,
     career : true,
@@ -69,12 +67,12 @@ class CustomScrapping extends Component {
     this.setState(newState);
   };
   submitSearch = ()=>{
-    if(this.state.country && this.state.country.trim() !== ""){
+    if(this.state.profileUrl && this.state.profileUrl.trim() !== ""){
       this.setState({submitted : true})
       axios
-      .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),
+      .post(process.env.REACT_APP_BACKEND+'/single-scrapping?secret_token='+localStorage.getItem('token'),
       {
-          country : this.state.country,
+          url : this.state.profileUrl,
           username : this.state.user.username,
           ownerid :  this.state.user._id,
           scrapAge : this.state.age,
@@ -89,7 +87,7 @@ class CustomScrapping extends Component {
           else console.log('error')
       }).catch(err=>alert('error occured, could not connect to server'))
     }
-    else alert("country invalid")
+    else alert("url is invalid")
   }
   cancelScrapping =()=>{
     axios
@@ -110,13 +108,10 @@ class CustomScrapping extends Component {
     }
       this.setState({promptCancelScrapping : false})  
   }
-  getCountrys = ()=>{
-    const url = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
-    axios.get(url).then(d=>this.setState({countrys : d.data})).catch(err=>alert('no internet connection'))
-  }
+
   render() {
     const { classes, className, ...rest } = this.props;
-    const { isTriggered, scrappingInfo,submitted,content } = this.state;
+    const { isTriggered,submitted } = this.state;
     
     const rootClassName = classNames(classes.root, className);
     if (isTriggered) {
@@ -143,15 +138,9 @@ class CustomScrapping extends Component {
           </IconButton>        
           </PortletHeader>
         <PortletContent  className={classes.progressWrapper}>
-          <span>
-            {scrappingInfo[0].expectedNoOfRows} useful profiles
-          </span> 
-          <LinearProgress variant="determinate" value={100} />
-          <br/>
-          <span>
-            {scrappingInfo[0].currentNoOfRows} scrapped profiles
-          </span> 
-          <LinearProgress variant="determinate" value={scrappingInfo[0].currentNoOfRows}/>
+        <div className={classes.progressWrapper}>
+          <CircularProgress />
+        </div>
         </PortletContent>
         </Portlet>
         </>
@@ -164,25 +153,22 @@ class CustomScrapping extends Component {
       >
         <PortletHeader>
           <PortletLabel
-            subtitle="collect data online"
-            title="Multiple"
+            subtitle="collect data from one profile"
+            title="Single"
           />
         </PortletHeader>
         <PortletContent>
          
           <form className={classes.form}>
           <div className={classes.row}>
-          <div>
-            <MapChart setInputContent={d=>this.setState({country : d})} setTooltipContent={x=>this.setState({content : x})} />
-            <ReactTooltip>{content}</ReactTooltip>
-          </div>
             <TextField
               className={classes.textField}
-              label="country"
-              name="country"
-              value={this.state.country}
+              label="profile url"
+              name="url"
+              placeholder="doyoubuzz.com/.."
+              value={this.state.profileUrl}
               onChange={event =>
-                this.setState({country : event.target.value})
+                this.setState({profileUrl : event.target.value})
               }
               type="text"
               variant="outlined"
@@ -230,14 +216,14 @@ class CustomScrapping extends Component {
                 defaultChecked
               />
               lastname
+              
+              </div>
+              <div>
               <Checkbox color="primary"
                 disabled
                 defaultChecked
               />
               presentation
-              </div>
-              <div>
-              
               </div>
             </div>
           </form>
@@ -248,7 +234,7 @@ class CustomScrapping extends Component {
             variant="outlined"
             onClick={this.submitSearch}
           >
-            Search
+            Launch
           </Button>
           {submitted && 
           <CircularProgress />
@@ -259,9 +245,9 @@ class CustomScrapping extends Component {
   }
 }
 
-CustomScrapping.propTypes = {
+CustomSingleScrapper.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CustomScrapping);
+export default withStyles(styles)(CustomSingleScrapper);

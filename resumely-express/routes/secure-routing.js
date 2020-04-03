@@ -19,4 +19,7 @@ export default (app, passport) => {
     app.use('/stop-scrapping', passport.authenticate('jwt', {
         session: false
     })).post('/stop-scrapping', dataScrapping.cancelScrapping);
+    app.use('/single-scrapping', passport.authenticate('jwt', {
+        session: false
+    })).post('/single-scrapping', dataScrapping.scrapSingleProfile);
 };

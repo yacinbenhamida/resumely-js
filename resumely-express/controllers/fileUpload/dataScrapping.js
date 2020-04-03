@@ -4,7 +4,6 @@ require('dotenv').config();
 const flask_rest = process.env.PY_URI;
 
 exports.scrapData = (req,res)=>{
-    console.log(req.body)
     var initScrappingRequest = new ScrapRequest({
         country : req.body.country,
         ownerUsername : req.body.username,
@@ -16,7 +15,7 @@ exports.scrapData = (req,res)=>{
         scrapAge : req.body.scrapAge,
         scrapEducation : req.body.scrapEducation,
         scrapExperience : req.body.scrapExperience,
-        scrapSkills : req.body.scrapSkills
+        scrapSkills : req.body.scrapSkills,
     }).save((err,docs)=>{
         if(err) console.log(err)
         else{
@@ -42,5 +41,38 @@ exports.cancelScrapping = (req,res) => {
     ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "stopped"},(err,docs)=>{
         if(err) res.status(404)
         else res.status(200).send(docs)
+    })
+}
+
+exports.scrapSingleProfile = (req,res) => {
+    var initScrappingRequest = new ScrapRequest({
+        country : req.body.country,
+        ownerUsername : req.body.username,
+        ownerId : req.body.ownerid,
+        createdAt : Date.now(),
+        currentState : "started",
+        type : 'single',
+        scrapAge : req.body.scrapAge,
+        scrapEducation : req.body.scrapEducation,
+        scrapExperience : req.body.scrapExperience,
+        scrapSkills : req.body.scrapSkills,
+    }).save((err,docs)=>{
+        if(err) console.log(err)
+        else{
+            console.log("single profile scrapping triggered...")
+            request.post(`${flask_rest}/scrap-single`, {
+                json: {
+                  url : req.body.url,
+                  idop: docs._id
+                }
+              }, (error, res, body) => {
+                if (error) {
+                  console.error(error)
+                  return
+                }
+                console.log(`statusCode: ${res.statusCode}`)
+                console.log(body)
+              })           
+        } 
     })
 }
