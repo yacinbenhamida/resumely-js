@@ -24,6 +24,18 @@ import { Portlet, PortletContent } from 'components';
 // Component styles
 import styles from './styles';
 
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+
+
 class FilesTable extends Component {
   state = {
     selectedFiles: [],
@@ -41,18 +53,18 @@ class FilesTable extends Component {
     const rootClassName = classNames(classes.root, className);
 
     return (
-      <Portlet className={rootClassName}>
+      <Portlet className={rootClassName} >
         <PortletContent noPadding>
           <PerfectScrollbar>
-          <Table>
-              <TableHead>
-                <TableRow>
+          <Table >
+              <TableHead >
+                <TableRow  >
                   <TableCell align="left"> Nom</TableCell>
                   <TableCell align="left">prénom</TableCell>
                   <TableCell align="left">Date de naissance </TableCell>
-                  <TableCell align="left">Ville </TableCell>
-                  <TableCell align="left">Région </TableCell>
                   <TableCell align="left">Pays </TableCell>
+                  <TableCell align="left">Région </TableCell>
+                
          
                 </TableRow>
               </TableHead>
@@ -76,10 +88,10 @@ class FilesTable extends Component {
                        0
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate.country}
+                        {candidate._source.country}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate.livesIn}
+                        {candidate._source.livesIn}
                       </TableCell>
                    
                     </TableRow>

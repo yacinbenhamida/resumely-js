@@ -88,10 +88,7 @@ export default (app) => {
         .post(parsingController.insert);
 
 
-    //match all data
-    app
-    .route('/allData/:from')
-    .get(dataController.getAllData)
+
     
 
     // files management
@@ -109,7 +106,15 @@ export default (app) => {
 
     //search
     app
-    .route('/autocomplete/:prefix')
-    .get(dataController.autoComplete)
+    .route('/autocomplete/')
+    .get(dataController.autoComplete )
+        //match all data
+    app
+    .route('/allData/:from')
+    .get(dataController.getAllData)
+
+    app
+    .route('/countries')
+    .get(dataController.getCountries);
 
 };
