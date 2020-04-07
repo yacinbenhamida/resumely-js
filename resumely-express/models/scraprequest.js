@@ -12,6 +12,7 @@ const ScrapRequest = new Schema({
     scrapEducation    :   {   type : Boolean, default : true  },
     scrapExperience    :   {   type : Boolean, default : true  },
     scrapSkills    :   {   type : Boolean , default : true },
+    type    :   {type    :   String} ,
     createdAt : {type : Date},
 }, {collection : 'scraprequests'})
 module.exports = mongoose.model('scraprequests', ScrapRequest)

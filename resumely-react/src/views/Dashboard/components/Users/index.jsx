@@ -39,7 +39,7 @@ class Users extends Component {
               className={classes.title}
               variant="body2"
             >
-              TOTAL USERS
+              TOTAL CANDIDATES
             </Typography>
             <Typography
               className={classes.value}

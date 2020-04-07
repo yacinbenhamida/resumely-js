@@ -16,6 +16,8 @@ exports.scrapData = (req,res)=>{
         scrapEducation : req.body.scrapEducation,
         scrapExperience : req.body.scrapExperience,
         scrapSkills : req.body.scrapSkills,
+        type : 'multiple',
+
     }).save((err,docs)=>{
         if(err) console.log(err)
         else{

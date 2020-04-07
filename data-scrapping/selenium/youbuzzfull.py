@@ -2,7 +2,6 @@
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys
-import parameters
 from parsel import Selector
 import json
 
@@ -20,7 +19,7 @@ sleep(3)
 country = "russian"
 potential_title = "developer"
 search_query = driver.find_element_by_name('q')
-search_query.send_keys(parameters.search_query+' "'+potential_title+'" AND "'+country+'"')
+search_query.send_keys('site:doyoubuzz.com "'+potential_title+'" AND "'+country+'"')
 
 sleep(0.5)
 
@@ -68,6 +67,10 @@ for youbuzz_url in youbuzz_urls:
     if lives_in:
         lives_in = lives_in.strip()
 
+    age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
+    if age:
+        age = age.strip()    
+    
     youbuzz_url = driver.current_url
 
     firstName = validate_field(firstName)
@@ -97,6 +100,7 @@ for youbuzz_url in youbuzz_urls:
             'profile' : youbuzz_url,
             'firstName': firstName,
             'lastName' : lastName,
+            'age' : age
         }
         json.dump(res, outfile, indent=2) 
 

@@ -142,11 +142,20 @@ class CustomScrappingHistory extends Component {
                     key={sc._id}
                   >       
                     <TableCell align="justify" className={classes.tableCell}>
+                    { (sc.type ==='multiple' || !sc.type) &&
                     <Typography
                               className={classes.nameText}          
                             >
                       Scrapped from {sc.country} : loaded {sc.currentNoOfRows} out of {sc.expectedNoOfRows} 
                       </Typography>
+                    }
+                    {sc.type ==='single' && sc.type &&
+                    <Typography
+                              className={classes.nameText}          
+                            >
+                      Scrapped one profile
+                      </Typography>
+                    }
                     </TableCell>
                     <TableCell>
                       <Chip  color="primary" variant="outlined" size="small" label={sc.currentState} />
