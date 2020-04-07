@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // Externals
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import moment from 'moment';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -36,15 +37,15 @@ const icons = {
     icon: <PaymentIcon />,
     color: 'blue'
   },
-  user: {
+  scrapping: {
     icon: <PeopleIcon />,
     color: 'red'
   },
-  product: {
+  account: {
     icon: <StoreIcon />,
     color: 'green'
   },
-  feature: {
+  files: {
     icon: <CodeIcon />,
     color: 'purple'
   }
@@ -73,7 +74,7 @@ class NotificationList extends Component {
               <List component="div">
                 {notifications.map(notification => (
                   <Link
-                    key={notification.id}
+                    key={notification._id}
                     to="#"
                   >
                     <ListItem
@@ -90,7 +91,7 @@ class NotificationList extends Component {
                       <ListItemText
                         classes={{ secondary: classes.listItemTextSecondary }}
                         primary={notification.content}
-                        secondary={notification.createdAt}
+                        secondary={moment(notification.createdAt).format('DD/MM/YYYY HH:mm')}
                       />
                       <ArrowForwardIosIcon className={classes.arrowForward} />
                     </ListItem>
@@ -100,7 +101,7 @@ class NotificationList extends Component {
               </List>
               <div className={classes.footer}>
                 <Button
-                  color="primary"
+                  color="secondary"
                   component={Link}
                   size="small"
                   to="#"
