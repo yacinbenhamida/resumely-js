@@ -204,6 +204,7 @@ class FilesList extends Component {
   }
 }
 
+
 FilesList.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired

@@ -15,28 +15,27 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Redirect } from 'react-router-dom';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import {DropzoneArea} from 'material-ui-dropzone'
+import {File}  from './File';
 
+import 'react-dropzone-uploader/dist/styles.css';
+import Dropzone from 'react-dropzone-uploader';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 
 
 // Services
-
-
 // Externals
 import PropTypes, {} from 'prop-types';
-
 // Material helpers
 import { withStyles } from '@material-ui/core';
-
 // Material components
 import { Grid } from '@material-ui/core';
-
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
-
-// Custom components
-
+import { stat } from 'fs';
 // Component styles
 const styles = theme => ({
   root: {
@@ -58,9 +57,46 @@ class ParserParent extends Component {
        open:false,
        resumes: [],
        sendToNextPage: false,
-       show:false
-   }
-   
+       show:false,
+       openalert:false,
+    }
+    };
+
+
+     handleChangeStatus = ({ meta }, status) => {
+      console.log(status, meta)
+    }
+  
+     handleSubmit = (files, allFiles) => {
+
+       const formData = new FormData();
+     files.map(f =>{
+       console.log("testing value of f")
+       console.log(f)
+      formData.append("file", f.file);
+     
+     } )
+     axios.post("http://localhost:5000/parsing", formData).then(response=>{
+      allFiles.forEach(f => f.remove())
+      this.setState({
+        show: true,
+       })
+
+    
+    })}
+
+
+   handleClickOpenAlert = () => {
+    this.setState({
+      openalert:true
+     })
+  };
+   handleCloseAlert = () => {
+    this.setState({
+      openalert:false,
+      selectedFile: null,
+     })
+     window.location.reload();
   };
 
    renderTime = value => {
@@ -72,22 +108,7 @@ class ParserParent extends Component {
     this.setState({
       selectedFile: event.target.files,
      })
-  }
-  onClickHandler = () => {
-    const data = new FormData()
-   for(var x = 0; x<this.state.selectedFile.length; x++) {
-       data.append('file', this.state.selectedFile[x])
-   }
-    axios.post("http://localhost:5000/parsing", data).then(response=>{
-      this.setState({
-        show: true,
-       })
-     
-
-    })  
-
-   }
-  
+  }  
   handleClickOpen = () => {
     this.setState({
       show:false
@@ -101,7 +122,8 @@ class ParserParent extends Component {
       phone: resums.phone,
       adresse:resums.adresse,
       DateNaissance:resums.DateNaissance,
-      age: resums.age
+      age: resums.age,
+      experience: resums.experience
 
       }));
       this.setState({
@@ -110,18 +132,15 @@ class ParserParent extends Component {
   }).then(response=>{
     this.setState({
       open:true
-
     })
   });
     }
-
     handleClose = () => {
       this.setState({
         open:false
   
       })
     }
-  
    handleCloseWithinsert = () => {
     axios.post('http://localhost:5000/parsing/database')
     .then(res => console.log(res.data));
@@ -136,8 +155,6 @@ class ParserParent extends Component {
   }
   handleCloseWithdelete = () => {
     axios.get('http://localhost:5000/delete/parsed')
-    
-
     .then(response => {
       document.getElementById('idfile').value = null;
       this.setState({
@@ -151,49 +168,48 @@ class ParserParent extends Component {
   render() {
     const { classes } = this.props;
     console.log(this.state.show)
-
     return (
       <DashboardLayout title="Parsing">
         <div className={classes.root}>
           <Grid
             container
             spacing={4}
-          >
-            <Grid
+         >
+             <Grid
               item
               lg={12}
               md={12}
               xl={12}
               xs={12}
             >
+
+           <div> 
+           <Dropzone
+      onChangeStatus={this.handleChangeStatus}
+      onSubmit={this.handleSubmit}
+      maxFiles={10}
+      inputContent="Drop  Files"
+      inputWithFilesContent={files => `${10 - files.length} more`}
+      submitButtonDisabled={files => files.length > 10}
+    />
+         </div>
           <div> 
           <div>               
-            
-    
           <div>
-            <form>
-           <div>
-             <input type="file" id="idfile"style={{color: "#1B1867"}} multiple onChange={this.onChangeHandler}/>
-              &nbsp;&nbsp;&nbsp;
-             <Button  variant="outlined" color="primary" onClick={this.onClickHandler}>Upload</Button> 
-           </div>
-           </form>
-           <br></br>
-           <br></br>
-           <br></br>
+      
+        
            <br></br>
            { this.state.show &&  <CountdownCircleTimer 
       isPlaying
-      durationSeconds={2}
+      durationSeconds={2.5}
       colors={[["#FF7F50", 1]]}
       renderTime={this.renderTime}
-      onComplete={() => [true, 50]}
+      onComplete={() => [true, 200]}
     /> }
          {this.state.open}
           </div>
           </div>
           <div>
- 
       <Dialog
       fullWidth={true}
       maxWidth = {'lg'}
@@ -202,12 +218,10 @@ class ParserParent extends Component {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Display parsed resumes"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-   
-
-    <TableContainer component={Paper}>
+      <DialogTitle id="alert-dialog-title">{"Display parsed resumes"}</DialogTitle>
+      <DialogContent>
+      <DialogContentText id="alert-dialog-description">
+      <TableContainer component={Paper}>
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
@@ -221,6 +235,8 @@ class ParserParent extends Component {
             <TableCell align="right">Adress</TableCell>
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
+            <TableCell align="right">Delete</TableCell>
+         
           </TableRow>
         </TableHead>
         <TableBody>
@@ -239,6 +255,11 @@ class ParserParent extends Component {
               <TableCell align="right">{resumes.adresse}</TableCell>
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
+              <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ () => this.deleteContact(resumes._id) }>
+              <DeleteIcon />
+              </IconButton>
+              </TableCell>
+          
             </TableRow>
           ))}
         </TableBody>
@@ -259,7 +280,27 @@ class ParserParent extends Component {
         </DialogActions>
       </Dialog>
     </div>
-          </div>
+    </div>
+    <div>
+      <Dialog
+        open={this.state.openalert}
+        onClose={this.handleCloseAlert}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Alert of depassing files limit"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            you can upload max 10 files
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={this.handleCloseAlert} color="error" autoFocus>
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
             </Grid>
             <Grid
               item

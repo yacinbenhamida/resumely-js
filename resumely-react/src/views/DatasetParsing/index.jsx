@@ -147,7 +147,6 @@ class Datasetparsing extends Component {
               <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-        
             <TableCell align="right">Full name </TableCell>
             <TableCell align="right">First name</TableCell>
             <TableCell align="right">Last name</TableCell>
@@ -272,7 +271,7 @@ class Datasetparsing extends Component {
         </div>
       </DashboardLayout>
     );
-  }
+ }
 }
 
 Datasetparsing.propTypes = {
