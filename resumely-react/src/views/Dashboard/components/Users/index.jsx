@@ -21,13 +21,25 @@ import { Paper } from 'components';
 
 // Component styles
 import styles from './styles';
-
+import axios from 'axios'
 class Users extends Component {
+  state = {
+    nbCandidates : 0
+  }
+  componentDidMount(){
+    this.loadNbOfUsers()
+  }
+  loadNbOfUsers = () => {
+    axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
+    .then(res=>{
+        this.setState({nbCandidates: res.data.nbCandidates})
+      })
+  }
   render() {
     const { classes, className, ...rest } = this.props;
-
+    const {nbCandidates} = this.state
     const rootClassName = classNames(classes.root, className);
-
+    
     return (
       <Paper
         {...rest}
@@ -45,7 +57,7 @@ class Users extends Component {
               className={classes.value}
               variant="h3"
             >
-              1600
+              {nbCandidates}
             </Typography>
           </div>
           <div className={classes.iconWrapper}>

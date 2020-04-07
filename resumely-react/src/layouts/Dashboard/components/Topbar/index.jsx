@@ -50,7 +50,8 @@ class Topbar extends Component {
       const { notificationsLimit } = this.state;
 
       const { notifications, notificationsCount } = await getNotifications(
-        notificationsLimit
+        notificationsLimit,
+        JSON.parse(localStorage.getItem('user'))._id
       );
 
       if (this.signal) {

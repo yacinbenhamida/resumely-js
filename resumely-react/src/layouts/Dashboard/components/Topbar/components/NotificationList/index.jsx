@@ -89,8 +89,8 @@ class NotificationList extends Component {
                       </ListItemIcon>
                       <ListItemText
                         classes={{ secondary: classes.listItemTextSecondary }}
-                        primary={notification.title}
-                        secondary={notification.when}
+                        primary={notification.content}
+                        secondary={notification.createdAt}
                       />
                       <ArrowForwardIosIcon className={classes.arrowForward} />
                     </ListItem>

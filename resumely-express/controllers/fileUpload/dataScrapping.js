@@ -1,6 +1,7 @@
 import request from 'request';
 import ScrapRequest from '../../models/scraprequest'
 require('dotenv').config();
+import Notification from '../../models/notification'
 const flask_rest = process.env.PY_URI;
 
 exports.scrapData = (req,res)=>{
@@ -27,7 +28,6 @@ exports.scrapData = (req,res)=>{
             }).pipe(res);
         } 
     })
-    //res.send('can access with token ' + req.query.secret_token)
 }
 exports.checkScrapper = (req,res) => {
     ScrapRequest.find({
@@ -42,7 +42,16 @@ exports.checkScrapper = (req,res) => {
 exports.cancelScrapping = (req,res) => {
     ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "stopped"},(err,docs)=>{
         if(err) res.status(404)
-        else res.status(200).send(docs)
+        else{
+            const notif = new Notification({
+                targetedUserId : docs.ownerId,
+                content : "scrapping request created at "+docs.createdAt+" cancelled.",
+                type : "scrapping"
+            }).save((e,d)=>{
+                if(e) console.log(e)
+                res.status(200).send(docs)
+            })
+        } 
     })
 }
 
