@@ -1,3 +1,4 @@
+import Grid from '@material-ui/core/Grid';
 import Snackbar from '@material-ui/core/Snackbar';
 import {withStyles} from '@material-ui/core/styles';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
@@ -26,13 +27,11 @@ const styles = {
         borderColor: '#C8C8C8',
         cursor: 'pointer',
         boxSizing: 'border-box',
-        fontFamily : 'Roboto'
     },
     stripes: {
         border: 'solid',
         backgroundImage: 'repeating-linear-gradient(-45deg, #F0F0F0, #F0F0F0 25px, #C8C8C8 25px, #C8C8C8 50px)',
         animation: 'progress 2s linear infinite !important',
-        fontFamily : 'Roboto',
         backgroundSize: '150% 100%',
     },
     rejectStripes: {
@@ -42,24 +41,21 @@ const styles = {
         backgroundSize: '150% 100%',
     },
     dropzoneTextStyle: {
-        paddingTop : '80px',
         textAlign: 'center',
-        fontFamily : 'Roboto'
     },
     uploadIconSize: {
         width: 51,
         height: 51,
         color: '#909090',
-        fontFamily : 'Roboto'
     },
     dropzoneParagraph: {
         fontSize: 24,
-        fontFamily : 'Roboto'
     },
 };
 
 
 class DropzoneArea extends Component {
+    _isMounted = false
     constructor(props) {
         super(props);
         this.state = {
@@ -73,6 +69,7 @@ class DropzoneArea extends Component {
 
     componentDidMount() {
         this.filesArray(this.props.initialFiles);
+        this._isMounted = true
     }
 
     componentDidUpdate(prevProps) {
@@ -89,6 +86,7 @@ class DropzoneArea extends Component {
                 fileObjects: [],
             });
         }
+        this._isMounted = false
     }
 
     async filesArray(urls) {
@@ -217,7 +215,7 @@ class DropzoneArea extends Component {
         const {classes} = this.props;
         const showPreviews = this.props.showPreviews && this.state.fileObjects.length > 0;
         const showPreviewsInDropzone = this.props.showPreviewsInDropzone && this.state.fileObjects.length > 0;
-
+        if(this._isMounted){
         return (
             <Fragment>
                 <Dropzone
@@ -248,6 +246,9 @@ class DropzoneArea extends Component {
                 </Dropzone>
                 {showPreviews &&
                     <Fragment>
+                        <Grid container={true}>
+                            <span>Preview:</span>
+                        </Grid>
                         <PreviewList
                             fileObjects={this.state.fileObjects}
                             handleRemove={this.handleRemove.bind(this)}
@@ -277,13 +278,21 @@ class DropzoneArea extends Component {
             </Fragment>
         );
     }
+    else {
+        return (
+            <Fragment>
+                Loading...
+            </Fragment>
+        );
+    }
+    }
 }
 
 DropzoneArea.defaultProps = {
     acceptedFiles: ['image/*', 'video/*', 'application/*'],
     filesLimit: 3,
     maxFileSize: 3000000,
-    dropzoneText: 'Drag and drop your files here or click',
+    dropzoneText: 'Drag and drop an image file here or click',
     showPreviews: false, // By default previews show up under in the dialog and inside in the standalone
     showPreviewsInDropzone: true,
     showFileNames: false,

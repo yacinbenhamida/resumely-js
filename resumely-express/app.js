@@ -46,10 +46,7 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
-<<<<<<< HEAD
-=======
  //indexing data
->>>>>>> correctionOfSearch&&addFilterByCountries
 let stream = Candidate.synchronize()
 let count = 0;
 
@@ -76,10 +73,7 @@ console.log('indexed ' + count + ' documents!');
 stream.on('error', function(err){
 console.log(err);
 });
-<<<<<<< HEAD
-=======
  
->>>>>>> correctionOfSearch&&addFilterByCountries
 
 /* ping to elastic search */
 

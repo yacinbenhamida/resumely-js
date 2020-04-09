@@ -38,12 +38,10 @@ const styles = (theme) => ({
     iconVariant: {
         opacity: 0.9,
         marginRight: theme.spacing(1),
-        fontFamily : 'Roboto'
     },
     message: {
         display: 'flex',
         alignItems: 'center',
-        fontFamily : 'Roboto'
     },
 });
 

@@ -22,13 +22,14 @@ import styles from './style';
 import axios from 'axios';
 
 class FilesList extends Component {
+  signal = true;
+  interval = null;
   constructor(props){
     super(props);
     this.signal = true;
     this.handler = this.handler.bind(this)
   }
-  signal = true;
-  interval = null;
+
   handler(updatedList) {
     this.setState({
       isLoading : true,
@@ -45,7 +46,7 @@ class FilesList extends Component {
     files: [],
     selectedFiles: [],
     error: null,
-    value : 0
+    value : 1
   };
   
   getUserFiles = ()=>{
@@ -75,7 +76,7 @@ class FilesList extends Component {
     }
   }
   componentDidMount() {
-    this.signal = true;
+    this.signal = true; 
     this.getFiles()
   }
 
@@ -124,8 +125,8 @@ class FilesList extends Component {
     };
   }
 
-  handleChangeIndex = (index) => {
-    this.setState({index })
+  handleChangeIndex = (ind) => {
+    this.setState({ index : ind })
   };
   render() {
     const { classes } = this.props;
@@ -175,7 +176,7 @@ class FilesList extends Component {
           <Grid
               item
               md={6}
-              xs={8}  
+              xs={6}  
           >
           <CustomScrappingHistory />
           </Grid>       

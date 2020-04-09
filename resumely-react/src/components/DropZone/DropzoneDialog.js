@@ -9,6 +9,7 @@ import DropzoneArea from './DropzoneArea';
 
 
 class DropzoneDialog extends React.Component {
+    _isMounted = false;
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +18,9 @@ class DropzoneDialog extends React.Component {
             disabled: true,
         };
     }
-
+    componentDidMount(){
+        this._isMounted = true
+    }
     componentDidUpdate(prevProps, prevState) {
         if (this.props.open !== prevProps.open) {
             this.setState({
@@ -36,6 +39,7 @@ class DropzoneDialog extends React.Component {
     }
 
     componentWillUnmount() {
+        this._isMounted = false
         if (this.props.clearOnUnmount) {
             this.setState({
                 files: [],
@@ -95,6 +99,7 @@ class DropzoneDialog extends React.Component {
         }
     }
     render() {
+        if(this._isMounted){
         return (
             <Fragment>
                 <Dialog
@@ -143,6 +148,14 @@ class DropzoneDialog extends React.Component {
                 </Dialog>
             </Fragment>
         );
+    }
+    else {
+        return (
+            <Fragment>
+                Loading...
+            </Fragment>
+        );
+    }
     }
 }
 DropzoneDialog.defaultProps = {

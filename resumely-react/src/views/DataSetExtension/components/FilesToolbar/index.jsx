@@ -22,8 +22,8 @@ import {  SearchInput } from 'components';
 
 // Component styles
 import styles from './styles';
-
-import {DropzoneDialog,SnackbarContentWrapper} from 'components/DropZone/index'
+import {DropzoneDialog} from 'material-ui-dropzone'
+import {SnackbarContentWrapper} from 'components/DropZone'
 import Axios from 'axios';
 import AlertDialog from './AlertDialog';
 
@@ -103,7 +103,6 @@ class FilesToolbar extends Component {
     this.props.handler(this.state.allFiles)
   }
   showDeleteDialog(){
-    console.log('prompt')
     this.setState({promptDelete : true})
   }
   handleConfirmDelete = (answer) => {
@@ -187,7 +186,6 @@ class FilesToolbar extends Component {
           />
         </div>
       </div>
-      <div className={classes.font}>
       <DropzoneDialog
         open={this.state.open}
         onSave={this.handleSave.bind(this)}
@@ -195,8 +193,8 @@ class FilesToolbar extends Component {
         showPreviews={true}
         maxFileSize={5000000}
         onClose={this.handleClose.bind(this)}
+        showFileNamesInPreview={true}
       />
-      </div>
       {this.props.showAlerts &&
         <Snackbar
             anchorOrigin={{

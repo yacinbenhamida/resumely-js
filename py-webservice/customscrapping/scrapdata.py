@@ -19,6 +19,7 @@ def scrap_one_profile(url,idop):
     database = client["resumelydb"]
     profiles_collection = database['profiles']
     scrapping_request_collection = database['scraprequests']
+    notifications = database["notifications"]
     options = Options()
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])

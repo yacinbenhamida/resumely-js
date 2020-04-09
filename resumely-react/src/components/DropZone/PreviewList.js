@@ -17,13 +17,12 @@ const styles = {
         right: -5,
         width: 40,
         height: 40,
-        fontFamily : 'Roboto'
     },
     smallPreviewImg: {
         height: 100,
         width: 'initial',
         maxWidth: '100%',
-        marginTop: 15,
+        marginTop: 5,
         marginRight: 10,
         color: 'rgba(0, 0, 0, 0.87)',
         transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
@@ -31,13 +30,11 @@ const styles = {
         boxShadow: 'rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px',
         borderRadius: 2,
         zIndex: 5,
-        fontFamily : 'Roboto',
         opacity: 1,
     },
     imageContainer: {
         position: 'relative',
         zIndex: 10,
-        fontFamily : 'Roboto',
         textAlign: 'center',
         '&:hover $smallPreviewImg': {
             opacity: 0.3,
@@ -69,7 +66,7 @@ function PreviewList(props) {
             {
                 fileObjects.map((fileObject, i) => {
                     const img = (isImage(fileObject.file) ?
-                        <img className={classes.smallPreviewImg} alt="presentation" src={fileObject.data} /> :
+                        <img className={classes.smallPreviewImg} role="presentation" src={fileObject.data} /> :
                         <AttachFileIcon className={classes.smallPreviewImg} />
                     );
                     return (
@@ -85,7 +82,7 @@ function PreviewList(props) {
 
                             <Fab
                                 onClick={handleRemove(i)}
-                                alt="Delete"
+                                aria-label="Delete"
                                 className={classes.removeBtn}
                             >
                                 <DeleteIcon />
