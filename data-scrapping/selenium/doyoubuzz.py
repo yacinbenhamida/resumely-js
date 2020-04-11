@@ -4,12 +4,16 @@ from selenium.webdriver.common.keys import Keys
 import parameters
 from parsel import Selector
 import json
+import pymongo
 
 def validate_field(field):
     if not field:
         field = 'No results'
     return field
 
+client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
+database = client["resumelydb"]
+profiles_collection = database['profiles']
 done = set()
 extracted_data = {}
 extracted_data['candidates'] = []
@@ -18,7 +22,7 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "czech"
+country = "saudi arabia"
 #potential_title = "egyptian"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
@@ -67,20 +71,15 @@ for youbuzz_url in youbuzz_urls:
     lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
     if lives_in:
         lives_in = lives_in.strip()
+        lives_in = ' '.join(lives_in.split())
        
     age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
     if age:
         age = age.strip()    
     youbuzz_url = driver.current_url
 
-    firstName = validate_field(firstName)
-    lastName = validate_field(lastName)
-    current_title = validate_field(current_title)
-    lives_in = validate_field(lives_in)
-    youbuzz_url = validate_field(youbuzz_url)
-    age = validate_field(age)
-    if lives_in != 'No Results':
-        lives_in = ' '.join(lives_in.split())
+    
+      
     try:
         if age != 'No Results':
             age = ' '.join(age.split())
@@ -89,6 +88,59 @@ for youbuzz_url in youbuzz_urls:
                     age = int(a)  
     except:
         pass
+    # experiences
+    experiencesTab = []
+    skills = []
+    education = []
+    presentation = None
+    j = 1
+    i = 1
+    try:
+        for div in driver.find_elements_by_xpath("//*[@class='widget widget_experiences']//*[@class='widgetElement widgetElement_topInfos']/div["+str(i)+"]"):
+            job = div.find_element_by_class_name('widgetElement__titleLink').text
+            job_details = div.find_element_by_class_name('widgetElement__subtitle').text
+            job_date = div.find_element_by_class_name('widgetElement__subtitleItem_date').text
+            experiencesTab.append({
+                'job' : job,
+                'job_details' : job_details,
+                'job_date' : job_date
+            })
+            i=i+1
+    except:
+        pass
+    try:
+        presentation = driver.find_element_by_xpath('//*[@class="widget widget_presentation"]//*[@class="widgetElement__text"]').text
+        presentation = validate_field(presentation)
+    except:
+        pass
+    try : 
+        for div2 in driver.find_elements_by_xpath("//*[@class='widget widget_educations']//*[@class='widgetElement widgetElement_topInfos']/div["+str(j)+"]"): 
+            diploma = div2.find_element_by_class_name('widgetElement__titleLink').text
+            university = div2.find_element_by_class_name('widgetElement__subtitle').text
+            date = div2.find_element_by_class_name('widgetElement__info').text
+            education.append({
+                'diploma ' : diploma,
+                'university ' : university,
+                'date' : date
+            })
+            j=j+1 #3600
+    except:
+        pass
+    #skills
+    try:
+        for div in driver.find_elements_by_xpath("//*[@class='widget widget_skills']"): 
+            for lang in div.find_elements_by_xpath("//*[@class='widget widget_skills']//*[starts-with(@class,'widgetElement__list skillsBulletList')]/li"):  
+                fetch = lang.text
+                skills.append(fetch)
+    except:
+        pass
+    firstName = validate_field(firstName)
+    lastName = validate_field(lastName)
+    current_title = validate_field(current_title)
+    lives_in = validate_field(lives_in)
+    youbuzz_url = validate_field(youbuzz_url)
+    age = validate_field(age)
+    presentation = validate_field(presentation)
     try:
         # printing the output to the terminal
         print('\n')
@@ -110,13 +162,16 @@ for youbuzz_url in youbuzz_urls:
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
-                'age' : age
+                'age' : age,
+                "experiences": experiencesTab,
+                "presentation": presentation,
+                "education": education,
+                "skills": skills
             }
             if res['lastName'] not in done:
                 print('relevant record, inserting to json file...')
+                profiles_collection.insert_one(res)
                 done.add(res['lastName']) 
-                json.dump(res, outfile, indent=2) 
-
             else:
                 print('already scrapped, moving...')
     else:
