@@ -15,6 +15,8 @@ client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/r
 database = client["resumelydb"]
 profiles_collection = database['profiles']
 done = set()
+for item in profiles_collection.find({},{"_id":0,"lastName":1}):
+    done.add(str(item))
 extracted_data = {}
 extracted_data['candidates'] = []
 driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
@@ -22,7 +24,7 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "saudi arabia"
+country = "tunisian"
 #potential_title = "egyptian"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
@@ -150,6 +152,8 @@ for youbuzz_url in youbuzz_urls:
         print('lives_in: ' + lives_in)
         print('age '+str(age))
         print('youbuzz_url: ' + youbuzz_url)
+        print('presentation : '+presentation)
+        print('experiences no '+len(experiencesTab))
         print('\n')
     except:
         pass
@@ -158,7 +162,7 @@ for youbuzz_url in youbuzz_urls:
             res = {        
                 'currentPosition' : current_title,
                 'livesIn' : lives_in,
-                'country' : country,
+                'country' : "tunisie",
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
@@ -169,7 +173,7 @@ for youbuzz_url in youbuzz_urls:
                 "skills": skills
             }
             if res['lastName'] not in done:
-                print('relevant record, inserting to json file...')
+                print('relevant record, inserting to db ...')
                 profiles_collection.insert_one(res)
                 done.add(res['lastName']) 
             else:

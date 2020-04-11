@@ -45,7 +45,7 @@ exports.cancelScrapping = (req,res) => {
         else{
             const notif = new Notification({
                 targetedUserId : docs.ownerId,
-                content : "scrapping request created at "+docs.createdAt+" cancelled.",
+                content : "scrapping request created at "+docs.createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '')+" cancelled.",
                 type : "scrapping"
             }).save((e,d)=>{
                 if(e) console.log(e)
