@@ -6,7 +6,7 @@ from threading import Thread
 from tasks import threaded_task
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
-PREDICTION_DIR = BASE_DIR / 'prediction'
+PREDICTION_DIR = BASE_DIR / 'prediction' / 'custom'
 
 # Import Services
 sys.path.append(str(PREDICTION_DIR))

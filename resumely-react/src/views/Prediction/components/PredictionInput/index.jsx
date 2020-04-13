@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import { Button, TextField } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Shared components
 import {
@@ -25,8 +26,9 @@ class PredictionInput extends Component {
     const { classes, className
       , firstName, lastName
       , handleChange_FirstName, handleChange_LastName
-      , handleSubmit_Prediction, ...rest } = this.props;
+      , handleSubmit_Prediction, loading, ...rest } = this.props;
 
+    console.log(loading)
     const rootClassName = classNames(classes.root, className);
 
     return (
@@ -37,10 +39,10 @@ class PredictionInput extends Component {
         <PortletContent noPadding>
           <form
             autoComplete="off"
-            onSubmit={this.props.handleSubmit_Prediction} 
+            onSubmit={this.props.handleSubmit_Prediction}
             className={classes.form}
           >
-            <div className={classes.field} style={{textAlign: "center"}}>
+            <div className={classes.field} style={{ textAlign: "center" }}>
               <TextField
                 className={classes.textField}
                 label="First name"
@@ -59,17 +61,18 @@ class PredictionInput extends Component {
                 onChange={this.props.handleChange_LastName}
                 variant="outlined"
               />
-              <br/>
-              <br/>
+              <br />
+              <br />
               <Button
                 type="submit"
                 variant="contained"
-                color="primary"
+                color="inherit"
                 onSubmit={this.props.handleSubmit}
                 className={classes.textField}
-            >
-                Predict
-            </Button>
+              >
+                {!loading && 'Predict'}
+                {loading && <CircularProgress color='secondary' size={24} className={classes.buttonProgress} />}
+              </Button>
             </div>
           </form>
         </PortletContent>
