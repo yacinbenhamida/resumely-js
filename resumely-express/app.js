@@ -10,7 +10,8 @@ import fs from 'fs'
 import passport from 'passport';
 import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
-
+import Candidate from './models/candidate'
+import esClient from './elasticsearch/connection'
 const app = express();
 
 
@@ -45,12 +46,29 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
- /*indexing data
+<<<<<<< HEAD
+=======
+ //indexing data
+>>>>>>> correctionOfSearch&&addFilterByCountries
 let stream = Candidate.synchronize()
 let count = 0;
 
 stream.on('data', function(err, doc){
-   count = count +1 ;
+  
+      
+
+    /*  if(doc.livesIn.includes('Tunisie'))
+      {
+        console.log(doc.livesIn)
+     
+     
+      
+      }*/
+    
+      count = count +1 ;
+ //  Candidate.findOneAndUpdate() 
+
+         
 });
 stream.on('close', function(){
 console.log('indexed ' + count + ' documents!');
@@ -58,13 +76,14 @@ console.log('indexed ' + count + ' documents!');
 stream.on('error', function(err){
 console.log(err);
 });
- */
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> correctionOfSearch&&addFilterByCountries
 
 /* ping to elastic search */
 
-
-
-/*esClient.ping({
+esClient.ping({
     // ping usually has a 3000ms timeout
         requestTimeout: 1000
     }, function (error) {

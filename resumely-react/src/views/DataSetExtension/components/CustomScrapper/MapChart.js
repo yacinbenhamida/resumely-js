@@ -4,6 +4,7 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  Annotation
 } from "react-simple-maps";
 
 const geoUrl =
@@ -20,7 +21,7 @@ const rounded = num => {
   }
 };
 
-const MapChart = ({ setTooltipContent,setInputContent }) => {
+const MapChart = ({ setTooltipContent,setInputContent,pointerLat = 0, pointerLong = 0, countryName ="" }) => {
   return (
     <>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
@@ -33,6 +34,7 @@ const MapChart = ({ setTooltipContent,setInputContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME, POP_EST } = geo.properties;
+                    console.log(geo.properties)
                     setTooltipContent(`${NAME}  — ${rounded(POP_EST)}`);
                   }}
                   onMouseLeave={() => {
@@ -63,6 +65,23 @@ const MapChart = ({ setTooltipContent,setInputContent }) => {
             }
           </Geographies>
         </ZoomableGroup>
+        {pointerLat > 0 && pointerLong > 0 && countryName !== ""
+        &&
+        <Annotation
+          subject={[pointerLat, pointerLong]}
+          dx={-90}
+          dy={-30}
+          connectorProps={{
+            stroke: "#FF5533",
+            strokeWidth: 3,
+            strokeLinecap: "round"
+        }}
+      >
+        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
+          {"Paris"}
+        </text>
+      </Annotation>
+        }
       </ComposableMap>
     </>
   );

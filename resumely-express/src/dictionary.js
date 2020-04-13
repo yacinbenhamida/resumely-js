@@ -4,21 +4,22 @@ var _ = require('underscore');
 
 module.exports = {
   titles: {
-    adresse: ['Adresse','avenue','km','tunisie','Route','maghreb','Rue','maroc','address','tunisia','Morocco','Ariana','Béja','Ben Arous','Bizerte','Gabès',
-    'Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Kef','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','	Sidi Bouzid',
-    'Siliana','Sousse','Tataouine','Tozeur','Tunis','Zaghouan'],
-    objective: ['objective', 'objectives'],
+    adresse: ['Cité','Adresse','avenue','Pays','Ville',' km ','tunisie','petite ariana','Route','maghreb','Rue','cité','RUE','Lieu de naissance','tunis','maroc','tunisienne','Nationalité','tunisien','address','tunisia','Morocco','Ariana','Béja','Ben Arous','Bizerte','Gabès',
+    'Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Bizerte','la marsa','Kef','Benarous','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','	Sidi Bouzid',
+    'Siliana','Sousse','Tataouine','Tozeur','Tunis','Zaghouan','Maroc','Provence','Province','Mdiq Fnideq','Tétouan','Fahs Anjra',
+    'Larache','Hoceima','Chefchaouen','Ouezzane','Oujda angad','Nador','Driouch','Jerada','Berkane','Taourirt','Guercif','Figuig','Fès','Meknès','Moulay yaacoub','Boulemane','Rabat','Tikachmirine'
+    ,'Chefchaouèn','Settat','Khmissat','Larache','Ksar el Kebir','Jadida','Beni Mellal','Khouribga','Safi','Tetouan','Kenitra',
+    'Oujda','Meknes','Tanger','Agadir','Marrakech','Salé'],
+   /* objective: ['objective', 'objectives'],
     nationalité: ['tunisien', 'tunisienne','nationalité'],
     summary: ['summary'],
-    experience: ['experience','EXPERIENCES PROFESSIONNELLES'],
     formation: ['education','formation','ETUDES & DIPLOMES','etudes','diplomes','formations'],
-    diplomes: ['diplomes'],
+    diplomes: ['diplomes','diplome'],
     skills: ['Compétences', 'Skills & Expertise', 'technology', 'technologies','COMPETENCES TECHNIQUES','competences techniques','Logiciels maîtrisés'],
     languages: ['languages','langues','Linguistique'],
     courses: ['courses'],
     stages: ['stages','stage'],
     projetsacademique: ['PROJETS ACADEMIQUES','Autres projets académiques'],
-    experience:['EXPÉRIENCE PROFESSIONNELLE','experience','experiences','professionnelles'],
     links: ['links'],
     contacts: ['contacts','contact'],
     positions: ['positions', 'position'],
@@ -27,8 +28,9 @@ module.exports = {
     honors: ['honors'],
     additional: ['additional'],
     certification: ['certification', 'certifications'],
-    activites: ['interests','CENTRES D’INTERETS','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
-    DateNaissance:['Date de Naissance','Né','birthdate','born','date de naissance','Née']
+    activites: ['interests','CENTRES D’INTERETS','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],*/
+    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né']
+
  
   },
  
@@ -68,29 +70,36 @@ module.exports = {
     skype: 'Skype'
   },
   regular: {
+
+   /* DateNaissance:[
+      /((((\d{1,2})[-|.|\\|\/](\d{1,2})[-|.|\\|\/](19))\d\d)|(((0[1-9]|[12][0-9]|3[01])[- \\|\/.](janvier|février|mars|avril|mai|juin|juillet|août|septembre|aout|octobre|novembre|décembre)[- \\|\/.](19))\d\d))/
+    ],*/
+
    /* birth:[
       
       "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"],*/
   
     name: [
-      /([A-Z][a-z]*)(\s[A-Z][a-z]*)/
+      /([A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/
     ],
-   /* adresse:[
-      /^(\d+) ?([A-Za-z](?= ))? (.*?) ([^ ]+?) ?((?<= )APT)? ?((?<= )\d*)?$/gm
-    ],*/
+
     email: [
-      /([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})/
+      /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/
     ],
-    phone: [
-      /((\+|00)216)?([0-9]{8})|((\+|00)212|0)?([ \-_\s]*)(\d[ \-_\s]*){9}|(([(][+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})|(([+]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/
-     // /(?:(?:\+?([1-9]|[0-9][0-9]|[0-9][0-9][0-9])\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([0-9][1-9]|[0-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?/
-    ],
-    age:
-    [
-      /[2-9][0-9]?(?:[\s]ans)/
+    experience: [
+     /(\d+)([\s]ans[\s]d[\\]'expérience)/
     ],
     
-   
+    phone: [
+   // /((\+|00)216)?([0-9]{8})|((\+|00)212|0)?([ \-_\s]*)(\d[ \-_\s]*){9}|(([(][+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})|(([+]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/
+   /((\+|00)212|0)?([ \-_\s]*)(\d[ \-_\s]*){9,13}|(([(][+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})|(([+]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})|((?:(?:\+\s|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4})|(([+][(][(]?[0-9]{1,3}[)]?)((\+|00)216)?([0-9\s]{12}))/
+    ],
+
+    age:
+    [
+      /[2-9][0-9](?:[\s](ans|Ans))/
+    ],
+    
   }
 };
 

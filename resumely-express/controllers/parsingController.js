@@ -1,4 +1,3 @@
-
 const parseIt = require('../utils/parseIt')
 const multer  = require('multer')
 const crypto  = require('crypto')
@@ -91,7 +90,7 @@ exports.insert = (req, res, next) => {
 exports.parsedresume= ( async function(req, res) {  
   var tab = Array();
   await new Promise (resolve => {
-  setTimeout(resolve, 50);
+  setTimeout(resolve, 300);
   fs.readdir('./compiled', function (err, files) {
   // Handling error
   if (err) {
@@ -99,7 +98,7 @@ exports.parsedresume= ( async function(req, res) {
   }
   // Listing all files using forEach
   files.forEach(function (file) {
-  fs.readFile('./compiled/' + file, 'utf8',function (err, data)  {
+  fs.readFile('./compiled/' + file,'utf8',function (err, data)  {
   if(err) {
   res.json({status: 'error', reason: err.toString()});
   return;
@@ -192,6 +191,3 @@ exports.deleteparsed= ( async function(req, res) {
     })
 
   })
-  
-
-

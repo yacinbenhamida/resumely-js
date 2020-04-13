@@ -143,6 +143,9 @@ class CustomScrapping extends Component {
           </IconButton>        
           </PortletHeader>
         <PortletContent  className={classes.progressWrapper}>
+        {(scrappingInfo[0].type === 'multiple' || !scrappingInfo[0].type )
+        &&
+          <div>
           <span>
             {scrappingInfo[0].expectedNoOfRows} useful profiles
           </span> 
@@ -152,6 +155,15 @@ class CustomScrapping extends Component {
             {scrappingInfo[0].currentNoOfRows} scrapped profiles
           </span> 
           <LinearProgress variant="determinate" value={scrappingInfo[0].currentNoOfRows}/>
+          </div>
+        }
+        {(scrappingInfo[0].type === 'single' || !scrappingInfo[0].type)
+         &&
+         <div className={classes.progressWrapper}>
+          <CircularProgress />
+          <span>Scrapping a single profile...</span>
+          </div>
+        }
         </PortletContent>
         </Portlet>
         </>
@@ -165,7 +177,7 @@ class CustomScrapping extends Component {
         <PortletHeader>
           <PortletLabel
             subtitle="collect data online"
-            title="Data Scrapping"
+            title="Multiple"
           />
         </PortletHeader>
         <PortletContent>

@@ -17,6 +17,7 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core';
+import axios from 'axios'
 
 // Material icons
 import {
@@ -26,8 +27,7 @@ import {
   Input as InputIcon
 } from '@material-ui/icons';
 
-// Shared services
-import { getNotifications } from 'services/notification';
+
 
 // Custom components
 import { NotificationList } from './components';
@@ -47,18 +47,19 @@ class Topbar extends Component {
 
   async getNotifications() {
     try {
-      const { notificationsLimit } = this.state;
-
-      const { notifications, notificationsCount } = await getNotifications(
-        notificationsLimit
-      );
-
-      if (this.signal) {
-        this.setState({
-          notifications,
-          notificationsCount
-        });
-      }
+      //const { notificationsLimit } = this.state;
+      await axios.post(process.env.REACT_APP_BACKEND
+        +'/notifications/all?secret_token='+localStorage.getItem('token'))
+        .then(d => {
+        console.log(d)
+        console.log(d.data)
+        if (this.signal) {
+          this.setState({
+            notifications : d.data,
+            notificationsCount : d.data.length
+          });
+        }
+      })
     } catch (error) {
       return;
     }

@@ -12,6 +12,10 @@ exports.getAllData = async(req ,res)=>{
         body: {
           size : 10,
           from : req.params.from,
+          "sort" : [
+        
+            { "firstName" : "asc" }
+        ],
           query: {
             match_all: {}
           }
@@ -28,6 +32,39 @@ exports.getAllData = async(req ,res)=>{
       res.status(500).json(error);
     }
  }
+
+ exports.getCountries = async(req ,res)=>{
+   
+  try {
+   
+    const response = await client.search({
+      index: "profiles",
+      body: {
+        size : 100,
+  
+       
+        "aggs": {
+          "all_indexes": {
+             "terms": {
+                "field": "country",
+                "size": 300,
+                "order": {
+                  "_key" : "asc" 
+                }
+             }
+          }
+       }
+
+      }
+    });
+
+   
+    res.status(200).json(response['aggregations']['all_indexes']['buckets']);
+  
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
  
  exports.autocompleteMultiMatchEdgeNGramsFn= async(req ,res)=>{
    
@@ -93,25 +130,135 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
 
 
  exports.autoComplete = async(req ,res)=>{
-   
-  console.log(req.params.prefix)
+
+ 
+
+  
+ 
+
+
   try {
    
+    if(req.query.prefix == undefined && req.query.options !=undefined)
+    {
+        
+      console.log(req.query.options)
+
+      let data =  req.query.options.join(' ' )
+      let countries = data.split(" ");
+      console.log(countries)
+      const response = await client.search({
+        index: "profiles",
+        body: {
+          size : 50,
+         // from : req.params.from,
+     
+         query: {
+          "bool": {
+            "must": {
+              "match_all": {}
+            },
+            "filter": {
+              "terms": {
+                "country": countries
+              }
+            }
+          }
+        }
+        }
+      });
+    //  res.status(200).json(response['suggest']['profile-suggest'][0]['options']);
+    var results =response.hits.hits.map(function (hit) {
+      return hit;
+    
+  });
+   
+      res.status(200).json(results);
+    }
+    else if(req.query.prefix !== undefined &&  req.query.options  == undefined)
+    {
+
+  
     const response = await client.search({
       index: "profiles",
       body: {
-       
-        "suggest": {
-          "profile-suggest" : {
-              "prefix" : req.params.prefix,
-              "completion" : {
-                  "field" : "firstName.completion"
-              }
-          }
-      }
+        size : 50,
+       // from : req.params.from,
+   
+       query: {
+           
+          "multi_match": {
+                       "query": req.query.prefix,
+                       "type":"cross_fields", 
+                       "operator": "and",
+                   
+                       "fields": ["firstName.autocomplete^10", "lastName.autocomplete"  ]
+                   }
+     }
       }
     });
-    res.status(200).json(response['suggest']['profile-suggest'][0]['options']);
+  //  res.status(200).json(response['suggest']['profile-suggest'][0]['options']);
+  var results =response.hits.hits.map(function (hit) {
+    return hit;
+  
+});
+ 
+    res.status(200).json(results);
+
+  }
+  else if(req.query.prefix != undefined && req.query.options  !== undefined)
+  {
+    console.log(req.query.options)
+
+    let data =  req.query.options.join(' ' )
+    let countries = data.split(" ");
+    console.log(countries)
+    const response = await client.search({
+      index: "profiles",
+      body: {
+        size : 50,
+       // from : req.params.from,
+   
+       query: {
+        "bool": {
+       "must": [
+         {
+                  "multi_match": 
+                {
+                     "query": req.query.prefix,
+                     "type":"cross_fields", 
+                     "operator": "and",
+                 
+                     "fields": ["firstName.autocomplete^10", "lastName.autocomplete"  ]
+                 }
+         }]
+         ,
+       "filter": [
+         {
+          "terms":{
+             "country":countries
+           }
+         }
+         
+       ]
+        }
+   }} 
+    });
+  //  res.status(200).json(response['suggest']['profile-suggest'][0]['options']);
+  var results =response.hits.hits.map(function (hit) {
+    return hit;
+  
+});
+ 
+    res.status(200).json(results);
+  }
+
+
+
+
+
+
+
 
   } catch (error) {
     res.status(500).json(error);

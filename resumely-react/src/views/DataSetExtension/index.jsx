@@ -7,17 +7,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
 // Material components
-import { CircularProgress, Typography } from '@material-ui/core';
-
+import { Grid, AppBar, Tabs, Tab , CircularProgress, Typography} from '@material-ui/core';
+import {TabPanel} from '../../components/TabPanel'
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 
 // Custom components
-import { FilesToolbar, FilesTable, CustomScrapping, CustomScrappingHistory } from './components';
+import { FilesToolbar, FilesTable, CustomScrapping, CustomScrappingHistory, CustomSingleScrapper } from './components';
 
-
-import { Grid } from '@material-ui/core';
-
+import SwipeableViews from 'react-swipeable-views';
 // Component styles
 import styles from './style';
 
@@ -27,7 +25,6 @@ class FilesList extends Component {
   constructor(props){
     super(props);
     this.signal = true;
-    
     this.handler = this.handler.bind(this)
   }
   signal = true;
@@ -47,7 +44,8 @@ class FilesList extends Component {
     limit: 10,
     files: [],
     selectedFiles: [],
-    error: null
+    error: null,
+    value : 0
   };
   
   getUserFiles = ()=>{
@@ -116,32 +114,80 @@ class FilesList extends Component {
       />
     );
   }
+  handleChange = (event, newValue) => {
+    this.setState({value : newValue})
+  };
+  a11yProps(index) {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+    };
+  }
 
+  handleChangeIndex = (index) => {
+    this.setState({index })
+  };
   render() {
     const { classes } = this.props;
-    const { selectedFiles,files } = this.state;
+    const { selectedFiles,files, value } = this.state;
     return (
-      <DashboardLayout title="File management">
-      <Grid
+      <DashboardLayout title="Dataset extension">
+      <AppBar position="static">
+        <Tabs variant="fullWidth" value={value} onChange={this.handleChange} aria-label="simple tabs example">
+          <Tab label="Data Scrapping" {...this.a11yProps(0)} />
+          <Tab label="Files Management" {...this.a11yProps(1)} />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+      axis={'x'}
+      index={value}
+      onChangeIndex={this.handleChangeIndex}
+      >
+      <TabPanel value={value} index={0}>
+         <Grid
             container
-            spacing={4}
+            spacing={2}
             className={classes.root}
           >
+          <Grid
+            container
+            item
+            md={6}
+            xs={6} 
+            spacing={2}
+            className={classes.root}
+          >
+          <Grid
+              item
+              md={12}
+              xs={12}   
+            >
+            <CustomSingleScrapper />
+            </Grid>
             <Grid
               item
-              md={6}
-              xs={4}   
+              md={12}
+              xs={12}   
             >
           <CustomScrapping />
           </Grid> 
+          </Grid>
           <Grid
               item
               md={6}
               xs={8}  
           >
           <CustomScrappingHistory />
-          </Grid>
-          <Grid
+          </Grid>       
+        </Grid>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+      <Grid
+            container
+            spacing={2}
+            className={classes.root}
+          >
+        <Grid
               item
               md={12}
               xs={12}
@@ -151,10 +197,13 @@ class FilesList extends Component {
           <div className={classes.content}>{this.renderfiles()}</div>
         </Grid>
         </Grid>
+      </TabPanel>    
+      </SwipeableViews>
       </DashboardLayout>
     );
   }
 }
+
 
 FilesList.propTypes = {
   className: PropTypes.string,

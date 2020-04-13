@@ -16,15 +16,12 @@ var parser = {
           if (err) {
             return logger.error('Resume ' + preppedFile.name + ' errored',err);
           }
+          console.log(preppedFile)
           logger.trace('Resume ' + preppedFile.name + ' saved');
-
         })
       });
     }
      processing.run(file,onFileReady);
-
-    
-
   }
 }
 module.exports = parser;

@@ -25,7 +25,11 @@ const modelcvSchema = new mongoose.Schema({
     },
     age:{
       type: String
-  } 
+  },
+  experience:{
+    type: String
+} 
+
 
 }, {collection : 'datatset'}) 
 
