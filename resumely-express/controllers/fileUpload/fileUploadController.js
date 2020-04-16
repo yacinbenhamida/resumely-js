@@ -5,7 +5,7 @@ import UploadedFile from '../../models/uploadedfile'
 import csv from 'csv-parser'
 import Candidate from '../../models/candidate'
 import User from '../../models/user'
-
+import zip from 'express-zip'
 /**
  * files management controller
  */
@@ -161,4 +161,25 @@ exports.deleteFiles = (req,res) =>{
     })
   });
   res.status(200).send('deleted files')
+}
+
+exports.downloadFile = (req,res) => {
+  let files = []
+  console.log('here')
+  if(files[0]){
+  req.body.files.forEach(element => {
+    try {
+      console.log('here')
+      //const file = `uploads/files/${element.filename}`;
+      files.append({
+        path : 'uploads/files' , name : element.filename
+      })
+    } catch (err) {
+      console.log(err);
+    }
+  })
+  res.zip(files);
+  }
+  else res.status(400)
+ 
 }

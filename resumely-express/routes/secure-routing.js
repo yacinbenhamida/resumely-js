@@ -41,5 +41,8 @@ export default (app, passport) => {
     app.use('/delete-files', passport.authenticate('jwt', {
         session: false
     })).post('/delete-files', fileUpload.deleteFiles);
+    app.use('/download-files', passport.authenticate('jwt', {
+        session: false
+    })).put('/download-files', fileUpload.downloadFile);
     
 };

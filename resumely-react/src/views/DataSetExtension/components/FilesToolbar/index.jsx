@@ -26,7 +26,7 @@ import {DropzoneDialog} from 'material-ui-dropzone'
 import SnackBarWrapper from 'components/DropZone/SnackBar'
 import Axios from 'axios';
 import AlertDialog from './AlertDialog';
-
+import download from 'downloadjs'
 class FilesToolbar extends Component {
  
   constructor(props) {
@@ -130,6 +130,35 @@ class FilesToolbar extends Component {
       }
     })
   }
+  handleExportFiles = async () => {
+    console.log('triggered')
+    let toBeDownloaded = []
+    await this.props.allFiles.forEach(file=>{
+      for (const iterator of this.props.selectedFiles) {
+        if(iterator === file._id) toBeDownloaded.push(file)
+      }
+    })
+    fetch(process.env.REACT_APP_BACKEND+'/download-files?secret_token='+localStorage.getItem('token')
+    ,{method: 'put',files : toBeDownloaded})
+    .then(response => {
+      response.blob().then(blob => {
+          let url = window.URL.createObjectURL(blob);
+					let a = document.createElement('a');
+					a.href = url;
+					a.download = 'files.zip';
+					a.click();
+      })
+      //window.location.href = response.url;
+    })
+    /*.then(response=>{
+      window.location.href = response.url
+      if(response.status === 200){
+        this.setState({openSnackBar : true,snackbarMessage: 'downloading files...'})
+      }else{
+        this.setState({openSnackBar : true,snackbarMessage: 'error downloading',snackbarVariant : 'error'})
+      }
+    })*/
+  }
   render() {
     const { classes, className, selectedFiles } = this.props;
     const rootClassName = classNames(classes.root, className);
@@ -173,6 +202,7 @@ class FilesToolbar extends Component {
             className={classes.exportButton}
             size="small"
             variant="outlined"
+            onClick={this.handleExportFiles}
           >
             <ArrowUpwardIcon className={classes.exportIcon} />
             Export
