@@ -4,6 +4,8 @@ import fs from 'fs';
 import UploadedFile from '../../models/uploadedfile'
 import csv from 'csv-parser'
 import Candidate from '../../models/candidate'
+import User from '../../models/user'
+
 /**
  * files management controller
  */
@@ -128,12 +130,18 @@ exports.uploadFiles = (req,res) => {
 }
 
 exports.getAllUserFiles = (req,res) => {
-    UploadedFile.find({
-      ownerId: req.params.id
-    },function (err,docs) {
-      if(err) res.status(400).send(err)
-      res.status(200).send(docs)
+    User.findOne({
+      $or : [{ username : req.user.email},{email : req.user.email}]
+    },{_id : 1 },(e,user)=>{
+      console.log(user)
+      UploadedFile.find({
+        ownerId: String(user._id)
+      },function (err,docs) {
+        if(err) res.status(400).send(err)
+        res.status(200).send(docs)
+      })
     })
+    
 }
 
 exports.deleteFiles = (req,res) =>{

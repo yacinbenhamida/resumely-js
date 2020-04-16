@@ -23,7 +23,7 @@ import {  SearchInput } from 'components';
 // Component styles
 import styles from './styles';
 import {DropzoneDialog} from 'material-ui-dropzone'
-import {SnackbarContentWrapper} from 'components/DropZone'
+import SnackBarWrapper from 'components/DropZone/SnackBar'
 import Axios from 'axios';
 import AlertDialog from './AlertDialog';
 
@@ -64,7 +64,7 @@ class FilesToolbar extends Component {
       data.append('file', files[x])
     }    
     data.append('user',  localStorage.getItem('user'))
-    Axios.post(process.env.REACT_APP_BACKEND+'/upload-files',data,{})
+    Axios.post(process.env.REACT_APP_BACKEND+'/upload-files?secret_token='+localStorage.getItem('token'),data,{})
     .then(response => {
       if(response.statusText === "OK"){
         this.setState({openSnackBar : true,snackbarMessage: 'uploaded successfuly'})
@@ -119,7 +119,7 @@ class FilesToolbar extends Component {
       }
     })
     Axios
-    .post(process.env.REACT_APP_BACKEND+'/delete-files'
+    .post(process.env.REACT_APP_BACKEND+'/delete-files?secret_token='+localStorage.getItem('token')
     ,{files : toBeDeleted})
     .then(response=>{
       if(response.status === 200){
@@ -195,23 +195,22 @@ class FilesToolbar extends Component {
         onClose={this.handleClose.bind(this)}
         showFileNamesInPreview={true}
       />
-      {this.props.showAlerts &&
         <Snackbar
             anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
             }}
             open={this.state.openSnackBar}
             autoHideDuration={6000}
             onClose={this.handleCloseSnackbar}
         >
-            <SnackbarContentWrapper
+            <SnackBarWrapper
                 onClose={this.handleCloseSnackbar}
                 variant={this.state.snackbarVariant}
                 message={this.state.snackbarMessage}
             />
         </Snackbar>
-    }
+    
       </>
     );
   }

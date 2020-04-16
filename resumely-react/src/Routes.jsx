@@ -21,7 +21,7 @@ import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 import ResetPassword from 'views/ResetPassword';
 import redirectResetPassword from 'views/ResetPassword/redirect-reset-password';
-
+import NotifList from 'views/NotificationsListDetails'
 
 
 export default class Routes extends Component {
@@ -44,7 +44,11 @@ export default class Routes extends Component {
         exact
         path="/Parsing"
         />
-
+        <Route
+        component={NotifList}
+        exact
+        path="/Notifications"
+        />
         <Route
         component={DatasetParsing}
         exact
@@ -59,21 +63,6 @@ export default class Routes extends Component {
           component={DataSetExtension}
           exact
           path="/dataset-extension"
-        />
-        <Route
-          component={ProductList}
-          exact
-          path="/products"
-        />
-        <Route
-          component={Typography}
-          exact
-          path="/typography"
-        />
-        <Route
-          component={Icons}
-          exact
-          path="/icons"
         />
         <Route
           component={Account}

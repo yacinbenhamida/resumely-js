@@ -25,13 +25,10 @@ export default (app) => {
         .get(forgotPassword.resetPassword);
     app.route('/user/updatePasswordviaEmail')
         .put(forgotPassword.updatePasswordViaEmail)
-
     app.route('/signup')
         .post(usersController.signup)
-
     app.route('/login')
         .post(usersController.login)
-
     /**
      * Facebook Login
      */
@@ -56,54 +53,28 @@ export default (app) => {
     app.route('/predict')
         .get(predict.RootPage);
     app.route('/predict')
-
         .post(predict.doPredict);
     //Parsing
-
-         app.route('/parsing')
-        .post(parser.RootPage);
-
-        app.route('/parsing/database')
-        .post(parser.insert);
-
-    
-        app.route('/parsing/parsed')
-        .get(parser.parsedresume);
-   
-
-        app.route('/getall')
-        .get(parser.getall);
-        app.route('/delete/:id')
-        .delete(parser.deleteitem)
-
-        
-        app.route('/delete/parsed')
-        .get(parser.deleteparsed);
-
-        app.route('/edit-resume/:id')
-        .get(parser.editresume)
-
-
+    app.route('/parsing')
+    .post(parser.RootPage);
+    app.route('/parsing/database')
+    .post(parser.insert);
+    app.route('/parsing/parsed')
+    .get(parser.parsedresume);
+    app.route('/getall')
+    .get(parser.getall);
+    app.route('/delete/:id')
+    .delete(parser.deleteitem)
+    app.route('/delete/parsed')
+    .get(parser.deleteparsed);
+    app.route('/edit-resume/:id')
+    .get(parser.editresume)
     app.route('/parsing/predict')
-        .post(parsingController.insert);
-
-
-
-    
-
-    // files management
-    app.route('/upload-files')
-    .post(fileUpload.uploadFiles)
-    app.route('/all-files/:id')
-    .get(fileUpload.getAllUserFiles)
-    app.route('/delete-files')
-    .post(fileUpload.deleteFiles)
-    
+    .post(parsingController.insert);
     //search autoComplete
     /*app
     .route('/:prefix')
     .get(dataController.autoComplete )*/
-
     //search
     app
     .route('/autocomplete/')
@@ -112,7 +83,6 @@ export default (app) => {
     app
     .route('/allData/:from')
     .get(dataController.getAllData)
-
     app
     .route('/countries')
     .get(dataController.getCountries);

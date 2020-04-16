@@ -3,7 +3,7 @@ import usersController from '../controllers/userManagement/usersController'
 import dataScrapping from '../controllers/fileUpload/dataScrapping'
 import dashboardController from '../controllers/dashboardController'
 import notificationsController from '../controllers/notificationsController'
-
+import fileUpload from '../controllers/fileUpload/fileUploadController'
 /**
  * All routes that require a token should be pasted in here
  */
@@ -31,4 +31,15 @@ export default (app, passport) => {
     app.use('/notifications/all', passport.authenticate('jwt', {
         session: false
     })).post('/notifications/all', notificationsController.getAll);
+
+    app.use('/upload-files', passport.authenticate('jwt', {
+        session: false
+    })).post('/upload-files', fileUpload.uploadFiles);
+    app.use('/all-files', passport.authenticate('jwt', {
+        session: false
+    })).get('/all-files', fileUpload.getAllUserFiles);
+    app.use('/delete-files', passport.authenticate('jwt', {
+        session: false
+    })).post('/delete-files', fileUpload.deleteFiles);
+    
 };

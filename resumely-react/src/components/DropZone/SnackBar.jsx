@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -47,10 +47,10 @@ const styles = (theme) => ({
     },
 });
 
-function SnackbarContentWrapper(props) {
-    const {classes, className, message, onClose, variant, ...other} = props;
+class SnackBarWrapper extends Component {
+    render() {
+    const {classes, className, message, onClose, variant, ...other} = this.props;
     const Icon = variantIcon[variant];
-
     return (
         <SnackbarContent
             className={clsx(classes[variant], className)}
@@ -75,14 +75,14 @@ function SnackbarContentWrapper(props) {
             {...other}
         />
     );
+    }
 }
 
-SnackbarContentWrapper.propTypes = {
+SnackBarWrapper.propTypes = {
     classes: PropTypes.object.isRequired,
     className: PropTypes.string,
     message: PropTypes.node,
     onClose: PropTypes.func,
     variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired,
 };
-
-export default withStyles(styles)(SnackbarContentWrapper);
+export default withStyles(styles)(SnackBarWrapper);

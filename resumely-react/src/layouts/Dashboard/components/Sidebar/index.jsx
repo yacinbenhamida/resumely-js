@@ -19,7 +19,6 @@ import {
   ListSubheader,
   Typography
 } from '@material-ui/core';
-
 // Material icons
 import {
   DashboardOutlined as DashboardIcon,
@@ -31,7 +30,10 @@ import {
   AccountBoxOutlined as AccountBoxIcon,
   SettingsOutlined as SettingsIcon
 } from '@material-ui/icons';
-
+import FindReplaceIcon from '@material-ui/icons/FindReplace';
+import BookIcon from '@material-ui/icons/Book';
+import StorageIcon from '@material-ui/icons/Storage';
+import ExtensionIcon from '@material-ui/icons/Extension';
 // Component styles
 import styles from './styles';
 
@@ -101,20 +103,7 @@ class Sidebar extends Component {
           component="div"
           disablePadding
         >
-          <ListItem
-              activeClassName={classes.activeListItem}
-              className={classes.listItem}
-              component={NavLink}
-              to="/prediction"
-            >
-              <ListItemIcon className={classes.listItemIcon}>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText
-                classes={{ primary: classes.listItemText }}
-                primary="Prediction"
-              />
-          </ListItem>
+          
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
@@ -130,13 +119,27 @@ class Sidebar extends Component {
             />
           </ListItem>
           <ListItem
+              activeClassName={classes.activeListItem}
+              className={classes.listItem}
+              component={NavLink}
+              to="/prediction"
+            >
+              <ListItemIcon className={classes.listItemIcon}>
+                <FindReplaceIcon />
+              </ListItemIcon>
+              <ListItemText
+                classes={{ primary: classes.listItemText }}
+                primary="Prediction"
+              />
+          </ListItem>
+          <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
             to="/dataset-extension"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <PeopleIcon />
+              <ExtensionIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -150,7 +153,7 @@ class Sidebar extends Component {
             to="/datasetparsing"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <ShoppingBasketIcon />
+              <BookIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -165,27 +168,14 @@ class Sidebar extends Component {
             to="/data-list"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <TextFieldsIcon />
+              <StorageIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
               primary="Dataset"
             />
           </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/icons"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <ImageIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Icons and Images"
-            />
-          </ListItem>
+
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
@@ -200,20 +190,7 @@ class Sidebar extends Component {
               primary="Account"
             />
           </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/settings"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Settings"
-            />
-          </ListItem>
+     
         </List>
         <Divider className={classes.listDivider} />
         <List
@@ -221,24 +198,24 @@ class Sidebar extends Component {
           disablePadding
           subheader={
             <ListSubheader className={classes.listSubheader}>
-              Support
+              Application
             </ListSubheader>
           }
         >
-          <ListItem
-            className={classes.listItem}
-            component="a"
-            href="https://devias.io/contact-us"
-            target="_blank"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Customer support"
-            />
-          </ListItem>
+        <ListItem
+        activeClassName={classes.activeListItem}
+        className={classes.listItem}
+        component={NavLink}
+        to="/settings"
+      >
+        <ListItemIcon className={classes.listItemIcon}>
+          <SettingsIcon />
+        </ListItemIcon>
+        <ListItemText
+          classes={{ primary: classes.listItemText }}
+          primary="Settings"
+        />
+      </ListItem>
         </List>
       </nav>
     );

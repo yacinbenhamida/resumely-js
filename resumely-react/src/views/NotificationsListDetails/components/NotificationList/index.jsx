@@ -33,7 +33,7 @@ import {
 import styles from './styles';
 
 const icons = {
-  order: {
+  other: {
     icon: <PaymentIcon />,
     color: 'blue'
   },
@@ -52,6 +52,11 @@ const icons = {
 };
 
 class NotificationList extends Component {
+  notificationTarget = (notification) => {
+    if(notification === ("scrapping" || "files") ) return "/dataset-extension"
+    if(notification === "account") return "/Account"
+    else return "/Dashboard"
+  }
   render() {
     const { className, classes, notifications, onSelect } = this.props;
 
@@ -75,7 +80,7 @@ class NotificationList extends Component {
                 {notifications.map(notification => (
                   <Link
                     key={notification._id}
-                    to="#"
+                    to={this.notificationTarget(notification.type)}
                   >
                     <ListItem
                       className={classes.listItem}
@@ -99,16 +104,6 @@ class NotificationList extends Component {
                   </Link>
                 ))}
               </List>
-              <div className={classes.footer}>
-                <Button
-                  color="secondary"
-                  component={Link}
-                  size="small"
-                  to="/Notifications"
-                >
-                  See all
-                </Button>
-              </div>
             </div>
           </Fragment>
         ) : (

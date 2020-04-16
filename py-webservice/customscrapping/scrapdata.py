@@ -15,10 +15,11 @@ def validate_field(field):
     return field
 def notify(db,content,iduser):
     notif = db["notifications"]
-    db.insert_one({
+    notif.insert_one({
         "targetedUserId" : str(iduser),
         "content" : content,
-        'type' : "scrapping"
+        'type' : "scrapping",
+        'seen' : False
     })
 def load_browser():
     options = Options()

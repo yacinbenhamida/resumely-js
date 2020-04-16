@@ -47,20 +47,21 @@ mongoose.connect(process.env.DB_URI, {
 });
 
  //indexing data
+ /*
 let stream = Candidate.synchronize()
 let count = 0;
 
 stream.on('data', function(err, doc){
-  
+
       
 
-    /*  if(doc.livesIn.includes('Tunisie'))
+     if(doc.livesIn.includes('Tunisie'))
       {
         console.log(doc.livesIn)
      
      
       
-      }*/
+      }
     
       count = count +1 ;
  //  Candidate.findOneAndUpdate() 
@@ -75,7 +76,7 @@ console.log(err);
 });
  
 
-/* ping to elastic search */
+/* ping to elastic search 
 
 esClient.ping({
     // ping usually has a 3000ms timeout
@@ -87,7 +88,7 @@ esClient.ping({
             console.log('All is well');
         }
     });
-
+*/
 /**
  * Middlewares
  */
