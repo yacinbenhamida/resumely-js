@@ -1,5 +1,5 @@
 
-var path = require('path')
+var path = require('path');
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
@@ -11,7 +11,9 @@ import passport from 'passport';
 import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
 import Candidate from './models/candidate'
-import esClient from './elasticsearch/connection'
+
+const countries =require('country-state-picker');
+const countries_fr = require('./data/index.js');
 const app = express();
 
 
@@ -46,25 +48,57 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
+
+
  //indexing data
- /*
+
+
 let stream = Candidate.synchronize()
 let count = 0;
 
+
 stream.on('data', function(err, doc){
 
-      
 
-     if(doc.livesIn.includes('Tunisie'))
-      {
-        console.log(doc.livesIn)
-     
-     
-      
-      }
+
+ 
+
+ /* if(doc.country != null)
+  {
+    let country = countries.getCountry(doc.country);
+    let country_fr = countries_fr.getCountry(doc.country);
+    if (country != null)
+    {
     
+     doc.country=country.name
+     doc.save();
+     console.log( "correct")
+     console.log( doc.country)
+    }
+    else  if (country_fr != null)
+    {
+        
+        let newCountry = countries.getCountry(country_fr.alpha2);
+        doc.country=newCountry.name
+        doc.save();
+          console.log( "correct_fr")
+         console.log(  doc.country )
+      
+     
+    }
+  else
+  {
+      console.log("******")
+      console.log(doc.country)
       count = count +1 ;
- //  Candidate.findOneAndUpdate() 
+  }
+ 
+  }
+ */
+   
+     
+count = count +1 ;
+
 
          
 });
@@ -74,10 +108,11 @@ console.log('indexed ' + count + ' documents!');
 stream.on('error', function(err){
 console.log(err);
 });
- 
+
 
 /* ping to elastic search 
 
+<<<<<<< HEAD
 esClient.ping({
     // ping usually has a 3000ms timeout
         requestTimeout: 1000
@@ -89,6 +124,7 @@ esClient.ping({
         }
     });
 */
+
 /**
  * Middlewares
  */

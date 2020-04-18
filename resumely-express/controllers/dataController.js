@@ -1,6 +1,33 @@
 const express = require("express");
 const client = require("./../elasticsearch/connection");
 
+exports.bulkApi=async(req,res)=>{
+  const data = req.body;
+  console.log(data)
+  let bulkBody = [];
+
+  data.forEach(item => {
+    bulkBody.push({
+      index: { _index: 'profiles', _type: 'profile' } 
+    });      
+    bulkBody.push(item);
+
+  });
+
+client.bulk(
+  {body: bulkBody},
+  function(err, response) {
+    if (err) { console.log(err); return; }
+    console.log(`Inside bulk3...`);
+    let errorCount = 0;
+    response.items.forEach(item => {
+      if (item.index && item.index.error) {
+        console.log(++errorCount, item.index.error);
+      }
+    });
+    console.log(`Successfully indexed ${data.length - errorCount} out of ${data.length} items`);
+  })
+}
 
 
 exports.getAllData = async(req ,res)=>{

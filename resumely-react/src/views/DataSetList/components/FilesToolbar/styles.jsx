@@ -30,5 +30,10 @@ export default theme => ({
   },
   searchInput: {
     marginRight: theme.spacing(1)
+  },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+   
   }
 });

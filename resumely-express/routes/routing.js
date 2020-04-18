@@ -71,20 +71,39 @@ export default (app) => {
     .get(parser.editresume)
     app.route('/parsing/predict')
     .post(parsingController.insert);
-    //search autoComplete
-    /*app
-    .route('/:prefix')
-    .get(dataController.autoComplete )*/
+   
+        
+
+
+
+    
+
+    // files management
+    app.route('/upload-files')
+    .post(fileUpload.uploadFiles)
+    app.route('/all-files/:id')
+    .get(fileUpload.getAllUserFiles)
+    app.route('/delete-files')
+    .post(fileUpload.deleteFiles)
+    
+ 
+  
+
+
     //search
     app
     .route('/autocomplete/')
     .get(dataController.autoComplete )
-        //match all data
+    //match all data
     app
     .route('/allData/:from')
     .get(dataController.getAllData)
     app
     .route('/countries')
     .get(dataController.getCountries);
+
+    app
+    .route('/bulk')
+    .post(dataController.bulkApi)
 
 };
