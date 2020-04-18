@@ -1,18 +1,39 @@
 const express = require("express");
 const client = require("./../elasticsearch/connection");
+import Candidate from './../models/candidate'
 
 exports.bulkApi=async(req,res)=>{
   const data = req.body;
   console.log(data)
   let bulkBody = [];
+  let item  ;
 
-  data.forEach(item => {
+  bulkBody.push({
+    index: { _index: 'profiles', _type: 'profile' } 
+  });  
+ 
+  const getCandidate = await Candidate.findById(data.id, function(error, doc) {
+ 
+   item =
+   {
+    "firstName": doc.firstName,
+    "lastName":doc.lastName,
+    "country": doc.country,
+    "livesIn": doc.livesIn
+    }
+
+  });
+  console.log(item)
+  bulkBody.push(item);
+
+  /*data.forEach(item => {
     bulkBody.push({
       index: { _index: 'profiles', _type: 'profile' } 
     });      
     bulkBody.push(item);
 
   });
+ */
 
 client.bulk(
   {body: bulkBody},
@@ -20,12 +41,13 @@ client.bulk(
     if (err) { console.log(err); return; }
     console.log(`Inside bulk3...`);
     let errorCount = 0;
-    response.items.forEach(item => {
+   /* response.items.forEach(item => {
       if (item.index && item.index.error) {
         console.log(++errorCount, item.index.error);
       }
     });
-    console.log(`Successfully indexed ${data.length - errorCount} out of ${data.length} items`);
+    console.log(`Successfully indexed ${data.length - errorCount} out of ${data.length} items`);*/
+    console.log('`Successfully indexed')
   })
 }
 
