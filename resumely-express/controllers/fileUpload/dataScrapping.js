@@ -40,7 +40,7 @@ exports.checkScrapper = (req,res) => {
         })
 }
 exports.cancelScrapping = (req,res) => {
-    ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "stopped"},(err,docs)=>{
+    ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "done"},(err,docs)=>{
         if(err) res.status(404)
         else{
             const notif = new Notification({

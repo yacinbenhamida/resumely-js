@@ -9,10 +9,16 @@ from flask import Flask
 from flask_restful import Resource, Api
 from flask import Response
 import bson
+import requests
+import customscrapping.parameters as params
 def validate_field(field):
     if not field:
         field = 'No results'
     return field
+def indexProfile(id):
+    # indexing profile to elasticsearch engine
+    target = requests.post(params.node_backend+'/bulk', json={ "id" : str(id)})
+    print('indexing : '+str(id)+' to node server ')
 def notify(db,content,iduser):
     notif = db["notifications"]
     notif.insert_one({
@@ -44,7 +50,7 @@ def scrap_profile(driver,url,idop):
     sleep(3)
     j = 0
     target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapExperience":1,"scrapSkills":1,"ownerId" : 1})[0]
-    if str(target['currentState']) == "stopped":
+    if str(target['currentState']) == "done":
         print("scrapping stopped, exiting... ")
         return
     sel = Selector(text=driver.page_source)    
@@ -178,8 +184,9 @@ def scrap_profile(driver,url,idop):
                 'experiences' : experiences                
             }
         j = j+1
-        profiles_collection.insert_one(res)
+        inserted = profiles_collection.insert_one(res)
         scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentNoOfRows": j } })
+        indexProfile(inserted.inserted_id)
     else:
         print('profile irrelevant skipping...')   
     notify(database,"scrapped "+firstName+" "+lastName+ " successfuly.",target['ownerId'])
@@ -226,7 +233,7 @@ def scrapper(country,idop):
         j = 0
         for youbuzz_url in youbuzz_urls:
             target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapExperience":1,"scrapSkills":1,"ownerId" : 1})[0]
-            if str(target['currentState']) == "stopped":
+            if str(target['currentState']) == "done":
                 print("scrapping stopped, exiting... ")
                 break;
             driver.get(youbuzz_url)
@@ -368,8 +375,9 @@ def scrapper(country,idop):
                     print('relevant record, inserting to database...')
                     done.add(res['lastName']) 
                     extracted_data.append(res)
-                    profiles_collection.insert_one(res)
+                    inserted = profiles_collection.insert_one(res)
                     scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentNoOfRows": j } })
+                    indexProfile(inserted.inserted_id)
                 else:
                     print('skipping...')
             else:

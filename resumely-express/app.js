@@ -3,8 +3,7 @@ var path = require('path');
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-const client = require('./elasticsearch/connection');
-import mongoosastic from 'mongoosastic' 
+import mongoosastic from 'mongoosastic'
 import candidate from './models/candidate'
 import fs from 'fs'
 import passport from 'passport';
@@ -12,10 +11,10 @@ import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
 import Candidate from './models/candidate'
 
-const countries =require('country-state-picker');
+const countries = require('country-state-picker');
 const countries_fr = require('./data/index.js');
 const app = express();
-
+import esClient from './elasticsearch/connection'
 
 import cors from 'cors';
 require('dotenv').config();
@@ -34,8 +33,7 @@ mongoose.connect(process.env.DB_URI, {
     useCreateIndex: true
 }, (err) => {
     if (err) console.log('Error during mongoose connection: ' + err);
-    else 
-    {
+    else {
         console.log('Successful mongoose connection.');
 
         // Quick DB Test
@@ -48,82 +46,58 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
-
-
- //indexing data
-
+//indexing dat
 
 let stream = Candidate.synchronize()
 let count = 0;
-
-
-stream.on('data', function(err, doc){
-
-
-
- 
-
- /* if(doc.country != null)
-  {
-    let country = countries.getCountry(doc.country);
-    let country_fr = countries_fr.getCountry(doc.country);
-    if (country != null)
-    {
-    
-     doc.country=country.name
-     doc.save();
-     console.log( "correct")
-     console.log( doc.country)
+stream.on('data', function (err, doc) {
+    if (doc.country != null) {
+        let country = countries.getCountry(doc.country);
+        let country_fr = countries_fr.getCountry(doc.country);
+        if (country != null) {
+            doc.country = country.name
+            doc.save();
+            /*console.log( "correct")
+            console.log( doc.country)*/
+        }
+        else if (country_fr != null) {
+            let newCountry = countries.getCountry(country_fr.alpha2);
+            doc.country = newCountry.name
+            doc.save();
+            /*   console.log( "correct_fr")
+              console.log(  doc.country )
+           */
+        }
+        else {
+            /* console.log("******")
+             console.log(doc.country)*/
+            count = count + 1;
+        }
     }
-    else  if (country_fr != null)
-    {
-        
-        let newCountry = countries.getCountry(country_fr.alpha2);
-        doc.country=newCountry.name
-        doc.save();
-          console.log( "correct_fr")
-         console.log(  doc.country )
-      
-     
-    }
-  else
-  {
-      console.log("******")
-      console.log(doc.country)
-      count = count +1 ;
-  }
- 
-  }
- */
-   
-     
-count = count +1 ;
+    count = count + 1;
 
 
-         
 });
-stream.on('close', function(){
-console.log('indexed ' + count + ' documents!');
+stream.on('close', function () {
+    console.log('indexed ' + count + ' documents!');
 });
-stream.on('error', function(err){
-console.log(err);
+stream.on('error', function (err) {
+    console.log(err);
 });
 
 
-/* ping to elastic search 
 
-<<<<<<< HEAD
 esClient.ping({
     // ping usually has a 3000ms timeout
-        requestTimeout: 1000
-    }, function (error) {
-        if (error) {
-            console.trace('elasticsearch cluster is down!');
-        } else {
-            console.log('All is well');
-        }
-    });
-*/
+    requestTimeout: 1000
+}, function (error) {
+    if (error) {
+        console.trace('elasticsearch cluster is down!');
+    } else {
+        console.log('All is well');
+    }
+});
+
 
 /**
  * Middlewares
@@ -163,7 +137,7 @@ app.use((err, req, res, next) => {
     next();
 });
 // create an uploads folder incase it got deleted
-if (!fs.existsSync('./uploads')){
+if (!fs.existsSync('./uploads')) {
     fs.mkdirSync('./uploads');
 }
 /**

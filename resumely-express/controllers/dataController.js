@@ -49,6 +49,7 @@ client.bulk(
     console.log(`Successfully indexed ${data.length - errorCount} out of ${data.length} items`);*/
     console.log('`Successfully indexed')
   })
+  res.send(200)
 }
 
 

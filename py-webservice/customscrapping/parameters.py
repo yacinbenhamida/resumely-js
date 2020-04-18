@@ -1,3 +1,1 @@
-search_query = 'site:doyoubuzz.com'
-file_name = 'data.csv'
-
+node_backend = 'http://localhost:5000'
