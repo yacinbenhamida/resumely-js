@@ -57,20 +57,14 @@ stream.on('data', function (err, doc) {
         if (country != null) {
             doc.country = country.name
             doc.save();
-            /*console.log( "correct")
-            console.log( doc.country)*/
+
         }
         else if (country_fr != null) {
             let newCountry = countries.getCountry(country_fr.alpha2);
             doc.country = newCountry.name
             doc.save();
-            /*   console.log( "correct_fr")
-              console.log(  doc.country )
-           */
         }
         else {
-            /* console.log("******")
-             console.log(doc.country)*/
             count = count + 1;
         }
     }
