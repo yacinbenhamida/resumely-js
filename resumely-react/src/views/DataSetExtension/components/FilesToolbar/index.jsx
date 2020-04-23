@@ -26,7 +26,6 @@ import {DropzoneDialog} from 'material-ui-dropzone'
 import SnackBarWrapper from 'components/DropZone/SnackBar'
 import Axios from 'axios';
 import AlertDialog from './AlertDialog';
-import download from 'downloadjs'
 class FilesToolbar extends Component {
  
   constructor(props) {

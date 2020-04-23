@@ -15,8 +15,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Redirect } from 'react-router-dom';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import {DropzoneArea} from 'material-ui-dropzone'
-import {File}  from './File';
 
 import 'react-dropzone-uploader/dist/styles.css';
 import Dropzone from 'react-dropzone-uploader';
@@ -35,7 +33,6 @@ import { withStyles } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
-import { stat } from 'fs';
 // Component styles
 const styles = theme => ({
   root: {

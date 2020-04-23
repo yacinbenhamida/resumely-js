@@ -47,7 +47,7 @@ mongoose.connect(process.env.DB_URI, {
 });
 
 //indexing dat
-
+/*
 let stream = Candidate.synchronize()
 let count = 0;
 stream.on('data', function (err, doc) {
@@ -78,9 +78,9 @@ stream.on('close', function () {
 stream.on('error', function (err) {
     console.log(err);
 });
+*/
 
-
-
+/*
 esClient.ping({
     // ping usually has a 3000ms timeout
     requestTimeout: 1000
@@ -92,7 +92,7 @@ esClient.ping({
     }
 });
 
-
+*/
 /**
  * Middlewares
  */
@@ -130,9 +130,12 @@ app.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err}`);
     next();
 });
-// create an uploads folder incase it got deleted
+// create an uploads & compiled folder incase it got deleted
 if (!fs.existsSync('./uploads')) {
     fs.mkdirSync('./uploads');
+}
+if (!fs.existsSync('./compiled')) {
+    fs.mkdirSync('./compiled');
 }
 /**
  * Register the routes

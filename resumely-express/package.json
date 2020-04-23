@@ -9,6 +9,9 @@
     "build": "babel . -s -D -d dist --presets env --ignore node_modules",
     "serve": "node dist/server.js"
   },
+  "nodemonConfig": {
+    "ignore": ["compiled/*", "uploads/*"]
+  },
   "dependencies": {
     "addressit": "^1.7.0",
     "all-the-cities": "^3.0.0",

@@ -5,11 +5,8 @@ import PrivateRoute from 'components/PrivateRoute';
 
 // Views
 import Dashboard from './views/Dashboard';
-import ProductList from './views/ProductList';
 import DataSetList from './views/DataSetList';
 import DataSetExtension from './views/DataSetExtension';
-import Typography from './views/Typography';
-import Icons from './views/Icons';
 import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';

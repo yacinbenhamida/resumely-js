@@ -5,7 +5,9 @@ import UploadedFile from '../../models/uploadedfile'
 import csv from 'csv-parser'
 import Candidate from '../../models/candidate'
 import User from '../../models/user'
-import zip from 'express-zip'
+import parseIt from '../../utils/parseIt'
+import modelcv from '../../models/modelcv'
+
 /**
  * files management controller
  */
@@ -182,4 +184,48 @@ exports.downloadFile = (req,res) => {
   }
   else res.status(400)
  
+}
+
+// parse already saved files 
+exports.parseFile = (req,res) => {
+  console.log(req.body)
+  fs.readdir('./uploads/files', function (err, files) {
+    if (err) {
+      return console.log('Unable to scan directory: ' + err);
+    }
+    fs.readFile('./uploads/files/' + req.body.filename, 'utf8', function (err2, file) {
+      if(err2){
+        return res.status(400)
+      }
+        try{
+            parseIt.parseResume('./uploads/files/' + req.body.filename, './compiled');     
+            return res.status(200)
+        }
+        catch(error){
+          return res.status(400)
+        }
+    });
+  });
+}
+
+exports.getParsedData = (req, res) => {
+  fs.readdir('./compiled', function (err, files) {
+    if (err) {
+      return res.status(400)
+    }
+    fs.readFile('./compiled/' + req.body.filename + '.json', 'utf8', function (error, data) {
+      if (error) {
+        return res.status(404)
+      }
+      let target = new modelcv(JSON.parse(data));
+      console.log(target)
+      fs.unlink('./compiled/'+req.body.filename + '.json',function(pb){
+        if(pb){
+          res.status(400).send("error deleting file")
+         }
+        console.log('file deleted successfully');
+      });  
+      return res.send({ parsed: target });
+    });
+  });
 }
