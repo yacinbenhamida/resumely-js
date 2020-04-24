@@ -135,8 +135,7 @@ class FilesToolbar extends Component {
   }
 
 getautoComplete()
-{  console.log("heyComp"+this.state.query)
-   console.log("heyCompOption"+this.state.options)
+{ 
 
 
   

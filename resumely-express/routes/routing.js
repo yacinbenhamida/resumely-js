@@ -29,6 +29,15 @@ export default (app) => {
         .post(usersController.signup)
     app.route('/login')
         .post(usersController.login)
+    //edit profile information
+    app.route('/editprofile')
+        .put(usersController.editProfile)
+    app.route('/editpicture')
+        .put(usersController.editPicture)
+    app.route('/verifypwd')
+    .post(usersController.verifyPassowrd)
+    app.route('/user/updatePasswordviaProfile')
+    .put(forgotPassword.updatePasswordViaProfile)
     /**
      * Facebook Login
      */

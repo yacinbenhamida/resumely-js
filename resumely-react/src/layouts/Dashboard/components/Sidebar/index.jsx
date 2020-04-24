@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
+import axios from 'axios';
 // Externals
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -29,23 +29,67 @@ import FindReplaceIcon from '@material-ui/icons/FindReplace';
 import BookIcon from '@material-ui/icons/Book';
 import StorageIcon from '@material-ui/icons/Storage';
 import ExtensionIcon from '@material-ui/icons/Extension';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+
+
 // Component styles
 import styles from './styles';
+
 
 class Sidebar extends Component {
   constructor(props)
   {
     super(props);
-
+    
     const user = JSON.parse(localStorage.getItem('user'));
 
     this.state = {
+      open:false,
       firstName: user.firstName,
-      lastName: user.lastName
+      lastName: user.lastName,
+      id : user._id,
+      selectedImg: null
     }
-
+    this.uploadImg= this.uploadImg.bind(this)
   }
+  uploadImg()
+  {
+    this.setState({
+      open:true
 
+    })
+  }
+  onChangeHandler=async (event)=>{
+
+  
+   await this.setState({
+      selectedImg: event.target.files[0],
+     
+    })
+  
+    if (this.state.selectedImg )
+    {   /* const formData = new FormData();
+        formData.append('myImage',this.state.selectedImg);
+        console.log(formData)*/
+      axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
+        Image: this.state.selectedImg.name , id : this.state.id}).then(res => { // then print response status
+          console.log(res)
+       })
+    }
+ 
+  
+
+}
+  handleClose = () => {
+    this.setState({
+      open:false
+
+    })
+  }
   render() {
     const { classes, className } = this.props;
 
@@ -58,8 +102,9 @@ class Sidebar extends Component {
     console.log(user.imageUrl)
 
     return (
+   
       <nav className={rootClassName}>
-        <div className={classes.logoWrapper}>
+          <div className={classes.logoWrapper}>
           <Link
             className={classes.logoLink}
             to="/"
@@ -70,14 +115,54 @@ class Sidebar extends Component {
               src="/images/logos/resumely-small.png"
             />
           </Link>
+          <div>
+      <form> 
+    <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title" maxWidth = {'xs'} fullWidth={true}  className={classes.dialogCustomizedWidth}>
+        <DialogTitle id="customized-dialog-title"  >Change profile picture</DialogTitle>
+        <Divider  />
+        <DialogContent >
+       
+          <Button  component="label" color="primary">
+          Upload Picture
+         <input
+          type="file"
+         style={{ display: "none" }}
+         onChange={this.onChangeHandler}
+         />
+         </Button>
+
+        </DialogContent>
+        <Divider  />
+        <DialogContent >
+        <Button style={{color: 'red'}} >
+        Remove picture
+          </Button>
+     
+        </DialogContent>
+        <Divider  />
+        <DialogActions  >
+          <Button onClick={this.handleClose}  maxWidth = {'md'} fullWidth={true} >
+            Cancel
+          </Button>
+         
+        </DialogActions>
+     
+  
+      </Dialog>
+      </form>
+      </div>
+
         </div>
+
+      
         <Divider className={classes.logoDivider} />
         <div className={classes.profile}>
-          <Link to="/account">
+          <Link >
             <Avatar
               alt="user"
               className={classes.avatar}
               src={imageUrl}
+              onClick={this.uploadImg}
             />
           </Link>
           <Typography
@@ -213,6 +298,7 @@ class Sidebar extends Component {
       </ListItem>
         </List>
       </nav>
+     
     );
   }
 }

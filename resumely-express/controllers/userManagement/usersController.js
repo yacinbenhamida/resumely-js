@@ -1,6 +1,7 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../../models/user');
+import bcrypt from 'bcrypt'
 require('dotenv').config()
 // Registration
 exports.signup = passport.authenticate('signup', {
@@ -137,6 +138,40 @@ exports.profile = (req, res, next) => {
     })
 }
 
+exports.editProfile=(req,res,next)=>{
+    console.log(req.body.user)
+}
+
+exports.editPicture=(req,res,next)=>{
+    console.log(req.body.Image)
+    console.log(req.body.id)
+}
+
+exports.verifyPassowrd= (req,res)=>
+{ 
+    if(req.body.username){
+        UserModel.findOne({
+            username : req.body.username
+        }).then(user => {
+            if(user){
+                 
+               
+                bcrypt.compare(req.body.password, user.password)
+                .then(validatedPassword => {
+                 if(validatedPassword == true)
+                res.status(200).send({message : 'password validated'})
+                
+                 else
+                 res.status(200).send({message : 'password unvalidated'})
+                })
+            }else {
+                
+                res.status(404).json('no user exists to update')
+            }
+        })
+    } else res.status(400).json('username is mandatory')
+
+}
 /**
  * Utils
  */

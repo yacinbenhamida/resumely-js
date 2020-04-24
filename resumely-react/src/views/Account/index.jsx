@@ -21,13 +21,22 @@ const styles = theme => ({
     padding: theme.spacing(4)
   }
 });
-
 class Account extends Component {
-  state = { tabIndex: 0 };
+
+  constructor(props)
+  {
+    super(props);
+
+  
+    
+    this. state = { tabIndex: 0 };
+  }
+   
+  
 
   render() {
     const { classes } = this.props;
-
+    const user = JSON.parse(localStorage.getItem('user'));
     return (
       <DashboardLayout title="Account">
         <div className={classes.root}>
@@ -37,12 +46,12 @@ class Account extends Component {
           >
             <Grid
               item
-              lg={4}
-              md={6}
-              xl={4}
-              xs={12}
+              lg={2}
+              md={3}
+              xl={2}
+              xs={6}
             >
-              <AccountProfile />
+             
             </Grid>
             <Grid
               item
@@ -51,7 +60,14 @@ class Account extends Component {
               xl={8}
               xs={12}
             >
-              <AccountDetails />
+               <Grid
+              item
+              lg={2}
+              md={3}
+              xl={2}
+              xs={6}
+            ></Grid>
+              <AccountDetails user= {user}/>
             </Grid>
           </Grid>
         </div>

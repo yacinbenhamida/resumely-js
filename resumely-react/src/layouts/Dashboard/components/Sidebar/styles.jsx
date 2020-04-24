@@ -81,5 +81,12 @@ export default theme => ({
   listDivider: {
     marginBottom: theme.spacing(2),
     marginTop: theme.spacing(2)
+  },
+  dialogCustomizedWidth: {
+    minHeight: '80vh',
+    maxHeight: '80vh',
+    alignItems: 'center',
+    textAlign: 'center',
+    borderRadius :'16'
   }
 });
