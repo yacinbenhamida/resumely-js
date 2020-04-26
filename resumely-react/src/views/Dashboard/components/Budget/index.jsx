@@ -12,7 +12,7 @@ import { Typography } from '@material-ui/core';
 
 // Material icons
 import {
-  ArrowDownward as ArrowDownwardIcon,
+  ArrowUpward as ArrowUpwardIcon,
   Money as MoneyIcon
 } from '@material-ui/icons';
 
@@ -21,8 +21,21 @@ import { Paper } from 'components';
 
 // Component styles
 import styles from './styles';
-
+import axios from 'axios'
 class Budget extends Component {
+  state = {
+    scrapRequests : 0,
+    totalProfiles : 0
+  }
+  componentDidMount(){
+    this.loadScrappRequests()
+  }
+  loadScrappRequests = () => {
+    axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
+    .then(res=>{
+        this.setState({scrapRequests: res.data.scrapCount, totalProfiles : res.data.nbCandidates})
+      })
+  }
   render() {
     const { classes, className, ...rest } = this.props;
 
@@ -39,13 +52,13 @@ class Budget extends Component {
               className={classes.title}
               variant="body2"
             >
-              BUDGET
+              SCRAPPING ATTEMPTS
             </Typography>
             <Typography
               className={classes.value}
               variant="h3"
             >
-              $24,000
+              {this.state.scrapRequests}
             </Typography>
           </div>
           <div className={classes.iconWrapper}>
@@ -57,14 +70,13 @@ class Budget extends Component {
             className={classes.difference}
             variant="body2"
           >
-            <ArrowDownwardIcon />
-            12%
+            <ArrowUpwardIcon />
           </Typography>
           <Typography
             className={classes.caption}
             variant="caption"
           >
-            Since last month
+            {this.state.totalProfiles} profiles
           </Typography>
         </div>
       </Paper>

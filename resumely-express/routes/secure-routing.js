@@ -28,6 +28,9 @@ export default (app, passport) => {
     app.use('/dashboard/numbers', passport.authenticate('jwt', {
         session: false
     })).get('/dashboard/numbers', dashboardController.numbers);
+    app.use('/dashboard/countriesCount', passport.authenticate('jwt', {
+        session: false
+    })).get('/dashboard/countriesCount', dashboardController.countryRatio);
     app.use('/notifications/all', passport.authenticate('jwt', {
         session: false
     })).post('/notifications/all', notificationsController.getAll);
@@ -47,5 +50,8 @@ export default (app, passport) => {
     app.use('/parse-file-data', passport.authenticate('jwt', {
         session: false
     })).post('/parse-file-data', fileUpload.getParsedData);
+    app.use('/update-file-status/:id', passport.authenticate('jwt', {
+        session: false
+    })).post('/update-file-status/:id', fileUpload.updateFileStatus);
     
 };

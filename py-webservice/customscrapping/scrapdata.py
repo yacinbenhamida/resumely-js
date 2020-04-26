@@ -15,6 +15,16 @@ def validate_field(field):
     if not field:
         field = 'No results'
     return field
+def getProfileCountry(found_country):
+    # finding the correct country name via google maps api
+    target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key="+params.google_api_key).json()
+    country = found_country
+    for data in target['results']:
+        for x in data['address_components']:
+            if x['types'][0] == 'country':
+                country = str(x['long_name'])
+    print(country)
+    return country
 def indexProfile(id):
     # indexing profile to elasticsearch engine
     target = requests.post(params.node_backend+'/bulk', json={ "id" : str(id)})
@@ -173,7 +183,7 @@ def scrap_profile(driver,url,idop):
         res = {        
                 'currentPosition' : current_title,
                 'livesIn' : lives_in,
-                'country' : lives_in,
+                'country' : getProfileCountry(lives_in),
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
@@ -361,7 +371,7 @@ def scrapper(country,idop):
                     res = {        
                             'currentPosition' : current_title,
                             'livesIn' : lives_in,
-                            'country' : country,
+                            'country' : getProfileCountry(lives_in),
                             'profile' : youbuzz_url,
                             'firstName': firstName,
                             'lastName' : lastName,

@@ -147,7 +147,6 @@ exports.getAllUserFiles = (req,res) => {
 }
 
 exports.deleteFiles = (req,res) =>{
-  console.log(req.body)
   req.body.files.forEach(element => {
     console.log('deleting file inside '+element.filename)
     UploadedFile.deleteOne({
@@ -165,30 +164,10 @@ exports.deleteFiles = (req,res) =>{
   res.status(200).send('deleted files')
 }
 
-exports.downloadFile = (req,res) => {
-  let files = []
-  console.log('here')
-  if(files[0]){
-  req.body.files.forEach(element => {
-    try {
-      console.log('here')
-      //const file = `uploads/files/${element.filename}`;
-      files.append({
-        path : 'uploads/files' , name : element.filename
-      })
-    } catch (err) {
-      console.log(err);
-    }
-  })
-  res.zip(files);
-  }
-  else res.status(400)
- 
-}
+
 
 // parse already saved files 
 exports.parseFile = (req,res) => {
-  console.log(req.body)
   fs.readdir('./uploads/files', function (err, files) {
     if (err) {
       return console.log('Unable to scan directory: ' + err);
@@ -228,4 +207,10 @@ exports.getParsedData = (req, res) => {
       return res.send({ parsed: target });
     });
   });
+}
+
+exports.updateFileStatus = (req,res) => {
+  UploadedFile.updateOne({_id : req.param.id},{$set : {scanned : true}},(err,docs)=>{
+    res.send(docs)
+  })
 }

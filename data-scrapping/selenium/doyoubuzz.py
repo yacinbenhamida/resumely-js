@@ -19,12 +19,12 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
     done.add(str(item))
 extracted_data = {}
 extracted_data['candidates'] = []
-driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
+driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver_80')
 
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "tunisian"
+country = "armenia"
 #potential_title = "egyptian"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
@@ -162,7 +162,7 @@ for youbuzz_url in youbuzz_urls:
             res = {        
                 'currentPosition' : current_title,
                 'livesIn' : lives_in,
-                'country' : "tunisie",
+                'country' : "Arménie",
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
