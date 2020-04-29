@@ -230,7 +230,7 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/datasetparsing"
+            to="/parsing"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <BookIcon />

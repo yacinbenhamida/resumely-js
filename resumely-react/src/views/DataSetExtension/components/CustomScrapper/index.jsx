@@ -85,6 +85,7 @@ class CustomScrapping extends Component {
           if(x.status === 200){
               console.log('processing request...')
               this.checkStatus()
+              window.location.reload();
           }
           else console.log('error')
       }).catch(err=>alert('error occured, could not connect to server'))
@@ -100,6 +101,7 @@ class CustomScrapping extends Component {
         if(x.status === 200){
             console.log('cancelling scrapping...')
             this.setState({isTriggered : false, scrappingInfo : null})
+            window.location.reload();
         }
         else console.log('error')
     })
