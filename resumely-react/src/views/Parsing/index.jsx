@@ -232,6 +232,7 @@ class ParserParent extends Component {
             <TableCell align="right">Adress</TableCell>
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
+            <TableCell align="right">Expérience</TableCell>
             <TableCell align="right">Delete</TableCell>
          
           </TableRow>
@@ -252,6 +253,7 @@ class ParserParent extends Component {
               <TableCell align="right">{resumes.adresse}</TableCell>
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
+              <TableCell align="right">{resumes.experience}</TableCell>
               <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ () => this.deleteContact(resumes._id) }>
               <DeleteIcon />
               </IconButton>

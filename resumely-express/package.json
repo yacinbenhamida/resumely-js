@@ -41,6 +41,7 @@
     "express-device": "^0.4.2",
     "express-session": "^1.17.0",
     "express-zip": "^3.0.0",
+    "http": "0.0.1-security",
     "http-errors": "~1.6.3",
     "humanparser": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
