@@ -48,9 +48,6 @@ mongoose.connect(process.env.DB_URI, {
 
 
 let stream = Candidate.synchronize()
-//indexing dat
-
-let stream = Candidate.synchronize()
 let count = 0;
 stream.on('data', function (err, doc) {
    /* if (doc.country != null) {
@@ -82,9 +79,9 @@ stream.on('error', function (err) {
 });
 
 
-<<<<<<< HEAD
+
 /*esClient.ping({
-=======
+
 /*
 esClient.ping({
 >>>>>>> 2f7eb8196a8460ee8f3894c560f39f9556c88b4c

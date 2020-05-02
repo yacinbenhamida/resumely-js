@@ -10,7 +10,10 @@
     "serve": "node dist/server.js"
   },
   "nodemonConfig": {
-    "ignore": ["compiled/*", "uploads/*"]
+    "ignore": [
+      "compiled/*",
+      "uploads/*"
+    ]
   },
   "dependencies": {
     "addressit": "^1.7.0",
@@ -40,11 +43,8 @@
     "express": "^4.17.1",
     "express-device": "^0.4.2",
     "express-session": "^1.17.0",
-<<<<<<< HEAD
     "http": "0.0.1-security",
-=======
     "express-zip": "^3.0.0",
->>>>>>> 2f7eb8196a8460ee8f3894c560f39f9556c88b4c
     "http-errors": "~1.6.3",
     "humanparser": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
