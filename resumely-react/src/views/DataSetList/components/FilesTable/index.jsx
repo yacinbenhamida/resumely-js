@@ -24,6 +24,10 @@ import { Portlet, PortletContent } from 'components';
 // Component styles
 import styles from './styles';
 
+
+
+
+
 class FilesTable extends Component {
   state = {
     selectedFiles: [],
@@ -41,18 +45,18 @@ class FilesTable extends Component {
     const rootClassName = classNames(classes.root, className);
 
     return (
-      <Portlet className={rootClassName}>
+      <Portlet className={rootClassName} >
         <PortletContent noPadding>
           <PerfectScrollbar>
-          <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell align="left"> Nom</TableCell>
-                  <TableCell align="left">prénom</TableCell>
-                  <TableCell align="left">Date de naissance </TableCell>
-                  <TableCell align="left">Ville </TableCell>
-                  <TableCell align="left">Région </TableCell>
-                  <TableCell align="left">Pays </TableCell>
+          <Table >
+              <TableHead >
+                <TableRow  >
+                  <TableCell align="left"> First Name</TableCell>
+                  <TableCell align="left">Last Name</TableCell>
+                  <TableCell align="left">Age</TableCell>
+                  <TableCell align="left">Country </TableCell>
+                  <TableCell align="left">livesIn </TableCell>
+                
          
                 </TableRow>
               </TableHead>
@@ -67,19 +71,20 @@ class FilesTable extends Component {
                       key={candidate._id}>
                   
                       <TableCell className={classes.tableCell}>
-                        {candidate._source.firstName}
+                      {candidate._source.firstName}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate._source.lastName}
+                      {candidate._source.lastName}
+                       
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                       0
+                      0
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate.country}
+                        {candidate._source.country}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate.livesIn}
+                        {candidate._source.livesIn}
                       </TableCell>
                    
                     </TableRow>

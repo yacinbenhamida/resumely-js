@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import predictionService from 'services/prediction.service';
 
 // Externals
-import PropTypes, {} from 'prop-types';
+import PropTypes, { } from 'prop-types';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -36,51 +36,67 @@ class Prediction extends Component {
       firstName: '',
       lastName: '',
       prediction: '',
-      tabIndex: 0
+      tabIndex: 0,
+      loading: false,
     };
-    
+
     this.handleChange_FirstName = this.handleChange_FirstName.bind(this);
     this.handleChange_LastName = this.handleChange_LastName.bind(this);
-    
+
     this.handleSubmit_Prediction = this.handleSubmit_Prediction.bind(this);
   }
 
   handleChange_FirstName(event) {
     this.setState({
-        firstName: event.target.value
+      firstName: event.target.value
     });
   }
 
   handleChange_LastName(event) {
     this.setState({
-        lastName: event.target.value,
+      lastName: event.target.value,
     });
   }
 
   async handleSubmit_Prediction(event) {
     event.preventDefault();
-    
+
     this.setState({
-        prediction: 'Loading...',
+      prediction: 'Loading...',
+      loading: true,
+
     });
 
     try {
-        const { data } = await predictionService.Predict(this.state.firstName, this.state.lastName);
-        this.setState({
-            prediction: data.Prediction,
-        });
+      const { data } = await predictionService.Predict(this.state.firstName, this.state.lastName);
+      const countries = data.Prediction[0];
+      const skills = data.Prediction[1];
+      const prediction = data.Prediction[2];
 
-        this.childPredictionDetails.current.loadPredictionDetails(
-          this.state.firstName, 
-          this.state.lastName,
-          this.state.prediction
-          );
+      this.setState({
+        prediction: prediction,
+        countries: countries,
+        skills: skills,
+        loading: false,
+      });
+
+      this.childPredictionDetails.current.loadPredictionDetails(
+        this.state.firstName,
+        this.state.lastName,
+        this.state.prediction,
+        this.state.countries,
+        this.state.skills,
+        this.state.loading,
+      );
 
     } catch (error) {
-        this.setState({
-            prediction: 'Unrecognized.',
-        });
-        console.error(error);
+      this.setState({
+        prediction: 'Unrecognized.',
+        loading: false,
+        countries: [],
+        skills: [],
+      });
+      console.error(error);
     } finally {
     }
 
@@ -104,12 +120,13 @@ class Prediction extends Component {
               xl={12}
               xs={12}
             >
-              <PredictionInput 
-                firstName = {this.state.firstName}
-                lastName = {this.state.lastName}
-                handleChange_FirstName = {this.handleChange_FirstName}
-                handleChange_LastName = {this.handleChange_LastName}
-                handleSubmit_Prediction = {this.handleSubmit_Prediction}
+              <PredictionInput
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                handleChange_FirstName={this.handleChange_FirstName}
+                handleChange_LastName={this.handleChange_LastName}
+                handleSubmit_Prediction={this.handleSubmit_Prediction}
+                loading={this.state.loading}
               />
             </Grid>
             <Grid
@@ -120,7 +137,7 @@ class Prediction extends Component {
               xs={12}
             >
               <PredictionDetails
-                ref = {this.childPredictionDetails}
+                ref={this.childPredictionDetails}
               />
             </Grid>
           </Grid>

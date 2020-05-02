@@ -10,5 +10,6 @@ export default theme => ({
     paddingBottom: '24px',
     display: 'flex',
     justifyContent: 'center'
-  }
+  },
+
 });

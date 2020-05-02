@@ -1,5 +1,8 @@
 export default theme => ({
   root: {},
+  body : {
+    fontFamily : 'Roboto'
+  },
   row: {
     height: '42px',
     display: 'flex',

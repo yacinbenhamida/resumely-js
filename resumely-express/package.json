@@ -9,6 +9,9 @@
     "build": "babel . -s -D -d dist --presets env --ignore node_modules",
     "serve": "node dist/server.js"
   },
+  "nodemonConfig": {
+    "ignore": ["compiled/*", "uploads/*"]
+  },
   "dependencies": {
     "addressit": "^1.7.0",
     "all-the-cities": "^3.0.0",
@@ -24,6 +27,9 @@
     "compromise": "^13.1.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "countries-code": "^1.0.8",
+    "country-dictionary": "^2.0.8",
+    "country-state-picker": "^1.1.1",
     "crypto": "0.0.3",
     "csv-parser": "^2.3.2",
     "debug": "~2.6.9",
@@ -32,8 +38,13 @@
     "email-addresses": "^3.1.0",
     "errorhandler": "^1.5.0",
     "express": "^4.17.1",
+    "express-device": "^0.4.2",
     "express-session": "^1.17.0",
+<<<<<<< HEAD
     "http": "0.0.1-security",
+=======
+    "express-zip": "^3.0.0",
+>>>>>>> 2f7eb8196a8460ee8f3894c560f39f9556c88b4c
     "http-errors": "~1.6.3",
     "humanparser": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
@@ -53,6 +64,7 @@
     "pug": "^2.0.0-beta6",
     "request": "^2.88.2",
     "serve-favicon": "^2.3.2",
+    "socket.io": "^2.3.0",
     "textract": "^2.5.0",
     "tracer": "^0.8.7",
     "underscore": "^1.7.0",

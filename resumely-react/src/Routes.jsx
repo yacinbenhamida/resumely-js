@@ -5,11 +5,8 @@ import PrivateRoute from 'components/PrivateRoute';
 
 // Views
 import Dashboard from './views/Dashboard';
-import ProductList from './views/ProductList';
 import DataSetList from './views/DataSetList';
 import DataSetExtension from './views/DataSetExtension';
-import Typography from './views/Typography';
-import Icons from './views/Icons';
 import Account from './views/Account';
 import Settings from './views/Settings';
 import SignUp from './views/SignUp';
@@ -21,7 +18,7 @@ import UnderDevelopment from './views/UnderDevelopment';
 import NotFound from './views/NotFound';
 import ResetPassword from 'views/ResetPassword';
 import redirectResetPassword from 'views/ResetPassword/redirect-reset-password';
-
+import NotifList from 'views/NotificationsListDetails'
 
 
 export default class Routes extends Component {
@@ -44,7 +41,11 @@ export default class Routes extends Component {
         exact
         path="/Parsing"
         />
-
+        <Route
+        component={NotifList}
+        exact
+        path="/Notifications"
+        />
         <Route
         component={DatasetParsing}
         exact
@@ -59,21 +60,6 @@ export default class Routes extends Component {
           component={DataSetExtension}
           exact
           path="/dataset-extension"
-        />
-        <Route
-          component={ProductList}
-          exact
-          path="/products"
-        />
-        <Route
-          component={Typography}
-          exact
-          path="/typography"
-        />
-        <Route
-          component={Icons}
-          exact
-          path="/icons"
         />
         <Route
           component={Account}

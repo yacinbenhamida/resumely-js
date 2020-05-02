@@ -70,100 +70,95 @@ do_shuffle_df = False   # Whether to shuffle the data upon read.
 group_samples = -1      # Whether to group rows by existing labels, make sure you specify a number >= to the least label count.
 rem_cat_frequency = 1   # Whether to remove rows with above or equal to specified frequency
 
-def get_df(path = None):
-    if path is None: return
-    df = pd.read_csv(path)
-
-    if n_rows > 0: df = df.head(n_rows)
-
-    # Manually getting rid of very low count label rows.
-    # nm = ['Georgia']
-    # df = df[~df[country_col_name].isin(nm)]
-
-    # Specifying what to read, for debugging.
-    # nm = ['Saad', 'Laure']
-    # df = df[(df['first_name'].isin(nm))]
-
-    pd.set_option('display.max_rows', df.shape[0]+1)
-    
-    # Here we remove categories with frequency = 1
-    counts_category = df.groupby(country_col_name)[country_col_name].transform(len)
-    mask = (counts_category > max(rem_cat_frequency, 1))
-    df = df[mask]
-    # print(counts_category)
-
-    if group_samples > 0:
-        df = pd.concat(g.sample(group_samples) for idx, g in df.groupby(country_col_name))
-
-    if do_shuffle_df: df = df.sample(frac=1)
-    
-    # df = df[80:]
-    Resumely.print_unique_vals_and_count(df[country_col_name])
-    # print(df)
-
-    return df
-
-def get_data():
-    dataset = get_df(profiles_csv_path)
-    #dataset = dataset.sort_values('first_name')
-    
-    enc = OneHotEncoder(handle_unknown='ignore')
-    X = dataset[['first_name','last_name']]
-    #X = dataset[['first_name']]
-
-    # print('X:', X)
-    enc.fit(X)
-    X = enc.transform(X).toarray()
-
-    np.set_printoptions(threshold=sys.maxsize)
-
-    global encoder
-    encoder = enc
-
-    """
-    global fn_dict, ln_dict 
-
-    fn_X_list = fn_X.tolist()
-    ln_X_list = ln_X.tolist()
-
-    fn_dict = dict(zip(dataset['first_name'], fn_X_list))
-    ln_dict = dict(zip(dataset['last_name'], ln_X_list))
-
-    real_row_count = len(fn_dict)
-    """
-    global le
-    le = LabelEncoder()
-    lab_fit = le.fit(dataset[country_col_name])
-    labels = le.transform(dataset[country_col_name])
-
-    # print(dataset[country_col_name])
-
-    """
-    print(
-        'Classes:',
-        le.classes_, '\n'
-    )
-    """
-
-    pickle.dump(le, open(MODELS_DIR / "label_encoder.pickle.dat", "wb"))
-
-    return X, labels
-
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import SVC
 
 def main():
+    def get_data():
+        dataset = get_df(profiles_csv_path)
+        #dataset = dataset.sort_values('first_name')
+        
+        enc = OneHotEncoder(handle_unknown='ignore')
+        X = dataset[['first_name','last_name']]
+        #X = dataset[['first_name']]
+
+        # print('X:', X)
+        enc.fit(X)
+        X = enc.transform(X).toarray()
+
+        np.set_printoptions(threshold=sys.maxsize)
+
+        global encoder
+        encoder = enc
+
+        """
+        global fn_dict, ln_dict 
+
+        fn_X_list = fn_X.tolist()
+        ln_X_list = ln_X.tolist()
+
+        fn_dict = dict(zip(dataset['first_name'], fn_X_list))
+        ln_dict = dict(zip(dataset['last_name'], ln_X_list))
+
+        real_row_count = len(fn_dict)
+        """
+        global le
+        le = LabelEncoder()
+        lab_fit = le.fit(dataset[country_col_name])
+        labels = le.transform(dataset[country_col_name])
+
+        # print(dataset[country_col_name])
+
+        """
+        print(
+            'Classes:',
+            le.classes_, '\n'
+        )
+        """
+
+        pickle.dump(le, open(MODELS_DIR / "label_encoder.pickle.dat", "wb"))
+
+        return X, labels
+    def get_df(path = None):
+        if path is None: return
+        df = pd.read_csv(path)
+
+        if n_rows > 0: df = df.head(n_rows)
+
+        # Manually getting rid of very low count label rows.
+        # nm = ['Georgia']
+        # df = df[~df[country_col_name].isin(nm)]
+
+        # Specifying what to read, for debugging.
+        # nm = ['Saad', 'Laure']
+        # df = df[(df['first_name'].isin(nm))]
+
+        pd.set_option('display.max_rows', df.shape[0]+1)
+        
+        # Here we remove categories with frequency = 1
+        counts_category = df.groupby(country_col_name)[country_col_name].transform(len)
+        mask = (counts_category > max(rem_cat_frequency, 1))
+        df = df[mask]
+        # print(counts_category)
+
+        if group_samples > 0:
+            df = pd.concat(g.sample(group_samples) for idx, g in df.groupby(country_col_name))
+
+        if do_shuffle_df: df = df.sample(frac=1)
+        
+        # df = df[80:]
+        Resumely.print_unique_vals_and_count(df[country_col_name])
+        # print(df)
+
+        return df
 
     global model, encoder, le
-
     # Load Data
     X_train, y_train = get_data()
-
-    # print('Labels:', y_train)
-    
-    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train#, test_size=0.25
+    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train
+                                                    #, test_size=0.25
                                                     #,random_state=4#, stratify=y_train, shuffle=True
                                                     )
     print('*'*3, 'MODEL SELECTION', '*'*3, '\n')

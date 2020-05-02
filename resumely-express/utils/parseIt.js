@@ -15,8 +15,7 @@ var parser = {
         objParseBoy.storeResume(preppedFile, Resume, savePath, function (err) {
           if (err) {
             return logger.error('Resume ' + preppedFile.name + ' errored',err);
-          }
-          //console.log(preppedFile)
+          }OB
           logger.trace('Resume ' + preppedFile.name + ' saved');
         })
       });

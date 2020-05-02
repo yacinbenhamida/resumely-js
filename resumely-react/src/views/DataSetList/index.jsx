@@ -102,7 +102,7 @@ class FilesList extends Component {
     const { selectedFiles } = this.state;
 
     return (
-      <DashboardLayout title="File management">
+      <DashboardLayout title="Liste des candidates">
         <div className={classes.root}>
           <FilesToolbar selectedFiles={selectedFiles} />
        

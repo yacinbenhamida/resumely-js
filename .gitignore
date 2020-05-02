@@ -1,5 +1,4 @@
-# Batch files
-*.bat
+
 
 # Logs
 logs
@@ -108,4 +107,4 @@ dist
 .vscode/settings.json
 resumely-react/package-lock.json
 
-elasticsearch-6.8.0\data\nodes
+elasticsearch-6.8.0/data/nodes/

@@ -6,7 +6,7 @@ from threading import Thread
 from tasks import threaded_task
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
-PREDICTION_DIR = BASE_DIR / 'prediction'
+PREDICTION_DIR = BASE_DIR / 'prediction' / 'custom'
 
 # Import Services
 sys.path.append(str(PREDICTION_DIR))
@@ -31,13 +31,11 @@ class SingleBgThread(Resource):
         thread.start()
         return jsonify({'thread_name': str(thread.name),
                         'started': True})
-
 # Route your service here
 def routes(api):
     api.add_resource(Predictor, '/<string:fname>/<string:lname>')
     api.add_resource(BackgroundThread, '/scrap/<string:country>/<string:idop>') #get request, multiple profiles
     api.add_resource(SingleBgThread, '/scrap-single') #post request, one target
-    
     
 def main():
     app = Flask(__name__)

@@ -3,14 +3,11 @@ require('dotenv').config;
 import nodemailer from 'nodemailer';
 import crypto from "crypto";
 import bcrypt from 'bcrypt';
-
+import Notification from '../../models/notification'
 const BCRYPT_SALT_ROUNDS = 12;
 
 
-// get
-exports.initPassword = (req, res) => {
-    res.send('forgot password page ')
-};
+
 // POST /user/forgotPassword
 exports.forgotPassword = (req,res) => {
     if(req.body.email){
@@ -105,7 +102,43 @@ exports.updatePasswordViaEmail = (req, res) => {
                     })
                 }).then(()=>{
                     console.log('password updated')
+                    let notif = new Notification({
+                        targetedUserId : user._id,
+                        content : "you have recently updated your password",
+                        type : "account",
+                        createdAt : Date.now()
+                    }).save((e,d)=>{
+                        if(e) console.log(e)
+                        console.log('notification sent')
+                    })
                     res.status(200).send({message : 'password updated'})
+                })
+            }else {
+                console.error('user not found to update')
+                res.status(404).json('no user exists to update')
+            }
+        })
+    } else res.status(400).json('username is mandatory')
+}
+
+exports.updatePasswordViaProfile= (req, res) => {
+    if(req.body.username){
+        User.findOne({
+            username : req.body.username
+        }).then(user => {
+            if(user){
+                console.log('user found ')   
+                bcrypt.hash(req.body.password, 10)
+                .then(hashedPassword => {
+                    User.updateOne({username : req.body.username},{
+                        password : hashedPassword,
+                        resetPasswordToken : null,
+                        resetPasswordExpires : null
+                    },(error,res)=>{
+                        if(error) console.log(error)
+                        console.log('res is '+res)
+                    })
+                res.status(200).send({message : 'password updated'})
                 })
             }else {
                 console.error('user not found to update')

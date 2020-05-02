@@ -22,13 +22,14 @@ import styles from './style';
 import axios from 'axios';
 
 class FilesList extends Component {
+  signal = true;
+  interval = null;
   constructor(props){
     super(props);
     this.signal = true;
     this.handler = this.handler.bind(this)
   }
-  signal = true;
-  interval = null;
+
   handler(updatedList) {
     this.setState({
       isLoading : true,
@@ -49,8 +50,7 @@ class FilesList extends Component {
   };
   
   getUserFiles = ()=>{
-    return axios.get(process.env.REACT_APP_BACKEND+"/all-files/"
-      +JSON.parse(localStorage.getItem('user'))._id)
+    return axios.get(process.env.REACT_APP_BACKEND+"/all-files?secret_token="+localStorage.getItem('token'))
   }
   async getFiles() {
     try {
@@ -75,7 +75,7 @@ class FilesList extends Component {
     }
   }
   componentDidMount() {
-    this.signal = true;
+    this.signal = true; 
     this.getFiles()
   }
 
@@ -124,8 +124,8 @@ class FilesList extends Component {
     };
   }
 
-  handleChangeIndex = (index) => {
-    this.setState({index })
+  handleChangeIndex = (ind) => {
+    this.setState({ index : ind })
   };
   render() {
     const { classes } = this.props;
@@ -175,7 +175,7 @@ class FilesList extends Component {
           <Grid
               item
               md={6}
-              xs={8}  
+              xs={6}  
           >
           <CustomScrappingHistory />
           </Grid>       
@@ -193,7 +193,7 @@ class FilesList extends Component {
               xs={12}
               className={classes.root}
             >
-          <FilesToolbar reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
+          <FilesToolbar  reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
           <div className={classes.content}>{this.renderfiles()}</div>
         </Grid>
         </Grid>

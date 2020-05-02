@@ -10,7 +10,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SHARED_DIR = BASE_DIR / 'shared'
 DATA_DIR = SHARED_DIR / 'data'
-profiles_csv_path = DATA_DIR / 'tn_profiles'
+save_file_name = 'train_data_min.csv'
+# profiles_csv_path = DATA_DIR / 'tn_profiles'
 
 sys.path.append(str(SHARED_DIR))
 
@@ -26,12 +27,19 @@ client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/t
 db_name = 'resumelydb'
 db = client['resumelydb']
 source = ['doyoubuzz', 'linkedin']
-do_augment_data = True
+do_augment_data = False
 
 # DT Construction Columns
 first_names_col = []
 last_names_col = []
 country_col = []
+
+# countries = pycountry.countries
+class Country:
+    def __init__(self, name):
+        self.name = name
+
+countries = [Country('tunisia'), Country('france')]
 
 max_iter = -1 # -1 All, used to fasten debugging.
 
@@ -61,13 +69,14 @@ if 'linkedin' in source:
         has_country = False
         countryName = location
 
-        for country in pycountry.countries:
-            if country.name in location:
+        for country in countries:
+            if country.name.lower() in location.lower():
                 countryName = country.name
                 has_country = True
                 break
 
         if not has_country:
+            continue
             countryName, distance = Resumely.get_closest_country_to_name(location)
 
         fname, lname = resumely.get_first_last_names(name)
@@ -94,7 +103,7 @@ if 'doyoubuzz' in source:
         countryName = location
 
         # Try to directly find exact country
-        for country in pycountry.countries:
+        for country in countries:
             if country.name.lower() in location.lower():
                 countryName = country.name
                 has_country = True
@@ -102,6 +111,7 @@ if 'doyoubuzz' in source:
 
         # If wasn't possible, search by edit distance
         if not has_country:
+            continue
             countryName, distance = Resumely.get_closest_country_to_name(location)
 
         fname, lname = profile['firstName'], profile['lastName']
@@ -122,8 +132,8 @@ df = df.drop(df[df.country == 'None'].index)
 
 if do_augment_data:
     print('\n' * 3, '*' * 3, 'DATA AUGMENTATION', '*' * 3, '\n' * 3)
-    df = Resumely.augment_data(df)
+    df = Resumely.augment_data(df, max_ln_iter = 2)
     print(df)
 
-df.to_csv(os.path.join(profiles_csv_path, 'train_mongo_data.csv'), index=False)
+df.to_csv(DATA_DIR / save_file_name, index=False)
 

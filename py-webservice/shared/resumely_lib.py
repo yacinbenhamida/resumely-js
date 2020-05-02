@@ -13,7 +13,8 @@ sys.path.append(str(SHARED_DIR))
 
 from resumely_lib import *
 
-profiles_csv_path = DATA_DIR / 'tn_profiles'
+# profiles_csv_path = DATA_DIR / 'tn_profiles'
+data_path = DATA_DIR
 dict_path = DATA_DIR / 'dict_names'
 n_rows = -1
 
