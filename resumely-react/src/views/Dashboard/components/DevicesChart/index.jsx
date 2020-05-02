@@ -64,7 +64,8 @@ class DevicesChart extends Component {
     for (var i = 0; i < 6; i++ ) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    return color;
+    if(color !== '#FFFFFF' || color !=='FFFAFA' || color !== 'F0FFF0') return color;
+
 }
   getCountriesCount(){
     axios.get(process.env.REACT_APP_BACKEND+'/dashboard/countriesCount?secret_token='+localStorage.getItem('token'))
@@ -83,8 +84,6 @@ class DevicesChart extends Component {
             {
               data: numbers,
               backgroundColor: colors,
-              borderWidth: 8,
-              borderColor: palette.common.white,
               hoverBorderColor: palette.common.white
             }
           ],

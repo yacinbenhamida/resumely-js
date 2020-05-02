@@ -5,7 +5,7 @@ export default theme => ({
   },
   chartWrapper: {
     position: 'relative',
-    height: '300px'
+    height: '500px'
   },
   stats: {
     marginTop: theme.spacing(2),
