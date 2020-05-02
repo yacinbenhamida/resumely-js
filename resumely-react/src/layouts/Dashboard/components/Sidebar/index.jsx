@@ -51,11 +51,16 @@ class Sidebar extends Component {
       open:false,
       firstName: user.firstName,
       lastName: user.lastName,
-      id : user._id,
-      selectedImg: null
+      user : user,
+      imageUrl : user.imageUrl ?? "/images/avatars/avatar_1.png",
+      loading :false
     }
     this.uploadImg= this.uploadImg.bind(this)
+    this.removePicture= this.removePicture.bind(this)
+    this.onChangeHandler= this.onChangeHandler.bind(this)
   }
+
+
   uploadImg()
   {
     this.setState({
@@ -63,25 +68,55 @@ class Sidebar extends Component {
 
     })
   }
-  onChangeHandler=async (event)=>{
-
-  
-   await this.setState({
-      selectedImg: event.target.files[0],
+  removePicture = async() =>
+  {
+   await axios.put(process.env.REACT_APP_BACKEND+'/deletepicture',{
+      user : this.state.user}).then(res => {
+        
+        if(res.data.message ==="picture deleted") 
+        {
+          this.setState({imageUrl : "/images/avatars/avatar_1.png"})
+          this.state.user.imageUrl="/images/avatars/avatar_1.png" ;
+          localStorage.setItem("user", JSON.stringify(this.state.user))
+        
      
-    })
+        }
+     
+     }).then(this.setState({open:false}));
+     console.log(this.state.loading)
+  }
+  onChangeHandler=async(event)=>{
+   
+        const formData = new FormData();
+        formData.append('upload_preset',"zwikhjud");
+        formData.append('file',event.target.files[0]);
+        this.setState({loading:true })
+        console.log(this.state.loading)
+       
+      await axios.post('https://api.cloudinary.com/v1_1/dyhnlahvq/image/upload/',formData)
+        .then(res=>
+        this.setState({imageUrl :  res.data.secure_url,loading :false })
+        )
+     
+        .catch(err=>console.log(err))
+      
+      
+       axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
+        Image: this.state.imageUrl, user : this.state.user}).then(res => {
+          
+          if(res.data.message ==="picture updated") 
+          {
+            this.state.user.imageUrl=this.state.imageUrl ;
+            localStorage.setItem("user", JSON.stringify(this.state.user))
+          
+       
+          }
+       
+       }).then(this.setState({open:false}));
+       console.log(this.state.loading)
   
-    if (this.state.selectedImg )
-    {   /* const formData = new FormData();
-        formData.append('myImage',this.state.selectedImg);
-        console.log(formData)*/
-      axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
-        Image: this.state.selectedImg.name , id : this.state.id}).then(res => { // then print response status
-          console.log(res)
-       })
-    }
- 
-  
+     
+      
 
 }
   handleClose = () => {
@@ -94,12 +129,10 @@ class Sidebar extends Component {
     const { classes, className } = this.props;
 
     const rootClassName = classNames(classes.root, className);
-    //const user = localStorage.getItem('user');
-    const { firstName, lastName } = this.state;
+  
+    const { firstName, lastName ,   imageUrl,loading } = this.state;
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    const imageUrl = user.imageUrl ?? "/images/avatars/avatar_1.png";
-    console.log(user.imageUrl)
+    {console.log(imageUrl)}
 
     return (
    
@@ -128,13 +161,14 @@ class Sidebar extends Component {
           type="file"
          style={{ display: "none" }}
          onChange={this.onChangeHandler}
+        // onClick={this.handleClose}
          />
          </Button>
 
         </DialogContent>
         <Divider  />
         <DialogContent >
-        <Button style={{color: 'red'}} >
+        <Button style={{color: 'red'}} onClick = {  this.removePicture} >
         Remove picture
           </Button>
      
@@ -152,19 +186,28 @@ class Sidebar extends Component {
       </form>
       </div>
 
-        </div>
+      </div>
 
       
         <Divider className={classes.logoDivider} />
         <div className={classes.profile}>
-          <Link >
-            <Avatar
-              alt="user"
-              className={classes.avatar}
-              src={imageUrl}
-              onClick={this.uploadImg}
-            />
-          </Link>
+    {loading ?
+     <Avatar
+     alt="user"
+     className={classes.avatar}
+     src="/images/avatars/avatar_1.png"
+     />:
+    <Avatar
+    alt="user"
+    className={classes.avatar}
+    src={imageUrl}
+    onClick={this.uploadImg}
+    />
+  
+  
+  }
+     
+          
           <Typography
             className={classes.nameText}
             variant="h6"

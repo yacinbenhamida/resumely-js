@@ -1,6 +1,7 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../../models/user');
+const  CnxModel = require('../../models/HistoriqueCnx');
 import bcrypt from 'bcrypt'
 require('dotenv').config()
 // Registration
@@ -142,11 +143,59 @@ exports.editProfile=(req,res,next)=>{
     console.log(req.body.user)
 }
 
-exports.editPicture=(req,res,next)=>{
-    console.log(req.body.Image)
-    console.log(req.body.id)
+exports.editPicture=(req,res,next)=>
+{
+    if(req.body.user.username){
+        UserModel.findOne({
+            username : req.body.user.username
+        }).then(user => {
+            if(user){
+              
+                UserModel.updateOne({username : req.body.user.username},{
+                imageUrl:req.body.Image
+                    },(error,doc)=>{
+                        if(error) console.log(error)
+                        console.log('res is '+doc)
+                       
+                    })
+            
+                res.status(200).send({message : 'picture updated'})
+               
+            }else {
+                console.error('user not found to update')
+                res.status(404).json('no user exists to update')
+            }
+        })
+    } else res.status(400).json('username is mandatory')
 }
+exports.removePicture =(req,res)=>
+{
+    
+    if(req.body.user.username){
+        UserModel.findOne({
+            username : req.body.user.username
+        }).then(user => {
+            if(user){
+              
+                UserModel.updateOne({username : req.body.user.username},{
+                imageUrl:null
+                    },(error,doc)=>{
+                        if(error) console.log(error)
+                        console.log('res is '+doc)
+                       
+                    })
+            
+                res.status(200).send({message : 'picture deleted'})
+               
+            }else {
+                console.error('user not found to update')
+                res.status(404).json('no user exists to update')
+            }
+        })
+    } else res.status(400).json('username is mandatory')
 
+   
+}
 exports.verifyPassowrd= (req,res)=>
 { 
     if(req.body.username){
@@ -171,6 +220,26 @@ exports.verifyPassowrd= (req,res)=>
         })
     } else res.status(400).json('username is mandatory')
 
+}
+
+exports.addCnx=(req,res)=>
+{
+  console.log(new Date().toString())
+ const cnx = new CnxModel({ username:req.body.username ,  dateCnx : new Date().toString(),  Os :req.body.Os, Browser:req.body.Browser,  Localisation:req.body.Localisation})
+ cnx.save(function (err,cnx) {
+    if (err) return console.error(err);
+    res.status(200).send({message : 'cnx added' })
+});
+  
+}
+
+exports.displayCnxByUser=(req,res)=>{
+
+   
+    CnxModel.find({username:req.body.username},{},{sort: {dateCnx: -1}},function(err,docs) {
+        if (err) return console.error(err);
+        res.status(200).send({cnx : docs })
+    });
 }
 /**
  * Utils

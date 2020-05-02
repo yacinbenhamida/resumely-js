@@ -69,9 +69,8 @@ class Password extends Component {
    };
    this.timeout =  0;
    this.verifyPassword=this.verifyPassword.bind(this)
-   //this. checkPassword=this. checkPassword.bind(this)
    this.handleChange=this.handleChange.bind(this)
-   //this.updatePassword=this.handleChange.bind(this)
+
   }
  
 
@@ -130,10 +129,11 @@ class Password extends Component {
 
   verifyPassword=async(e)=>
   {
+    
   await this.setState({  currentPassword:e.target.value  })
   console.log(this.state.currentPassword+"**")
  
- if(this.state.currentPassword =='')
+ if(this.state.currentPassword ==='')
  {
   
     this.state.errors.currentPassword= "Empty password" ;
@@ -179,7 +179,7 @@ class Password extends Component {
 handleChange=(event) =>{
    this.setState({[event.target.name] : event.target.value });
     //  const re = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$");
-      if (event.target.name == 'password')
+      if (event.target.name === 'password')
       { 
         const passwordRegex = /(?=.*[0-9])/;
       
@@ -189,7 +189,7 @@ handleChange=(event) =>{
           this.state.errors.password = "Empty password" ;
   
         }
-       else if (event.target.value.length < 8 && this.state.confirmPassword =='' && this.state.currentPassword =='')
+       else if (event.target.value.length < 8 && this.state.confirmPassword ==='' && this.state.currentPassword ==='')
         {
           this.state.touched.password =true ;
           this.state.errors.password = "Password must be 8 characters long." ;
@@ -209,7 +209,7 @@ handleChange=(event) =>{
         }
         else
         {
-       //   this.state.password =event.target.value;
+      
           this.state.touched.password =false ;
           this.state.errors. password ="" ;
       
@@ -217,9 +217,9 @@ handleChange=(event) =>{
        
       }
 
-      else if ( event.target.name == 'confirmPassword')
+      else if ( event.target.name === 'confirmPassword')
       {
-       // this.state.confirmPassword= event.target.value;
+       
         this.state.touched.confirmPassword =true ;
         this.checkPassword(event);
       }
@@ -230,7 +230,7 @@ handleChange=(event) =>{
 
   checkPassword (event)  
   {
-   if( !this.state.password ||this.state.password != event.target.value) {
+   if( !this.state.password ||this.state.password !== event.target.value) {
          
           this.state.errors.confirmPassword ="The passwords do not match" ;
           this.state.isVerify=false ;
@@ -248,7 +248,7 @@ handleChange=(event) =>{
 
   render() {
     const { classes, className, ...rest } = this.props;
-    const {   currentPassword ,  touched,errors, password,confirmPassword,isVerify,submitError,isLoading} 
+    const {   currentPassword ,  touched,errors, password,confirmPassword,isVerify,submitError,isLoading , user} 
     = this.state;
 
     const rootClassName = classNames(classes.root, className);
@@ -256,6 +256,8 @@ handleChange=(event) =>{
     const showPasswordConfError = touched.confirmPassword && errors.confirmPassword;
     const showCurrentPasswordError = touched.currentPassword && errors.currentPassword;
     const enabled =isVerify && currentPassword;
+if (user.provider === 'local')
+{
     return (
       <Portlet
         {...rest}
@@ -356,6 +358,11 @@ handleChange=(event) =>{
        
       </Portlet>
     );
+  }
+  else
+  {
+    return (null)
+  }
   }
 }
 

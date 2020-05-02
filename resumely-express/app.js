@@ -47,11 +47,11 @@ mongoose.connect(process.env.DB_URI, {
 });
 
 //indexing dat
-/*
+
 let stream = Candidate.synchronize()
 let count = 0;
 stream.on('data', function (err, doc) {
-    if (doc.country != null) {
+   /* if (doc.country != null) {
         let country = countries.getCountry(doc.country);
         let country_fr = countries_fr.getCountry(doc.country);
         if (country != null) {
@@ -67,7 +67,7 @@ stream.on('data', function (err, doc) {
         else {
             count = count + 1;
         }
-    }
+    }*/
     count = count + 1;
 
 
@@ -78,7 +78,7 @@ stream.on('close', function () {
 stream.on('error', function (err) {
     console.log(err);
 });
-*/
+
 
 /*
 esClient.ping({
