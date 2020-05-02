@@ -1,6 +1,6 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-const UserModel = require('../models/user.model');
+const UserModel = require('../models/user');
 
 const JWTstrategy = require('passport-jwt').Strategy;
 // We use this to extract the JWT sent by the user
@@ -17,7 +17,7 @@ passport.use('signup', new localStrategy({
         const existUser = await UserModel.findOne({
             username: req.body.username
         });
-        
+
         if (existUser) {
             // If the user is found in the database, return a message
             return done(null, false, {
@@ -79,9 +79,9 @@ passport.use('login', new localStrategy({
 // This verifies that the token sent by the user is valid
 passport.use(new JWTstrategy({
     // Secret we used to sign our JWT
-    secretOrKey: 'top_secret',
+    secretOrKey: process.env.PASSPORT_SECRET,
     // We expect the user to send the token as a query parameter with the name 'secret_token'
-    jwtFromRequest: ExtractJWT.fromUrlQueryParameter('secret_token')
+    jwtFromRequest: ExtractJWT.fromUrlQueryParameter(process.env.SECRET_TOKEN)
 }, async (token, done) => {
     try {
         // Pass the user details to the next middleware

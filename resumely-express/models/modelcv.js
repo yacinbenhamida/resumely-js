@@ -1,5 +1,4 @@
-let mongoose = require('mongoose')
-
+import mongoose from 'mongoose'
 const modelcvSchema = new mongoose.Schema({
     name:{
         firstName: {

@@ -6,25 +6,16 @@ import classNames from 'classnames';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
-import Snackbar from '@material-ui/core/Snackbar';
 import axios from 'axios';
 // Material components
-import { Button, IconButton } from '@material-ui/core';
 
-// Material icons
-import {
-  ArrowDownward as ArrowDownwardIcon,
-  ArrowUpward as ArrowUpwardIcon,
-  Delete as DeleteIcon
-} from '@material-ui/icons';
+
 // Shared components
-import { DisplayMode, SearchInput } from 'components';
+import {  SearchInput } from 'components';
 
 // Component styles
 import styles from './styles';
 
-import {DropzoneDialog,SnackbarContentWrapper} from 'components/DropZone/index'
-import Axios from 'axios';
 import FilesTable from '../FilesTable';
 
 class FilesToolbar extends Component {
@@ -121,13 +112,13 @@ getautoComplete(ev)
   {
     if (ev.target.value)
      {
-      this.state.search=true;
+      this.setState({search : true});
       this.getautoComplete(ev);
 
     }
     else
     {
-      this.state.search=false;
+      this.setState({search : false});
       this.setState({
         filteredTableData: this.state.candidates     
       });
@@ -138,7 +129,7 @@ getautoComplete(ev)
   handleObserver(entities, observer)
    {
     const y = entities[0].boundingClientRect.y;
-    if (this.state.search == false)
+    if (this.state.search === false)
     {
       if (this.state.prevY > y) 
       {
@@ -161,7 +152,7 @@ getautoComplete(ev)
 
   render() 
   {
-    const { classes, className, selectedFiles } = this.props;
+    const { classes, className } = this.props;
     const rootClassName = classNames(classes.root, className);
     const loadingCSS = {
       height: "100px",

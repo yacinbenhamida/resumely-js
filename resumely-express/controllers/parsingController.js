@@ -5,6 +5,8 @@ const mime    = require('mime')
 const path = require('path')
 const fs = require('fs')
 let modelcv = require('../models/modelcv')
+const https= require('https');
+const  Request = require("request");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -90,7 +92,7 @@ exports.insert = (req, res, next) => {
 exports.parsedresume= ( async function(req, res) {  
   var tab = Array();
   await new Promise (resolve => {
-  setTimeout(resolve, 300);
+  setTimeout(resolve, 350);
   fs.readdir('./compiled', function (err, files) {
   // Handling error
   if (err) {
@@ -129,6 +131,20 @@ exports.getall= ( async function(req, res) {
   }
   });
 });
+
+
+exports.verifnum= ( async function(req, res) {  
+  Request.get('http://apilayer.net/api/validate?access_key=6f058e8d12f78fa6b4840c6ab3235c56&number='+req.params.number, (error, response, body) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log(JSON.parse(body))
+    res.json(JSON.parse(body));
+
+});
+});
+
+
 
 exports.deleteitem= ( async function(req, res) {  
   modelcv.findByIdAndRemove(req.params.id, (error, data) => {

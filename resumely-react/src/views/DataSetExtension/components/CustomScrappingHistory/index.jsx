@@ -7,17 +7,14 @@ import moment from 'moment';
 
 // Material helpers
 import {
-    Avatar,
-    Checkbox,
     Table,
     TableBody,
     TableCell,
-    TableHead,
     TableRow,
     Typography,
     TablePagination,
     CircularProgress,
-    withStyles
+    withStyles,Chip
   } from '@material-ui/core';
 // Shared components
 import {
@@ -26,7 +23,6 @@ import {
   PortletLabel,
   PortletContent,
 } from 'components';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import styles from './styles';
 import axios from 'axios'
 
@@ -35,13 +31,12 @@ class CustomScrappingHistory extends Component {
     isLoading : true,
     user : JSON.parse(localStorage.getItem('user')),
     scrappingAttempts : null,
-    rowsPerPage: 5,
+    rowsPerPage: 10,
     page : 0
   };
   getData = async()=>{
     await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
     {id : this.state.user._id , currentstate : "done"}).then(d=>{
-        console.log(d)
         if(d.status === 200){
             this.setState({
                 isLoading : false,
@@ -50,16 +45,16 @@ class CustomScrappingHistory extends Component {
         }
     })
   }
-  componentWillMount(){
-    this.getData()
-  }
+
   componentDidMount(){
-    setInterval(this.getData, 5000);
+    this.interval = setInterval(this.getData, 5000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
   handleChangePage = (event, page) => {
+    console.log(page)
+    //this.setState({scrappingAttempts : this.state.scrappingAttempts.slice(this.state.rowsPerPage,this.state.scrappingAttempts.length)})
     this.setState({ page });
   };
 
@@ -84,11 +79,34 @@ class CustomScrappingHistory extends Component {
             title="Scrapping History"
           />        
           </PortletHeader>
-        <PortletContent noPadding>
+        <PortletContent >
+        <div className={classes.progressWrapper}>
           <CircularProgress />
+        </div>
         </PortletContent>
         </Portlet>
       );
+    }
+    if(scrappingAttempts.length === 0){
+      return(
+      <Portlet
+      {...rest}
+      className={rootClassName}
+    >
+      <PortletHeader>
+        <PortletLabel
+        subtitle="previous scrapping attempts"
+        title="History"
+        />
+      </PortletHeader>
+      <PortletContent>
+        <Typography
+        className={classes.nameText}
+        variant="body1"
+        > no records
+        </Typography>
+      </PortletContent>
+      </Portlet>)
     }
     return (
       <Portlet
@@ -101,16 +119,9 @@ class CustomScrappingHistory extends Component {
           title="History"
           />
         </PortletHeader>
-        <PortletContent>
+        <PortletContent noPadding>
         <Table>
             <TableBody>
-            {scrappingAttempts.length == 0 &&
-                <Typography
-                className={classes.nameText}
-                variant="body1"
-                > no records
-                </Typography>
-            }
             {scrappingAttempts
                 .filter(sc => {
                   if (activeTab === 1) {
@@ -131,12 +142,23 @@ class CustomScrappingHistory extends Component {
                     key={sc._id}
                   >       
                     <TableCell align="justify" className={classes.tableCell}>
+                    { (sc.type ==='multiple' || !sc.type) &&
                     <Typography
                               className={classes.nameText}          
                             >
-                    <ArrowRightIcon  fontSize="small" />
                       Scrapped from {sc.country} : loaded {sc.currentNoOfRows} out of {sc.expectedNoOfRows} 
                       </Typography>
+                    }
+                    {sc.type ==='single' && sc.type &&
+                    <Typography
+                              className={classes.nameText}          
+                            >
+                      Scrapped one profile
+                      </Typography>
+                    }
+                    </TableCell>
+                    <TableCell>
+                      <Chip  color="primary" variant="outlined" size="small" label={sc.currentState} />
                     </TableCell>
                     <TableCell align="right" className={classes.tableCell}>
                       in {moment(sc.createdAt).format('DD/MM/YYYY')} at {moment(sc.createdAt).format('HH:mm')}

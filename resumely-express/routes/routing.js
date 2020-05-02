@@ -79,6 +79,8 @@ export default (app) => {
         
         app.route('/delete/parsed')
         .get(parser.deleteparsed);
+        app.route('/verif/:number')
+        .get(parser.verifnum);
 
         app.route('/edit-resume/:id')
         .get(parser.editresume)

@@ -25,20 +25,20 @@ search_query.send_keys(parameters.search_query+' AND "'+country+'"')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(150)
+sleep(2)
 
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
-for page in pages:
-    href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
-    for i in href:
-        youbuzz_urls.append(i.get_attribute('href'))
-    try:
+try:
+    while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+        for i in href:
+            youbuzz_urls.append(i.get_attribute('href'))
         driver.find_element_by_xpath("//span[text()='Suivant']").click()
-    except:
-        pass
+except:
+    pass
 sleep(0.5)
 for youbuzz_url in youbuzz_urls:
     driver.get(youbuzz_url)
@@ -67,7 +67,10 @@ for youbuzz_url in youbuzz_urls:
     lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
     if lives_in:
         lives_in = lives_in.strip()
-        
+       
+    age = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_age")]/text()').extract_first()
+    if age:
+        age = age.strip()    
     youbuzz_url = driver.current_url
 
     firstName = validate_field(firstName)
@@ -75,9 +78,17 @@ for youbuzz_url in youbuzz_urls:
     current_title = validate_field(current_title)
     lives_in = validate_field(lives_in)
     youbuzz_url = validate_field(youbuzz_url)
-
+    age = validate_field(age)
     if lives_in != 'No Results':
         lives_in = ' '.join(lives_in.split())
+    try:
+        if age != 'No Results':
+            age = ' '.join(age.split())
+            for a in age.split():
+                if a.isdigit():
+                    age = int(a)  
+    except:
+        pass
     try:
         # printing the output to the terminal
         print('\n')
@@ -85,6 +96,7 @@ for youbuzz_url in youbuzz_urls:
         print('last Name: ' + lastName)
         print('current_title: ' + current_title)
         print('lives_in: ' + lives_in)
+        print('age '+str(age))
         print('youbuzz_url: ' + youbuzz_url)
         print('\n')
     except:
@@ -98,6 +110,7 @@ for youbuzz_url in youbuzz_urls:
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
+                'age' : age
             }
             if res['lastName'] not in done:
                 print('relevant record, inserting to json file...')

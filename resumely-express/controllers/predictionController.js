@@ -1,5 +1,5 @@
 import request from 'request';
-
+require('dotenv').config()
 const headers = {
     "Content-Type": "application/json"
 };

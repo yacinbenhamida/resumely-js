@@ -16,7 +16,7 @@ var parser = {
           if (err) {
             return logger.error('Resume ' + preppedFile.name + ' errored',err);
           }
-          console.log(preppedFile)
+          //console.log(preppedFile)
           logger.trace('Resume ' + preppedFile.name + ' saved');
         })
       });

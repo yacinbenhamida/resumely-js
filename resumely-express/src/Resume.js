@@ -21,6 +21,88 @@ function isEmpty(obj) {
   return true;
 }
 
+
+function totalmonths(T1,T2)
+{
+  let total=0;
+  if(T1.length%2!=0)
+  {
+    T1.splice(-1,1)
+  }
+  if(T2.length%2!=0)
+  {
+    T2.splice(-1,1)
+  }
+  for(let i=0;i<T1.length;i+=2)
+  {
+  //  console.log("tableeee"+T1[i+1]+"isoustraction"+T1[i])
+    total+=(T1[i+1]-T1[i]);
+  }
+  for(let i=0;i<T2.length;i+=2)
+  {
+   // console.log("tableeee"+T2[i+1]+"isoustraction"+T2[i])
+    if(T2[i+1]>=T2[i])
+    {
+      total+=((T2[i+1]-T2[i])*12); 
+    }
+  }
+return total;
+}
+
+let monthsConverter={
+'january':1,
+ 'janvier':1,
+ 'february':2,
+ 'février':2,
+ 'march':3,
+ 'mars':3,
+ 'april':4,
+ 'avril':4,
+ 'mai':5,
+ 'may':5,
+ 'june':6,
+ 'juin':6,
+ 'juillet':7,
+ 'july':7,
+ 'august':8,
+ 'aout':8,
+ 'août':8,
+ 'september':9,
+ 'septembre':9,
+ 'october':10,
+ 'octobre':10,
+ 'november':11,
+ 'novembre':11,
+ 'december':12,
+ 'décembre':12,
+ '01/':1,
+ '02/':2,
+ '03/':3,
+ '04/':4,
+ '05/':5,
+ '06/':6,
+ '07/':7,
+ '08/':8,
+ '09/':9,
+ '10/':10,
+ '11/':11,
+ '12/':12,
+ 'aujourd':new Date().getMonth()+1,
+ 'today':new Date().getMonth()+1,
+ 'now':new Date().getMonth()+1,
+ 'since':new Date().getMonth()+1,
+ 'depuis':new Date().getMonth()+1,
+ 'présent':new Date().getMonth()+1
+}
+
+  //december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|(en cours|a aujourd’hui|a ce jour|now|present)
+  
+  
+
+
+
+
+
 Resume.prototype.addKey = function(key, value) {
   value = value || '';
   value = value.trim();
@@ -56,11 +138,11 @@ Resume.prototype.addObject = function(key, options) {
 Resume.prototype.jsoned = function() { 
   if(!isEmpty(this.parts)) 
   {
-    console.log("experiennceeee"+this.parts.experience)
+  
   let name= this.parts.name
   if(this.parts.adresse!=undefined)
   { 
-  let n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan|benarous|la marsa|petite ariana|tunis)(?!tunisie)(?!tunisia)(?!tunisienne)(?!tunisien)/);
+  let n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|bizert|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan|benarous|la marsa|petite ariana|tunis)(?!tunisie)(?!tunisia)(?!tunisienne)(?!tunisien)/);
   let p = this.parts.adresse.toLowerCase().match(/(chefchaouèn|salé|settat|khmissat|larache|ksar el kebir|jadida|beni mellal|khouribga|safi|mdiq fnideq|tétouan|fahs anjra|larache|hoceima|chefchaouen|ouezzane|oujda|nador|driouch|jerada|berkane|taourirt|guercif|figuig|fès|meknès|moulay yaacoub|boulemane|rabat|tikachmirine|casablanca|marrakech|agadir|tanger|kenitra)/)
 
   if(n!=null&&p==null)
@@ -91,18 +173,88 @@ Resume.prototype.jsoned = function() {
   if(d!=null)
   {
   this.parts.DateNaissance=String(d[0])
+  let year=d[0].match(/\d{4}/)
+  if(year!=null)
+  {
+    let age=new Date().getFullYear()-year
+    this.parts.age=age
+  }
   }
   else 
   this.parts.DateNaissance=""
   }
-  /*if(this.parts.experience!=undefined)
+  if(this.parts.DateNaissance==undefined)
   {
-    let e=this.experience.toLowerCase.match(/((\d+)([\s]ans))/)
+    if(this.parts.age!=null)
+    {
+      let agee=this.parts.age.match(/\d{2}/)
+      if(agee!=null){
+        let age=agee[0]
+        let year=new Date().getFullYear()-age
+        this.parts.DateNaissance=String(year)
+      }
+    }
+  }
+ 
+  if(this.parts.experience!=undefined)
+{
+// console.log(this.parts.experience) 
+
+let regex = /(\d{2}[\/](19|20)\d{2}|((19|20)\d{2}|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|(en cours|aujourd|a ce jour|now|présent|since|depuis))/g
+let matches = [];
+let months = [];
+let years = [];
+
+let match;
+do {
+  match =regex.exec(this.parts.experience.toLowerCase());
+  if (match) {
+    matches.push(match[0]);
+    }
+} while (match);
+
+if(matches!=null)
+{
+  for(let i=0;i<matches.length;i++)
+  { 
+   
+    let k=matches[i].match(/[a-zA-Zéû]+|\d{2}[\/]/)
+   
+    let kk=matches[i].match(/\d{4}|aujourd|today|now|since|depuis|présent/)
+   
+   
+    if(k!=null){
+      var monthNumber = monthsConverter[k[0]]
+      months.push(monthNumber)
+     
+   
+  }
+  if(kk!=null){
+    let cc=kk[0].match(/aujourd|today|now|since|depuis|présent/)
+    if(cc!=null)
+    {
+      kk[0]=new Date().getFullYear();
+    }
+
+  
+    years.push(kk[0])
+}
+  }
+  
+ /* months.forEach(element => console.log("moisssssssss"+element));
+  years.forEach(element => console.log("yearsss"+element));*/
+this.parts.experience=String(matches)+' total months'+totalmonths(months,years)
+}
+
+
+   /* let e=this.parts.experience.toLowerCase().match(/(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|août|septembre|aout|octobre|novembre|décembre)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}/)
     if(e!=null)
     {
-      this.parts.experience=String[e[0]]
-    }
-  }*/
+     console.log(e)
+      
+    }*/
+
+  }
   if(this.parts.name!=undefined)
   {
   let myfirst= human.parseName(name)

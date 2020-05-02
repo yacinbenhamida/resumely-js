@@ -41,7 +41,7 @@ class SignIn extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       values: {
         email: '',
@@ -102,8 +102,8 @@ class SignIn extends Component {
       const token = data.token;
       const error = data.error;
 
-      if(error || !token)
-      {
+      if (error || !token) {
+        console.log(error)
         this.setState({ isLoading: false });
         return;
       }
@@ -127,18 +127,20 @@ class SignIn extends Component {
     const { history } = this.props;
 
     console.log(response.accessToken)
-    if(!response.accessToken) return;
+    if (!response.accessToken) return;
 
     // Notify backend to create if this is a new account.
     const { data } = await usersService.notifyFacebookLogin(response);
-    if(data.error) return;
+    console.log(data);
+    if (data.error) return;
 
     const user = data.user;
     console.log(user.firstName)
     console.log(user)
 
     localStorage.setItem('isAuthenticated', true);
-    localStorage.setItem('token', response.accessToken);
+    // localStorage.setItem('token', response.accessToken);
+    localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(user));
 
     history.push('/dashboard');
@@ -146,17 +148,18 @@ class SignIn extends Component {
 
   responseGoogle = async (response) => {
     const { history } = this.props;
-    
-    if(!response?.tokenObj) return;
+
+    if (!response?.tokenObj) return;
 
 
     const { data } = await usersService.notifyGoogleLogin(response);
     console.log(data);
-    if(data.error) return;
+    if (data.error) return;
 
-    const token = response.tokenObj.access_token;
+    // const token = response.tokenObj.access_token;
+    const token = data.token
     const user = data.user;
-    
+
     localStorage.setItem('isAuthenticated', true);
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
@@ -239,29 +242,29 @@ class SignIn extends Component {
                     Sign in with social media
                   </Typography>
                   <FacebookLogin
-                    appId = "631341827412897"
-                    autoLoad = {false}
+                    appId="631341827412897"
+                    autoLoad={false}
                     fields="name,email,picture,first_name, last_name, short_name"
                     callback={this.responseFacebook}
                     render={renderProps => (
                       <Button
-                      className={classes.facebookButton}
-                      color="primary"
-                      onClick={renderProps.onClick}
-                      disabled={renderProps.disabled}
-                      size="large"
-                      variant="contained"
-                    >
-                      <FacebookIcon className={classes.facebookIcon} />
+                        className={classes.facebookButton}
+                        color="primary"
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        size="large"
+                        variant="contained"
+                      >
+                        <FacebookIcon className={classes.facebookIcon} />
                       Login with Facebook
-                    </Button>
+                      </Button>
                     )}
                   />
 
-                <GoogleLogin
+                  <GoogleLogin
                     clientId="168031260511-suqku20g2abluojak1thha52redr8639.apps.googleusercontent.com"
                     render={renderProps => (
-                        <Button
+                      <Button
                         className={classes.googleButton}
                         onClick={renderProps.onClick}
                         disabled={renderProps.disabled}

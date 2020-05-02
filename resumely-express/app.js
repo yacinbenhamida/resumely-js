@@ -5,12 +5,15 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 const client = require('./elasticsearch/connection');
 import mongoosastic from 'mongoosastic' 
-const Candidate = require('./models/candidate.model')
-const app = express();
-
+import candidate from './models/candidate'
+import fs from 'fs'
 import passport from 'passport';
 import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
+import Candidate from './models/candidate'
+import esClient from './elasticsearch/connection'
+const app = express();
+
 
 import cors from 'cors';
 require('dotenv').config();
@@ -43,8 +46,7 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
- /*indexing data
-let stream = Candidate.synchronize()
+/*let stream = Candidate.synchronize()
 let count = 0;
 
 stream.on('data', function(err, doc){
@@ -56,11 +58,8 @@ console.log('indexed ' + count + ' documents!');
 stream.on('error', function(err){
 console.log(err);
 });
- */
 
 /* ping to elastic search */
-
-
 
 /*esClient.ping({
     // ping usually has a 3000ms timeout
@@ -110,7 +109,10 @@ app.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err}`);
     next();
 });
-
+// create an uploads folder incase it got deleted
+if (!fs.existsSync('./uploads')){
+    fs.mkdirSync('./uploads');
+}
 /**
  * Register the routes
  */

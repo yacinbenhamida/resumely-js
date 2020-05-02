@@ -1,13 +1,5 @@
-// Mock data
-import notifications from 'data/notifications';
-
-export const getNotifications = (limit = 6) => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
-        notifications: notifications.slice(0, limit),
-        notificationsCount: notifications.length
-      });
-    }, 700);
-  });
+import axios from 'axios'
+export const getNotifications = (limit = 6, userId) => {
+  axios.post(process.env.REACT_APP_BACKEND
+    +'/check-scrapping?secret_token='+localStorage.getItem('token'),{id : userId})
 };

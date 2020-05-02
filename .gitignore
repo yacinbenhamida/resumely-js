@@ -106,3 +106,6 @@ dist
 # TernJS port file
 .tern-port
 .vscode/settings.json
+resumely-react/package-lock.json
+
+elasticsearch-6.8.0\data\nodes

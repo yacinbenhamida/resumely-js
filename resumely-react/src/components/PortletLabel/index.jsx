@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   icon: {
     fontSize: '1.3rem',
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(1),
     color: theme.palette.text.secondary,
     alignItems: 'center',
     display: 'flex'
@@ -27,7 +27,7 @@ const styles = theme => ({
   },
   subtitle: {
     fontWeight: 400,
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
     color: theme.palette.text.secondary
   }
 });

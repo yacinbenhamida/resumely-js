@@ -12,32 +12,27 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import { Typography } from '@material-ui/core';
+import classNames from 'classnames';
+import palette from 'theme/palette';
+import {
+  Status
+} from 'components';
+import {
+  Phone as Phone,
+} from '@material-ui/icons';
 
 
-
-// Services
-
-
-// Externals
 import PropTypes, {} from 'prop-types';
-
-// Material helpers
 import { withStyles } from '@material-ui/core';
-
-// Material components
 import { Grid } from '@material-ui/core';
-
-// Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 
-// Custom components
-
-// Component styles
 const styles = theme => ({
   root: {
     margin: 0,
@@ -52,6 +47,10 @@ class Datasetparsing extends Component {
     super(props);
     this.state = {resumes: [],
       open:false,
+      test:true,
+      verif:{
+       },
+       phone:"",
      
       name : {
         firstName: "",
@@ -68,7 +67,7 @@ class Datasetparsing extends Component {
   }
 
   handleChange(event) {
-    const name = event.target.name;
+    //const name = event.target.name;
     const value = event.target.value;
 
     this.setState({
@@ -82,6 +81,23 @@ class Datasetparsing extends Component {
   
       })
     }
+   
+    //'http://apilayer.net/api/validate?access_key=6f058e8d12f78fa6b4840c6ab3235c56&number'=+phone
+     handleClickOpen = (number) => {
+       console.log('numberrrrrrrr'+number)
+       axios.get(`http://localhost:5000/verif/${number}`)
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          phone:number,
+          verif:res.data})})
+    .then( this.setState({
+        open:true
+      }))
+   
+
+    };
+
     
    componentgeteditable(id) {
     axios.get('http://localhost:5000/edit-resume/' +id)
@@ -156,6 +172,7 @@ class Datasetparsing extends Component {
             <TableCell align="right">Adress</TableCell>
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
+            <TableCell align="right">Experience</TableCell>
             <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -166,16 +183,22 @@ class Datasetparsing extends Component {
               <TableCell align="right">{resumes.name.firstName}</TableCell>
               <TableCell align="right">{resumes.name.lastName}</TableCell>
               <TableCell align="right">{resumes.email}</TableCell>
-              <TableCell align="right">{resumes.phone}</TableCell>
+              <TableCell align="right">{resumes.phone}
+             {!!resumes.phone && <IconButton  onClick={ () => this.handleClickOpen(resumes.phone) }>  <Phone/>
+          </IconButton> }
+              </TableCell>
+             
               <TableCell align="right">{resumes.adresse}</TableCell>
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
+              <TableCell align="right">{resumes.experience}</TableCell>
               <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ () => this.deleteContact(resumes._id) }>
               <DeleteIcon />
               </IconButton>
-              <IconButton aria-label="edit" className={classes.margin} onClick={  () => this.componentgeteditable(resumes._id)}>
+             {/* <IconButton aria-label="edit" className={classes.margin} onClick={  () => this.componentgeteditable(resumes._id)}>
               <EditIcon />
-              </IconButton>
+              </IconButton>*/
+             }
               </TableCell>
             </TableRow>
           ))}
@@ -183,9 +206,99 @@ class Datasetparsing extends Component {
       </Table>
 
     </TableContainer>
-    <div>
+    <Dialog
+        open={this.state.open}
+        onClose={this.handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title" >   {"Validation of phone number"}&nbsp; <div  style={{ color: palette.warning.main }}>{this.state.phone}</div></DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            <div> 
+      <center>  { this.state.verif.valid==true &&
+         <Typography 
+              className={classes.value}
+              style={{ color: palette.success.main}}
+              variant="h5"
+          
+            >
+           <Status
+          className={classes.status}
+          color="success"
+          size="sm"
+          />   Valid number
+
+          <Typography 
+            className={classes.value}
+            style={{ color: palette.success }}
+            variant="h5"
+        
+          >
+             {this.state.verif.country_code} 
+            </Typography>
+            <Typography 
+            className={classes.value}
+            style={{ color: palette.success }}
+            variant="h5"
+        
+          >
+           {this.state.verif.country_name}
+            </Typography>
+            <Typography 
+            className={classes.value}
+            style={{ color: palette.success }}
+            variant="h5"
+        
+          >
+           {this.state.verif.carrier}
+            </Typography>
+            <Typography 
+            className={classes.value}
+            style={{ color: palette.success }}
+            variant="h5"
+          >
+           {this.state.verif.location}
+            </Typography>
+       
+            <Typography 
+            className={classes.value}
+            style={{ color: palette.success }}
+            variant="h5"
+          >
+           {this.state.verif.line_type}
+            </Typography>
+            </Typography>
+        
+          } 
+           </center> 
+            </div>
+            <div> 
+      <center>   
+      { this.state.verif.valid==false &&
+         <Typography y={this.state.test}
+              className={classes.value}
+              style={{ color: palette.danger.main }}
+              variant="h5"
+          
+            >
+            <Status
+             className={classes.status}
+             color="danger"
+             size="sm"
+             />  Invalid number
+             
+       
+      </Typography> }</center> 
+            </div>
+
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
+  
+   { /*  <div>
       <form> 
-    <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
+   <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Edit Resume</DialogTitle>
         <DialogContent>
         <input type="text" className="form-control" value={this.state.name.fullName} onChange={this.handleChange}/>
@@ -258,6 +371,7 @@ class Datasetparsing extends Component {
       </Dialog>
       </form>
        </div>
+      */ }
             </Grid>
             <Grid
               item

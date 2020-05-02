@@ -8,9 +8,11 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
 import { LinearProgress,IconButton  } from '@material-ui/core';
 // Material components
-import { Button, TextField,CircularProgress } from '@material-ui/core';
+import { Button, TextField,CircularProgress,Checkbox, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AlertDialog from '../FilesToolbar/AlertDialog'
+import MapChart from "./MapChart";
+import ReactTooltip from "react-tooltip";
 // Shared components
 import {
   Portlet,
@@ -19,24 +21,27 @@ import {
   PortletContent,
   PortletFooter
 } from 'components';
-
 // Component styles
 import styles from './styles';
 import axios from 'axios'
 
 class CustomScrapping extends Component {
+
     state = {
-    values: {
-      country: '',
-    },
+    country: '',
+    age : true,
+    education : true,
+    career : true,
+    skills  : true,
     promptCancelScrapping : false,
     isTriggered : false,
     user : JSON.parse(localStorage.getItem('user')),
     submitted : false,
-    scrappingInfo : null
+    scrappingInfo : null,
+    interval : null
   };
-  checkStatus = async ()=>{
-    await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
+  checkStatus = ()=>{
+    axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
     {id : this.state.user._id, currentstate : "started"}).then(d=>{
         if(d.status === 200 && d.data.length > 0){
             this.setState({
@@ -47,14 +52,14 @@ class CustomScrapping extends Component {
         }
     })
   }
-  componentWillMount(){
-    this.checkStatus()
+  componentDidUpdate(){
+    setInterval(this.checkStatus(), 5000)
   }
   componentDidMount(){
-    setInterval(this.checkStatus, 5000);
+    this.checkStatus()
   }
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.state.interval);
   }
   handleFieldChange = (field, value) => {
     const newState = { ...this.state };
@@ -64,14 +69,18 @@ class CustomScrapping extends Component {
     this.setState(newState);
   };
   submitSearch = ()=>{
-    if(this.state.values.country.trim() !== ""){
+    if(this.state.country && this.state.country.trim() !== ""){
       this.setState({submitted : true})
       axios
       .post(process.env.REACT_APP_BACKEND+'/scrapping?secret_token='+localStorage.getItem('token'),
       {
           country : this.state.country,
           username : this.state.user.username,
-          ownerid :  this.state.user._id
+          ownerid :  this.state.user._id,
+          scrapAge : this.state.age,
+          scrapEducation : this.state.education,
+          scrapExperience : this.state.career,
+          scrapSkills : this.state.skills
       }).then(x=>{
           if(x.status === 200){
               console.log('processing request...')
@@ -86,7 +95,7 @@ class CustomScrapping extends Component {
     axios
     .post(process.env.REACT_APP_BACKEND+'/stop-scrapping?secret_token='+localStorage.getItem('token'),
     {
-        id : this.state.scrappingInfo[0]._id
+        id : this.state.scrappingInfo[0]._id,
     }).then(x=>{
         if(x.status === 200){
             console.log('cancelling scrapping...')
@@ -101,9 +110,13 @@ class CustomScrapping extends Component {
     }
       this.setState({promptCancelScrapping : false})  
   }
+  getCountrys = ()=>{
+    const url = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+    axios.get(url).then(d=>this.setState({countrys : d.data})).catch(err=>alert('no internet connection'))
+  }
   render() {
     const { classes, className, ...rest } = this.props;
-    const { isTriggered, scrappingInfo,submitted } = this.state;
+    const { isTriggered, scrappingInfo,submitted,content } = this.state;
     
     const rootClassName = classNames(classes.root, className);
     if (isTriggered) {
@@ -130,6 +143,9 @@ class CustomScrapping extends Component {
           </IconButton>        
           </PortletHeader>
         <PortletContent  className={classes.progressWrapper}>
+        {(scrappingInfo[0].type === 'multiple' || !scrappingInfo[0].type )
+        &&
+          <div>
           <span>
             {scrappingInfo[0].expectedNoOfRows} useful profiles
           </span> 
@@ -139,6 +155,15 @@ class CustomScrapping extends Component {
             {scrappingInfo[0].currentNoOfRows} scrapped profiles
           </span> 
           <LinearProgress variant="determinate" value={scrappingInfo[0].currentNoOfRows}/>
+          </div>
+        }
+        {(scrappingInfo[0].type === 'single' || !scrappingInfo[0].type)
+         &&
+         <div className={classes.progressWrapper}>
+          <CircularProgress />
+          <span>Scrapping a single profile...</span>
+          </div>
+        }
         </PortletContent>
         </Portlet>
         </>
@@ -152,21 +177,81 @@ class CustomScrapping extends Component {
         <PortletHeader>
           <PortletLabel
             subtitle="collect data online"
-            title="Data Scrapping"
+            title="Multiple"
           />
         </PortletHeader>
         <PortletContent>
+         
           <form className={classes.form}>
+          <div className={classes.row}>
+          <div>
+            <MapChart setInputContent={d=>this.setState({country : d})} setTooltipContent={x=>this.setState({content : x})} />
+            <ReactTooltip>{content}</ReactTooltip>
+          </div>
             <TextField
               className={classes.textField}
               label="country"
               name="country"
+              value={this.state.country}
               onChange={event =>
                 this.setState({country : event.target.value})
               }
               type="text"
               variant="outlined"
             />
+              <Typography
+                className={classes.groupLabel}
+                variant="h6"
+              >
+                Targeted data
+              </Typography>
+              <div>
+                <Checkbox color="primary" onChange={event =>
+                  this.setState({age : event.target.checked})}
+                  defaultChecked/>
+                age
+                <Checkbox color="primary"onChange={event =>
+                  this.setState({education : event.target.checked})}
+                  defaultChecked
+                />
+                education
+                <Checkbox color="primary" onChange={event =>
+                  this.setState({skills : event.target.checked})}
+                  defaultChecked
+                />
+                skills
+                <Checkbox color="primary"onChange={event =>
+                  this.setState({career : event.target.checked})}
+                  defaultChecked
+                />
+                experience
+              </div>
+              <div>
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              image
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              firstname
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              lastname
+              <Checkbox color="primary"
+                disabled
+                defaultChecked
+              />
+              presentation
+              </div>
+              <div>
+              
+              </div>
+            </div>
           </form>
         </PortletContent>
         <PortletFooter className={classes.portletFooter}>
