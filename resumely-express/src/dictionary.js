@@ -30,7 +30,7 @@ module.exports = {
     certification: ['certification', 'certifications'],*/
     activites: ['interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
     DateNaissance:['Née','Née le','Date de naissance',' Date de naissance ','born','birthdate','Né','naissance','DN'],
-    experience:['Expériences professionnelles','Parcours','EXPERIENCES PROFESSIONNELLES','Expérience Professionnelle ','stage','Parcours professionnel','EXPERIENCE PROFESIONNELLE','stages','Expériences'],
+    experience:['Parcours','EXPERIENCES PROFESSIONNELLES','Expérience Professionnelle ','stage','Parcours professionnel','EXPERIENCE PROFESIONNELLE','stages','Expériences'],
      formation: ['education','formation','ETUDES & DIPLOMES','etudes','diplomes','formations','Éducation','Projets'],
 
 

@@ -47,6 +47,8 @@ mongoose.connect(process.env.DB_URI, {
 });
 
 
+
+
 /*let stream = Candidate.synchronize()
 let count = 0;
 stream.on('data', function (err, doc) {
@@ -78,13 +80,9 @@ stream.on('error', function (err) {
     console.log(err);
 });*/
 
-
-
-/*esClient.ping({
-
 /*
 esClient.ping({
->>>>>>> 2f7eb8196a8460ee8f3894c560f39f9556c88b4c
+
     // ping usually has a 3000ms timeout
     requestTimeout: 1000
 }, function (error) {
