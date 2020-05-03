@@ -6,6 +6,7 @@ const CandidateSchema = new mongoose.Schema({
     firstName:  {   type: String },
     lastName:   {     type: String    },
     country:    {   type: String    },
+   // age:    {   type: Number   },
     currentPosition:    {   type: String  , es_indexed: false  },
     profile:    {   type: String  , es_indexed: false  } ,
     livesIn:    {   type:String     },

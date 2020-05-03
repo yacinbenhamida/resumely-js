@@ -10,7 +10,10 @@
     "serve": "node dist/server.js"
   },
   "nodemonConfig": {
-    "ignore": ["compiled/*", "uploads/*"]
+    "ignore": [
+      "compiled/*",
+      "uploads/*"
+    ]
   },
   "dependencies": {
     "addressit": "^1.7.0",

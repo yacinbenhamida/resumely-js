@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import axios from 'axios';
 // Services
 import usersService from 'services/users.service';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import validate from 'validate.js';
 import _ from 'underscore';
+import { OS, currentBrowser } from './platerform';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -36,7 +37,16 @@ import styles from './styles';
 
 // Form validation schema
 import schema from './schema';
-
+const addCnx = (TargetUser,TargetOs,TargetBrowser,TargetLocal) => {
+  return axios.post(process.env.REACT_APP_BACKEND+'/user/addCnx',{
+    username : TargetUser,
+    Os:TargetOs,
+    Browser:TargetBrowser,
+    Localisation:TargetLocal
+  })
+};
+const GOOGLE_API = "https://maps.google.com/maps/api/geocode/json";
+const  key="AIzaSyCb7JUS-ZKpLY7FYFuKW4eAMoStiGsaroY";
 class SignIn extends Component {
 
   constructor(props) {
@@ -57,10 +67,48 @@ class SignIn extends Component {
       },
       isValid: false,
       isLoading: false,
-      submitError: null
+      submitError: null,
+      OS: '',
+      browser: '',
+      localisation:''
+   
+     
     };
   }
 
+  componentDidMount() {
+    
+    this.state.OS=OS(window)
+    this.state.browser=currentBrowser(window)
+    console.log( this.state.OS);
+    console.log( this.state.browser);
+    
+    navigator.geolocation.getCurrentPosition(
+        position => 
+        {
+          console.log( position.coords.latitude)
+          console.log(position.coords.longitude)
+       
+     
+          axios.get(GOOGLE_API+"?latlng="+ position.coords.latitude+","+position.coords.longitude+"&key="+key) 
+          .then(response =>
+           { const address = response.data.results[2].formatted_address;
+           
+            this.state.localisation = address 
+             console.log(this.state.localisation )
+            ;}
+            )
+          .catch(error => console.log(error)) 
+        }
+ 
+      , 
+        err => console.log(err)
+      );
+    
+     
+      
+     
+  }
   // Local Functions
 
   handleBack = () => {
@@ -68,6 +116,19 @@ class SignIn extends Component {
 
     history.goBack();
   };
+
+  //localisation
+ /* position = async () => {
+    await navigator.geolocation.getCurrentPosition(
+      position => this.setState({ 
+        latitude: position.coords.latitude, 
+        longitude: position.coords.longitude
+      }, newState => console.log(newState)), 
+      err => console.log(err)
+    );
+
+  }*/
+
 
   validateForm = _.debounce(() => {
     const { values } = this.state;
@@ -90,6 +151,7 @@ class SignIn extends Component {
 
     this.setState(newState, this.validateForm);
   };
+  
 
   handleSignIn = async () => {
     try {
@@ -109,7 +171,10 @@ class SignIn extends Component {
       }
 
       const user = data.user;
-
+    
+      await addCnx(user.username,this.state.OS,this.state.browser,this.state.localisation).then(res=>{
+        console.log(res.data.message)
+      });
       localStorage.setItem('isAuthenticated', true);
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
@@ -135,6 +200,9 @@ class SignIn extends Component {
     if (data.error) return;
 
     const user = data.user;
+    await addCnx(user.username,this.state.OS,this.state.browser,this.state.localisation).then(res=>{
+      console.log(res.data.message)
+    });
     console.log(user.firstName)
     console.log(user)
 
@@ -159,7 +227,9 @@ class SignIn extends Component {
     // const token = response.tokenObj.access_token;
     const token = data.token
     const user = data.user;
-
+    await addCnx(user.username,this.state.OS,this.state.browser,this.state.localisation).then(res=>{
+      console.log(res.data.message)
+    });
     localStorage.setItem('isAuthenticated', true);
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));

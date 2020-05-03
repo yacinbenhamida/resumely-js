@@ -34,10 +34,16 @@ export default (app) => {
         .put(usersController.editProfile)
     app.route('/editpicture')
         .put(usersController.editPicture)
+    app.route('/deletepicture')
+        .put(usersController.removePicture)
     app.route('/verifypwd')
     .post(usersController.verifyPassowrd)
     app.route('/user/updatePasswordviaProfile')
     .put(forgotPassword.updatePasswordViaProfile)
+    app.route('/user/addCnx')
+    .post(usersController.addCnx)
+    app.route('/user/cnx')
+    .post(usersController.displayCnxByUser)
     /**
      * Facebook Login
      */
@@ -82,14 +88,13 @@ export default (app) => {
     .post(parsingController.insert);
    
         
-        app.route('/delete/parsed')
-        .get(parser.deleteparsed);
-        app.route('/verif/:number')
-        .get(parser.verifnum);
+    app.route('/delete/parsed')
+    .get(parser.deleteparsed);
+     app.route('/verif/:number')
+    .get(parser.verifnum);
 
-        app.route('/edit-resume/:id')
-        .get(parser.editresume)
-
+    app.route('/edit-resume/:id')
+    .get(parser.editresume)
 
 
 
