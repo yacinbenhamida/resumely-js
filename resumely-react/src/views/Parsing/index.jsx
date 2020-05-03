@@ -234,7 +234,7 @@ class ParserParent extends Component {
             <TableCell align="right">Adress</TableCell>
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
-            <TableCell align="right">Expérience</TableCell>
+            <TableCell align="right">Experience</TableCell> 
             <TableCell align="right">Delete</TableCell>
          
           </TableRow>

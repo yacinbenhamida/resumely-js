@@ -27,12 +27,11 @@ module.exports = {
     awards: ['awards'],
     honors: ['honors'],
     additional: ['additional'],
-    certification: ['certification', 'certifications'],
-    activites: ['interests','CENTRES D’INTERETS','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],*/
+    certification: ['certification', 'certifications'],*/
+    activites: ['interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
     DateNaissance:['Née','Née le','Date de naissance',' Date de naissance ','born','birthdate','Né','naissance','DN'],
-    experience:['Expériences professionnelles','Parcours','Parcours professionnel','EXPÉRIENCE PROFESSIONNELLE','EXPERIENCE PROFESIONNELLE','stages'],
-     Académiques:['Projets'],
-     formation: ['education','formation','ETUDES & DIPLOMES','etudes','diplomes','formations'],
+    experience:['Expériences professionnelles','Parcours','EXPERIENCES PROFESSIONNELLES','Expérience Professionnelle ','stage','Parcours professionnel','EXPERIENCE PROFESIONNELLE','stages','Expériences'],
+     formation: ['education','formation','ETUDES & DIPLOMES','etudes','diplomes','formations','Éducation','Projets'],
 
 
  

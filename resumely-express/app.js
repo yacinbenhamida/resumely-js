@@ -47,7 +47,7 @@ mongoose.connect(process.env.DB_URI, {
 });
 
 
-let stream = Candidate.synchronize()
+/*let stream = Candidate.synchronize()
 let count = 0;
 stream.on('data', function (err, doc) {
    /* if (doc.country != null) {
@@ -67,16 +67,16 @@ stream.on('data', function (err, doc) {
             count = count + 1;
         }
     }*/
-    count = count + 1;
+   // count = count + 1;
 
 
-});
+/*});
 stream.on('close', function () {
     console.log('indexed ' + count + ' documents!');
 });
 stream.on('error', function (err) {
     console.log(err);
-});
+});*/
 
 
 
