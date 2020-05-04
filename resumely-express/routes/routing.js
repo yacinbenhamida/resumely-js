@@ -123,9 +123,7 @@ export default (app) => {
     app
     .route('/countries')
     .get(dataController.getCountries);
-
     app
     .route('/bulk')
     .post(dataController.bulkApi)
-
 };

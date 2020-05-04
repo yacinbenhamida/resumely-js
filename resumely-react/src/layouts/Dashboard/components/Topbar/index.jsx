@@ -76,12 +76,13 @@ class Topbar extends Component {
 
   handleSignOut = () => {
     const { history } = this.props;
-
-    localStorage.setItem('isAuthenticated', false);
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-
-    history.push('/sign-in');
+    axios.get(process.env.REACT_APP_BACKEND
+      +'/flask-disconnect?secret_token='+localStorage.getItem('token')).then(res=>{
+        localStorage.setItem('isAuthenticated', false);
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        history.push('/sign-in');
+      })
   };
 
   handleShowNotifications = event => {

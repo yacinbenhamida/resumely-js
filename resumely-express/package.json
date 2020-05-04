@@ -54,6 +54,7 @@
     "mongoose": "^5.2.8",
     "morgan": "~1.9.1",
     "multer": "^1.2.0",
+    "node-localstorage": "^2.1.6",
     "nodemailer": "^6.4.5",
     "nodemon": "^2.0.2",
     "parse-address": "^1.1.2",

@@ -3,7 +3,11 @@ const jwt = require('jsonwebtoken');
 const UserModel = require('../../models/user');
 const  CnxModel = require('../../models/HistoriqueCnx');
 import bcrypt from 'bcrypt'
+import request from 'request';
 require('dotenv').config()
+import flaskLogin from './flaskConnector'
+const flask_rest = process.env.PY_URI;
+
 // Registration
 exports.signup = passport.authenticate('signup', {
     session: false
@@ -47,9 +51,26 @@ exports.login = async (req, res, next) => {
                 const token = jwt.sign({
                     user: body
                 }, process.env.PASSPORT_SECRET);
-
-                user.password = null;
-
+                // we need to log to our flask app
+                try{
+                    let LocalStorage = require('node-localstorage').LocalStorage,
+                    localStorage = new LocalStorage('./scratch');
+                    await request.post(`${flask_rest}/login`,{
+                        json : {
+                            email : user.email,
+                            password: user.password
+                        }
+                    }, (error2, res, body) => {
+                        if (error2) {
+                            console.log("flask server may be down")
+                            console.error(error2)
+                            return
+                        }
+                        localStorage.setItem(user.email, body.access_token);
+                        console.log('flask token is : '+localStorage.getItem(user.email))
+                    })
+                }catch(except){}
+                user.password = null;               
                 // Send back the token to the user
                 return res.json({
                     token,
@@ -90,7 +111,25 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         },
         'facebook'
     );
-
+    // auth to flask server 
+    try{
+        let LocalStorage = require('node-localstorage').LocalStorage,
+        localStorage = new LocalStorage('./scratch');
+        await request.post(`${flask_rest}/login`,{
+            json : {
+                email : outData.outUser.email,
+                password: outData.outUser.password
+            }
+        }, (error2, res, body) => {
+            if (error2) {
+                console.log("flask server is down")
+                console.error(error2)
+                return
+            }
+            localStorage.setItem(outData.outUser.email, body.access_token);
+            console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
+        })
+    }catch(except){}
     console.log('Sending data:', outData);
 
     return res.json({
@@ -120,7 +159,25 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         },
         'google'
     );
-
+    // auth to flask server 
+    try{
+        let LocalStorage = require('node-localstorage').LocalStorage,
+        localStorage = new LocalStorage('./scratch');
+        await request.post(`${flask_rest}/login`,{
+            json : {
+                email : outData.outUser.email,
+                password: outData.outUser.password
+            }
+        }, (error2, res, body) => {
+            if (error2) {
+                console.log("flask server is down")
+                console.error(error2)
+                return
+            }
+            localStorage.setItem(outData.outUser.email, body.access_token);
+            console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
+        })   
+    }catch(except){} 
     console.log('Sending data:', outData);
 
     return res.json({
