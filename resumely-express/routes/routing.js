@@ -69,6 +69,9 @@ export default (app) => {
         .get(predict.RootPage);
     app.route('/predict')
         .post(predict.doPredict);
+    app.route('/correct')
+        .post(predict.doCorrect)
+
     //Parsing
     app.route('/parsing')
     .post(parser.RootPage);

@@ -106,8 +106,8 @@ def correct(fn, ln, lb):
 
     train_data_path = DATA_DIR / 'train_data_full.csv'
 
-    row_list = [[fn, ln, lb]]
-    with open(train_data_path, 'w', newline='') as file:
+    row_list = [[fn, ln, lb, []]]
+    with open(train_data_path, 'a+', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(row_list)
 

@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 
+// Services
+import predictionService from 'services/prediction.service';
+
 // Material helpers
 import { withStyles } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
@@ -42,8 +45,31 @@ class PredictionDetails extends Component {
             countries: [],
             skills: [],
             showPrediction: false,
-            isRating: false
+            isRating: false,
+
+            ratingFirstName: '',
+            ratingLastName: '',
+            ratingLabel: '',
         };
+    }
+
+    handleChange_RatingFirstName(e) {
+
+        this.setState({
+            ratingFirstName: e.target.value
+        });
+    }
+
+    handleChange_RatingLastName(e) {
+        this.setState({
+            ratingLastName: e.target.value
+        });
+    }
+
+    handleChange_RatingLabel(e) {
+        this.setState({
+            ratingLabel: e.target.value
+        });
     }
 
     // Called by parent Prediction component
@@ -158,20 +184,6 @@ class PredictionDetails extends Component {
 
     render() {
 
-        const classes2 = makeStyles((theme) => ({
-            modal: {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-            },
-            paper: {
-                backgroundColor: theme.palette.background.paper,
-                border: '2px solid #000',
-                boxShadow: theme.shadows[5],
-                padding: theme.spacing(2, 4, 3),
-            },
-        }));
-
         function capitalize(name) {
             return name
                 .charAt(0)
@@ -201,30 +213,99 @@ class PredictionDetails extends Component {
         return (
             <div>
 
-                <Dialog open={this.state.isRating} onClose={() => this.setState({isRating: false})} aria-labelledby="form-dialog-title">
-                    <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText>
-                            To subscribe to this website, please enter your email address here. We will send updates
-                            occasionally.
+                <Dialog open={this.state.isRating} onClose={() => this.setState({ isRating: false })} aria-labelledby="form-dialog-title">
+                    <DialogTitle id="form-dialog-title">Prediction Correction</DialogTitle>
+                    <form
+                        autoComplete="off"
+                        // onSubmit={this.handleSubmitRating}
+                        className={classes.form}
+                    >
+
+                        <DialogContent>
+                            <DialogContentText>
+                                To subscribe to this website, please enter your email address here. We will send updates
+                                occasionally.
                         </DialogContentText>
-                        <TextField
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Email Address"
-                            type="email"
-                            fullWidth
-                        />
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClose={() => this.setState({isRating: false})} color="primary">
-                            Cancel
+
+
+
+                            <div className={classes.field} style={{ textAlign: "center" }}>
+                                <TextField
+                                    className={classes.textField}
+                                    label="First Name"
+                                    required
+                                    margin="dense"
+                                    value={this.state.ratingFirstName}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            ratingFirstName: e.target.value
+                                        });
+                                    }}
+                                    variant="outlined"
+                                />
+                                <br />
+                                <TextField
+                                    className={classes.textField}
+                                    label="Last Name"
+                                    required
+                                    margin="dense"
+                                    value={this.state.ratingLastName}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            ratingLastName: e.target.value
+                                        });
+                                    }}
+                                    variant="outlined"
+                                />
+                                <br />
+                                <TextField
+                                    className={classes.textField}
+                                    label="Label"
+                                    required
+                                    margin="dense"
+                                    value={this.state.ratingLabel}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            ratingLabel: e.target.value
+                                        });
+                                    }}
+                                    variant="outlined"
+                                />
+                            </div>
+                        </DialogContent>
+
+                        <DialogActions>
+                            <Button onClick={() => this.setState({ isRating: false })} color="primary">
+                                Cancel
           </Button>
-                        <Button onClose={() => this.setState({isRating: false})} color="primary">
-                            Subscribe
+                            <Button
+                                onClick={
+
+                                    (event) => {
+                                        event.preventDefault();
+
+                                        console.log(event);
+                                        console.log(this);
+
+                                        try {
+                                            const { data } = predictionService.Correct(this.state.ratingFirstName, this.state.ratingLastName, this.state.ratingLabel);
+
+                                        } catch (error) {
+                                            console.error(error);
+                                        } finally {
+                                        }
+
+                                        event.persist();
+                                    }
+
+
+                                }
+                                color="primary">
+                                Submit Rating
           </Button>
-                    </DialogActions>
+                        </DialogActions>
+                    </form>
+
                 </Dialog>
 
                 <Portlet {...rest} className={rootClassName}>

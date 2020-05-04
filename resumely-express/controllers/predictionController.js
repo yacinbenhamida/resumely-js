@@ -18,3 +18,13 @@ exports.doPredict = (req, res) => {
         uri: `${py_url}/${firstName}/${lastName}`,
     }).pipe(res);
 };
+
+exports.doCorrect = (req, res) => {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const label = req.body.label;
+    
+    request({
+        uri: `${py_url}/${firstName}/${lastName}/${label}`,
+    }).pipe(res);
+}
