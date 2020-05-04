@@ -10,7 +10,7 @@ PREDICTION_DIR = BASE_DIR / 'prediction' / 'custom'
 
 # Import Services
 sys.path.append(str(PREDICTION_DIR))
-from prediction import Predictor
+from prediction import Predictor, Corrector
 from customscrapping import scrapdata
 from tasks import threaded_task
 class BackgroundThread(Resource):     
@@ -34,6 +34,7 @@ class SingleBgThread(Resource):
 
 # Route your service here
 def routes(api):
+    api.add_resource(Corrector, '/<string:fname>/<string:lname>/<string:label>')
     api.add_resource(Predictor, '/<string:fname>/<string:lname>')
     api.add_resource(BackgroundThread, '/scrap/<string:country>/<string:idop>') #get request, multiple profiles
     api.add_resource(SingleBgThread, '/scrap-single') #post request, one target
