@@ -91,13 +91,11 @@ class CustomSingleScrapper extends Component {
   }
   cancelScrapping =()=>{
     axios
-    .post(process.env.REACT_APP_BACKEND+'/stop-scrapping?secret_token='+localStorage.getItem('token'),
-    {
-        id : this.state.scrappingInfo[0]._id,
-    }).then(x=>{
+    .post(process.env.REACT_APP_BACKEND+'/stop-scrapping?secret_token='+localStorage.getItem('token'))
+    .then(x=>{
         if(x.status === 200){
             console.log('cancelling scrapping...')
-            this.setState({isTriggered : false, scrappingInfo : null})
+            window.location.reload()
         }
         else console.log('error')
     })

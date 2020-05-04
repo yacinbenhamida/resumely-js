@@ -22,4 +22,3 @@ set CLI_JAR=%ES_HOME%/bin/*
 
 endlocal
 endlocal
-exit /b %ERRORLEVEL%

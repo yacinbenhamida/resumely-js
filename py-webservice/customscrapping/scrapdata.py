@@ -9,16 +9,33 @@ from flask import Flask
 from flask_restful import Resource, Api
 from flask import Response
 import bson
+import requests
+import customscrapping.parameters as params
 def validate_field(field):
     if not field:
         field = 'No results'
     return field
+def getProfileCountry(found_country):
+    # finding the correct country name via google maps api
+    target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key="+params.google_api_key).json()
+    country = found_country
+    for data in target['results']:
+        for x in data['address_components']:
+            if x['types'][0] == 'country':
+                country = str(x['long_name'])
+    print(country)
+    return country
+def indexProfile(id):
+    # indexing profile to elasticsearch engine
+    target = requests.post(params.node_backend+'/bulk', json={ "id" : str(id)})
+    print('indexing : '+str(id)+' to node server ')
 def notify(db,content,iduser):
     notif = db["notifications"]
-    db.insert_one({
+    notif.insert_one({
         "targetedUserId" : str(iduser),
         "content" : content,
-        'type' : "scrapping"
+        'type' : "scrapping",
+        'seen' : False
     })
 def load_browser():
     options = Options()
@@ -43,7 +60,7 @@ def scrap_profile(driver,url,idop):
     sleep(3)
     j = 0
     target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapExperience":1,"scrapSkills":1,"ownerId" : 1})[0]
-    if str(target['currentState']) == "stopped":
+    if str(target['currentState']) == "done":
         print("scrapping stopped, exiting... ")
         return
     sel = Selector(text=driver.page_source)    
@@ -166,7 +183,7 @@ def scrap_profile(driver,url,idop):
         res = {        
                 'currentPosition' : current_title,
                 'livesIn' : lives_in,
-                'country' : lives_in,
+                'country' : getProfileCountry(lives_in),
                 'profile' : youbuzz_url,
                 'firstName': firstName,
                 'lastName' : lastName,
@@ -177,8 +194,9 @@ def scrap_profile(driver,url,idop):
                 'experiences' : experiences                
             }
         j = j+1
-        profiles_collection.insert_one(res)
+        inserted = profiles_collection.insert_one(res)
         scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentNoOfRows": j } })
+        indexProfile(inserted.inserted_id)
     else:
         print('profile irrelevant skipping...')   
     notify(database,"scrapped "+firstName+" "+lastName+ " successfuly.",target['ownerId'])
@@ -225,7 +243,7 @@ def scrapper(country,idop):
         j = 0
         for youbuzz_url in youbuzz_urls:
             target = scrapping_request_collection.find({"_id" : bson.ObjectId(idop)},{"currentState":1,"scrapAge":1,"scrapEducation":1,"scrapExperience":1,"scrapSkills":1,"ownerId" : 1})[0]
-            if str(target['currentState']) == "stopped":
+            if str(target['currentState']) == "done":
                 print("scrapping stopped, exiting... ")
                 break;
             driver.get(youbuzz_url)
@@ -234,8 +252,10 @@ def scrapper(country,idop):
             sel = Selector(text=driver.page_source) 
             
             lastName = sel.xpath('//*[starts-with(@class,"userName__lastName")]/text()').extract_first()
-            
-            if lastName and lastName not in done: 
+            lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
+
+                
+            if lives_in and lastName and lastName not in done: 
                 age = ""
                 lastName = lastName.strip()           
                 firstName = sel.xpath('//*[starts-with(@class,"userName__firstName")]/text()').extract_first()
@@ -244,7 +264,6 @@ def scrapper(country,idop):
                 current_title = sel.xpath('//*[@class="cvTitle"]/text()').extract_first()
                 if current_title:
                     current_title = current_title.strip()
-                lives_in = sel.xpath('//*[starts-with(@class,"widgetUserInfo__item widgetUserInfo__item_location")]/text()').extract_first()
                 if lives_in:
                     lives_in = lives_in.strip()
                 if str(target['scrapAge']) == "true":
@@ -353,7 +372,7 @@ def scrapper(country,idop):
                     res = {        
                             'currentPosition' : current_title,
                             'livesIn' : lives_in,
-                            'country' : country,
+                            'country' : getProfileCountry(lives_in),
                             'profile' : youbuzz_url,
                             'firstName': firstName,
                             'lastName' : lastName,
@@ -367,8 +386,9 @@ def scrapper(country,idop):
                     print('relevant record, inserting to database...')
                     done.add(res['lastName']) 
                     extracted_data.append(res)
-                    profiles_collection.insert_one(res)
+                    inserted = profiles_collection.insert_one(res)
                     scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentNoOfRows": j } })
+                    indexProfile(inserted.inserted_id)
                 else:
                     print('skipping...')
             else:

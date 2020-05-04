@@ -1,19 +1,20 @@
 
-var path = require('path')
+var path = require('path');
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-const client = require('./elasticsearch/connection');
-import mongoosastic from 'mongoosastic' 
+import mongoosastic from 'mongoosastic'
 import candidate from './models/candidate'
 import fs from 'fs'
 import passport from 'passport';
 import routes from './routes/routing';
 import secureRoutes from './routes/secure-routing';
 import Candidate from './models/candidate'
-import esClient from './elasticsearch/connection'
-const app = express();
 
+const countries = require('country-state-picker');
+const countries_fr = require('./data/index.js');
+const app = express();
+import esClient from './elasticsearch/connection'
 
 import cors from 'cors';
 require('dotenv').config();
@@ -32,8 +33,7 @@ mongoose.connect(process.env.DB_URI, {
     useCreateIndex: true
 }, (err) => {
     if (err) console.log('Error during mongoose connection: ' + err);
-    else 
-    {
+    else {
         console.log('Successful mongoose connection.');
 
         // Quick DB Test
@@ -46,47 +46,7 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
- //indexing data
-let stream = Candidate.synchronize()
-let count = 0;
 
-stream.on('data', function(err, doc){
-  
-      
-
-    /*  if(doc.livesIn.includes('Tunisie'))
-      {
-        console.log(doc.livesIn)
-     
-     
-      
-      }*/
-    
-      count = count +1 ;
- //  Candidate.findOneAndUpdate() 
-
-         
-});
-stream.on('close', function(){
-console.log('indexed ' + count + ' documents!');
-});
-stream.on('error', function(err){
-console.log(err);
-});
- 
-
-/* ping to elastic search */
-
-esClient.ping({
-    // ping usually has a 3000ms timeout
-        requestTimeout: 1000
-    }, function (error) {
-        if (error) {
-            console.trace('elasticsearch cluster is down!');
-        } else {
-            console.log('All is well');
-        }
-    });
 
 /**
  * Middlewares
@@ -125,9 +85,12 @@ app.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err}`);
     next();
 });
-// create an uploads folder incase it got deleted
-if (!fs.existsSync('./uploads')){
+// create an uploads & compiled folder incase it got deleted
+if (!fs.existsSync('./uploads')) {
     fs.mkdirSync('./uploads');
+}
+if (!fs.existsSync('./compiled')) {
+    fs.mkdirSync('./compiled');
 }
 /**
  * Register the routes

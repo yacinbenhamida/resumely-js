@@ -15,8 +15,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Redirect } from 'react-router-dom';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import {DropzoneArea} from 'material-ui-dropzone'
-import {File}  from './File';
 
 import 'react-dropzone-uploader/dist/styles.css';
 import Dropzone from 'react-dropzone-uploader';
@@ -36,6 +34,7 @@ import { Grid } from '@material-ui/core';
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 import { stat } from 'fs';
+// Custom components
 // Component styles
 const styles = theme => ({
   root: {
@@ -235,6 +234,7 @@ class ParserParent extends Component {
             <TableCell align="right">Adress</TableCell>
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
+            <TableCell align="right">Experience</TableCell> 
             <TableCell align="right">Delete</TableCell>
          
           </TableRow>
@@ -255,6 +255,7 @@ class ParserParent extends Component {
               <TableCell align="right">{resumes.adresse}</TableCell>
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
+              <TableCell align="right">{resumes.experience}</TableCell>
               <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ () => this.deleteContact(resumes._id) }>
               <DeleteIcon />
               </IconButton>
@@ -326,3 +327,6 @@ ParserParent.propTypes = {
  
 
 export default withStyles(styles)(ParserParent);
+
+
+

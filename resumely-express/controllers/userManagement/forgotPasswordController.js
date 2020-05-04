@@ -120,3 +120,30 @@ exports.updatePasswordViaEmail = (req, res) => {
         })
     } else res.status(400).json('username is mandatory')
 }
+
+exports.updatePasswordViaProfile= (req, res) => {
+    if(req.body.username){
+        User.findOne({
+            username : req.body.username
+        }).then(user => {
+            if(user){
+                console.log('user found ')   
+                bcrypt.hash(req.body.password, 10)
+                .then(hashedPassword => {
+                    User.updateOne({username : req.body.username},{
+                        password : hashedPassword,
+                        resetPasswordToken : null,
+                        resetPasswordExpires : null
+                    },(error,res)=>{
+                        if(error) console.log(error)
+                        console.log('res is '+res)
+                    })
+                res.status(200).send({message : 'password updated'})
+                })
+            }else {
+                console.error('user not found to update')
+                res.status(404).json('no user exists to update')
+            }
+        })
+    } else res.status(400).json('username is mandatory')
+}

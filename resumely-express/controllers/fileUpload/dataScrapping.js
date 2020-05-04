@@ -2,6 +2,7 @@ import request from 'request';
 import ScrapRequest from '../../models/scraprequest'
 require('dotenv').config();
 import Notification from '../../models/notification'
+import User from '../../models/user'
 const flask_rest = process.env.PY_URI;
 
 exports.scrapData = (req,res)=>{
@@ -40,19 +41,16 @@ exports.checkScrapper = (req,res) => {
         })
 }
 exports.cancelScrapping = (req,res) => {
-    ScrapRequest.findOneAndUpdate({_id : req.body.id},{currentState : "stopped"},(err,docs)=>{
-        if(err) res.status(404)
-        else{
-            const notif = new Notification({
-                targetedUserId : docs.ownerId,
-                content : "scrapping request created at "+docs.createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '')+" cancelled.",
-                type : "scrapping"
-            }).save((e,d)=>{
-                if(e) console.log(e)
-                res.status(200).send(docs)
+    User.findOne({
+        $or : [{ username : req.user.email},{email : req.user.email}]
+      },{_id : 1 },(e,user)=>{
+        ScrapRequest.updateMany({ownerId : String(user._id), currentState : "started"},{$set : {currentState : "done" }},(err,docs)=>{
+                if(err) res.status(404)
+                else{
+                    res.status(200)
+                } 
             })
-        } 
-    })
+      }) 
 }
 
 exports.scrapSingleProfile = (req,res) => {

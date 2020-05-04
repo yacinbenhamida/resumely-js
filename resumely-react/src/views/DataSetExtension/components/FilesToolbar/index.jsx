@@ -23,10 +23,9 @@ import {  SearchInput } from 'components';
 // Component styles
 import styles from './styles';
 import {DropzoneDialog} from 'material-ui-dropzone'
-import {SnackbarContentWrapper} from 'components/DropZone'
+import SnackBarWrapper from 'components/DropZone/SnackBar'
 import Axios from 'axios';
 import AlertDialog from './AlertDialog';
-
 class FilesToolbar extends Component {
  
   constructor(props) {
@@ -64,7 +63,7 @@ class FilesToolbar extends Component {
       data.append('file', files[x])
     }    
     data.append('user',  localStorage.getItem('user'))
-    Axios.post(process.env.REACT_APP_BACKEND+'/upload-files',data,{})
+    Axios.post(process.env.REACT_APP_BACKEND+'/upload-files?secret_token='+localStorage.getItem('token'),data,{})
     .then(response => {
       if(response.statusText === "OK"){
         this.setState({openSnackBar : true,snackbarMessage: 'uploaded successfuly'})
@@ -119,7 +118,7 @@ class FilesToolbar extends Component {
       }
     })
     Axios
-    .post(process.env.REACT_APP_BACKEND+'/delete-files'
+    .post(process.env.REACT_APP_BACKEND+'/delete-files?secret_token='+localStorage.getItem('token')
     ,{files : toBeDeleted})
     .then(response=>{
       if(response.status === 200){
@@ -129,6 +128,35 @@ class FilesToolbar extends Component {
         this.setState({openSnackBar : true,snackbarMessage: 'error deleting',snackbarVariant : 'error'})
       }
     })
+  }
+  handleExportFiles = async () => {
+    console.log('triggered')
+    let toBeDownloaded = []
+    await this.props.allFiles.forEach(file=>{
+      for (const iterator of this.props.selectedFiles) {
+        if(iterator === file._id) toBeDownloaded.push(file)
+      }
+    })
+    fetch(process.env.REACT_APP_BACKEND+'/download-files?secret_token='+localStorage.getItem('token')
+    ,{method: 'put',files : toBeDownloaded})
+    .then(response => {
+      response.blob().then(blob => {
+          let url = window.URL.createObjectURL(blob);
+					let a = document.createElement('a');
+					a.href = url;
+					a.download = 'files.zip';
+					a.click();
+      })
+      //window.location.href = response.url;
+    })
+    /*.then(response=>{
+      window.location.href = response.url
+      if(response.status === 200){
+        this.setState({openSnackBar : true,snackbarMessage: 'downloading files...'})
+      }else{
+        this.setState({openSnackBar : true,snackbarMessage: 'error downloading',snackbarVariant : 'error'})
+      }
+    })*/
   }
   render() {
     const { classes, className, selectedFiles } = this.props;
@@ -173,6 +201,7 @@ class FilesToolbar extends Component {
             className={classes.exportButton}
             size="small"
             variant="outlined"
+            onClick={this.handleExportFiles}
           >
             <ArrowUpwardIcon className={classes.exportIcon} />
             Export
@@ -195,23 +224,22 @@ class FilesToolbar extends Component {
         onClose={this.handleClose.bind(this)}
         showFileNamesInPreview={true}
       />
-      {this.props.showAlerts &&
         <Snackbar
             anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
             }}
             open={this.state.openSnackBar}
             autoHideDuration={6000}
             onClose={this.handleCloseSnackbar}
         >
-            <SnackbarContentWrapper
+            <SnackBarWrapper
                 onClose={this.handleCloseSnackbar}
                 variant={this.state.snackbarVariant}
                 message={this.state.snackbarMessage}
             />
         </Snackbar>
-    }
+    
       </>
     );
   }

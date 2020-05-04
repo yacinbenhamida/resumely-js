@@ -23,17 +23,24 @@ import {
   Typography,
   TablePagination,
 } from '@material-ui/core';
-
+import axios from 'axios';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 // Shared helpers
 import { getInitials } from 'helpers';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import { Button } from '@material-ui/core';
+import TableContainer from '@material-ui/core/TableContainer';
+import { Redirect } from 'react-router-dom';
 
 // Shared components
-import { Portlet, PortletContent } from 'components';
-
+import { Portlet, PortletContent,Status } from 'components';
+import Paper from '@material-ui/core/Paper';
+import Snackbar from '@material-ui/core/Snackbar';
 // Component styles
 import styles from './styles';
-
 
 class FilesTable extends Component {
   state = {
@@ -41,6 +48,11 @@ class FilesTable extends Component {
     rowsPerPage: 5,
     page: 0,
     activeTab : 0,
+    parsedFromFile : null,
+    sendToNextPage : false,
+    popupScanResult : false,
+    selectedFileToScan : null,
+    showSnackBarError : false
   };
  
   handleSelectAll = event => {
@@ -58,7 +70,9 @@ class FilesTable extends Component {
 
     onSelect(selectedFiles);
   };
-
+  handleClose = () => {
+    this.setState({showSnackBarError : false})
+  }
   handleSelectOne = (event, id) => {
     const { onSelect } = this.props;
     const { selectedFiles } = this.state;
@@ -91,10 +105,52 @@ class FilesTable extends Component {
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
   };
-
+  handleScanFile = (file) => {
+    axios.post(process.env.REACT_APP_BACKEND+'/parse-file?secret_token='+localStorage.getItem('token'),{filename : file.filename})
+    .then(
+      axios.post(process.env.REACT_APP_BACKEND+'/parse-file-data?secret_token='+localStorage.getItem('token'),{filename : file.filename})
+      .then(parsed=>{
+        console.log(parsed.data)
+        this.setState({parsedFromFile : parsed.data.parsed , popupScanResult : true, selectedFileToScan : file})
+      })
+    )     
+  }
+  handleCloseWithinsert = () => {
+    axios.post(process.env.REACT_APP_BACKEND + '/parsing/database')
+      .then(res => console.log(res.data));
+    axios.get(process.env.REACT_APP_BACKEND + '/getall')
+      .then(response => {
+        this.setState({ resumes: response.data });
+        axios.get(process.env.REACT_APP_BACKEND + '/update-file-status/'+this.state.selectedFileToScan._id+'?secret_token=' + localStorage.getItem('token'))
+          .then(
+            x => this.setState({ sendToNextPage: true })
+          );
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+  handleCloseWithdelete = () => {
+    axios.get(process.env.REACT_APP_BACKEND+'/delete/parsed')
+    .then(response => {
+      this.setState({
+        parsedFromFile : null,
+        popupScanResult : false,
+        selectedFileToScan : null
+      })
+    })
+    window.location.reload()
+  }
+  handleClose = () =>{
+    this.setState({
+      parsedFromFile : null,
+      popupScanResult : false,
+      selectedFileToScan : null
+    })
+  }
   render() {
     const { classes, className, files } = this.props;
-    const { activeTab, selectedFiles, rowsPerPage, page } = this.state;
+    const { activeTab, selectedFiles, rowsPerPage, page, parsedFromFile,popupScanResult,selectedFileToScan } = this.state;
 
     const rootClassName = classNames(classes.root, className);
 
@@ -117,7 +173,7 @@ class FilesTable extends Component {
                     />
                     File Name
                   </TableCell>
-                  <TableCell align="left">Owner</TableCell>
+                  <TableCell align="left">Status</TableCell>
                   <TableCell align="left">Upload date</TableCell>
                   <TableCell align="left">Scan</TableCell>
                 </TableRow>
@@ -170,15 +226,20 @@ class FilesTable extends Component {
                         </div>
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {file.ownerUsername}
+                      <Status
+                            className={classes.status}
+                            color={file.scanned? 'success' : 'danger'}
+                            size="sm"
+                          />
+                        {file.scanned ? ' scanned' :' not scanned'}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                         {moment(file.createdAt).format('DD/MM/YYYY')}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                       <IconButton
-                      className={classes.deleteButton}
-                      onClick={ev=>console.log(file._id)}
+                        className={classes.deleteButton}
+                        onClick={this.handleScanFile.bind(this,file)}
                       >
                       <CloudUploadIcon />
                     </IconButton>
@@ -204,6 +265,61 @@ class FilesTable extends Component {
             rowsPerPageOptions={[5, 10, 25]}
           />
         </PortletContent>
+        {parsedFromFile &&  popupScanResult &&
+          <Dialog
+            fullWidth={true}
+            maxWidth = {'lg'}
+            open={popupScanResult}
+            onClose={this.handleClose}
+          >
+          <DialogTitle >parsed data from file : {selectedFileToScan.filename}</DialogTitle>
+          <DialogContent>
+          <TableContainer component={Paper}>
+          <Table className={classes.table} size="small">
+            <TableHead>
+              <TableRow>
+                <TableCell>Results</TableCell>        
+                <TableCell align="right">First name</TableCell>
+                <TableCell align="right">Last name</TableCell>
+                <TableCell align="right">Email</TableCell>
+                <TableCell align="right">Phone</TableCell>
+                <TableCell align="right">Adress</TableCell>
+                <TableCell align="right">Birth date</TableCell>
+                <TableCell align="right">Age</TableCell>         
+              </TableRow>
+            </TableHead>
+            <TableBody>            
+                <TableRow key={parsedFromFile.name.fullName}>         
+                  <TableCell align="right">{parsedFromFile.name.firstName}</TableCell>
+                  <TableCell align="right">{parsedFromFile.name.lastName}</TableCell>
+                  <TableCell align="right">{parsedFromFile.email}</TableCell>
+                  <TableCell align="right">{parsedFromFile.phone}</TableCell>
+                  <TableCell align="right">{parsedFromFile.adresse}</TableCell>
+                  <TableCell align="right">{parsedFromFile.DateNaissance}</TableCell>
+                  <TableCell align="right">{parsedFromFile.age}</TableCell>         
+                </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleCloseWithdelete} color="primary">
+               Discard all
+              </Button>
+              <Button onClick={this.handleCloseWithinsert} color="primary" autoFocus>
+               Add to dataset
+              </Button>
+              {this.state.sendToNextPage &&
+              <Redirect to='/datasetparsing' />
+              }
+            </DialogActions>
+          </Dialog>
+          }
+          {this.state.showSnackBarError && 
+        <Snackbar open={this.state.showSnackBarError} autoHideDuration={6000} onClose={this.handleClose}>
+            Files deleted         
+        </Snackbar>
+          }
       </Portlet>
     );
   }

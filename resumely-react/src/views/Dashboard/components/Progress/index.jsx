@@ -18,8 +18,21 @@ import { Paper } from 'components';
 
 // Component styles
 import styles from './styles';
+import axios from 'axios';
 
 class Progress extends Component {
+  state = {
+    filesCount : 0
+  }
+  componentDidMount(){
+    this.loadFiles()
+  }
+  loadFiles = () => {
+    axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
+    .then(res=>{
+        this.setState({filesCount: res.data.fileCount})
+      })
+  }
   render() {
     const { classes, className, ...rest } = this.props;
 
@@ -36,13 +49,13 @@ class Progress extends Component {
               className={classes.title}
               variant="body2"
             >
-              PROGRESS
+              FILES
             </Typography>
             <Typography
               className={classes.value}
               variant="h3"
             >
-              75.5%
+              {this.state.filesCount}
             </Typography>
           </div>
           <div className={classes.iconWrapper}>
@@ -51,7 +64,7 @@ class Progress extends Component {
         </div>
         <div className={classes.footer}>
           <LinearProgress
-            value={75.5}
+            value={this.state.filesCount}
             variant="determinate"
           />
         </div>

@@ -5,7 +5,7 @@ export default theme => ({
     flexWrap: 'wrap'
   },
   group: {
-    flexGrow: 1,
+   // flexGrow: 1,
     padding: theme.spacing(2)
   },
   groupLabel: {
@@ -15,7 +15,9 @@ export default theme => ({
     marginBottom: theme.spacing(2),
     marginTop: theme.spacing(2),
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+   
+  
   },
   textField: {
     width: '320px',
@@ -26,6 +28,14 @@ export default theme => ({
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
+    
+  },
+  details: {
+
+  flexDirection: "column",
+  
+  display:"flex",
+
   }
 });

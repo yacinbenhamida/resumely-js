@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
+import axios from 'axios';
 // Externals
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -19,50 +19,125 @@ import {
   ListSubheader,
   Typography
 } from '@material-ui/core';
-
 // Material icons
 import {
   DashboardOutlined as DashboardIcon,
-  PeopleOutlined as PeopleIcon,
-  ShoppingBasketOutlined as ShoppingBasketIcon,
-  TextFields as TextFieldsIcon,
-  ImageOutlined as ImageIcon,
-  InfoOutlined as InfoIcon,
   AccountBoxOutlined as AccountBoxIcon,
   SettingsOutlined as SettingsIcon
 } from '@material-ui/icons';
+import FindReplaceIcon from '@material-ui/icons/FindReplace';
+import BookIcon from '@material-ui/icons/Book';
+import StorageIcon from '@material-ui/icons/Storage';
+import ExtensionIcon from '@material-ui/icons/Extension';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+
 
 // Component styles
 import styles from './styles';
+
 
 class Sidebar extends Component {
   constructor(props)
   {
     super(props);
-
+    
     const user = JSON.parse(localStorage.getItem('user'));
 
     this.state = {
+      open:false,
       firstName: user.firstName,
-      lastName: user.lastName
+      lastName: user.lastName,
+      user : user,
+      imageUrl : user.imageUrl ?? "/images/avatars/avatar_1.png",
+      loading :false
     }
-
+    this.uploadImg= this.uploadImg.bind(this)
+    this.removePicture= this.removePicture.bind(this)
+    this.onChangeHandler= this.onChangeHandler.bind(this)
   }
 
+
+  uploadImg()
+  {
+    this.setState({
+      open:true
+
+    })
+  }
+  removePicture = async() =>
+  {
+   await axios.put(process.env.REACT_APP_BACKEND+'/deletepicture',{
+      user : this.state.user}).then(res => {
+        
+        if(res.data.message ==="picture deleted") 
+        {
+          this.setState({imageUrl : "/images/avatars/avatar_1.png"})
+          this.state.user.imageUrl="/images/avatars/avatar_1.png" ;
+          localStorage.setItem("user", JSON.stringify(this.state.user))
+        
+     
+        }
+     
+     }).then(this.setState({open:false}));
+     console.log(this.state.loading)
+  }
+  onChangeHandler=async(event)=>{
+   
+        const formData = new FormData();
+        formData.append('upload_preset',"zwikhjud");
+        formData.append('file',event.target.files[0]);
+        this.setState({loading:true })
+        console.log(this.state.loading)
+       
+      await axios.post('https://api.cloudinary.com/v1_1/dyhnlahvq/image/upload/',formData)
+        .then(res=>
+        this.setState({imageUrl :  res.data.secure_url,loading :false })
+        )
+     
+        .catch(err=>console.log(err))
+      
+      
+       axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
+        Image: this.state.imageUrl, user : this.state.user}).then(res => {
+          
+          if(res.data.message ==="picture updated") 
+          {
+            this.state.user.imageUrl=this.state.imageUrl ;
+            localStorage.setItem("user", JSON.stringify(this.state.user))
+          
+       
+          }
+       
+       }).then(this.setState({open:false}));
+       console.log(this.state.loading)
+  
+     
+      
+
+}
+  handleClose = () => {
+    this.setState({
+      open:false
+
+    })
+  }
   render() {
     const { classes, className } = this.props;
 
     const rootClassName = classNames(classes.root, className);
-    //const user = localStorage.getItem('user');
-    const { firstName, lastName } = this.state;
+  
+    const { firstName, lastName ,   imageUrl,loading } = this.state;
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    const imageUrl = user.imageUrl ?? "/images/avatars/avatar_1.png";
-    console.log(user.imageUrl)
+    {console.log(imageUrl)}
 
     return (
+   
       <nav className={rootClassName}>
-        <div className={classes.logoWrapper}>
+          <div className={classes.logoWrapper}>
           <Link
             className={classes.logoLink}
             to="/"
@@ -73,16 +148,66 @@ class Sidebar extends Component {
               src="/images/logos/resumely-small.png"
             />
           </Link>
-        </div>
+          <div>
+      <form> 
+    <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title" maxWidth = {'xs'} fullWidth={true}  className={classes.dialogCustomizedWidth}>
+        <DialogTitle id="customized-dialog-title"  >Change profile picture</DialogTitle>
+        <Divider  />
+        <DialogContent >
+       
+          <Button  component="label" color="primary">
+          Upload Picture
+         <input
+          type="file"
+         style={{ display: "none" }}
+         onChange={this.onChangeHandler}
+        // onClick={this.handleClose}
+         />
+         </Button>
+
+        </DialogContent>
+        <Divider  />
+        <DialogContent >
+        <Button style={{color: 'red'}} onClick = {  this.removePicture} >
+        Remove picture
+          </Button>
+     
+        </DialogContent>
+        <Divider  />
+        <DialogActions  >
+          <Button onClick={this.handleClose}  maxWidth = {'md'} fullWidth={true} >
+            Cancel
+          </Button>
+         
+        </DialogActions>
+     
+  
+      </Dialog>
+      </form>
+      </div>
+
+      </div>
+
+      
         <Divider className={classes.logoDivider} />
         <div className={classes.profile}>
-          <Link to="/account">
-            <Avatar
-              alt="user"
-              className={classes.avatar}
-              src={imageUrl}
-            />
-          </Link>
+    {loading ?
+     <Avatar
+     alt="user"
+     className={classes.avatar}
+     src="/images/avatars/avatar_1.png"
+     />:
+    <Avatar
+    alt="user"
+    className={classes.avatar}
+    src={imageUrl}
+    onClick={this.uploadImg}
+    />
+  
+  
+  }
+     
+          
           <Typography
             className={classes.nameText}
             variant="h6"
@@ -101,20 +226,7 @@ class Sidebar extends Component {
           component="div"
           disablePadding
         >
-          <ListItem
-              activeClassName={classes.activeListItem}
-              className={classes.listItem}
-              component={NavLink}
-              to="/prediction"
-            >
-              <ListItemIcon className={classes.listItemIcon}>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText
-                classes={{ primary: classes.listItemText }}
-                primary="Prediction"
-              />
-          </ListItem>
+          
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
@@ -130,13 +242,27 @@ class Sidebar extends Component {
             />
           </ListItem>
           <ListItem
+              activeClassName={classes.activeListItem}
+              className={classes.listItem}
+              component={NavLink}
+              to="/prediction"
+            >
+              <ListItemIcon className={classes.listItemIcon}>
+                <FindReplaceIcon />
+              </ListItemIcon>
+              <ListItemText
+                classes={{ primary: classes.listItemText }}
+                primary="Prediction"
+              />
+          </ListItem>
+          <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
             to="/dataset-extension"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <PeopleIcon />
+              <ExtensionIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -147,10 +273,10 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/datasetparsing"
+            to="/parsing"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <ShoppingBasketIcon />
+              <BookIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -165,27 +291,14 @@ class Sidebar extends Component {
             to="/data-list"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <TextFieldsIcon />
+              <StorageIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
               primary="Dataset"
             />
           </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/icons"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <ImageIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Icons and Images"
-            />
-          </ListItem>
+
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
@@ -200,20 +313,7 @@ class Sidebar extends Component {
               primary="Account"
             />
           </ListItem>
-          <ListItem
-            activeClassName={classes.activeListItem}
-            className={classes.listItem}
-            component={NavLink}
-            to="/settings"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Settings"
-            />
-          </ListItem>
+     
         </List>
         <Divider className={classes.listDivider} />
         <List
@@ -221,26 +321,27 @@ class Sidebar extends Component {
           disablePadding
           subheader={
             <ListSubheader className={classes.listSubheader}>
-              Support
+              Application
             </ListSubheader>
           }
         >
-          <ListItem
-            className={classes.listItem}
-            component="a"
-            href="https://devias.io/contact-us"
-            target="_blank"
-          >
-            <ListItemIcon className={classes.listItemIcon}>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.listItemText }}
-              primary="Customer support"
-            />
-          </ListItem>
+        <ListItem
+        activeClassName={classes.activeListItem}
+        className={classes.listItem}
+        component={NavLink}
+        to="/settings"
+      >
+        <ListItemIcon className={classes.listItemIcon}>
+          <SettingsIcon />
+        </ListItemIcon>
+        <ListItemText
+          classes={{ primary: classes.listItemText }}
+          primary="Settings"
+        />
+      </ListItem>
         </List>
       </nav>
+     
     );
   }
 }

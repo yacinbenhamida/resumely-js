@@ -104,8 +104,7 @@ class NotificationList extends Component {
                   color="secondary"
                   component={Link}
                   size="small"
-                  to="#"
-                  variant="contained"
+                  to="/Notifications"
                 >
                   See all
                 </Button>

@@ -5,11 +5,24 @@ import parameters
 from parsel import Selector
 import json
 import pymongo
+import requests
 
 def validate_field(field):
     if not field:
         field = 'No results'
     return field
+def getProfileCountry(found_country):
+    if found_country != 'No results':
+        target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key=AIzaSyAg5g5m6tKq4pg0fusvq2HDzlm5nnIkaQ8").json()
+        country = found_country
+        for data in target['results']:
+            for x in data['address_components']:
+                if x['types'][0] == 'country':
+                    country = str(x['long_name'])
+        print(country)
+        return country
+    else :
+        return "Saudi arabia";
 
 client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
 database = client["resumelydb"]
@@ -19,13 +32,12 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
     done.add(str(item))
 extracted_data = {}
 extracted_data['candidates'] = []
-driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
+driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver_80')
 
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "tunisian"
-#potential_title = "egyptian"
+country = "arab"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
 sleep(0.5)
@@ -158,26 +170,25 @@ for youbuzz_url in youbuzz_urls:
     except:
         pass
     if firstName != 'No results' and lastName != 'No results':       
-        with open('data.json',mode='a', encoding='utf-8') as outfile:
-            res = {        
-                'currentPosition' : current_title,
-                'livesIn' : lives_in,
-                'country' : "tunisie",
-                'profile' : youbuzz_url,
-                'firstName': firstName,
-                'lastName' : lastName,
-                'age' : age,
-                "experiences": experiencesTab,
-                "presentation": presentation,
-                "education": education,
-                "skills": skills
-            }
-            if res['lastName'] not in done:
-                print('relevant record, inserting to db ...')
-                profiles_collection.insert_one(res)
-                done.add(res['lastName']) 
-            else:
-                print('already scrapped, moving...')
+        res = {        
+            'currentPosition' : current_title,
+            'livesIn' : lives_in,
+            'country' : getProfileCountry(lives_in),
+            'profile' : youbuzz_url,
+            'firstName': firstName,
+            'lastName' : lastName,
+            'age' : age,
+            "experiences": experiencesTab,
+            "presentation": presentation,
+            "education": education,
+            "skills": skills
+        }
+        if res['lastName'] not in done:
+            print('relevant record, inserting to db ...')
+            profiles_collection.insert_one(res)
+            done.add(res['lastName']) 
+        else:
+            print('already scrapped, moving...')
     else:
         print('skipping...')
 driver.quit()

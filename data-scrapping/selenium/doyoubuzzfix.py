@@ -5,10 +5,22 @@ import parameters
 from parsel import Selector
 import bson
 import pymongo
+import requests
+
 def validate_field(field):
     if not field:
         field = 'No results'
     return field
+def getProfileCountry(found_country):
+    # finding the correct country name via google maps api
+    target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key="+params.google_api_key).json()
+    country = found_country
+    for data in target['results']:
+        for x in data['address_components']:
+            if x['types'][0] == 'country':
+                country = str(x['long_name'])
+    print(country)
+    return country
 
 client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
 database = client["resumelydb"]

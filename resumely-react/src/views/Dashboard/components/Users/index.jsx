@@ -24,7 +24,9 @@ import styles from './styles';
 import axios from 'axios'
 class Users extends Component {
   state = {
-    nbCandidates : 0
+    nbCandidates : 0,
+    countscrappedProfiles : 0,
+    contribution : 0
   }
   componentDidMount(){
     this.loadNbOfUsers()
@@ -32,7 +34,9 @@ class Users extends Component {
   loadNbOfUsers = () => {
     axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
     .then(res=>{
-        this.setState({nbCandidates: res.data.nbCandidates})
+        this.setState({nbCandidates: res.data.nbCandidates , 
+          countscrappedProfiles : res.data.countscrappedProfiles , contribution : Math.round(Number(res.data.countscrappedProfiles / res.data.nbCandidates )*100) })
+          console.log(this.state.countscrappedProfiles)
       })
   }
   render() {
@@ -70,13 +74,13 @@ class Users extends Component {
             variant="body2"
           >
             <ArrowUpwardIcon />
-            16%
+            { this.state.contribution} %
           </Typography>
           <Typography
             className={classes.caption}
             variant="caption"
           >
-            Since last month
+             contriubution
           </Typography>
         </div>
       </Paper>

@@ -22,22 +22,19 @@ export const data = {
 // Chart options
 export const options = {
   legend: {
-    display: false
+    display: false,
+    position : 'bottom',
   },
   responsive: true,
   maintainAspectRatio: false,
   animation: false,
-  cutoutPercentage: 80,
+  cutoutPercentage: 70,
   layout: { padding: 0 },
   tooltips: {
     enabled: true,
     mode: 'index',
-    intersect: false,
-    borderWidth: 1,
+    intersect: true,
+    borderWidth: 0,
     borderColor: palette.border,
-    backgroundColor: palette.common.white,
-    titleFontColor: palette.text.primary,
-    bodyFontColor: palette.text.secondary,
-    footerFontColor: palette.text.secondary
   }
 };

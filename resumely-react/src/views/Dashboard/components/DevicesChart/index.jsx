@@ -9,14 +9,11 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
 // Material components
-import { IconButton, Typography } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 
 // Material icons
 import {
-  LaptopMac as LaptopMacIcon,
-  PhoneIphone as PhoneIphoneIcon,
   Refresh as RefreshIcon,
-  TabletMac as TabletMacIcon
 } from '@material-ui/icons';
 
 // Shared components
@@ -32,12 +29,68 @@ import {
 import palette from 'theme/palette';
 
 // Chart configuration
-import { data, options } from './chart';
-
+import { options } from './chart';
+import axios from 'axios'
 // Component styles
 import styles from './styles';
 
 class DevicesChart extends Component {
+  state = {
+    countries : [],
+    data : {
+      datasets: [
+        {
+          data: [63, 15, 22],
+          backgroundColor: [
+            palette.primary.main,
+            palette.danger.main,
+            palette.warning.main
+          ],
+          borderWidth: 8,
+          borderColor: palette.common.white,
+          hoverBorderColor: palette.common.white
+        }
+      ],
+      labels: ['France', 'Tunisia', 'Canada']
+    }
+  }
+   
+  componentDidMount(){
+    this.getCountriesCount()
+  }
+  getRandomColor() {
+    var letters = '0123456789ABCDEFGH'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    if(color !== '#FFFFFF' || color !=='FFFAFA' || color !== 'F0FFF0') return color;
+
+}
+  getCountriesCount(){
+    axios.get(process.env.REACT_APP_BACKEND+'/dashboard/countriesCount?secret_token='+localStorage.getItem('token'))
+    .then(res=>{
+        let numbers = []
+        let labels = []
+        let colors = []
+        res.data.countriesByCount.forEach(element => {
+          numbers.push(element.count)
+          labels.push(element._id)
+          colors.push(this.getRandomColor())
+        });
+        console.log(numbers)
+        this.setState({countries : res.data , data : {
+          datasets: [
+            {
+              data: numbers,
+              backgroundColor: colors,
+              hoverBorderColor: palette.common.white
+            }
+          ],
+          labels: labels
+        }})
+      })
+  }
   render() {
     const { classes, className, ...rest } = this.props;
 
@@ -49,7 +102,7 @@ class DevicesChart extends Component {
         className={rootClassName}
       >
         <PortletHeader noDivider>
-          <PortletLabel title="Users by device" />
+          <PortletLabel title="Countries" />
           <PortletToolbar>
             <IconButton
               className={classes.refreshButton}
@@ -63,41 +116,9 @@ class DevicesChart extends Component {
         <PortletContent>
           <div className={classes.chartWrapper}>
             <Doughnut
-              data={data}
+              data={this.state.data}
               options={options}
             />
-          </div>
-          <div className={classes.stats}>
-            <div className={classes.device}>
-              <LaptopMacIcon className={classes.deviceIcon} />
-              <Typography variant="body1">Desktop</Typography>
-              <Typography
-                style={{ color: palette.primary.main }}
-                variant="h2"
-              >
-                63%
-              </Typography>
-            </div>
-            <div className={classes.device}>
-              <TabletMacIcon className={classes.deviceIcon} />
-              <Typography variant="body1">Tablet</Typography>
-              <Typography
-                style={{ color: palette.danger.main }}
-                variant="h2"
-              >
-                15%
-              </Typography>
-            </div>
-            <div className={classes.device}>
-              <PhoneIphoneIcon className={classes.deviceIcon} />
-              <Typography variant="body1">Mobile</Typography>
-              <Typography
-                style={{ color: palette.warning.main }}
-                variant="h2"
-              >
-                23%
-              </Typography>
-            </div>
           </div>
         </PortletContent>
       </Portlet>

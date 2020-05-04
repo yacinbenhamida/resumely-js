@@ -4,6 +4,10 @@ import fs from 'fs';
 import UploadedFile from '../../models/uploadedfile'
 import csv from 'csv-parser'
 import Candidate from '../../models/candidate'
+import User from '../../models/user'
+import parseIt from '../../utils/parseIt'
+import modelcv from '../../models/modelcv'
+
 /**
  * files management controller
  */
@@ -128,16 +132,21 @@ exports.uploadFiles = (req,res) => {
 }
 
 exports.getAllUserFiles = (req,res) => {
-    UploadedFile.find({
-      ownerId: req.params.id
-    },function (err,docs) {
-      if(err) res.status(400).send(err)
-      res.status(200).send(docs)
+    User.findOne({
+      $or : [{ username : req.user.email},{email : req.user.email}]
+    },{_id : 1 },(e,user)=>{
+      console.log(user)
+      UploadedFile.find({
+        ownerId: String(user._id)
+      },function (err,docs) {
+        if(err) res.status(400).send(err)
+        res.status(200).send(docs)
+      })
     })
+    
 }
 
 exports.deleteFiles = (req,res) =>{
-  console.log(req.body)
   req.body.files.forEach(element => {
     console.log('deleting file inside '+element.filename)
     UploadedFile.deleteOne({
@@ -153,4 +162,55 @@ exports.deleteFiles = (req,res) =>{
     })
   });
   res.status(200).send('deleted files')
+}
+
+
+
+// parse already saved files 
+exports.parseFile = (req,res) => {
+  fs.readdir('./uploads/files', function (err, files) {
+    if (err) {
+      return console.log('Unable to scan directory: ' + err);
+    }
+    fs.readFile('./uploads/files/' + req.body.filename, 'utf8', function (err2, file) {
+      if(err2){
+        return res.status(400)
+      }
+        try{
+            parseIt.parseResume('./uploads/files/' + req.body.filename, './compiled');     
+            return res.status(200)
+        }
+        catch(error){
+          return res.status(400)
+        }
+    });
+  });
+}
+
+exports.getParsedData = (req, res) => {
+  fs.readdir('./compiled', function (err, files) {
+    if (err) {
+      return res.status(400)
+    }
+    fs.readFile('./compiled/' + req.body.filename + '.json', 'utf8', function (error, data) {
+      if (error) {
+        return res.status(404)
+      }
+      let target = new modelcv(JSON.parse(data));
+      console.log(target)
+      fs.unlink('./compiled/'+req.body.filename + '.json',function(pb){
+        if(pb){
+          res.status(400).send("error deleting file")
+         }
+        console.log('file deleted successfully');
+      });  
+      return res.send({ parsed: target });
+    });
+  });
+}
+
+exports.updateFileStatus = (req,res) => {
+  UploadedFile.updateOne({_id : req.param.id},{$set : {scanned : true}},(err,docs)=>{
+    res.send(docs)
+  })
 }

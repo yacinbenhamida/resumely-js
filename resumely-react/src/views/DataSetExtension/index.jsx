@@ -46,12 +46,11 @@ class FilesList extends Component {
     files: [],
     selectedFiles: [],
     error: null,
-    value : 1
+    value : 0
   };
   
   getUserFiles = ()=>{
-    return axios.get(process.env.REACT_APP_BACKEND+"/all-files/"
-      +JSON.parse(localStorage.getItem('user'))._id)
+    return axios.get(process.env.REACT_APP_BACKEND+"/all-files?secret_token="+localStorage.getItem('token'))
   }
   async getFiles() {
     try {
@@ -194,7 +193,7 @@ class FilesList extends Component {
               xs={12}
               className={classes.root}
             >
-          <FilesToolbar reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
+          <FilesToolbar  reloadFilesAction={this.getUserFiles} handler={this.handler} allFiles={files} selectedFiles={selectedFiles} />
           <div className={classes.content}>{this.renderfiles()}</div>
         </Grid>
         </Grid>

@@ -22,7 +22,7 @@ class AccountProfile extends Component {
 
     const rootClassName = classNames(classes.root, className);
     const user = JSON.parse(localStorage.getItem('user'));
-    const imageUrl = user.imageUrl ?? "/images/avatars/avatar_1.png";
+    const imageUrl = this.props.user.imageUrl ?? "/images/avatars/avatar_1.png";
     console.log(user.imageUrl)
 
     return (
@@ -33,7 +33,7 @@ class AccountProfile extends Component {
         <PortletContent>
           <div className={classes.details}>
             <div className={classes.info}>
-              <Typography variant="h2">John Doe</Typography>
+    <Typography variant="h2">  {user.firstName + ' ' + user.lastName}</Typography>
               <Typography
                 className={classes.locationText}
                 variant="body1"

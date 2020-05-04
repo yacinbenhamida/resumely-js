@@ -24,15 +24,7 @@ import { Portlet, PortletContent } from 'components';
 // Component styles
 import styles from './styles';
 
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
+
 
 
 
@@ -59,11 +51,11 @@ class FilesTable extends Component {
           <Table >
               <TableHead >
                 <TableRow  >
-                  <TableCell align="left"> Nom</TableCell>
-                  <TableCell align="left">prénom</TableCell>
-                  <TableCell align="left">Date de naissance </TableCell>
-                  <TableCell align="left">Pays </TableCell>
-                  <TableCell align="left">Région </TableCell>
+                  <TableCell align="left"> First Name</TableCell>
+                  <TableCell align="left">Last Name</TableCell>
+                  <TableCell align="left">Age</TableCell>
+                  <TableCell align="left">Country </TableCell>
+                  <TableCell align="left">livesIn </TableCell>
                 
          
                 </TableRow>
@@ -79,13 +71,14 @@ class FilesTable extends Component {
                       key={candidate._id}>
                   
                       <TableCell className={classes.tableCell}>
-                        {candidate._source.firstName}
+                      {candidate._source.firstName}
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate._source.lastName}
+                      {candidate._source.lastName}
+                       
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                       0
+                      0
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                         {candidate._source.country}
