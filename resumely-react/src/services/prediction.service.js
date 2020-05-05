@@ -19,4 +19,20 @@ export default {
       }
     );
   },
+
+  Correct: function(firstName, lastName, label) {
+    console.log('Correct called!');
+    console.log(firstName, lastName, label);
+    return axios.post(
+        `${burl}/correct/`,
+      {
+        firstName,
+        lastName,
+        label
+      },
+      {
+        headers: headers
+      }
+    );
+  },
 };

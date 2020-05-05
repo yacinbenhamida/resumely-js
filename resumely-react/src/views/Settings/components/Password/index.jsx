@@ -135,11 +135,8 @@ class Password extends Component {
  
  if(this.state.currentPassword ==='')
  {
-  
     this.state.errors.currentPassword= "Empty password" ;
     this.state.touched.currentPassword =true ;
-    
- 
   }
 
   else if(this.state.currentPassword)

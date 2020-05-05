@@ -4,6 +4,7 @@ import dataScrapping from '../controllers/fileUpload/dataScrapping'
 import dashboardController from '../controllers/dashboardController'
 import notificationsController from '../controllers/notificationsController'
 import fileUpload from '../controllers/fileUpload/fileUploadController'
+import flaskCon from '../controllers/userManagement/flaskConnector'
 /**
  * All routes that require a token should be pasted in here
  */
@@ -53,5 +54,7 @@ export default (app, passport) => {
     app.use('/update-file-status/:id', passport.authenticate('jwt', {
         session: false
     })).post('/update-file-status/:id', fileUpload.updateFileStatus);
-    
+    app.use('/flask-disconnect', passport.authenticate('jwt', {
+        session: false
+    })).get('/flask-disconnect',flaskCon.disconnectFromFlaskApp);
 };

@@ -5,6 +5,7 @@ from collections import Counter
 from pathlib import Path
 import json
 import sys
+import csv
 
 from flask import Flask
 from flask_restful import Resource, Api
@@ -101,6 +102,17 @@ def merge_skills(skills1, skills2):
     return skills[:TOP_SKILLS]
 
 
+def correct(fn, ln, lb):
+
+    train_data_path = DATA_DIR / 'train_data_full.csv'
+
+    row_list = [[fn, ln, lb, []]]
+    with open(train_data_path, 'a+', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(row_list)
+
+    return True
+
 def predict(fn, ln, df):
     fn_occ, all_fn_count, fn_skills = get_occ(fn, df)
     ln_occ, all_ln_count, ln_skills = get_occ(ln, df)
@@ -122,11 +134,21 @@ def predict(fn, ln, df):
 
     return occ, skills, best
 
+class Corrector(Resource):
+
+    def get(self, fname, lname, label):
+
+        res = correct(fname, lname, label)
+
+        return True;
+
 
 class Predictor(Resource):
+    
     def get(self, fname, lname):
 
         res = predict(fname, lname, load_df())
+
         return {"Prediction": res}
 
 

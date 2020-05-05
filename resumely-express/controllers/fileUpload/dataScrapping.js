@@ -6,10 +6,13 @@ import User from '../../models/user'
 const flask_rest = process.env.PY_URI;
 
 exports.scrapData = (req,res)=>{
-    var initScrappingRequest = new ScrapRequest({
+  User.findOne({
+    $or: [{ username: req.user.email }, { email: req.user.email }]},
+     { _id: 1,username :1 }, (e, user) => {
+      let initScrappingRequest = new ScrapRequest({
         country : req.body.country,
-        ownerUsername : req.body.username,
-        ownerId : req.body.ownerid,
+        ownerUsername : user.username,
+        ownerId : String(user._id),
         createdAt : Date.now(),
         currentState : "started",
         expectedNoOfRows : 0,
@@ -24,21 +27,42 @@ exports.scrapData = (req,res)=>{
         if(err) console.log(err)
         else{
             console.log("scrapping triggered...")
-            request({
-                uri: `${flask_rest}/scrap/${docs.country}/${docs._id}`,
-            }).pipe(res);
+            let LocalStorage = require('node-localstorage').LocalStorage,
+            localStorage = new LocalStorage('./scratch');
+            let options = {
+                method: 'GET',
+                json: true,
+                url: `${flask_rest}/scrap/${docs.country}/${docs._id}`,
+                headers: {
+                  'Authorization':'Bearer '+localStorage.getItem(req.user.email)
+                }
+              };
+            request(options,(error, result, body) => {
+                if (error) {
+                  console.error(error)
+                  return res.status(result.statusCode)             
+                }
+                console.log(`statusCode: ${result.statusCode}`)
+                console.log(body)
+                res.status(200)
+              })
         } 
     })
+     })
 }
-exports.checkScrapper = (req,res) => {
+exports.checkScrapper = (req, res) => {
+  User.findOne({
+    $or: [{ username: req.user.email }, { email: req.user.email }]},
+     { _id: 1 }, (e, user) => {
     ScrapRequest.find({
-        ownerId : req.body.id,
-        currentState : req.body.currentstate
+      ownerId: String(user._id),
+      currentState: req.body.currentstate
     },
-        (err,docs)=>{
-            if(err) res.status(400)
-            else res.send(docs)
-        })
+      (err, docs) => {
+        if (err) res.status(400)
+        else res.send(docs)
+      })
+  })
 }
 exports.cancelScrapping = (req,res) => {
     User.findOne({
@@ -54,10 +78,13 @@ exports.cancelScrapping = (req,res) => {
 }
 
 exports.scrapSingleProfile = (req,res) => {
-    var initScrappingRequest = new ScrapRequest({
+  User.findOne({
+    $or: [{ username: req.user.email }, { email: req.user.email }]},
+     { _id: 1,username : 1 }, (e, user) => {
+      let initScrappingRequest = new ScrapRequest({
         country : req.body.country,
-        ownerUsername : req.body.username,
-        ownerId : req.body.ownerid,
+        ownerUsername : user.username,
+        ownerId : String(user._id),
         createdAt : Date.now(),
         currentState : "started",
         type : 'single',
@@ -69,19 +96,30 @@ exports.scrapSingleProfile = (req,res) => {
         if(err) console.log(err)
         else{
             console.log("single profile scrapping triggered...")
-            request.post(`${flask_rest}/scrap-single`, {
-                json: {
-                  url : req.body.url,
-                  idop: docs._id
+            let LocalStorage = require('node-localstorage').LocalStorage,
+            localStorage = new LocalStorage('./scratch');
+            let options = {
+                method: 'POST',
+                body: {
+                    url : req.body.url,
+                    idop: docs._id
+                  },
+                json: true,
+                url: `${flask_rest}/scrap-single`,
+                headers: {
+                  'Authorization':'Bearer '+localStorage.getItem(req.user.email)
                 }
-              }, (error, res, body) => {
+              };
+              request(options, (error, result, body) => {
                 if (error) {
                   console.error(error)
-                  return
+                  return res.status(result.statusCode)
                 }
-                console.log(`statusCode: ${res.statusCode}`)
+                console.log(`statusCode: ${result.statusCode}`)
                 console.log(body)
-              })           
+                res.status(result.statusCode)
+              })      
         } 
     })
+     })  
 }

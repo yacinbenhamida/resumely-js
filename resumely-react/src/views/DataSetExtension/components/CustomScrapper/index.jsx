@@ -50,6 +50,13 @@ class CustomScrapping extends Component {
                 scrappingInfo : d.data.sort((a, b) => new Date(...a.createdAt.split('/').reverse()) - new Date(...b.createdAt.split('/').reverse()))
             })
         }
+        else {
+          this.setState({
+            isTriggered : false,
+            submitted : false,
+            scrappingInfo : null
+        })
+        }
     })
   }
   componentDidUpdate(){
@@ -101,9 +108,9 @@ class CustomScrapping extends Component {
         if(x.status === 200){
             console.log('cancelling scrapping...')
             this.setState({isTriggered : false, scrappingInfo : null})
-            window.location.reload();
         }
         else console.log('error')
+        window.location.reload();
     })
   }
   handleConfirm = (answer)=>{

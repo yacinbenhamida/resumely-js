@@ -29,7 +29,7 @@ class Account extends Component {
 
   
     
-    this. state = { tabIndex: 0 };
+    this.state = { tabIndex: 0 };
   }
    
   

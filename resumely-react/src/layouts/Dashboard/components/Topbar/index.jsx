@@ -47,12 +47,9 @@ class Topbar extends Component {
 
   async getNotifications() {
     try {
-      //const { notificationsLimit } = this.state;
       await axios.post(process.env.REACT_APP_BACKEND
         +'/notifications/all?secret_token='+localStorage.getItem('token'))
         .then(d => {
-        console.log(d)
-        console.log(d.data)
         if (this.signal) {
           this.setState({
             notifications : d.data,
@@ -76,12 +73,13 @@ class Topbar extends Component {
 
   handleSignOut = () => {
     const { history } = this.props;
-
-    localStorage.setItem('isAuthenticated', false);
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-
-    history.push('/sign-in');
+    axios.get(process.env.REACT_APP_BACKEND
+      +'/flask-disconnect?secret_token='+localStorage.getItem('token')).then(res=>{
+        localStorage.setItem('isAuthenticated', false);
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        history.push('/sign-in');
+      })
   };
 
   handleShowNotifications = event => {
