@@ -77,9 +77,7 @@ class SignIn extends Component {
   }
 
   componentDidMount() {
-    
-    this.state.OS=OS(window)
-    this.state.browser=currentBrowser(window)
+    this.setState({OS : OS(window) , browser : currentBrowser(window) })
     console.log( this.state.OS);
     console.log( this.state.browser);
     
@@ -93,8 +91,7 @@ class SignIn extends Component {
           axios.get(GOOGLE_API+"?latlng="+ position.coords.latitude+","+position.coords.longitude+"&key="+key) 
           .then(response =>
            { const address = response.data.results[2].formatted_address;
-           
-            this.state.localisation = address 
+            this.setState({localisation : address})
              console.log(this.state.localisation )
             ;}
             )

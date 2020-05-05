@@ -26,6 +26,7 @@ def main():
     api = Api(app)
     routes(api)
     app.config['JWT_SECRET_KEY'] = 'super-secret'  # We need to Change this!
+    app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
     jwt = JWTManager(app)
     app.run(debug=True, port=5555)
 

@@ -33,20 +33,26 @@ class CustomSingleScrapper extends Component {
     skills  : true,
     promptCancelScrapping : false,
     isTriggered : false,
-    user : JSON.parse(localStorage.getItem('user')),
     submitted : false,
     scrappingInfo : null,
     interval : null
   };
   checkStatus = ()=>{
     axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
-    {id : this.state.user._id, currentstate : "started"}).then(d=>{
+    {currentstate : "started"}).then(d=>{
         if(d.status === 200 && d.data.length > 0){
             this.setState({
                 isTriggered : true,
                 submitted : false,
                 scrappingInfo : d.data.sort((a, b) => new Date(...a.createdAt.split('/').reverse()) - new Date(...b.createdAt.split('/').reverse()))
             })
+        }
+        else{
+          this.setState({
+            isTriggered : false,
+            submitted : false,
+            scrappingInfo : null
+        })
         }
     })
   }
@@ -73,8 +79,6 @@ class CustomSingleScrapper extends Component {
       .post(process.env.REACT_APP_BACKEND+'/single-scrapping?secret_token='+localStorage.getItem('token'),
       {
           url : this.state.profileUrl,
-          username : this.state.user.username,
-          ownerid :  this.state.user._id,
           scrapAge : this.state.age,
           scrapEducation : this.state.education,
           scrapExperience : this.state.career,
@@ -95,9 +99,8 @@ class CustomSingleScrapper extends Component {
     .then(x=>{
         if(x.status === 200){
             console.log('cancelling scrapping...')
-            window.location.reload()
         }
-        else console.log('error')
+        window.location.reload()
     })
   }
   handleConfirm = (answer)=>{

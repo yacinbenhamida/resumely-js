@@ -11,4 +11,4 @@ cd..
 cls
 
 echo MERN started, happy pidev!
-pause
+exit

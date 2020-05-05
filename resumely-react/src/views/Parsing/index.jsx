@@ -33,7 +33,6 @@ import { withStyles } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
-import { stat } from 'fs';
 // Custom components
 // Component styles
 const styles = theme => ({
@@ -73,7 +72,7 @@ class ParserParent extends Component {
        console.log("testing value of f")
        console.log(f)
       formData.append("file", f.file);
-     
+      return
      } )
      axios.post("http://localhost:5000/parsing", formData).then(response=>{
       allFiles.forEach(f => f.remove())

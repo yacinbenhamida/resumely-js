@@ -96,7 +96,7 @@ onLoadLess =async()=> {
                      <div>
                      <Typography variant="body1">{c.Os} - {c.Localisation}</Typography>
                      <Typography variant="caption" >
-                       {c. Browser } - <span style={{color :"green",fontWeight:" bold"}}>Active</span>
+                       {c.Browser } - <span style={{color :"green",fontWeight:" bold"}}>Active</span>
                      </Typography>
                      </div>
                     :

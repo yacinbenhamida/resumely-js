@@ -29,14 +29,13 @@ import axios from 'axios'
 class CustomScrappingHistory extends Component {
     state = {
     isLoading : true,
-    user : JSON.parse(localStorage.getItem('user')),
     scrappingAttempts : null,
     rowsPerPage: 10,
     page : 0
   };
   getData = async()=>{
     await axios.post(process.env.REACT_APP_BACKEND+'/check-scrapping?secret_token='+localStorage.getItem('token'),
-    {id : this.state.user._id , currentstate : "done"}).then(d=>{
+    {currentstate : "done"}).then(d=>{
         if(d.status === 200){
             this.setState({
                 isLoading : false,
@@ -53,7 +52,6 @@ class CustomScrappingHistory extends Component {
     clearInterval(this.interval);
   }
   handleChangePage = (event, page) => {
-    console.log(page)
     //this.setState({scrappingAttempts : this.state.scrappingAttempts.slice(this.state.rowsPerPage,this.state.scrappingAttempts.length)})
     this.setState({ page });
   };
