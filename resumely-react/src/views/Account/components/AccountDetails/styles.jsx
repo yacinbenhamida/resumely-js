@@ -1,5 +1,10 @@
 export default theme => ({
   root: {},
+  list: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
   field: {
     margin: theme.spacing(3)
   },

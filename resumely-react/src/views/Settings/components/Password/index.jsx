@@ -48,20 +48,12 @@ class Password extends Component {
     currentPassword:'',
     password: '',
     confirmPassword: '',
-     
-    
-    touched: {
-      password: false,
-      confirmPassword: false,
-      currentPassword:false
-     
-    },
-    errors: {
-      password:null,
-      confirmPassword:null,
-      currentPassword:null
-    },
-  
+    touchedPassword:false,
+    touchedConfirmPassword :false,
+    touchedCurrentPassword:false,
+    errorsPassword:null,
+    errorsConfirmPassword:null,
+    errorsCurrentPassword:null,
     isVerify:false,
     isValid:false,
     isLoading: false,
@@ -75,14 +67,14 @@ class Password extends Component {
  
 
   updatePassword= async () => {
-    console.log("***")
+    
    if(!this.state.isValid)
    {
     await this.setState({
       isLoading: false,
       submitError: 'Current password is invalid '
     });
-    console.log("***")
+ 
    }
    else
    {
@@ -131,36 +123,38 @@ class Password extends Component {
   {
     
   await this.setState({  currentPassword:e.target.value  })
-  console.log(this.state.currentPassword+"**")
+ 
  
  if(this.state.currentPassword ==='')
- {
-    this.state.errors.currentPassword= "Empty password" ;
-    this.state.touched.currentPassword =true ;
-  }
 
-  else if(this.state.currentPassword)
-  {
-    this.state.errors.currentPassword= "" ;
-    this.state.touched.currentPassword =false ;
+{
+this.setState({errorsCurrentPassword:"Empty password",touchedCurrentPassword:true})
+
+}
+else if(this.state.currentPassword)
+{
+   
+    this.setState({errorsCurrentPassword:"",touchedCurrentPassword:false})
+
     if(this.timeout) 
     {
       clearTimeout(this.timeout);
     }
 
     this.timeout = setTimeout(() => {
+
    verifyCurrentPassword(this.state.user.username,this.state.currentPassword).then(res=>{
-    console.log(res.data.message)
+   
     if(res.data.message === 'password validated'){
      this.setState({
-      isValid : true
+      isValid : true,
       });
     
       console.log("validated"+this.state.isValid)
     }
     else {
       this.setState({
-        isValid : false
+        isValid : false,
       });
     }
   });
@@ -173,71 +167,59 @@ class Password extends Component {
  
 
   
-handleChange=(event) =>{
-   this.setState({[event.target.name] : event.target.value });
+handleChange=async(event) =>{
+  const name = event.target.name;
+  const value = event.target.value;
+  await this.setState({[event.target.name] : event.target.value });
     //  const re = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$");
-      if (event.target.name === 'password')
+      if (name === 'password')
       { 
         const passwordRegex = /(?=.*[0-9])/;
       
-        if (!event.target.value  )
-       {
-          this.state.touched.password =true ;
-          this.state.errors.password = "Empty password" ;
-  
-        }
-       else if (event.target.value.length < 8 && this.state.confirmPassword ==='' && this.state.currentPassword ==='')
+        if (!value)
         {
-          this.state.touched.password =true ;
-          this.state.errors.password = "Password must be 8 characters long." ;
-          this.state.errors.confirmPassword ="The passwords do not match" ;
-          this.state.errors.currentPassword= "Empty password" ;
-          this.state.touched.confirmPassword =true;
-          this.state.touched.currentPassword =true ;
+          this.setState({touchedPassword:true ,errorsPassword:"Empty password"})
         }
-        else if (event.target.value.length < 8)  
-        {  this.state.touched.password =true ;
-          this.state.errors.password = "Password must be 8 characters long.";
+       else if (value.length < 8 && this.state.confirmPassword ==='' && this.state.currentPassword ==='')
+        {
+          this.setState({touchedPassword:true ,errorsPassword:"Password must be 8 characters long",
+          errorsConfirmPassword:"The passwords do not match",touchedConfirmPassword:true,
+          errorsCurrentPassword:"Empty password",touchedCurrentPassword:true})
+
+        }
+        else if (value.length < 8)  
+        {
+          this.setState({touchedPassword:true,errorsPassword:"Password must be 8 characters long."})
         } 
-        else if (!passwordRegex.test(event.target.value))
-       {  this.state.touched.password =true ;
-          this.state.errors.password= "Password is not sufficiently complex";
-       
+        else if (!passwordRegex.test(value))
+        {  
+          this.setState({touchedPassword:true,errorsPassword:"Password is not sufficiently complex"})
         }
         else
         {
-      
-          this.state.touched.password =false ;
-          this.state.errors. password ="" ;
-      
+          this.setState({touchedPassword:false,errorsPassword:""});
         }
        
       }
 
-      else if ( event.target.name === 'confirmPassword')
+      else if ( name === 'confirmPassword')
       {
-       
-        this.state.touched.confirmPassword =true ;
-        this.checkPassword(event);
+        this.setState({touchedConfirmPassword:true})
+        this.checkPassword(value);
       }
-     
-   
+
     
   }
 
-  checkPassword (event)  
+  checkPassword=async(value) =>
   {
-   if( !this.state.password ||this.state.password !== event.target.value) {
-         
-          this.state.errors.confirmPassword ="The passwords do not match" ;
-          this.state.isVerify=false ;
-         
+
+   if( !this.state.password ||this.state.password !== value)
+    {
+        this.setState({errorsConfirmPassword:"The passwords does not match",isVerify:false})
     }
     else {
-         
-          this.state.errors.confirmPassword ="";
-          this.state.touched.confirmPassword =false ;
-          this.state.isVerify=true ;
+        this.setState({errorsConfirmPassword:"",isVerify:true,touchedConfirmPassword:false})
     } 
   }
 
@@ -245,13 +227,14 @@ handleChange=(event) =>{
 
   render() {
     const { classes, className, ...rest } = this.props;
-    const {   currentPassword ,  touched,errors, password,confirmPassword,isVerify,submitError,isLoading , user} 
-    = this.state;
+    const {currentPassword, password, confirmPassword, isVerify, submitError, isLoading, user,
+      touchedPassword,touchedConfirmPassword,touchedCurrentPassword,errorsPassword, errorsConfirmPassword,
+      errorsCurrentPassword} = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const showPasswordError = touched.password && errors.password;
-    const showPasswordConfError = touched.confirmPassword && errors.confirmPassword;
-    const showCurrentPasswordError = touched.currentPassword && errors.currentPassword;
+    const showPasswordError =errorsPassword&& touchedPassword;
+    const showPasswordConfError = errorsConfirmPassword &&touchedConfirmPassword;
+    const showCurrentPasswordError =errorsCurrentPassword && touchedCurrentPassword;
     const enabled =isVerify && currentPassword;
 if (user.provider === 'local')
 {
@@ -284,7 +267,7 @@ if (user.provider === 'local')
                         className={classes.fieldError}
                         variant="body2"
                       >
-                        {errors.currentPassword}
+                        {errorsCurrentPassword }
                       </Typography>
                     )}
             <TextField
@@ -306,7 +289,7 @@ if (user.provider === 'local')
                         className={classes.fieldError}
                         variant="body2"
                       >
-                        {errors.password}
+                        {errorsPassword}
                       </Typography>
                     )}
             <TextField
@@ -325,7 +308,7 @@ if (user.provider === 'local')
                         className={classes.fieldError}
                         variant="body2"
                       >
-                        {errors.confirmPassword}
+                        {errorsConfirmPassword}
                       </Typography>
                     )}
                     

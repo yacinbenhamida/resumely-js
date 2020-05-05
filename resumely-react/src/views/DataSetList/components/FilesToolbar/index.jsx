@@ -29,7 +29,7 @@ class FilesToolbar extends Component {
         snackbarMessage: '',
         snackbarVariant: 'success',
         filteredTableData: [],
-        birthPlace: null,
+        searchInput: null,
         loading: false,
         candidates: [],
         page: 1,
@@ -58,51 +58,58 @@ class FilesToolbar extends Component {
       threshold: 1.0
     };
     
-    this.observer = new IntersectionObserver(
-      this.handleObserver.bind(this),
-      options
-    );
-    this.observer.observe(this.loadingRef);
+    
+      this.observer = new IntersectionObserver(
+        this.handleObserver.bind(this),
+        options
+      );
+      this.observer.observe(this.loadingRef);
+    
+   
 
     }
+    
+  handleObserver(entities, observer)
+  {
+  
+   if (this.state.search === false){
+
+ 
+   const y = entities[0].boundingClientRect.y;
+     if (this.state.prevY > y) 
+     {
+       const lastPhoto = this.state.candidates[this.state.candidates.length - 1];
+       console.log(lastPhoto)
+       this.getCandidates(this.state.page+10);
+       this.setState({ page: this.state.page+10 });
+     }
+     this.setState({ prevY: y });
+    }
+
+ }
 
    handleClose = () => {
-     
       this.setState({
         open: false
       });
-     
-   
     };
     handleToggle = () => {
-     
-  
       this.setState({
         open: !this.state.open
       });
       setTimeout(() => this.setState({ open: false}), 1000)
-     // setTimeout(this.state.open, 1000);
+     
     };
 
-  getCandidates(page)
-   {
+    getCandidates(page)
+    {
     this.setState({ loading: true });
-    axios({
-            method: "get",
-            url: "http://localhost:5000/allData/"+page  ,
-           
-            headers: {
-              "Access-Control-Allow-Origin":" *",
-              "Access-Control-Allow-Headers":" *",
-              "Access-Control-Allow-Methods":" *",
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            }
-        })
+      axios
+      .get("http://localhost:5000/allData/"+page)
         .then(response => {
             if (response && response.data) {
                 this.setState({   candidates: [...this.state.candidates, ...response.data] ,  filteredTableData:[...this.state.candidates, ...response.data],  loading: false });
-              console.log(this.state.candidates)
+         
             }
         })
         .catch(error => console.log(error));
@@ -111,23 +118,12 @@ class FilesToolbar extends Component {
 
   getCountries()
    {
- 
-    axios({
-            method: "get",
-            url: "http://localhost:5000/countries" ,
-           
-            headers: {
-              "Access-Control-Allow-Origin":" *",
-              "Access-Control-Allow-Headers":" *",
-              "Access-Control-Allow-Methods":" *",
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            }
-        })
-        .then(response => {
+    axios
+    .get("http://localhost:5000/countries")
+    .then(response => {
             if (response && response.data) {
                 this.setState({   countries: response.data});
-              // console.log(this.state.countries)
+              
             }
         })
         .catch(error => console.log(error));
@@ -136,9 +132,6 @@ class FilesToolbar extends Component {
 
 getautoComplete()
 { 
-
-
-  
   axios({
     method: "get",
     url: "http://localhost:5000/autocomplete/" ,
@@ -233,25 +226,6 @@ onFilterValueChanged =async(ev ) =>
 
   };
 
-  handleObserver(entities, observer)
-   {
-    const y = entities[0].boundingClientRect.y;
-    if (this.state.search === false)
-    {
-      if (this.state.prevY > y) 
-      {
-        const lastPhoto = this.state.candidates[this.state.candidates.length - 1];
-        console.log(lastPhoto)
-       // const curPage = lastPhoto._id;
-        this.getCandidates(this.state.page+10);
-       // console.log(curPage)
-        this.setState({ page: this.state.page+10 });
-      }
-      this.setState({ prevY: y });
-    }
- 
-
-  }
     
 
 
@@ -261,7 +235,7 @@ onFilterValueChanged =async(ev ) =>
  const item = e.target.name;
  const isChecked = e.target.checked;
 
-  await this.setState({ checkedItems: this.state.checkedItems.set(item, isChecked) });
+  await this.setState({ checkedItems: this.state.checkedItems.set(item, isChecked) , search:true});
    
   // var mapValues = this.state.checkedItems.values();
   // var mapIKey = this.state.checkedItems.keys();
@@ -299,9 +273,9 @@ onFilterValueChanged =async(ev ) =>
   else if (this.state.options.length === 0 && this.state.query === null)
   {
   await this.setState({
-    filteredTableData: this.state.candidates     
+    filteredTableData: this.state.candidates   , search:false  
   });
-  console.log(this.state.filteredTableData)
+
   }
   else if (this.state.options.length === 0 && this.state.query !== null)
   {
@@ -322,41 +296,26 @@ onFilterValueChanged =async(ev ) =>
     
     const { classes, className } = this.props;
     const rootClassName = classNames(classes.root, className);
-   
     const loadingCSS = {
       height: "100px",
       margin: "30px"
     };
-
     // To change the loading icon behavior
     const loadingTextCSS = { display: this.state.loading ? "block" : "none" };
- 
-    
-      
-     
-    
     return (
       <>
       <div className={rootClassName}>
-    
-   
-  
       <Grid container spacing={1} >
-   
         <Grid item xs={3}>
-      
         <Portlet >
         <PortletHeader>
-          <PortletLabel
-           
-            title="Localisation"
-          />
+          <PortletLabel title="Localisation"/>
         </PortletHeader>
         <PortletContent style={{ height: "250px", overflow: "auto" }}  >     
         <MuiThemeProvider >
         <FormGroup>
        {
-    this.state.countries.map(c=>(
+       this.state.countries.map(c=>(
                 <FormControlLabel
                  key={c.key}
                   control=
@@ -386,12 +345,18 @@ onFilterValueChanged =async(ev ) =>
           
           <SearchInput
             className={classes.searchInput}
-            placeholder="Rechercher par nom , prénom" value={this.state.birthPlace  }  onKeyUp={this.onFilterValueChanged.bind(this)} onKeyDown={this.onKeyPressed.bind(this)}
+            placeholder="Rechercher par nom , prénom" value={this.state.searchInput}  onKeyUp={this.onFilterValueChanged.bind(this)} onKeyDown={this.onKeyPressed.bind(this)}
           />
         
         </div>
         </Box>
         <FilesTable users={this.state.filteredTableData} />
+        <div
+          ref={loadingRef => (this.loadingRef = loadingRef)}
+          style={loadingCSS}
+        >
+          <span style={loadingTextCSS}>Loading...</span>
+        </div>
         </Grid>
     
       </Grid>
@@ -400,19 +365,14 @@ onFilterValueChanged =async(ev ) =>
       <div>
       {this.state.open ? 
       <Backdrop className={classes.backdrop} open={this.state.open} onClick={this.handleClose}>
-        <CircularProgress color="inherit" />
+        <CircularProgress className={classes.progress} />
        
       </Backdrop>
        : null }
     </div>
     
  
-        <div
-          ref={loadingRef => (this.loadingRef = loadingRef)}
-          style={loadingCSS}
-        >
-          <span style={loadingTextCSS}>Loading...</span>
-        </div>
+     
       </div>
       <div className={classes.font}>
  

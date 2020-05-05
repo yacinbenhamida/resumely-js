@@ -83,41 +83,32 @@ class Sidebar extends Component {
         }
      
      }).then(this.setState({open:false}));
-     console.log(this.state.loading)
+    
   }
   onChangeHandler=async(event)=>{
    
         const formData = new FormData();
         formData.append('upload_preset',"zwikhjud");
         formData.append('file',event.target.files[0]);
-        this.setState({loading:true })
-        console.log(this.state.loading)
+        this.setState({loading:true,open:false })
+     
        
       await axios.post('https://api.cloudinary.com/v1_1/dyhnlahvq/image/upload/',formData)
-        .then(res=>
-        this.setState({imageUrl :  res.data.secure_url,loading :false })
-        )
-     
-        .catch(err=>console.log(err))
+        .then(res=>{
+          this.setState({imageUrl :  res.data.secure_url,loading :false })
+       }).catch(err=>console.log(err))
       
       
-       axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
+        axios.put(process.env.REACT_APP_BACKEND+'/editpicture',{
         Image: this.state.imageUrl, user : this.state.user}).then(res => {
           
           if(res.data.message ==="picture updated") 
           {
             this.state.user.imageUrl=this.state.imageUrl ;
             localStorage.setItem("user", JSON.stringify(this.state.user))
-          
-       
           }
        
-       }).then(this.setState({open:false}));
-       console.log(this.state.loading)
-  
-     
-      
-
+       });
 }
   handleClose = () => {
     this.setState({
@@ -132,7 +123,7 @@ class Sidebar extends Component {
   
     const { firstName, lastName ,   imageUrl,loading } = this.state;
 
-    {console.log(imageUrl)}
+  
 
     return (
    
@@ -175,7 +166,7 @@ class Sidebar extends Component {
         </DialogContent>
         <Divider  />
         <DialogActions  >
-          <Button onClick={this.handleClose}  maxWidth = {'md'} fullWidth={true} >
+          <Button onClick={this.handleClose}   fullWidth={true} >
             Cancel
           </Button>
          

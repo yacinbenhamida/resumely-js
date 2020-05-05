@@ -32,6 +32,10 @@ export default (app) => {
     //edit profile information
     app.route('/editprofile')
         .put(usersController.editProfile)
+    app.route('/editname')
+        .put(usersController.editName)
+    app.route('/verifyEmail')
+        .post(usersController.VerifyEmailExist)
     app.route('/editpicture')
         .put(usersController.editPicture)
     app.route('/deletepicture')

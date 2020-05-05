@@ -36,7 +36,7 @@ class Account extends Component {
 
   render() {
     const { classes } = this.props;
-    const user = JSON.parse(localStorage.getItem('user'));
+  //  const user = JSON.parse(localStorage.getItem('user'));
     return (
       <DashboardLayout title="Account">
         <div className={classes.root}>
@@ -67,7 +67,7 @@ class Account extends Component {
               xl={2}
               xs={6}
             ></Grid>
-              <AccountDetails user= {user}/>
+              <AccountDetails />
             </Grid>
           </Grid>
         </div>
