@@ -69,10 +69,16 @@ stream.on('data', function (err, doc) {
             count = count + 1;
         }
     }*/
-}
+});
     
     
+stream.on('close', function(){
+    console.log('indexed ' + count + ' documents!');
+ });
 
+stream.on('error', function(err){
+    console.log(err);
+});
 
 
 /**
