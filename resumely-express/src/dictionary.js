@@ -8,15 +8,15 @@ module.exports = {
     'Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Bizerte','Bizert','la marsa','Kef','Benarous','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','	Sidi Bouzid',
     'Siliana','Sousse','Tataouine','Tozeur','Tunis','Zaghouan','Maroc','Provence','Province','Mdiq Fnideq','Tétouan','Fahs Anjra',
     'Larache','Hoceima','Chefchaouen','Ouezzane','Oujda angad','Nador','Driouch','Jerada','Berkane','Taourirt','Guercif','Figuig','Fès','Meknès','Moulay yaacoub','Boulemane','Rabat','Tikachmirine'
-    ,'Chefchaouèn','Settat','Khmissat','Larache','Ksar el Kebir','Jadida','Beni Mellal','Khouribga','Safi','Tetouan','Kenitra',
+    ,'Chefchaouèn','Settat','Khmissat','Larache','Ksar el Kebir','Jadida','Beni Mellal','Béni Mellal','Khouribga','Safi','Tetouan','Kenitra',
     'Oujda','Meknes','Tanger','Agadir','Marrakech','Salé'],
    /* objective: ['objective', 'objectives'],
     nationalité: ['tunisien', 'tunisienne','nationalité'],
     summary: ['summary'],
    
     diplomes: ['diplomes','diplome'],
-    skills: ['Compétences', 'Skills & Expertise', 'technology', 'technologies','COMPETENCES TECHNIQUES','competences techniques','Logiciels maîtrisés'],
-    languages: ['languages','langues','Linguistique'],
+
+   
     courses: ['courses'],
     stages: ['stages','stage'],
     projetsacademique: ['PROJETS ACADEMIQUES','Autres projets académiques'],
@@ -28,10 +28,12 @@ module.exports = {
     honors: ['honors'],
     additional: ['additional'],
     certification: ['certification', 'certifications'],*/
-    activites: ['interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
-    DateNaissance:['Née','Née le','Date de naissance',' Date de naissance ','born','birthdate','Né','naissance','DN'],
-    experience:['Parcours','EXPERIENCES PROFESSIONNELLES','Expérience Professionnelle ','stage','Parcours professionnel','EXPERIENCE PROFESIONNELLE','stages','Expériences'],
-     formation: ['education','formation','ETUDES & DIPLOMES','etudes','diplomes','formations','Éducation','Projets'],
+    activites: ['Interêts','interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
+    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né','naissance','DN','Naissance'],
+    experience:['Parcours','Expérience','Experience','Stages'],
+    formation: ['education','Formations','formation','ETUDES & DIPLOMES','etudes','diplomes','formations','Éducation','Projets','PROJETS','Stages Académiques','STAGE'],
+    languages: ['languages','langues','Linguistique','Compétences linguistiques'],
+    skills: ['Compétences', 'Skills & Expertise', 'technology', 'technologies','COMPETENCES TECHNIQUES','competences techniques','Logiciels maîtrisés','Compétences techniques'],
 
 
  

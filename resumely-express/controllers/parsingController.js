@@ -10,7 +10,7 @@ const  Request = require("request");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-  cb(null, './uploads')
+  cb(null, './uploads/Parsing/')
   },
   filename: function (req, file, cb) {
   cb(null, Date.now() + '-' +file.originalname )
@@ -25,7 +25,7 @@ exports.RootPage= ( function(req, res) {
   } else if (err) {
   return res.status(500).json(err)
   }
-  fs.readdir('./uploads',  function (err, files){
+  fs.readdir('./uploads/Parsing/',  function (err, files){
   //handling error
   if (err) {
   return console.log('Unable to scan directory: ' + err);
@@ -33,7 +33,7 @@ exports.RootPage= ( function(req, res) {
   //listing all files using forEach
   files.forEach(  function  (file) {
   console.log(file); 
-  parseIt.parseResume('./uploads/'+file, './compiled');
+  parseIt.parseResume('./uploads/Parsing/'+file, './compiled');
   });
   });
   return res.status(200).send(req.file)
@@ -69,16 +69,16 @@ exports.insert = (req, res, next) => {
   });
   });
 });
-  fs.readdir('./uploads', function (err, files) {
+  fs.readdir('./uploads/Parsing/', function (err, files) {
   // Handling error
   if (err) {
   return console.log('Unable to scan directory uploads: ' + err);
   }
   // Listing all files using forEach
   files.forEach(function (file) {
-  fs.readFile('./uploads/' + file, 'utf8',async function (err, data) {
+  fs.readFile('./uploads/Parsing/' + file, 'utf8',async function (err, data) {
   if (err) throw err;
-  fs.unlink("./uploads/"+file, (err) => {
+  fs.unlink("./uploads/Parsing/"+file, (err) => {
   if (err) {
   console.log("failed to delete local file on uploads:"+err);
   } 
@@ -175,16 +175,16 @@ exports.deleteparsed= ( async function(req, res) {
    });
    });
    });
-   fs.readdir('./uploads', function (err, files) {
+   fs.readdir('./uploads/Parsing/', function (err, files) {
 // Handling error
    if (err) {
     return console.log('Unable to scan directory uploads: ' + err);
 }
 // Listing all files using forEach
   files.forEach(function (file) {
-  fs.readFile('./uploads/' + file, 'utf8',async function (err, data) {
+  fs.readFile('./uploads/Parsing/' + file, 'utf8',async function (err, data) {
   if (err) throw err;
-  fs.unlink("./uploads/"+file, (err) => {
+  fs.unlink("./uploads/Parsing/"+file, (err) => {
   if (err) {
   console.log("failed to delete local file on uploads:"+err);
   } 
