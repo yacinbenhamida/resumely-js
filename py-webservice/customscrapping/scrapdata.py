@@ -41,8 +41,8 @@ def load_browser():
     options = Options()
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
-    '''options.add_argument('--disable-gpu')
-    options.add_argument('--headless')'''
+    options.add_argument('--disable-gpu')
+    options.add_argument('--headless')
     driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
     return driver 
 
