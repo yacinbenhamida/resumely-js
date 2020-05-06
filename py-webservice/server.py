@@ -20,15 +20,14 @@ def routes(api):
     api.add_resource(SingleBgThread, '/scrap-single') #post request, one target
     api.add_resource(Login, '/login') # POST login mandatory
     api.add_resource(Protected, '/current-user') # GET your current user
+    
 app = Flask(__name__)
-def main():
+api = Api(app)
+routes(api)
+app.config['JWT_SECRET_KEY'] = 'super-secret'  # We need to Change this!
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
+jwt = JWTManager(app)
 
-    api = Api(app)
-    routes(api)
-    app.config['JWT_SECRET_KEY'] = 'super-secret'  # We need to Change this!
-    app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
-    jwt = JWTManager(app)
-    app.run(debug=True, port=5555)
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True, port=5555)
