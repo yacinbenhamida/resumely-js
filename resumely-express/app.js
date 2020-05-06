@@ -51,8 +51,8 @@ mongoose.connect(process.env.DB_URI, {
 
 let stream = Candidate.synchronize()
 let count = 0;
-stream.on('data', function (err, doc) {
-   /* if (doc.country != null) {
+  stream.on('data', function (err, doc) {
+ /* if (doc.country != null) {
         let country = countries.getCountry(doc.country);
         let country_fr = countries_fr.getCountry(doc.country);
         if (country != null) {

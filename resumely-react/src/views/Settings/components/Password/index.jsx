@@ -72,7 +72,10 @@ class Password extends Component {
    {
     await this.setState({
       isLoading: false,
-      submitError: 'Current password is invalid '
+      submitError: 'Current password is invalid ',
+      currentPassword:'',
+      password: '',
+      confirmPassword: '',
     });
  
    }

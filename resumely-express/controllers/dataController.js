@@ -64,7 +64,7 @@ exports.getAllData = async(req ,res)=>{
           from : req.params.from,
           "sort" : [
         
-            { "firstName" : "asc" }
+            { "firstName.raw" : "asc" }
         ],
           query: {
             match_all: {}
@@ -96,7 +96,7 @@ exports.getAllData = async(req ,res)=>{
         "aggs": {
           "all_indexes": {
              "terms": {
-                "field": "country",
+                "field": "country.filter",
                 "size": 300,
                 "order": {
                   "_key" : "asc" 
@@ -138,7 +138,7 @@ exports.getAllData = async(req ,res)=>{
             },
             "filter": {
               "terms": {
-                "country": req.query.options
+                "country.filter": req.query.options
               }
             }
           }
@@ -214,7 +214,7 @@ exports.getAllData = async(req ,res)=>{
        "filter": [
          {
           "terms":{
-             "country":req.query.options
+             "country.filter":req.query.options
            }
          }
          
