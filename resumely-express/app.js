@@ -48,7 +48,7 @@ mongoose.connect(process.env.DB_URI, {
 
 
 //indexing dat
-/*
+
 let stream = Candidate.synchronize()
 let count = 0;
   stream.on('data', function (err, doc) {
@@ -68,10 +68,11 @@ let count = 0;
         else {
             count = count + 1;
         }
-    }
+    }*/
+    count = count + 1;
 });
-    */
-    /*
+    
+    
 stream.on('close', function(){
     console.log('indexed ' + count + ' documents!');
  });
@@ -79,7 +80,7 @@ stream.on('close', function(){
 stream.on('error', function(err){
     console.log(err);
 });
-*/
+
 
 /**
  * Middlewares
