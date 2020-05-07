@@ -27,7 +27,7 @@ const CandidateSchema = new mongoose.Schema({
 
 
 CandidateSchema.plugin(mongoosastic, {
-    "host": "localhost",
+    "host": "http://51.178.142.162",
     "port": 9200,
    
 });
