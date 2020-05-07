@@ -27,9 +27,10 @@ const CandidateSchema = new mongoose.Schema({
 
 
 CandidateSchema.plugin(mongoosastic, {
-    "host": "http://51.178.142.162",
-    "port": 9200,
-   
+    
+    hosts: [
+      'http://51.178.142.162:9200'
+  ]
 });
 
 var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
