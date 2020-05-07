@@ -122,7 +122,7 @@ Candidate.createMapping({
                  },
                  "filter":
                  {
-                   type:"keyword"
+                   "type":"keyword"
                  }
                 
                }
