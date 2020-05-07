@@ -67,36 +67,51 @@ Candidate.createMapping({
           
           "properties": {
             "firstName": {
-              "type": "keyword",
-             
-            "fields": {
-                              
-              "autocomplete": {
-                  "type": "text",
-                  "analyzer": "autocomplete",
-                  "search_analyzer": "autocomplete_search"
-              }
-             }
-             
-           
-              
-            },
-            "lastName": {
-              "type": "keyword",
+              "type": "text",
             
-            "fields": {
+              "fields": {
+                                
+                "autocomplete": {
+                    "type": "text",
+                    "analyzer": "autocomplete",
+                    "search_analyzer": "autocomplete_search"
+                },
+                "raw":
+                {
+                 "type": "keyword",
+                
+                }
+              }}
+              ,
+            "lastName": {
+            "type": "text",
+             
+            
+              "fields": {
                               
-              "autocomplete": {
-                  "type": "text",
-                  "analyzer": "autocomplete",
-                  "search_analyzer": "autocomplete_search"
-              }
-             }
+                "autocomplete": {
+                    "type": "text",
+                    "analyzer": "autocomplete",
+                    "search_analyzer": "autocomplete_search"
+                }
+               }
+         
       
       
             },
             "country":{
-               "type": "keyword" ,
+             /* "type": "text",
+            
+               
+               "fields":
+               {
+                 "raw":
+                 {
+                  "type": "keyword",
+                 
+                 }
+               }*/
+               "type": "text" ,
                
                "fields":
                {
@@ -104,7 +119,12 @@ Candidate.createMapping({
                  {
                   "type": "text",
                   "analyzer":"standard",
+                 },
+                 "filter":
+                 {
+                   type:"keyword"
                  }
+                
                }
             }
           }

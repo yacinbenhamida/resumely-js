@@ -88,7 +88,7 @@ class Account extends Component {
     else if (!emailRegex.test(value))
      {
    
-      this.setState({errorEmail : "this is not an email",touchedEmail:true,isValid:false})
+      this.setState({errorEmail : "this is not a valid email",touchedEmail:true,isValid:false})
       
      }
     else if(emailRegex.test(value))
