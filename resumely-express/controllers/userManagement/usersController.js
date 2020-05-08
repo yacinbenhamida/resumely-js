@@ -52,7 +52,7 @@ exports.login = async (req, res, next) => {
                     user: body
                 }, process.env.PASSPORT_SECRET);
                 // we need to log to our flask app
-                try{
+                /*try{
                     let LocalStorage = require('node-localstorage').LocalStorage,
                     localStorage = new LocalStorage('./scratch');
                     await request.post(`${flask_rest}/login`,{
@@ -69,7 +69,7 @@ exports.login = async (req, res, next) => {
                         localStorage.setItem(user.email, body.access_token);
                         console.log('flask token is : '+localStorage.getItem(user.email))
                     })
-                }catch(except){}
+                }catch(except){}*/
                 user.password = null;               
                 // Send back the token to the user
                 return res.json({
@@ -112,7 +112,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         'facebook'
     );
     // auth to flask server 
-    try{
+    /*try{
         let LocalStorage = require('node-localstorage').LocalStorage,
         localStorage = new LocalStorage('./scratch');
         await request.post(`${flask_rest}/login`,{
@@ -129,7 +129,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
             localStorage.setItem(outData.outUser.email, body.access_token);
             console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
         })
-    }catch(except){}
+    }catch(except){}*/
     console.log('Sending data:', outData);
 
     return res.json({
@@ -160,7 +160,7 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         'google'
     );
     // auth to flask server 
-    try{
+    /*try{
         let LocalStorage = require('node-localstorage').LocalStorage,
         localStorage = new LocalStorage('./scratch');
         await request.post(`${flask_rest}/login`,{
@@ -177,7 +177,7 @@ exports.notifyGoogleLogin = async (req, res, next) => {
             localStorage.setItem(outData.outUser.email, body.access_token);
             console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
         })   
-    }catch(except){} 
+    }catch(except){} */
     console.log('Sending data:', outData);
 
     return res.json({

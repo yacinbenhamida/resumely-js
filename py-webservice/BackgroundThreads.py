@@ -12,8 +12,7 @@ SCRAP_DIR = BASE_DIR / 'customscrapping'
 sys.path.append(str(SCRAP_DIR))
 from customscrapping import scrapdata
 
-class BackgroundThread(Resource):  
-    @jwt_required   
+class BackgroundThread(Resource):    
     def get(self,country,idop):
         thread = Thread(target=scrapdata.scrapper, args=(country,idop))
         thread.daemon = True
@@ -21,7 +20,6 @@ class BackgroundThread(Resource):
         return jsonify({'thread_name': str(thread.name),
                         'started': True})
 class SingleBgThread(Resource):
-    @jwt_required
     def post(self):
         json_data = request.get_json(force=True)
         print(json_data)
