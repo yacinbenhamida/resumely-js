@@ -35,23 +35,15 @@ mongoose.connect(process.env.DB_URI, {
     if (err) console.log('Error during mongoose connection: ' + err);
     else {
         console.log('Successful mongoose connection.');
-
-        // Quick DB Test
-        // UserModel.find({}, (err, users) => {
-        //     if (err) {
-        //         console.log(err);
-        //     }
-        //     console.log(users)
-        // });
     }
 });
 
 
 //indexing dat
 
-//let stream = Candidate.synchronize()
-//let count = 0;
- // stream.on('data', function (err, doc) {
+let stream = Candidate.synchronize()
+let count = 0;
+stream.on('data', function (err, doc) {
  /* if (doc.country != null) {
         let country = countries.getCountry(doc.country);
         let country_fr = countries_fr.getCountry(doc.country);
@@ -69,9 +61,8 @@ mongoose.connect(process.env.DB_URI, {
             count = count + 1;
         }
     }*/
-   // count = count + 1;
-//});
-   /* 
+    count = count + 1;
+});
 stream.on('close', function(){
     console.log('indexed ' + count + ' documents!');
  });
@@ -80,7 +71,7 @@ stream.on('error', function(err){
     console.log(err);
 });
 
-*/
+
 /**
  * Middlewares
  */
