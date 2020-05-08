@@ -40,14 +40,14 @@ def notify(db,content,iduser):
 def load_browser():
     options = Options()
     options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
+    options.add_argument("start-maximized")
     options.add_argument("--headless")
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-proxy-server')
-    options.add_argument("--proxy-server='direct://'");
-    options.add_argument("--proxy-bypass-list=*");
-    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver',chrome_options=options)
+    options.add_argument("--disable-gpu")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--no-sandbox") 
+    service_args = ['--verbose']
+    service_log_path = '/tmp/local/chromedriver.log'
+    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver',chrome_options=options,service_args=service_args, service_log_path=service_log_path)
     return driver 
 
 def connect_to_db():
