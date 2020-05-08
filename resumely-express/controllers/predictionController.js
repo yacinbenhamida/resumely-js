@@ -16,6 +16,9 @@ exports.doPredict = (req, res) => {
 
     request({
         uri: `${py_url}/${firstName}/${lastName}`,
+        rejectUnauthorized: false,
+        requestCert: true,
+        agent: false
     }).pipe(res);
 };
 
@@ -26,5 +29,8 @@ exports.doCorrect = (req, res) => {
     
     request({
         uri: `${py_url}/${firstName}/${lastName}/${label}`,
+        rejectUnauthorized: false,
+        requestCert: true,
+        agent: false
     }).pipe(res);
 }

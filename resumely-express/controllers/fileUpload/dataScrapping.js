@@ -36,6 +36,10 @@ exports.scrapData = (req,res)=>{
                 /*headers: {
                   'Authorization':'Bearer '+localStorage.getItem(req.user.email)
                 }*/
+                ,
+                rejectUnauthorized: false,
+                requestCert: true,
+                agent: false
               };
             request(options,(error, result, body) => {
                 if (error) {
@@ -105,7 +109,10 @@ exports.scrapSingleProfile = (req,res) => {
                     idop: docs._id
                   },
                 json: true,
-                url: `${flask_rest}/scrap-single`
+                url: `${flask_rest}/scrap-single`,
+                rejectUnauthorized: false,
+                requestCert: true,
+                agent: false
                 /*headers: {
                   'Authorization':'Bearer '+localStorage.getItem(req.user.email)
                 }*/
