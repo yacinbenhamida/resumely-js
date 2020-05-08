@@ -44,7 +44,9 @@ def load_browser():
     options.add_argument("--headless")
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
-    options.add_argument("--window-size=1920x1080")
+    options.add_argument('--no-proxy-server')
+    options.add_argument("--proxy-server='direct://'");
+    options.add_argument("--proxy-bypass-list=*");
     driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
     return driver 
 
