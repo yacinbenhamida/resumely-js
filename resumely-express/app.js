@@ -40,11 +40,12 @@ mongoose.connect(process.env.DB_URI, {
 
 
 //indexing data
+ /*
 try {
     let stream = Candidate.synchronize()
     let count = 0;
     stream.on('data', function (err, doc) {
-        /* if (doc.country != null) {
+        if (doc.country != null) {
                 let country = countries.getCountry(doc.country);
                 let country_fr = countries_fr.getCountry(doc.country);
                 if (country != null) {
@@ -60,7 +61,7 @@ try {
                 else {
                     count = count + 1;
                 }
-            }*/
+            
         count = count + 1;
     });
     stream.on('close', function () {
@@ -71,9 +72,8 @@ try {
         console.log(err);
     });
 
-} catch (exception) {
-    console.log("couldn't index profiles...")
-}
+} catch (exception) {}
+*/
 /**
  * Middlewares
  */

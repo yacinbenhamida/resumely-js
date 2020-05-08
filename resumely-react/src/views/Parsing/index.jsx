@@ -74,7 +74,7 @@ class ParserParent extends Component {
       formData.append("file", f.file);
       return
      } )
-     axios.post("http://localhost:5000/parsing", formData).then(response=>{
+     axios.post(process.env.REACT_APP_BACKEND+"/parsing", formData).then(response=>{
       allFiles.forEach(f => f.remove())
       this.setState({
         show: true,
@@ -112,7 +112,7 @@ class ParserParent extends Component {
       show:false
 
     })
-    axios.get('http://localhost:5000/parsing/parsed')
+    axios.get(process.env.REACT_APP_BACKEND+'/parsing/parsed')
     .then((response) => {
       const resumes = response.data.map((resums) => ({
         name : resums.name,
@@ -140,9 +140,9 @@ class ParserParent extends Component {
       })
     }
    handleCloseWithinsert = () => {
-    axios.post('http://localhost:5000/parsing/database')
+    axios.post(process.env.REACT_APP_BACKEND+'/parsing/database')
     .then(res => console.log(res.data));
-    axios.get('http://localhost:5000/getall')
+    axios.get(process.env.REACT_APP_BACKEND+'/getall')
     .then(response => {
         this.setState({ resumes: response.data });
     })
@@ -152,7 +152,7 @@ class ParserParent extends Component {
     this.setState({ sendToNextPage: true });  
   }
   handleCloseWithdelete = () => {
-    axios.get('http://localhost:5000/delete/parsed')
+    axios.get(process.env.REACT_APP_BACKEND+'/delete/parsed')
     .then(response => {
       document.getElementById('idfile').value = null;
       this.setState({

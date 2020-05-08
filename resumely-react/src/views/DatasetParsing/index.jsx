@@ -85,7 +85,7 @@ class Datasetparsing extends Component {
     //'http://apilayer.net/api/validate?access_key=6f058e8d12f78fa6b4840c6ab3235c56&number'=+phone
      handleClickOpen = (number) => {
        console.log('numberrrrrrrr'+number)
-       axios.get(`http://localhost:5000/verif/${number}`)
+       axios.get(`${process.env.REACT_APP_BACKEND}/verif/${number}`)
       .then(res => {
         console.log(res.data)
         this.setState({
@@ -100,7 +100,7 @@ class Datasetparsing extends Component {
 
     
    componentgeteditable(id) {
-    axios.get('http://localhost:5000/edit-resume/' +id)
+    axios.get(process.env.REACT_APP_BACKEND+'/edit-resume/' +id)
       .then(res => {
         this.setState({
           resume:res.data,
@@ -125,7 +125,7 @@ class Datasetparsing extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/getall')
+        axios.get(process.env.REACT_APP_BACKEND+'/getall')
             .then(response => {
                 this.setState({ resumes: response.data });
             })
@@ -134,7 +134,7 @@ class Datasetparsing extends Component {
             })
     }
     deleteContact (id) {
-      axios.delete(`http://localhost:5000/delete/${id}`)
+      axios.delete(`${process.env.REACT_APP_BACKEND}/delete/${id}`)
       .then(res => {
          this.componentDidMount()
       })

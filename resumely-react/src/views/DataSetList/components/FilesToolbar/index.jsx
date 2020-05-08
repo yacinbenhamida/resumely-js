@@ -105,7 +105,7 @@ class FilesToolbar extends Component {
     {
     this.setState({ loading: true });
       axios
-      .get("http://localhost:5000/allData/"+page)
+      .get(process.env.REACT_APP_BACKEND+"/allData/"+page)
         .then(response => {
             if (response && response.data) {
                 this.setState({   candidates: [...this.state.candidates, ...response.data] ,  filteredTableData:[...this.state.candidates, ...response.data],  loading: false });
@@ -119,7 +119,7 @@ class FilesToolbar extends Component {
   getCountries()
    {
     axios
-    .get("http://localhost:5000/countries")
+    .get(process.env.REACT_APP_BACKEND+"/countries")
     .then(response => {
             if (response && response.data) {
                 this.setState({   countries: response.data});
@@ -134,7 +134,7 @@ getautoComplete()
 { 
   axios({
     method: "get",
-    url: "http://localhost:5000/autocomplete/" ,
+    url: process.env.REACT_APP_BACKEND+"/autocomplete/" ,
    params:{
      
    

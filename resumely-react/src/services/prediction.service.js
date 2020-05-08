@@ -4,7 +4,7 @@ const headers = {
   "Content-Type": "application/json"
 };
 
-const burl = "http://localhost:5000";
+const burl = process.env.REACT_APP_BACKEND;
 
 export default {
   Predict: function(firstName, lastName) {
