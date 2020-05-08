@@ -27,12 +27,13 @@ const CandidateSchema = new mongoose.Schema({
 
 
 CandidateSchema.plugin(mongoosastic, {
-    
+
     hosts: [
       'http://51.178.142.162:9200'
-  ]
+ //'localhost:9200'
+  ],
+  type: 'profile',
 });
-
 var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
 
 Candidate.createMapping({
@@ -48,7 +49,7 @@ Candidate.createMapping({
             },
             "autocomplete_search": {
               "tokenizer": "lowercase"
-            },
+            }
            
           },
           "tokenizer": {
@@ -79,7 +80,7 @@ Candidate.createMapping({
                 },
                 "raw":
                 {
-                 "type": "keyword",
+                 "type": "keyword"
                 
                 }
               }}
@@ -101,17 +102,7 @@ Candidate.createMapping({
       
             },
             "country":{
-             /* "type": "text",
-            
-               
-               "fields":
-               {
-                 "raw":
-                 {
-                  "type": "keyword",
-                 
-                 }
-               }*/
+           
                "type": "text" ,
                
                "fields":
@@ -119,7 +110,7 @@ Candidate.createMapping({
                  "raw":
                  {
                   "type": "text",
-                  "analyzer":"standard",
+                  "analyzer":"standard"
                  },
                  "filter":
                  {
@@ -129,7 +120,7 @@ Candidate.createMapping({
                }
             }
           }
-        }
+       }
       }
 
     }, (err, mapping) => {
