@@ -47,8 +47,7 @@ def load_browser():
     options.add_argument('--no-proxy-server')
     options.add_argument("--proxy-server='direct://'");
     options.add_argument("--proxy-bypass-list=*");
-    driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options)
-    #driver = webdriver.Chrome('./shared/chromedrivers/chromedriver_80.exe',chrome_options=options)
+    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver',chrome_options=options)
     return driver 
 
 def connect_to_db():
