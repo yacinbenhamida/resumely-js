@@ -30,6 +30,7 @@ const UserSchema = new Schema({
     },
     imageUrl: {
         type: String,
+        default: 'empty',
         required: false,
         minlength: 3
     },
