@@ -50,7 +50,7 @@ service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
 driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
-driver.manage().timeouts().implicitlyWait(5);
+driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
