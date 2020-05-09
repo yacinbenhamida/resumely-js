@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import validate from 'validate.js';
 import _ from 'underscore';
+import axios from 'axios';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
@@ -195,18 +196,21 @@ class SignUp extends Component {
 
       this.setState({ isLoading: true });
 
-      await signUp({
+      await signUp(  axios.post('http://localhost:5000/signup',{
+        username:values.email,
         firstName: values.firstName,
         lastName: values.lastName,
         email: values.email,
         password: values.password
-      });
-
+      }).then(res => console.log(res.data)));
+   
+    
       history.push('/sign-in');
+
+     
     } catch (error) {
       this.setState({
-        isLoading: false,
-        serviceError: error
+        isLoading: false
       });
     }
   };

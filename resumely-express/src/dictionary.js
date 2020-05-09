@@ -29,9 +29,9 @@ module.exports = {
     additional: ['additional'],
     certification: ['certification', 'certifications'],*/
     activites: ['Interêts','interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
-    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né','naissance','DN','Naissance'],
+    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né','naissance','DN','Naissance','Date de naissance:'],
     experience:['Parcours','Expérience','Experience','Stages'],
-    formation: ['education','Formations','formation','ETUDES & DIPLOMES','etudes','diplomes','formations','Éducation','Projets','PROJETS','Stages Académiques','STAGE'],
+    formation: ['education','Formations','formation','ETUDES & DIPLOMES','etudes','Education','diplomes','formations','Éducation','Projets','PROJETS','Stages Académiques','STAGE'],
     languages: ['languages','langues','Linguistique','Compétences linguistiques'],
     skills: ['Compétences', 'Skills & Expertise', 'technology', 'technologies','COMPETENCES TECHNIQUES','competences techniques','Logiciels maîtrisés','Compétences techniques'],
 

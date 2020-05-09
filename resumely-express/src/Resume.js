@@ -20,6 +20,17 @@ function isEmpty(obj) {
 
   return true;
 }
+function simplecsomme(T)
+{
+  let total=0; 
+  console.log("length"+T.length)
+  for(let i=0;i<T.length;i++)
+  {
+   console.log("case"+T[i]+"indice"+i)
+    total = Number(T[i]) + total;
+  }
+  return total
+}
 
 
 function totalmonths(T1,T2)
@@ -211,8 +222,31 @@ Resume.prototype.jsoned = function() {
   if(this.parts.experience!=undefined)
 {
 // console.log(this.parts.experience) 
+let simplesomme;
+let simpletable=[];
+let num;
+let regexsimple= /(\d{1,2}[\s|\s\s]mois)/g
+if(this.parts.experience.toLowerCase().match(/(\d{1,2}[\s|\s\s]mois)/)!=null)
+{
 
-let regex = /(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[\s|\s\s]{0,2}[à|-|\-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s][\s]{0,1}(?:\d{2})?[\s]{0,1}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|\d{4}[\s]{0,2}[-|_|\s|à][\s]{0,2}(\d{4}|en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat)|(\d{2}[\/](19|20)\d{2}|((19|20)\d{2}|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|(en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat))|((december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(19|20)\d{2})/g
+do {
+  simplesomme =regexsimple.exec(this.parts.experience.toLowerCase());
+  if (simplesomme) {
+    num=simplesomme[0].match(/\d{1,2}/)
+    simpletable.push(num[0]);
+}
+} while (simplesomme);
+
+if(simpletable.length!=null)
+{
+  this.parts.experience='total months'+simplecsomme(simpletable)
+}
+}
+
+
+else
+{
+let regex = /(?!présentation)(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[\s|\s\s]{0,2}[à|-|\-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s][\s]{0,1}(?:\d{2})?[\s]{0,1}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|\d{4}[\s]{0,2}[-|_|\s|à][\s]{0,2}(\d{4}|en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat)|(\d{2}[\/](19|20)\d{2}|((19|20)\d{2}|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|(en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat))|((december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(19|20)\d{2})/g
 let matches = [];
 let months = [];
 let years = [];
@@ -221,6 +255,7 @@ let match;
 do {
   match =regex.exec(this.parts.experience.toLowerCase());
   if (match) {
+
     matches.push(match[0]);
     }
 } while (match);
@@ -268,9 +303,9 @@ if(matches!=null)
   }
   
  /* months.forEach(element => console.log("moisssssssss"+element));*/
-  years.forEach(element => console.log("yearsss"+element));
+ // years.forEach(element => console.log("yearsss"+element));
 this.parts.experience=String(matches)+' total months'+totalmonths(months,years)
-}
+}}
 
   }
   if(this.parts.name!=undefined)
