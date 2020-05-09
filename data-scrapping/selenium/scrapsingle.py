@@ -17,7 +17,7 @@ def validate_field(field):
     return field
 def getProfileCountry(found_country):
     # finding the correct country name via google maps api
-    target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key="+params.google_api_key).json()
+    target = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+found_country+"&key=AIzaSyAg5g5m6tKq4pg0fusvq2HDzlm5nnIkaQ8").json()
     country = found_country
     for data in target['results']:
         for x in data['address_components']:
