@@ -7,7 +7,6 @@ import json
 import pymongo
 import requests
 from selenium.webdriver.chrome.options import Options
-
 def validate_field(field):
     if not field:
         field = 'No results'
@@ -37,6 +36,7 @@ options = Options()
 options.set_headless(headless=True)
 options.add_argument("--window-size=1920,1080")
 options.add_argument("--disable-extensions")
+options.add_argument("--allow-running-insecure-content")
 options.add_argument("--proxy-server='direct://'")
 options.add_argument("--proxy-bypass-list=*")
 options.add_argument("--start-maximized")
@@ -50,6 +50,7 @@ service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
 driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
+driver.manage().timeouts().implicitlyWait(5);
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
