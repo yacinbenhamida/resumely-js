@@ -47,7 +47,7 @@ def load_browser():
     options.add_argument("--no-sandbox") 
     service_args = ['--verbose']
     service_log_path = '/tmp/local/chromedriver.log'
-    driver = webdriver.Chrome('./shared/chromedrivers/chromedriver',chrome_options=options,service_args=service_args, service_log_path=service_log_path)
+    driver = webdriver.Chrome('/usr/local/chromedriver',chrome_options=options,service_args=service_args, service_log_path=service_log_path)
     return driver 
 
 def connect_to_db():
