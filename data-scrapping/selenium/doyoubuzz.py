@@ -37,9 +37,8 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-service_log_path = '/tmp/local/chromedriver.log'
 print('triggering chrome...')
-driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options)
 
 driver.maximize_window()
 driver.get('https:www.google.com')
@@ -57,11 +56,18 @@ pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
 try:
-    while(driver.find_element_by_xpath("//span[text()='Suivant']")):
-        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
-        for i in href:
-            youbuzz_urls.append(i.get_attribute('href'))
-        driver.find_element_by_xpath("//span[text()='Suivant']").click()
+    if driver.find_element_by_xpath("//span[text()='Suivant']") :
+        while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+            href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+            for i in href:
+                youbuzz_urls.append(i.get_attribute('href'))
+            driver.find_element_by_xpath("//span[text()='Suivant']").click()
+    elif driver.find_element_by_xpath("//span[text()='Next']") : 
+        while(driver.find_element_by_xpath("//span[text()='Next']")):
+            href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+            for i in href:
+                youbuzz_urls.append(i.get_attribute('href'))
+            driver.find_element_by_xpath("//span[text()='Next']").click()
 except:
     pass
 sleep(0.5)
