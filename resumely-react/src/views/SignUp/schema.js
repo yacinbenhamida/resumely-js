@@ -21,6 +21,7 @@ export default {
   password: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
+      minimum:6,
       maximum: 128
     }
   },
