@@ -34,6 +34,7 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
 extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
+options.set_headless(headless=True)
 #options.add_argument('--headless')
 #options.add_argument('--no-sandbox')
 #options.add_argument('--disable-dev-shm-usage')
