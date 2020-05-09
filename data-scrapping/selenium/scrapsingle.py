@@ -43,7 +43,7 @@ def connect_to_db():
     client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
     database = client["resumelydb"]
     return database
-def scrap_profile(driver,url,idop):
+def scrap_profile(driver,url):
     database = connect_to_db()
     profiles_collection = database['profiles']
     driver.get(url)
