@@ -35,7 +35,8 @@ extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
 options.add_argument('--headless')
-options.add_argument('--disable-dev-shm-usage')
+#options.add_argument('--no-sandbox')
+#options.add_argument('--disable-dev-shm-usage')
 options.add_argument("--lang=fr");
 service_log_path = '/tmp/local/chromedriver.log'
 
@@ -58,13 +59,13 @@ pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
 try:
-    if driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]") :
+    if driver.find_element_by_xpath("//*[contains(text(), 'Suivant')]") :
         print("found next")
-        while(driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]")):
+        while(driver.find_element_by_xpath("//*[contains(text(), 'Suivant')]")):
             href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
             for i in href:
                 youbuzz_urls.append(i.get_attribute('href'))
-            driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]").click()
+            driver.find_element_by_xpath("//*[contains(text(), 'Suivant')]").click()
     elif driver.find_element_by_xpath("//span[contains(text(), 'Next')]") : 
         while(driver.find_element_by_xpath("//span[contains(text(), 'Next')]")):
             href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
