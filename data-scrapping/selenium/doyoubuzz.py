@@ -50,7 +50,7 @@ service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
 driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
-cookies = pickle.load(open("./cookies.pkl", "rb"))
+cookies = pickle.load(open("cookies.pkl", "rb"))
 for cookie in cookies:
     driver.add_cookie(cookie)
 driver.implicitly_wait(10)
