@@ -108,7 +108,7 @@ class SignUp extends Component {
 
       this.setState({ isLoading: true });
 
-      await signUp(  axios.post('http://localhost:5000/signup',{
+      await signUp(axios.post(process.env.REACT_APP_BACKEND+"/signup",{
         username:values.email,
         firstName: values.firstName,
         lastName: values.lastName,
