@@ -50,7 +50,6 @@ service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
 driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
-
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
@@ -61,7 +60,7 @@ print('in google..')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(4)
+sleep(10)
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
