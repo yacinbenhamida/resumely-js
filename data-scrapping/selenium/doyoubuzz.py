@@ -37,6 +37,7 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
+options.addArguments("--lang=fr");
 service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
@@ -58,24 +59,20 @@ pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 youbuzz_urls = []
 try:
-    if driver.find_element_by_xpath("//span[text()='Suivant']") :
-        while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+    if driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]") :
+        while(driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]")):
             href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
             for i in href:
                 youbuzz_urls.append(i.get_attribute('href'))
-            driver.find_element_by_xpath("//span[text()='Suivant']").click()
-    elif driver.find_element_by_xpath("//span[text()='Next']") : 
-        while(driver.find_element_by_xpath("//span[text()='Next']")):
+            driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]").click()
+    elif driver.find_element_by_xpath("//span[contains(text(), 'Next')]") : 
+        while(driver.find_element_by_xpath("//span[contains(text(), 'Next')]")):
             href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
             for i in href:
                 youbuzz_urls.append(i.get_attribute('href'))
-            driver.find_element_by_xpath("//span[text()='Next']").click()
+            driver.find_element_by_xpath("//span[contains(text(), 'Next')]").click()
 except:
-    while(driver.find_element_by_xpath("//span[text()='Next']")):
-        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
-        for i in href:
-            youbuzz_urls.append(i.get_attribute('href'))
-        driver.find_element_by_xpath("//span[text()='Next']").click()
+    pass
 sleep(0.5)
 for youbuzz_url in youbuzz_urls:
     driver.get(youbuzz_url)
