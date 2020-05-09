@@ -6,6 +6,7 @@ from parsel import Selector
 import json
 import pymongo
 import requests,pickle
+from fake_useragent import UserAgent
 from selenium.webdriver.chrome.options import Options
 def validate_field(field):
     if not field:
@@ -33,6 +34,10 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
 extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
+ua = UserAgent()
+userAgent = ua.random
+print(userAgent)
+options.add_argument('user-agent={'+userAgent+'}')
 options.set_headless(headless=True)
 options.add_argument("--window-size=1920,1080")
 options.add_argument("--disable-extensions")
@@ -50,9 +55,6 @@ service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
 driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
-cookies = pickle.load(open("cookies.pkl", "rb"))
-for cookie in cookies:
-    driver.add_cookie(cookie)
 driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get('https:www.google.com')

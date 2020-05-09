@@ -5,6 +5,7 @@ import parameters
 from parsel import Selector
 import pymongo, requests, pickle ,json
 from selenium.webdriver.chrome.options import Options
+from fake_useragent import UserAgent
 def validate_field(field):
     if not field:
         field = 'No results'
@@ -31,6 +32,10 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
 extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
+ua = UserAgent()
+userAgent = ua.random
+print(userAgent)
+options.add_argument('user-agent={'+userAgent+'}')
 options.set_headless(headless=True)
 options.add_argument("--window-size=1920,1080")
 options.add_argument("--disable-extensions")
