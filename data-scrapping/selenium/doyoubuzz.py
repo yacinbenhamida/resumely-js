@@ -6,6 +6,7 @@ from parsel import Selector
 import json
 import pymongo
 import requests
+from selenium.webdriver.chrome.options import Options
 
 def validate_field(field):
     if not field:
@@ -32,7 +33,13 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
     done.add(str(item))
 extracted_data = {}
 extracted_data['candidates'] = []
-driver = webdriver.Chrome('/usr/bin/chromedriver')
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+service_log_path = '/tmp/local/chromedriver.log'
+print('triggering chrome...')
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
 
 driver.maximize_window()
 driver.get('https:www.google.com')
