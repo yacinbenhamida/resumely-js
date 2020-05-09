@@ -35,7 +35,6 @@ extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
 options.add_argument('--headless')
-options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument("--lang=fr");
 service_log_path = '/tmp/local/chromedriver.log'
@@ -60,6 +59,7 @@ print(pages)
 youbuzz_urls = []
 try:
     if driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]") :
+        print("found next")
         while(driver.find_element_by_xpath("//span[contains(text(), 'Suivant')]")):
             href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
             for i in href:
