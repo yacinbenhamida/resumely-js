@@ -35,7 +35,7 @@ CandidateSchema.plugin(mongoosastic, {
   type: 'profile',
 });
 var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
-
+/*
 Candidate.createMapping({
     
     "settings": {
@@ -132,7 +132,7 @@ Candidate.createMapping({
     console.log(mapping);
     }
     });
-
+*/
 
 
 module.exports =  Candidate;
