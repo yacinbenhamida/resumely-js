@@ -34,10 +34,9 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
 extracted_data = {}
 extracted_data['candidates'] = []
 options = Options()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.binary_location('/usr/bin/google-chrome-stable')
+#options.add_argument('--headless')
+#options.add_argument('--no-sandbox')
+#options.add_argument('--disable-dev-shm-usage')
 options.add_argument("--lang=fr");
 service_log_path = '/tmp/local/chromedriver.log'
 
