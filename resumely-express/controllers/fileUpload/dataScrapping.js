@@ -32,10 +32,14 @@ exports.scrapData = (req,res)=>{
             let options = {
                 method: 'GET',
                 json: true,
-                url: `${flask_rest}/scrap/${docs.country}/${docs._id}`,
-                headers: {
+                url: `${flask_rest}/scrap/${docs.country}/${docs._id}`
+                /*headers: {
                   'Authorization':'Bearer '+localStorage.getItem(req.user.email)
-                }
+                }*/
+                ,
+                rejectUnauthorized: false,
+                requestCert: true,
+                agent: false
               };
             request(options,(error, result, body) => {
                 if (error) {
@@ -106,18 +110,20 @@ exports.scrapSingleProfile = (req,res) => {
                   },
                 json: true,
                 url: `${flask_rest}/scrap-single`,
-                headers: {
+                rejectUnauthorized: false,
+                requestCert: true,
+                agent: false
+                /*headers: {
                   'Authorization':'Bearer '+localStorage.getItem(req.user.email)
-                }
+                }*/
               };
               request(options, (error, result, body) => {
                 if (error) {
                   console.error(error)
-                  return res.status(result.statusCode)
+                  return res.status(400)
                 }
-                console.log(`statusCode: ${result.statusCode}`)
                 console.log(body)
-                res.status(result.statusCode)
+                res.status(200)
               })      
         } 
     })

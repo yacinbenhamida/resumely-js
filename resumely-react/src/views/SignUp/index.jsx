@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import axios from 'axios';
 // Externals
 import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
@@ -44,34 +44,54 @@ const signUp = () => {
     }, 1500);
   });
 };
+const verifyEmailExist = (TargetEmail) => {
+  return axios.post(process.env.REACT_APP_BACKEND+'/verifyEmail',{
+   
+    email : TargetEmail
+  })
+
+};
 
 class SignUp extends Component {
-  state = {
+  
+  constructor(props)
+  {
+    super(props);
+     this.state = {
+    email: '',
     values: {
       firstName: '',
       lastName: '',
-      email: '',
+     // email: '',
       password: '',
       policy: false
     },
     touched: {
       firstName: false,
       lastName: false,
-      email: false,
+    //  email: false,
       password: false,
       policy: null
     },
     errors: {
       firstName: null,
       lastName: null,
-      email: null,
+    //  email: null,
       password: null,
       policy: null
     },
     isValid: false,
+    isValidEmail: false,
     isLoading: false,
-    submitError: null
+    submitError: null,
+    errorEmail:null,
+    touchedEmail:false,
+    
   };
+  this.handleChange=this.handleChange.bind(this)
+  this.timeout=0;
+  }
+ 
 
   handleBack = () => {
     const { history } = this.props;
@@ -99,8 +119,76 @@ class SignUp extends Component {
     newState.values[field] = value;
 
     this.setState(newState, this.validateForm);
+    
   };
 
+  onKeyPressed(e) 
+  {
+    clearTimeout(this.timeout);
+    console.log("hey")
+    
+  }
+
+  handleChange=async(event) =>{
+    const name = event.target.name;
+    const value = event.target.value;
+   await  this.setState({[event.target.name] : event.target.value });
+  
+  
+  if (name === 'email')
+  {
+    const emailRegex=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+     if(!value)
+     {
+   
+      this.setState({isValidEmail:false,errorEmail :"",touchedEmail:false})
+   
+     }
+    else if (!emailRegex.test(value))
+     {
+   
+      this.setState({isValidEmail:false,errorEmail : "this is not a valid email",touchedEmail:true})
+      
+     }
+    else if(emailRegex.test(value))
+     {
+      if(this.timeout) 
+      {
+        clearTimeout(this.timeout);
+      
+      }
+    
+      this.timeout = setTimeout(() => {
+        
+      
+        verifyEmailExist(value).then(res=>{
+       
+          if(res.data.message === false){
+           
+            this.setState({
+              isValidEmail: true,errorEmail : "",touchedEmail:false
+             });
+           
+      
+           }
+           else  if(res.data.message === true) {
+             this.setState({
+              isValidEmail : false,errorEmail : "this email is already used, try another one",touchedEmail:true
+             });
+            
+           }
+         }) 
+       
+      },700)
+      
+   
+     this.setState({
+       errorEmail : "",touchedEmail:false
+       });
+  
+     }
+   
+  }}
   handleSignUp = async () => {
     try {
       const { history } = this.props;
@@ -135,20 +223,26 @@ class SignUp extends Component {
       errors,
       isValid,
       submitError,
-      isLoading
+      isLoading,
+      errorEmail,
+      touchedEmail,
+      email,
+      isValidEmail
     } = this.state;
 
     const showFirstNameError =
       touched.firstName && errors.firstName ? errors.firstName[0] : false;
     const showLastNameError =
       touched.lastName && errors.lastName ? errors.lastName[0] : false;
-    const showEmailError =
-      touched.email && errors.email ? errors.email[0] : false;
+    //const showEmailError =
+    //  touched.email && errors.email ? errors.email[0] : false;
+    const showEmailError = errorEmail && touchedEmail  ? errorEmail : false;;
     const showPasswordError =
       touched.password && errors.password ? errors.password[0] : false;
     const showPolicyError =
       touched.policy && errors.policy ? errors.policy[0] : false;
-
+    const enable =    isValidEmail && isValid;
+    {console.log(enable , isValidEmail,isValid)}
     return (
       <div className={classes.root}>
         <Grid
@@ -255,10 +349,9 @@ class SignUp extends Component {
                       className={classes.textField}
                       label="Email address"
                       name="email"
-                      onChange={event =>
-                        this.handleFieldChange('email', event.target.value)
-                      }
-                      value={values.email}
+                      onChange={event =>this.handleChange(event)}
+                      onKeyDown={this.onKeyPressed.bind(this)}
+                      value={email}
                       variant="outlined"
                     />
                     {showEmailError && (
@@ -266,7 +359,7 @@ class SignUp extends Component {
                         className={classes.fieldError}
                         variant="body2"
                       >
-                        {errors.email[0]}
+                        {errorEmail}
                       </Typography>
                     )}
                     <TextField
@@ -334,7 +427,7 @@ class SignUp extends Component {
                     <Button
                       className={classes.signUpButton}
                       color="primary"
-                      disabled={!isValid}
+                      disabled={!enable}
                       onClick={this.handleSignUp}
                       size="large"
                       variant="contained"

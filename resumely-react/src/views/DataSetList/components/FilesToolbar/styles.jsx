@@ -35,5 +35,11 @@ export default theme => ({
     zIndex: theme.zIndex.drawer + 1,
     color: '#fff',
    
-  }
+  },
+  progress: {
+    display: 'block',
+    marginTop: theme.spacing(2),
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
 });

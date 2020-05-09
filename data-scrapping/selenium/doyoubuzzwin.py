@@ -3,11 +3,9 @@ from time import sleep
 from selenium.webdriver.common.keys import Keys
 import parameters
 from parsel import Selector
-import json
-import pymongo
-import requests,pickle
-from fake_useragent import UserAgent
+import pymongo, requests, pickle ,json
 from selenium.webdriver.chrome.options import Options
+from fake_useragent import UserAgent
 def validate_field(field):
     if not field:
         field = 'No results'
@@ -51,10 +49,10 @@ options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--no-sandbox')
 options.add_argument('--ignore-certificate-errors')
 options.add_argument("--lang=fr");
-service_log_path = '/tmp/local/chromedriver.log'
-
 print('triggering chrome...')
-driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
+driver = webdriver.Chrome('C:\chromedriver_win32\chromedriver_80',chrome_options=options)
+
+
 driver.implicitly_wait(10)
 driver.maximize_window()
 driver.get('https:www.google.com')
@@ -66,11 +64,11 @@ print('in google..')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
+pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 sleep(10)
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
-print(driver.page_source)
 youbuzz_urls = []
 try:
     if driver.find_element_by_xpath("//*[contains(text(), 'Suivant')]") :

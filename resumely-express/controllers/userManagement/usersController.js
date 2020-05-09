@@ -52,7 +52,7 @@ exports.login = async (req, res, next) => {
                     user: body
                 }, process.env.PASSPORT_SECRET);
                 // we need to log to our flask app
-                try{
+                /*try{
                     let LocalStorage = require('node-localstorage').LocalStorage,
                     localStorage = new LocalStorage('./scratch');
                     await request.post(`${flask_rest}/login`,{
@@ -69,7 +69,7 @@ exports.login = async (req, res, next) => {
                         localStorage.setItem(user.email, body.access_token);
                         console.log('flask token is : '+localStorage.getItem(user.email))
                     })
-                }catch(except){}
+                }catch(except){}*/
                 user.password = null;               
                 // Send back the token to the user
                 return res.json({
@@ -112,7 +112,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
         'facebook'
     );
     // auth to flask server 
-    try{
+    /*try{
         let LocalStorage = require('node-localstorage').LocalStorage,
         localStorage = new LocalStorage('./scratch');
         await request.post(`${flask_rest}/login`,{
@@ -129,7 +129,7 @@ exports.notifyFacebookLogin = async (req, res, next) => {
             localStorage.setItem(outData.outUser.email, body.access_token);
             console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
         })
-    }catch(except){}
+    }catch(except){}*/
     console.log('Sending data:', outData);
 
     return res.json({
@@ -160,7 +160,7 @@ exports.notifyGoogleLogin = async (req, res, next) => {
         'google'
     );
     // auth to flask server 
-    try{
+    /*try{
         let LocalStorage = require('node-localstorage').LocalStorage,
         localStorage = new LocalStorage('./scratch');
         await request.post(`${flask_rest}/login`,{
@@ -177,7 +177,7 @@ exports.notifyGoogleLogin = async (req, res, next) => {
             localStorage.setItem(outData.outUser.email, body.access_token);
             console.log('flask token is : '+localStorage.getItem(outData.outUser.email))
         })   
-    }catch(except){} 
+    }catch(except){} */
     console.log('Sending data:', outData);
 
     return res.json({
@@ -195,11 +195,69 @@ exports.profile = (req, res, next) => {
         token: req.query.secret_token
     })
 }
-
-exports.editProfile=(req,res,next)=>{
-    console.log(req.body.user)
+exports.VerifyEmailExist=(req,res,next)=>{
+   
+    if (req.body.email)
+    {
+        UserModel.findOne({
+            email : req.body.email
+        }).then(user=>
+            {
+                if (user){
+                    res.status(200).send({message : true})
+                    console.log(user)
+                }
+                else res.status(200).send({message :false})
+            })
+    }
+    else res.status(400).json('email is mandatory')
 }
-
+exports.editProfile=(req,res,next)=>{
+    
+    if (req.body.user.email)
+    {
+        UserModel.findOne({
+            email : req.body.user.email
+        }).then(user=>
+            {
+                if (user){
+                    UserModel.updateOne({username : req.body.user.username},{
+                        email:req.body.email
+                            },(error,doc)=>{
+                                if(error) console.log(error)
+                                console.log('res is '+doc)
+                               
+                            })
+                    res.status(200).send({message : "email updated"})
+                }
+              else  res.status(404).json('no user exists to update')
+            })
+    }
+    else res.status(400).json('username is mandatory')
+}
+exports.editName=(req,res,next)=>{
+    
+    if (req.body.user)
+    {
+        UserModel.findOne({
+            username : req.body.user.username
+        }).then(user=>
+            {
+                if (user){
+                    UserModel.updateOne({username : req.body.user.username},{
+                        firstName:req.body.firstName,lastName:req.body.lastName
+                            },(error,doc)=>{
+                                if(error) console.log(error)
+                                console.log('res is '+doc)
+                               
+                            })
+                    res.status(200).send({message : "name updated"})
+                }
+              else  res.status(404).json('no user exists to update')
+            })
+    }
+    else res.status(400).json('username is mandatory')
+}
 exports.editPicture=(req,res,next)=>
 {
     if(req.body.user.username){

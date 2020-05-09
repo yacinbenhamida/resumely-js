@@ -64,7 +64,7 @@ exports.getAllData = async(req ,res)=>{
           from : req.params.from,
           "sort" : [
         
-            { "firstName" : "asc" }
+            { "firstName.raw" : "asc" }
         ],
           query: {
             match_all: {}
@@ -96,7 +96,7 @@ exports.getAllData = async(req ,res)=>{
         "aggs": {
           "all_indexes": {
              "terms": {
-                "field": "country",
+                "field": "country.filter",
                 "size": 300,
                 "order": {
                   "_key" : "asc" 
@@ -116,91 +116,19 @@ exports.getAllData = async(req ,res)=>{
   }
 }
  
- exports.autocompleteMultiMatchEdgeNGramsFn= async(req ,res)=>{
-   
-  console.log(req.params.prefix)
-  try {
-   
-    const response = await client.search({
-      index: "profiles",
-      body: {
-       
-        "query": {
-          "multi_match": {
-              "query": req.params.prefix,
-              "type": "most_fields",
-              "fields": ["firstName.edge_ngrams^2", "lastName.edge_ngrams"   ]
-          }
-      }
-      }
-    });
-    var results =response.hits.hits.map(function (hit) {
-      return hit;
-    
-  });
-   
-  res.status(200).json(results);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-}
-
-exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
-   
-  console.log(req.params.prefix)
-  try {
-   
-    const response = await client.search({
-      index: "profiles",
-      body: {
-      
-        "query": {
-          "multi_match": {
-              "query": req.params.prefix,
-              "type": "most_fields",
-              "fields": ["firstName.autocomplete^10", "lastName.autocomplete^5"]
-          }
-      }
-      }
-    });
-
-   
-    var results =response.hits.hits.map(function (hit) {
-      return hit;
-    
-  });
-   
-  res.status(200).json(results);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-};
-
-
-
 
  exports.autoComplete = async(req ,res)=>{
-
- 
-
-  
- 
-
-
   try {
    
     if(req.query.prefix == undefined && req.query.options !=undefined)
     {
-        
-      console.log(req.query.options)
-
-      let data =  req.query.options.join(' ' )
-      let countries = data.split(" ");
-      console.log(countries)
+      /*let data =  req.query.options.join(' ' )
+      let countries = data.split(" ,");*/
+   
       const response = await client.search({
         index: "profiles",
         body: {
-          size : 50,
+          size : 10,
          // from : req.params.from,
      
          query: {
@@ -210,7 +138,7 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
             },
             "filter": {
               "terms": {
-                "country": countries
+                "country.filter": req.query.options
               }
             }
           }
@@ -232,7 +160,7 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
     const response = await client.search({
       index: "profiles",
       body: {
-        size : 50,
+        size : 10,
        // from : req.params.from,
    
        query: {
@@ -258,15 +186,15 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
   }
   else if(req.query.prefix != undefined && req.query.options  !== undefined)
   {
-    console.log(req.query.options)
+    
 
-    let data =  req.query.options.join(' ' )
-    let countries = data.split(" ");
-    console.log(countries)
+    /*let data =  req.query.options.join(' ' )
+    let countries = data.split(" ");*/
+    
     const response = await client.search({
       index: "profiles",
       body: {
-        size : 50,
+        size : 10,
        // from : req.params.from,
    
        query: {
@@ -286,7 +214,7 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
        "filter": [
          {
           "terms":{
-             "country":countries
+             "country.filter":req.query.options
            }
          }
          
@@ -302,13 +230,6 @@ exports.autocompleteMultiMatchNGramsFn = async(req ,res)=>{
  
     res.status(200).json(results);
   }
-
-
-
-
-
-
-
 
   } catch (error) {
     res.status(500).json(error);

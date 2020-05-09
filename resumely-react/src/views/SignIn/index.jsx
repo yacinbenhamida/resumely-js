@@ -76,23 +76,26 @@ class SignIn extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({OS : OS(window) , browser : currentBrowser(window) })
+
+  componentDidMount=async() => {
+    
+
+  await this.setState({OS:OS(window),browser:currentBrowser(window)})
+
     console.log( this.state.OS);
     console.log( this.state.browser);
     
-    navigator.geolocation.getCurrentPosition(
+  await navigator.geolocation.getCurrentPosition(
         position => 
         {
-          console.log( position.coords.latitude)
-          console.log(position.coords.longitude)
-       
-     
           axios.get(GOOGLE_API+"?latlng="+ position.coords.latitude+","+position.coords.longitude+"&key="+key) 
           .then(response =>
            { const address = response.data.results[2].formatted_address;
-            this.setState({localisation : address})
+          
+            this.setState({localisation:address })
+
              console.log(this.state.localisation )
+             
             ;}
             )
           .catch(error => console.log(error)) 
@@ -101,9 +104,7 @@ class SignIn extends Component {
       , 
         err => console.log(err)
       );
-    
-     
-      
+       
      
   }
   // Local Functions
@@ -113,19 +114,6 @@ class SignIn extends Component {
 
     history.goBack();
   };
-
-  //localisation
- /* position = async () => {
-    await navigator.geolocation.getCurrentPosition(
-      position => this.setState({ 
-        latitude: position.coords.latitude, 
-        longitude: position.coords.longitude
-      }, newState => console.log(newState)), 
-      err => console.log(err)
-    );
-
-  }*/
-
 
   validateForm = _.debounce(() => {
     const { values } = this.state;

@@ -35,18 +35,8 @@ mongoose.connect(process.env.DB_URI, {
     if (err) console.log('Error during mongoose connection: ' + err);
     else {
         console.log('Successful mongoose connection.');
-
-        // Quick DB Test
-        // UserModel.find({}, (err, users) => {
-        //     if (err) {
-        //         console.log(err);
-        //     }
-        //     console.log(users)
-        // });
     }
 });
-
-
 
 /**
  * Middlewares

@@ -26,7 +26,7 @@ exports.numbers = (req, res) => {
                         , (err, countscrappedProfiles) => {             
                                 res.send({
                                     nbCandidates: count, scrapCount: scrapCounts,
-                                    fileCount: fileCount, countscrappedProfiles: countscrappedProfiles[0].total
+                                   // fileCount: fileCount, countscrappedProfiles: countscrappedProfiles[0].total
                                 })
                             })
                         })

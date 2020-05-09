@@ -5,11 +5,17 @@ export default {
     length: {
       maximum: 64
     }
-  }/*,
-  password: {
+  },
+    firstName: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
-      maximum: 128
+      maximum: 32
     }
-  }*/
+  },
+  lastName: {
+    presence: { allowEmpty: false, message: 'is required' },
+    length: {
+      maximum: 32
+    }
+  }
 };
