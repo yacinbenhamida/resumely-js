@@ -57,6 +57,8 @@ sleep(4)
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
+test = driver.find_element_by_id('result-stats');
+print(str(test))
 youbuzz_urls = []
 try:
     if driver.find_element_by_xpath("//*[contains(text(), 'Suivant')]") :
