@@ -23,7 +23,7 @@ def getProfileCountry(found_country):
         print(country)
         return country
     else :
-        return "Spain";
+        return "Germany";
 
 client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
 database = client["resumelydb"]
@@ -37,20 +37,22 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
+service_log_path = '/tmp/local/chromedriver.log'
+
 print('triggering chrome...')
-driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options)
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_log_path = service_log_path)
 
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "spanish"
+country = "german"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
+print('in google..')
 sleep(0.5)
 
 search_query.send_keys(Keys.RETURN)
-sleep(2)
-
+sleep(4)
 
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
@@ -69,7 +71,11 @@ try:
                 youbuzz_urls.append(i.get_attribute('href'))
             driver.find_element_by_xpath("//span[text()='Next']").click()
 except:
-    pass
+    while(driver.find_element_by_xpath("//span[text()='Next']")):
+        href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
+        for i in href:
+            youbuzz_urls.append(i.get_attribute('href'))
+        driver.find_element_by_xpath("//span[text()='Next']").click()
 sleep(0.5)
 for youbuzz_url in youbuzz_urls:
     driver.get(youbuzz_url)
