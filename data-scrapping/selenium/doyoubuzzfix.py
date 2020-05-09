@@ -6,7 +6,7 @@ from parsel import Selector
 import bson
 import pymongo
 import requests
-
+import pickle
 def validate_field(field):
     if not field:
         field = 'No results'
@@ -28,7 +28,8 @@ profiles_collection = database['profiles']
 done = set()
 extracted_data = {}
 extracted_data['candidates'] = []
-driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver')
+driver = webdriver.Chrome(executable_path='C:\chromedriver_win32\chromedriver_80')
+pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
 driver.maximize_window()
 for x in profiles_collection.find(no_cursor_timeout=True).skip(3600):
