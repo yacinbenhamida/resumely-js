@@ -39,15 +39,10 @@ def notify(db,content,iduser):
     })
 def load_browser():
     options = Options()
-    options = webdriver.ChromeOptions()
-    options.add_argument("start-maximized")
-    options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--no-sandbox") 
-    service_args = ['--verbose']
+    options.set_headless(headless=True)
     service_log_path = '/tmp/local/chromedriver.log'
-    driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options,service_args=service_args, service_log_path=service_log_path)
+    print('triggering chrome...')
+    driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
     return driver 
 
 def connect_to_db():
