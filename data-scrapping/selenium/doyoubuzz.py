@@ -22,7 +22,7 @@ def getProfileCountry(found_country):
         print(country)
         return country
     else :
-        return "Saudi arabia";
+        return "Spain";
 
 client = pymongo.MongoClient("mongodb+srv://ybh:ybh@resumely-g5wzc.mongodb.net/resumely?retryWrites=true&w=majority")
 database = client["resumelydb"]
@@ -37,7 +37,7 @@ driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver_80')
 driver.maximize_window()
 driver.get('https:www.google.com')
 sleep(3)
-country = "arab"
+country = "spanish"
 search_query = driver.find_element_by_name('q')
 search_query.send_keys(parameters.search_query+' AND "'+country+'"')
 sleep(0.5)

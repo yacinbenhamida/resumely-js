@@ -38,42 +38,6 @@ mongoose.connect(process.env.DB_URI, {
     }
 });
 
-
-//indexing data
- /*
-try {
-    let stream = Candidate.synchronize()
-    let count = 0;
-    stream.on('data', function (err, doc) {
-        if (doc.country != null) {
-                let country = countries.getCountry(doc.country);
-                let country_fr = countries_fr.getCountry(doc.country);
-                if (country != null) {
-                    doc.country = country.name
-                    doc.save();
-    
-                }
-                else if (country_fr != null) {
-                    let newCountry = countries.getCountry(country_fr.alpha2);
-                    doc.country = newCountry.name
-                    doc.save();
-                }
-                else {
-                    count = count + 1;
-                }
-            
-        count = count + 1;
-    });
-    stream.on('close', function () {
-        console.log('indexed ' + count + ' documents!');
-    });
-
-    stream.on('error', function (err) {
-        console.log(err);
-    });
-
-} catch (exception) {}
-*/
 /**
  * Middlewares
  */
