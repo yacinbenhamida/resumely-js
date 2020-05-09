@@ -32,7 +32,7 @@ for item in profiles_collection.find({},{"_id":0,"lastName":1}):
     done.add(str(item))
 extracted_data = {}
 extracted_data['candidates'] = []
-driver = webdriver.Chrome('C:/chromedriver_win32/chromedriver_80')
+driver = webdriver.Chrome('/usr/bin/chromedriver')
 
 driver.maximize_window()
 driver.get('https:www.google.com')
