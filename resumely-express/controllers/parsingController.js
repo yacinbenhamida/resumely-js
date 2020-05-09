@@ -25,7 +25,7 @@ exports.RootPage= ( function(req, res) {
   } else if (err) {
   return res.status(500).json(err)
   }
-  fs.readdir('./uploads/Parsing/',  function (err, files){
+  /*fs.readdir('./uploads/Parsing/',  function (err, files){
   //handling error
   if (err) {
   return console.log('Unable to scan directory: ' + err);
@@ -35,7 +35,7 @@ exports.RootPage= ( function(req, res) {
   console.log(file); 
   parseIt.parseResume('./uploads/Parsing/'+file, './compiled');
   });
-  });
+  });*/
   return res.status(200).send(req.file)
 
  });
