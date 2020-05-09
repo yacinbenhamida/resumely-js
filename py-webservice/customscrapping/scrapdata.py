@@ -44,6 +44,7 @@ def load_browser():
     options.add_argument('--disable-infobars')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--remote-debugging-port=9222')
+    options.set_binary('/usr/bin/google-chrome')
     service_log_path = '/tmp/local/chromedriver.log'
     print('triggering chrome...')
     driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
