@@ -37,7 +37,7 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-options.addArguments("--lang=fr");
+options.add_argument("--lang=fr");
 service_log_path = '/tmp/local/chromedriver.log'
 
 print('triggering chrome...')
