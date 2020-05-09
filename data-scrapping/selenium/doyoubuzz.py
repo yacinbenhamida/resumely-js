@@ -58,9 +58,9 @@ sleep(4)
 pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
 print(pages)
 
-test = driver.find_element_by_xpath('//*[@class="gLFyf gsfi"]');
+test = driver.find_element_by_xpath("//*[starts-with(@class,'gLFyf')]");
 print(str(test))
-test1 = driver.find_element_by_xpath('//*[@class="gLFyf gsfi"]');
+test1 = driver.find_element_by_xpath("//*[starts-with(@id,'result-stats')]");
 print(str(test1))
 youbuzz_urls = []
 try:
