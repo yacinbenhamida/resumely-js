@@ -39,7 +39,10 @@ def notify(db,content,iduser):
     })
 def load_browser():
     options = Options()
-    options.set_headless(headless=True)
+    options.add_argument('--no-sandbox')
+    options.add_argument('--headless')
+
+    options.add_argument('--disable-dev-shm-usage')
     service_log_path = '/tmp/local/chromedriver.log'
     print('triggering chrome...')
     driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
