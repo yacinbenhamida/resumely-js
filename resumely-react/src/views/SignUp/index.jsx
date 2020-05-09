@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import validate from 'validate.js';
 import _ from 'underscore';
-import axios from 'axios';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
