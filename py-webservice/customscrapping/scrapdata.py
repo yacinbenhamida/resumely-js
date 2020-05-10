@@ -229,6 +229,7 @@ def scrapper(country,idop):
     sleep(0.5)
     search_query.send_keys(Keys.RETURN)
     sleep(5)
+    target = None
     try:
         pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
         youbuzz_urls = []
@@ -398,7 +399,8 @@ def scrapper(country,idop):
                 print('already scrapped, moving on....')
     except: 
         pass   
-    scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentState" :"done" } })
-    notify(database,"scrapping data from "+country+" has been completed.",target['ownerId'])
+    if target != None:
+        scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentState" :"done" } })
+        notify(database,"scrapping data from "+country+" has been completed.",target['ownerId'])
     driver.quit()
     return Response(json.dumps({"status" : "done"}),  mimetype='application/json')
