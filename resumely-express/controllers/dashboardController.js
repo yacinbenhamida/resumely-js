@@ -30,7 +30,7 @@ exports.numbers = (req, res) => {
                                     fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
                                 })
                             }  
-                            if(countscrappedProfiles[0].data){
+                            if(countscrappedProfiles && countscrappedProfiles[0] && countscrappedProfiles[0].total){
                                 res.send({
                                     nbCandidates: count, scrapCount: scrapCounts,
                                     fileCount: (fileCount ? fileCount : 0)
