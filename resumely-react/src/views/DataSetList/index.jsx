@@ -12,9 +12,6 @@ import { CircularProgress, Typography } from '@material-ui/core';
 // Shared layouts
 import { Dashboard as DashboardLayout } from 'layouts';
 
-// Shared services
-import { getFiles } from 'services/user';
-
 // Custom components
 import { FilesToolbar, FilesTable } from './components';
 
@@ -26,7 +23,6 @@ class FilesList extends Component {
 
   state = {
     isLoading: false,
-    limit: 10,
     users: [],
     selectedFiles: [],
     error: null
@@ -36,9 +32,8 @@ class FilesList extends Component {
     try {
       this.setState({ isLoading: true });
 
-      const { limit } = this.state;
 
-      const { users } = await getFiles(limit);
+      const { users } = null
 
       if (this.signal) {
         this.setState({

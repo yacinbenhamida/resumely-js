@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 // Externals
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { makeStyles } from '@material-ui/core/styles';
 
 // Services
 import predictionService from 'services/prediction.service';
@@ -22,11 +21,8 @@ import { Grid } from '@material-ui/core';
 
 import { CircularProgress } from '@material-ui/core';
 
-// Material icons
-import { ArrowRight as ArrowRightIcon } from '@material-ui/icons';
-
 // Shared components
-import { Portlet, PortletContent, PortletFooter } from 'components';
+import { Portlet, PortletContent } from 'components';
 // Shared components
 import { PortletHeader, PortletLabel } from 'components';
 

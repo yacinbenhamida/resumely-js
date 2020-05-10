@@ -9,10 +9,9 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import { Typography } from '@material-ui/core';
-
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 // Material icons
 import {
-  ArrowUpward as ArrowUpwardIcon,
   Money as MoneyIcon
 } from '@material-ui/icons';
 
@@ -25,11 +24,12 @@ import axios from 'axios'
 class Budget extends Component {
   state = {
     scrapRequests : 0,
-    totalProfiles : 0
+    totalProfiles : 0,
   }
   componentDidMount(){
     this.loadScrappRequests()
   }
+
   loadScrappRequests = () => {
     axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
     .then(res=>{
@@ -66,11 +66,11 @@ class Budget extends Component {
           </div>
         </div>
         <div className={classes.footer}>
-          <Typography
+        <Typography
             className={classes.difference}
             variant="body2"
           >
-            <ArrowUpwardIcon />
+            <PersonAddIcon />
           </Typography>
           <Typography
             className={classes.caption}

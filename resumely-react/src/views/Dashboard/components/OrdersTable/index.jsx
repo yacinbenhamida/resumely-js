@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // Externals
 import classNames from 'classnames';
-import moment from 'moment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 
@@ -11,38 +10,28 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
-  Button,
   CircularProgress,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-  Tooltip,
-  TableSortLabel
+  Avatar
 } from '@material-ui/core';
-
-// Shared services
-import { getOrders } from 'services/order';
 
 // Shared components
 import {
   Portlet,
   PortletHeader,
   PortletLabel,
-  PortletToolbar,
-  PortletContent,
-  Status
+  PortletContent
 } from 'components';
+
 
 // Component styles
 import styles from './styles';
+import axios from 'axios'
 
-const statusColors = {
-  delivered: 'success',
-  pending: 'info',
-  refund: 'danger'
-};
 
 class OrdersTable extends Component {
   signal = false;
@@ -50,23 +39,27 @@ class OrdersTable extends Component {
   state = {
     isLoading: false,
     limit: 10,
-    orders: [],
-    ordersTotal: 0
+    candidates: [],
+    candidatesTotal: 0
   };
 
   async getOrders(limit) {
     try {
       this.setState({ isLoading: true });
-
-      const { orders, ordersTotal } = await getOrders(limit);
-
-      if (this.signal) {
-        this.setState({
-          isLoading: false,
-          orders,
-          ordersTotal
-        });
-      }
+      
+     // const { orders, ordersTotal } = await getOrders(limit);
+      axios.get(process.env.REACT_APP_BACKEND+'/dashboard/latest-candidates?secret_token='+localStorage.getItem('token'))
+      .then(res=>{
+        if (this.signal) {
+          console.log(res.data)
+          this.setState({
+            isLoading: false,
+            candidates : res.data,
+            candidatesTotal : res.data.length
+          });
+        }
+      })
+      
     } catch (error) {
       if (this.signal) {
         this.setState({
@@ -91,28 +84,18 @@ class OrdersTable extends Component {
 
   render() {
     const { classes, className } = this.props;
-    const { isLoading, orders, ordersTotal } = this.state;
+    const { isLoading, candidates, candidatesTotal } = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const showOrders = !isLoading && orders.length > 0;
+    const showOrders = !isLoading && candidates.length > 0;
 
     return (
       <Portlet className={rootClassName}>
         <PortletHeader noDivider>
           <PortletLabel
-            subtitle={`${ordersTotal} in total`}
-            title="Latest orders"
+            subtitle={`${candidatesTotal} in total`}
+            title="Newest profiles"
           />
-          <PortletToolbar>
-            <Button
-              className={classes.newEntryButton}
-              color="primary"
-              size="small"
-              variant="outlined"
-            >
-              New entry
-            </Button>
-          </PortletToolbar>
         </PortletHeader>
         <PerfectScrollbar>
           <PortletContent
@@ -128,50 +111,36 @@ class OrdersTable extends Component {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Order ID</TableCell>
-                    <TableCell align="left">Customer</TableCell>
-                    <TableCell
-                      align="left"
-                      sortDirection="desc"
-                    >
-                      <Tooltip
-                        enterDelay={300}
-                        title="Sort"
-                      >
-                        <TableSortLabel
-                          active
-                          direction="desc"
-                        >
-                          Date
-                        </TableSortLabel>
-                      </Tooltip>
-                    </TableCell>
-                    <TableCell align="left">Status</TableCell>
+                    <TableCell align="right" colSpan={2}>First Name</TableCell>
+                    <TableCell align="left">Last Name</TableCell>
+                    <TableCell align="left">Lives in</TableCell>
+                    <TableCell align="left">Country</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {orders.map(order => (
+                  {candidates.map(c => (
                     <TableRow
                       className={classes.tableRow}
                       hover
-                      key={order.id}
+                      onClick = {e => {window.open(c.profile,"_blank")}}
+                      key={c._id}
                     >
-                      <TableCell>{order.id}</TableCell>
+                      <TableCell>
+                        <Avatar
+                          className={classes.avatar}
+                          src={c.imageUrl !== 'No results'  ? c.imageUrl : "https://debut.careers/app/themes/debut/assets/images/Profile-Fallback-01-01.png"}
+                        >
+                        </Avatar>
+                      </TableCell>
+                      <TableCell>{c.firstName}</TableCell>
                       <TableCell className={classes.customerCell}>
-                        {order.customer.name}
+                        {c.lastName}
                       </TableCell>
                       <TableCell>
-                        {moment(order.createdAt).format('DD/MM/YYYY')}
+                        {c.livesIn !== 'No results' ? c.livesIn : c.country}
                       </TableCell>
                       <TableCell>
-                        <div className={classes.statusWrapper}>
-                          <Status
-                            className={classes.status}
-                            color={statusColors[order.status]}
-                            size="sm"
-                          />
-                          {order.status}
-                        </div>
+                        {c.country}
                       </TableCell>
                     </TableRow>
                   ))}

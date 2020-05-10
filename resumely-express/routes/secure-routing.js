@@ -56,5 +56,8 @@ export default (app, passport) => {
     })).post('/update-file-status/:id', fileUpload.updateFileStatus);
     app.use('/flask-disconnect', passport.authenticate('jwt', {
         session: false
-    })).get('/flask-disconnect',flaskCon.disconnectFromFlaskApp);
+    })).get('/flask-disconnect',flaskCon.disconnectFromFlaskApp); 
+    app.use('/dashboard/latest-candidates', passport.authenticate('jwt', {
+        session: false
+    })).get('/dashboard/latest-candidates',dashboardController.getNewestCandidates);
 };

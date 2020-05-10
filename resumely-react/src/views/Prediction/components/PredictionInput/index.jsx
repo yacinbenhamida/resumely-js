@@ -21,11 +21,6 @@ import {
 import styles from './styles';
 
 class PredictionInput extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { classes, className
       , firstName, lastName

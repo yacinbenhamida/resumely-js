@@ -9,13 +9,13 @@ import { withStyles } from '@material-ui/core';
 
 // Material components
 import { Typography } from '@material-ui/core';
-
 // Material icons
 import {
   ArrowUpward as ArrowUpwardIcon,
-  PeopleOutlined as PeopleIcon
+  PeopleOutlined as PeopleIcon,
 } from '@material-ui/icons';
-
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import DragHandleIcon from '@material-ui/icons/DragHandle';
 // Shared components
 import { Paper } from 'components';
 
@@ -34,10 +34,12 @@ class Users extends Component {
   loadNbOfUsers = () => {
     axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
     .then(res=>{
+      let contrib = Math.round(Number(res.data.countscrappedProfiles / res.data.nbCandidates )*100)
         this.setState({nbCandidates: res.data.nbCandidates , 
-          countscrappedProfiles : res.data.countscrappedProfiles , contribution : Math.round(Number(res.data.countscrappedProfiles / res.data.nbCandidates )*100) })
-          console.log(this.state.countscrappedProfiles)
+          countscrappedProfiles : res.data.countscrappedProfiles , contribution : contrib ? contrib : 0,
       })
+      console.log(this.state.contribution)
+    })
   }
   render() {
     const { classes, className, ...rest } = this.props;
@@ -69,6 +71,7 @@ class Users extends Component {
           </div>
         </div>
         <div className={classes.footer}>
+        {this.state.contribution > 0 && 
           <Typography
             className={classes.difference}
             variant="body2"
@@ -76,6 +79,25 @@ class Users extends Component {
             <ArrowUpwardIcon />
             { this.state.contribution} %
           </Typography>
+        }
+        {this.state.contribution === 0 && 
+          <Typography
+            className={classes.difference}
+            variant="body2"
+          >
+            <DragHandleIcon />
+            { this.state.contribution} %
+          </Typography>
+        }
+        {this.state.contribution < 0 && 
+          <Typography
+            className={classes.difference}
+            variant="body2"
+          >
+            <ArrowDownwardIcon />
+            { this.state.contribution} %
+          </Typography>
+        }
           <Typography
             className={classes.caption}
             variant="caption"

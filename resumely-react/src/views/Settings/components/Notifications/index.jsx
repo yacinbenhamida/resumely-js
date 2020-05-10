@@ -103,7 +103,7 @@ onLoadLess =async()=> {
                     <div>
                   <Typography variant="body1">{c.Os} - {c.Localisation}</Typography>
                   <Typography variant="caption">
-                    {c. Browser} -
+                    {c.Browser} -
                   
                   {
                   

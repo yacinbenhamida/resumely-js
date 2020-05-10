@@ -8,20 +8,13 @@ import PropTypes from 'prop-types';
 // Material helpers
 import { withStyles } from '@material-ui/core';
 
-// Material components
-import { IconButton } from '@material-ui/core';
 
-// Material icons
-import {
-  Refresh as RefreshIcon,
-} from '@material-ui/icons';
 
 // Shared components
 import {
   Portlet,
   PortletHeader,
   PortletLabel,
-  PortletToolbar,
   PortletContent
 } from 'components';
 
@@ -103,15 +96,6 @@ class DevicesChart extends Component {
       >
         <PortletHeader noDivider>
           <PortletLabel title="Countries" />
-          <PortletToolbar>
-            <IconButton
-              className={classes.refreshButton}
-              onClick={this.handleRefresh}
-              variant="text"
-            >
-              <RefreshIcon />
-            </IconButton>
-          </PortletToolbar>
         </PortletHeader>
         <PortletContent>
           <div className={classes.chartWrapper}>

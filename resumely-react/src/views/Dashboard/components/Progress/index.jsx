@@ -10,8 +10,6 @@ import { withStyles } from '@material-ui/core';
 // Material components
 import { Typography, LinearProgress } from '@material-ui/core';
 
-// Material icons
-import { InsertChartOutlined as InsertChartIcon } from '@material-ui/icons';
 
 // Shared components
 import { Paper } from 'components';
@@ -19,7 +17,7 @@ import { Paper } from 'components';
 // Component styles
 import styles from './styles';
 import axios from 'axios';
-
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 class Progress extends Component {
   state = {
     filesCount : 0
@@ -30,7 +28,7 @@ class Progress extends Component {
   loadFiles = () => {
     axios.get(process.env.REACT_APP_BACKEND+'/dashboard/numbers?secret_token='+localStorage.getItem('token'))
     .then(res=>{
-        this.setState({filesCount: res.data.fileCount})
+        this.setState({filesCount: res.data.fileCount ? res.data.fileCount : 0})
       })
   }
   render() {
@@ -59,7 +57,7 @@ class Progress extends Component {
             </Typography>
           </div>
           <div className={classes.iconWrapper}>
-            <InsertChartIcon className={classes.icon} />
+            <InsertDriveFileIcon className={classes.icon} />
           </div>
         </div>
         <div className={classes.footer}>
