@@ -51,25 +51,21 @@ class FilesTable extends Component {
           <Table >
               <TableHead >
                 <TableRow  >
-                  <TableCell align="left"> First Name</TableCell>
+                  <TableCell align="left">First Name</TableCell>
                   <TableCell align="left">Last Name</TableCell>
                   <TableCell align="left">Age</TableCell>
                   <TableCell align="left">Country </TableCell>
-                  <TableCell align="left">livesIn </TableCell>
-                
-         
+                  <TableCell align="left">lives In </TableCell>   
                 </TableRow>
               </TableHead>
               <TableBody>
               {
-                 this.props.users
-              
+                 this.props.users            
                   .map(candidate => (
                     <TableRow
                       className={classes.tableRow}
                       hover
-                      key={candidate._id}>
-                  
+                      key={candidate._id}>             
                       <TableCell className={classes.tableCell}>
                       {candidate._source.firstName}
                       </TableCell>
@@ -78,21 +74,19 @@ class FilesTable extends Component {
                        
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                      0
+                      {candidate._source.age ? candidate._source.age : 0} 
                       </TableCell>
                       <TableCell className={classes.tableCell}>
-                        {candidate._source.country}
+                        {candidate._source.country !== 'No results' ? candidate._source.country : candidate._source.livesIn }
                       </TableCell>
                       <TableCell className={classes.tableCell}>
                         {candidate._source.livesIn}
                       </TableCell>
-                   
                     </TableRow>
                   ))}
               </TableBody>
             </Table>
           </PerfectScrollbar>
-  
         </PortletContent>
       </Portlet>
     );
