@@ -23,12 +23,20 @@ exports.numbers = (req, res) => {
                                 total: { $sum: "$currentNoOfRows" }
                             }
                         }]
-                        , (err, countscrappedProfiles) => {             
+                        , (err, countscrappedProfiles) => {
+                            if(err){
+                                res.send({
+                                    nbCandidates: count, scrapCount: scrapCounts,
+                                    fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
+                                })
+                            }  
+                            if(countscrappedProfiles){
                                 res.send({
                                     nbCandidates: count, scrapCount: scrapCounts,
                                     fileCount: (fileCount ? fileCount : 0)
-                                    , countscrappedProfiles: (countscrappedProfiles[0].total ?countscrappedProfiles[0].total : 0) 
+                                    , countscrappedProfiles: (countscrappedProfiles ?countscrappedProfiles[0].total : 0) 
                                 })
+                            }               
                             })
                         })
                     })
