@@ -219,8 +219,7 @@ class PredictionDetails extends Component {
 
                         <DialogContent>
                             <DialogContentText>
-                                To subscribe to this website, please enter your email address here. We will send updates
-                                occasionally.
+                                You can improve the prediction.
                         </DialogContentText>
 
 
