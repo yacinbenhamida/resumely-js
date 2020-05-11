@@ -8,46 +8,51 @@ exports.numbers = (req, res) => {
     User.findOne({
         $or: [{ username: req.user.email }, { email: req.user.email }]
     }, { _id: 1 }, (error, user) => {
-        UploadeFile.countDocuments({ ownerId: String(user._id) }, (err, fileCount) => {
-            ScrapRequest.countDocuments({ ownerId: String(user._id) }, (err, scrapCounts) => {
-                Candidate.countDocuments({}, (err, count) => {   
-                    ScrapRequest.aggregate(
-                        [{
-                            $match: {
-                                ownerId: String(user._id)
-                            }
-                        },
-                        {
-                            $group: {
-                                _id: String(user._id),
-                                total: { $sum: "$currentNoOfRows" }
-                            }
-                        }]
-                        , (err, countscrappedProfiles) => {
-                            if(err){
-                                res.send({
-                                    nbCandidates: count, scrapCount: scrapCounts,
-                                    fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
+        if (error) res.send({})
+        if(user && user._id){
+            UploadeFile.countDocuments({ ownerId: String(user._id) }, (err, fileCount) => {
+                ScrapRequest.countDocuments({ ownerId: String(user._id) }, (err, scrapCounts) => {
+                    Candidate.countDocuments({}, (err, count) => {   
+                        ScrapRequest.aggregate(
+                            [{
+                                $match: {
+                                    ownerId: String(user._id)
+                                }
+                            },
+                            {
+                                $group: {
+                                    _id: String(user._id),
+                                    total: { $sum: "$currentNoOfRows" }
+                                }
+                            }]
+                            , (err, countscrappedProfiles) => {
+                                if(err){
+                                    res.send({
+                                        nbCandidates: count, scrapCount: scrapCounts,
+                                        fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
+                                    })
+                                }  
+                                if(countscrappedProfiles && countscrappedProfiles[0] && countscrappedProfiles[0].total){
+                                    res.send({
+                                        nbCandidates: count, scrapCount: scrapCounts,
+                                        fileCount: (fileCount ? fileCount : 0)
+                                        , countscrappedProfiles: (countscrappedProfiles ?countscrappedProfiles[0].total : 0) 
+                                    })
+                                }  
+                                else {
+                                    res.send({
+                                        nbCandidates: count, scrapCount: scrapCounts,
+                                        fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
+                                    })
+                                }             
                                 })
-                            }  
-                            if(countscrappedProfiles && countscrappedProfiles[0] && countscrappedProfiles[0].total){
-                                res.send({
-                                    nbCandidates: count, scrapCount: scrapCounts,
-                                    fileCount: (fileCount ? fileCount : 0)
-                                    , countscrappedProfiles: (countscrappedProfiles ?countscrappedProfiles[0].total : 0) 
-                                })
-                            }  
-                            else {
-                                res.send({
-                                    nbCandidates: count, scrapCount: scrapCounts,
-                                    fileCount: (fileCount ? fileCount : 0), countscrappedProfiles : 0
-                                })
-                            }             
                             })
                         })
-                    })
-                });
+                    });
+                }
+            else res.send({})
             })
+            
 }
 
 exports.countryRatio = (req, res) => {
