@@ -222,7 +222,7 @@ def scrapper(country,idop):
     profiles_collection = database['profiles']
     done = set()
     extracted_data = []
-    driver.get('https:www.google.com')
+    driver.get('https://www.bing.com/')
     sleep(3)
     search_query = driver.find_element_by_name('q')
     search_query.send_keys('site:doyoubuzz.com AND "'+country+'"')
@@ -231,14 +231,13 @@ def scrapper(country,idop):
     sleep(5)
     target = None
     try:
-        pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
         youbuzz_urls = []
         try:
-            while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+            while(driver.find_element_by_xpath("//a[starts-with(@class,'sb_pagN')]")):
                 href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
                 for i in href:
                     youbuzz_urls.append(i.get_attribute('href'))
-                driver.find_element_by_xpath("//span[text()='Suivant']").click()
+                driver.find_element_by_xpath("//a[starts-with(@class,'sb_pagN')]").click()
         except:
             pass
         print('recording state to database with id '+idop)
