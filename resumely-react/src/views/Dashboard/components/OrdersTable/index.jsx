@@ -47,11 +47,9 @@ class OrdersTable extends Component {
     try {
       this.setState({ isLoading: true });
       
-     // const { orders, ordersTotal } = await getOrders(limit);
       axios.get(process.env.REACT_APP_BACKEND+'/dashboard/latest-candidates?secret_token='+localStorage.getItem('token'))
       .then(res=>{
         if (this.signal) {
-          console.log(res.data)
           this.setState({
             isLoading: false,
             candidates : res.data,

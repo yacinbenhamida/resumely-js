@@ -71,7 +71,6 @@ class DevicesChart extends Component {
           labels.push(element._id)
           colors.push(this.getRandomColor())
         });
-        console.log(numbers)
         this.setState({countries : res.data , data : {
           datasets: [
             {
