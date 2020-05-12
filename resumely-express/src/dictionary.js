@@ -5,10 +5,10 @@ var _ = require('underscore');
 module.exports = {
   titles: {
     adresse: ['Cité','Adresse','city','avenue','Pays','Ville','km','tunisie','Route','maghreb','Rue','cité','RUE','Lieu de naissance','tunis','maroc','tunisienne','Nationalité','tunisien','address','tunisia','Morocco','Ariana','Béja','Ben Arous','Bizerte','Gabès',
-    'Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Bizerte','Bizert','la marsa','Kef','Benarous','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','	Sidi Bouzid',
+    'Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Goulette','Bizerte','Bizert','la marsa','Kef','Benarous','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','	Sidi Bouzid',
     'Siliana','Sousse','Tataouine','Tozeur','Tunis','Zaghouan','Maroc','Provence','Province','Mdiq Fnideq','Tétouan','Fahs Anjra',
     'Larache','Hoceima','Chefchaouen','Ouezzane','Oujda angad','Nador','Driouch','Jerada','Berkane','Taourirt','Guercif','Figuig','Fès','Meknès','Moulay yaacoub','Boulemane','Rabat','Tikachmirine'
-    ,'Chefchaouèn','Settat','Khmissat','Larache','Ksar el Kebir','Jadida','Beni Mellal','Béni Mellal','Khouribga','Safi','Tetouan','Kenitra',
+    ,'Chefchaouèn','Settat','Khmissat','Larache','Ksar el Kebir','Taza','Jadida','Beni Mellal','Béni Mellal','Khouribga','Safi','Tetouan','Kenitra',
     'Oujda','Meknes','Tanger','Agadir','Marrakech','Salé'],
    /* objective: ['objective', 'objectives'],
     nationalité: ['tunisien', 'tunisienne','nationalité'],
@@ -29,9 +29,9 @@ module.exports = {
     additional: ['additional'],
     certification: ['certification', 'certifications'],*/
     activites: ['Interêts','interests','CENTRES D’INTERETS','bénévole','vie associative','vie associative et intérêt','intérêt','vie associative et intéret',"centres d'interets"],
-    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né','naissance','DN','Naissance','Date de naissance:'],
-    experience:['Parcours','Expérience','Experience','Stages'],
-    formation: ['education','Formations','formation','ETUDES & DIPLOMES','etudes','Education','diplomes','formations','Éducation','Projets','PROJETS','Stages Académiques','STAGE'],
+    DateNaissance:['Née','Née le','Date de naissance','born','birthdate','Né','né le','naissance','DN','Naissance','Date de naissance:'],
+    experience:['Parcours','Expérience','Experience','Stages','E X P E R I E N C E'],
+    formation: ['education','Etudes','Formations','formation','ETUDES & DIPLOMES','etudes','Education','diplomes','formations','Éducation','Projets','PROJETS','Stages Académiques','STAGE'],
     languages: ['languages','langues','Linguistique','Compétences linguistiques'],
     skills: ['Compétences', 'Skills & Expertise', 'technology', 'technologies','COMPETENCES TECHNIQUES','competences techniques','Logiciels maîtrisés','Compétences techniques'],
 

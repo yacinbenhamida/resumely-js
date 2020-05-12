@@ -295,91 +295,14 @@ class Datasetparsing extends Component {
           </DialogContentText>
         </DialogContent>
       </Dialog>
-  
-   { /*  <div>
-      <form> 
-   <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Edit Resume</DialogTitle>
-        <DialogContent>
-        <input type="text" className="form-control" value={this.state.name.fullName} onChange={this.handleChange}/>
-            <TextField
-            autoFocus
-            margin="dense"
-            id="Firstname"
-            label="First name"
-            type="text"
-            fullWidth
-          />
-            <TextField
-            autoFocus
-            margin="dense"
-            id="Lastname"
-            label="Last name"
-            type="text"
-            fullWidth
-          />
-
-         <TextField
-            autoFocus
-            margin="dense"
-            id="email"
-            label="Email"
-            type="email"
-            fullWidth
-          />
-            <TextField
-            autoFocus
-            margin="dense"
-            id="phone"
-            label="Phone"
-            type="text"
-            fullWidth
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="adress"
-            label="Adress"
-            type="text"
-            fullWidth
-          />
-            <TextField
-            autoFocus
-            margin="dense"
-            id="birthdate"
-            label="Birth date"
-            type="date"
-            fullWidth
-          />
-             <TextField
-            autoFocus
-            margin="dense"
-            id="age"
-            label="Age"
-            type="text"
-            fullWidth
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={this.handleClose} color="primary">
-            Subscribe
-          </Button>
-        </DialogActions>
-      </Dialog>
-      </form>
-       </div>
-      */ }
-            </Grid>
-            <Grid
-              item
-              lg={12}
-              md={12}
-              xl={12}
-              xs={12}
-            >
+      </Grid>
+      <Grid
+      item
+      lg={12}
+      md={12}
+      xl={12}
+      xs={12}
+      >
             
             </Grid>
           </Grid>

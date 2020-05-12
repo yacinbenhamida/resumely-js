@@ -69,8 +69,7 @@ class ParserParent extends Component {
 
        const formData = new FormData();
      files.map(f =>{
-       console.log("testing value of f")
-       console.log(f)
+       console.log("testing f"+f)
       formData.append("file", f.file);
       return
      } )
@@ -255,7 +254,7 @@ class ParserParent extends Component {
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
               <TableCell align="right">{resumes.experience}</TableCell>
-              <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ () => this.deleteContact(resumes._id) }>
+              <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ console.log(resumes.filename) }>
               <DeleteIcon />
               </IconButton>
               </TableCell>

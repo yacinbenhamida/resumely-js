@@ -40,6 +40,7 @@ function totalmonths(T1,T2)
   if(T1.length%2!=0)
   {
     T1.splice(-1,1)
+    total+=1;
   }
   if(T2.length%2!=0)
   {
@@ -165,8 +166,8 @@ Resume.prototype.jsoned = function() {
   let name= this.parts.name
   if(this.parts.adresse!=undefined)
   { 
-  let n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|bizert|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan|benarous|la marsa|petite ariana|tunis)(?!tunisie)(?!tunisia)(?!tunisienne)(?!tunisien)/);
-  let p = this.parts.adresse.toLowerCase().match(/(chefchaouèn|salé|béni mellal|settat|khmissat|larache|ksar el kebir|jadida|beni mellal|khouribga|safi|mdiq fnideq|tétouan|fahs anjra|larache|hoceima|chefchaouen|ouezzane|oujda|nador|driouch|jerada|berkane|taourirt|guercif|figuig|fès|meknès|moulay yaacoub|boulemane|rabat|tikachmirine|casablanca|marrakech|agadir|tanger|kenitra)/)
+  let n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|bizert|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan|benarous|la marsa|petite ariana|tunis|goulette)(?!tunisie)(?!tunisia)(?!tunisienne)(?!tunisien)/);
+  let p = this.parts.adresse.toLowerCase().match(/(taza|chefchaouèn|salé|béni mellal|settat|khmissat|larache|ksar el kebir|jadida|beni mellal|khouribga|safi|mdiq fnideq|tétouan|fahs anjra|larache|hoceima|chefchaouen|ouezzane|oujda|nador|driouch|jerada|berkane|taourirt|guercif|figuig|fès|meknès|moulay yaacoub|boulemane|rabat|tikachmirine|casablanca|marrakech|agadir|tanger|kenitra)/)
 
   if(n!=null&&p==null)
   {
@@ -179,14 +180,20 @@ Resume.prototype.jsoned = function() {
   if(n==null&&p==null)
   {
     let s=this.parts.adresse.toLowerCase().match(/(tunisie|tunisienne|tunisien|tunisie )/)
+    let m=this.parts.adresse.toLowerCase().match(/(maroc|marocain|marocaine)/)
     if(s!=null)
   {
     this.parts.adresse=String("Tunisie");
+  }
+  if(m!=null)
+  {
+    this.parts.adresse=String("Maroc");
   }
   else{
     this.parts.adresse=" "
   }
   }
+ 
 
 }
 
@@ -239,14 +246,37 @@ do {
 
 if(simpletable.length!=null)
 {
-  this.parts.experience='total months'+simplecsomme(simpletable)
+  let smon=0;
+ let smyear=0;
+ let valueres=simplecsomme(simpletable);
+ if(valueres>0&&valueres!=null)
+ {
+  smon=valueres % 12;
+  smyear=Math.floor(valueres/12);
+   if(smon>0&&smyear>0)
+   {
+    this.parts.experience=+smyear+" ans et "+smon+"mois";
+   }
+   if(smyear>0&&(smon==0|smon==null))
+   {
+    this.parts.experience=+smyear+" ans ";
+   }
+   if(smon>0&&(smyear==0|smyear==null))
+   {
+    this.parts.experience=+smon+" mois ";
+   }
+ }
+ else{
+   this.parts.experience=" "
+ }
+
 }
 }
 
 
 else
 {
-let regex = /(?!présentation)(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[\s|\s\s]{0,2}[à|-|\-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s][\s]{0,1}(?:\d{2})?[\s]{0,1}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|\d{4}[\s]{0,2}[-|_|\s|à][\s]{0,2}(\d{4}|en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat)|(\d{2}[\/](19|20)\d{2}|((19|20)\d{2}|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|(en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat))|((december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à][\s]{0,2}(19|20)\d{2})/g
+let regex = /(?!présentation)(jan|fev|mar|avr|mai|juin|juil|aou|sep|oct|nov|dec|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[\s|\s\s]{0,2}[à|-|\-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s||||ü||-|-||||■||•|•|•|✗||][\s]{0,1}(?:\d{2})?[\s]{0,1}(jan|fev|mar|avr|mai|juin|juil|aou|sep|oct|nov|dec|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s]{1,4}(19|20)\d{2}|\d{4}[\s]{0,2}[-|_|\s|à][\s]{0,2}(\d{4}|en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat)|(\d{2}[\/](19|20)\d{2}|((19|20)\d{2}|jan|fev|mar|avr|mai|juin|juil|aou|sep|oct|nov|dec|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-!$%^&*()_–+|~=`{}\[\]:";'<>?,.\/\s||||ü||-|-||||■||•|•|•|✗||]{1,4}(19|20)\d{2}|(en cours|aujourd|a ce jour|now|présent|since|depuis|maintenat))|((jan|fev|mar|avr|mai|juin|juil|aou|sep|oct|nov|dec|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à||||ü||-|-||||■||•|•|•|✗||][\s]{0,2}(jan|fev|mar|avr|mai|juin|juil|aou|sep|oct|nov|dec|december|november|october|september|august|july|june|may|april|march|february|january|janvier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|décembre|depuis|since)[-|_|\s|à||||ü||-|-||||■||•|•|•|✗||][\s]{0,2}(19|20)\d{2})/g
 let matches = [];
 let months = [];
 let years = [];
@@ -304,7 +334,31 @@ if(matches!=null)
   
  /* months.forEach(element => console.log("moisssssssss"+element));*/
  // years.forEach(element => console.log("yearsss"+element));
-this.parts.experience=String(matches)+' total months'+totalmonths(months,years)
+ let smon=0;
+ let smyear=0;
+ let valueres=totalmonths(months,years);
+ if(valueres>0&&valueres!=null)
+ {
+  smon=valueres % 12;
+  smyear=Math.floor(valueres/12);
+   if(smon>0&&smyear>0)
+   {
+    this.parts.experience=+smyear+" ans et "+smon+"mois";
+   }
+   if(smyear>0&&(smon==0|smon==null))
+   {
+    this.parts.experience=+smyear+" ans ";
+   }
+   if(smon>0&&(smyear==0|smyear==null))
+   {
+    this.parts.experience=+smon+" mois ";
+   }
+ }
+ else{
+   this.parts.experience=" "
+ }
+
+
 }}
 
   }
@@ -355,7 +409,7 @@ this.parts.experience=String(matches)+' total months'+totalmonths(months,years)
   {
   if(this.parts.email!=undefined)
   {
-  var test = this.parts.email.replace(/@.*$/,"");
+  let test = this.parts.email.replace(/@.*$/,"");
   test=test.replace(/[0-9]/g, "");
   test=test.split('.').join(" ");
   test=test.split('-').join(" ");
