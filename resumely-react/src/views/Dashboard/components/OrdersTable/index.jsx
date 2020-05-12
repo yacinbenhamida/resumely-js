@@ -111,7 +111,7 @@ class OrdersTable extends Component {
                   <TableRow>
                     <TableCell align="right" colSpan={2}>First Name</TableCell>
                     <TableCell align="left">Last Name</TableCell>
-                    <TableCell align="left">Lives in</TableCell>
+                    <TableCell align="left">Address</TableCell>
                     <TableCell align="left">Country</TableCell>
                   </TableRow>
                 </TableHead>

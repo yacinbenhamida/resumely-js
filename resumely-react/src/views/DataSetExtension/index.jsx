@@ -153,7 +153,7 @@ class FilesList extends Component {
             container
             item
             md={6}
-            xs={6} 
+            xs={12} 
             spacing={2}
             className={classes.root}
           >
@@ -175,7 +175,7 @@ class FilesList extends Component {
           <Grid
               item
               md={6}
-              xs={6}  
+              xs={12}  
           >
           <CustomScrappingHistory />
           </Grid>       
