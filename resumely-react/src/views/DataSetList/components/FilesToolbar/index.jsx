@@ -311,7 +311,7 @@ onFilterValueChanged =async(ev ) =>
         <PortletHeader>
           <PortletLabel title="Localisation"/>
         </PortletHeader>
-        <PortletContent style={{ height: "250px", overflow: "auto" }}  >     
+        <PortletContent style={{ height: "300px", overflow: "auto" }}  >     
         <MuiThemeProvider >
         <FormGroup>
        {

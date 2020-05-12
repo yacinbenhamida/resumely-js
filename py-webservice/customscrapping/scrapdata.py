@@ -41,7 +41,9 @@ def load_browser():
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
+    options.add_argument('--disable-infobars')
     options.add_argument('--disable-dev-shm-usage')
+    options.binary_location = '/usr/bin/google-chrome'
     service_log_path = '/tmp/local/chromedriver.log'
     print('triggering chrome...')
     driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=options, service_log_path=service_log_path)
@@ -220,22 +222,22 @@ def scrapper(country,idop):
     profiles_collection = database['profiles']
     done = set()
     extracted_data = []
-    driver.get('https:www.google.com')
+    driver.get('https://www.bing.com/')
     sleep(3)
     search_query = driver.find_element_by_name('q')
     search_query.send_keys('site:doyoubuzz.com AND "'+country+'"')
     sleep(0.5)
     search_query.send_keys(Keys.RETURN)
     sleep(5)
+    target = None
     try:
-        pages=driver.find_elements_by_xpath("//*[@class='AaVjTc']/tbody/tr/td/a")
         youbuzz_urls = []
         try:
-            while(driver.find_element_by_xpath("//span[text()='Suivant']")):
+            while(driver.find_element_by_xpath("//a[starts-with(@class,'sb_pagN')]")):
                 href = driver.find_elements_by_xpath('//a[starts-with(@href, "https://www.doyoubuzz.com/")]')
                 for i in href:
                     youbuzz_urls.append(i.get_attribute('href'))
-                driver.find_element_by_xpath("//span[text()='Suivant']").click()
+                driver.find_element_by_xpath("//a[starts-with(@class,'sb_pagN')]").click()
         except:
             pass
         print('recording state to database with id '+idop)
@@ -396,7 +398,8 @@ def scrapper(country,idop):
                 print('already scrapped, moving on....')
     except: 
         pass   
-    scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentState" :"done" } })
-    notify(database,"scrapping data from "+country+" has been completed.",target['ownerId'])
+    if target != None:
+        scrapping_request_collection.update_one({"_id" : bson.ObjectId(idop)},{ "$set": { "currentState" :"done" } })
+        notify(database,"scrapping data from "+country+" has been completed.",target['ownerId'])
     driver.quit()
     return Response(json.dumps({"status" : "done"}),  mimetype='application/json')

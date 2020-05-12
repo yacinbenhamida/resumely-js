@@ -9,22 +9,18 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import { Typography } from '@material-ui/core';
-import classNames from 'classnames';
 import palette from 'theme/palette';
 import {
   Status
 } from 'components';
 import {
-  Phone as Phone,
+  Phone,
 } from '@material-ui/icons';
 
 
@@ -216,7 +212,7 @@ class Datasetparsing extends Component {
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             <div> 
-      <center>  { this.state.verif.valid==true &&
+      <center>  { this.state.verif.valid===true &&
          <Typography 
               className={classes.value}
               style={{ color: palette.success.main}}
@@ -275,7 +271,7 @@ class Datasetparsing extends Component {
             </div>
             <div> 
       <center>   
-      { this.state.verif.valid==false &&
+      { this.state.verif.valid===false &&
          <Typography y={this.state.test}
               className={classes.value}
               style={{ color: palette.danger.main }}

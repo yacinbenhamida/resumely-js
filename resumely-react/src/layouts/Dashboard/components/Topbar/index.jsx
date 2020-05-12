@@ -50,9 +50,9 @@ class Topbar extends Component {
       await axios.post(process.env.REACT_APP_BACKEND
         +'/notifications/all?secret_token='+localStorage.getItem('token'))
         .then(d => {
-        if (this.signal) {
+        if (this.signal && d.data) {
           this.setState({
-            notifications : d.data,
+            notifications : d.data.length > 5 ? d.data.slice(d.data.length -5 , d.data.length  ) : d.data,
             notificationsCount : d.data.length
           });
         }

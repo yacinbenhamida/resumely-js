@@ -1,25 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 // Externals
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Material helpers
 import { withStyles } from '@material-ui/core';
 
 // Material components
-import { Avatar, Typography, Button, LinearProgress, TextField } from '@material-ui/core';
-import { Grid } from '@material-ui/core';
+import {  Button, TextField } from '@material-ui/core';
 
 import { CircularProgress } from '@material-ui/core';
 
-// Material icons
-import { ArrowRight as ArrowRightIcon } from '@material-ui/icons';
-
 // Shared components
-import { Portlet, PortletContent, PortletFooter } from 'components';
-// Shared components
-import { PortletHeader, PortletLabel } from 'components';
+import { Portlet, PortletContent } from 'components';
 
 // Component styles
 import styles from './styles';
