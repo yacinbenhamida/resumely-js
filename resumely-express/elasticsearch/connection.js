@@ -4,7 +4,7 @@ const esClient = new es.Client({
 
     log: 'trace',
     requestTimeout: Infinity, // Test
-    keepAlive: true // Test
+    keepAlive: true, // Test,
 
   // host: 'localhost:9200/',
     

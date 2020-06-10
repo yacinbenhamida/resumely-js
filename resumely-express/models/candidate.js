@@ -5,7 +5,7 @@ const CandidateSchema = new mongoose.Schema({
     firstName:  {   type: String },
     lastName:   {     type: String    },
     country:    {   type: String    },
-   // age:    {   type: Number   },
+    age:    {   type: Number   },
     currentPosition:    {   type: String  , es_indexed: false  },
     profile:    {   type: String  , es_indexed: false  } ,
     livesIn:    {   type:String     },
@@ -27,10 +27,114 @@ const CandidateSchema = new mongoose.Schema({
 
 CandidateSchema.plugin(mongoosastic, {
     hosts: [
-      'http://51.178.142.162:9200'
+
+     'http://51.178.142.162:9200'
+ //'localhost:9200'
+
   ],
   type: 'profile',
 });
 var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
+
+
+
+/*Candidate.createMapping({
+    
+    "settings": {
+        "analysis": {
+          "analyzer": {
+            "autocomplete": {
+              "tokenizer": "autocomplete",
+              "filter": [
+                "lowercase"
+              ]
+            },
+            "autocomplete_search": {
+              "tokenizer": "lowercase"
+            }
+           
+          },
+          "tokenizer": {
+            "autocomplete": {
+              "type": "edge_ngram",
+              "min_gram": 1,
+              "max_gram": 10,
+              "token_chars": [
+                "letter"
+              ]
+            }
+          }
+        }
+      },
+      "mappings": {
+        "profile": {
+          
+          "properties": {
+            "firstName": {
+              "type": "text",
+            
+              "fields": {
+                                
+                "autocomplete": {
+                    "type": "text",
+                    "analyzer": "autocomplete",
+                    "search_analyzer": "autocomplete_search"
+                },
+                "raw":
+                {
+                 "type": "keyword"
+                
+                }
+              }}
+              ,
+            "lastName": {
+            "type": "text",
+             
+            
+              "fields": {
+                              
+                "autocomplete": {
+                    "type": "text",
+                    "analyzer": "autocomplete",
+                    "search_analyzer": "autocomplete_search"
+                }
+               }
+         
+      
+      
+            },
+            "country":{
+           
+               "type": "text" ,
+               
+               "fields":
+               {
+                 "raw":
+                 {
+                  "type": "text",
+                  "analyzer":"standard"
+                 },
+                 "filter":
+                 {
+                   "type":"keyword"
+                 }
+                
+               }
+            }
+          }
+      }
+      }
+
+    }, (err, mapping) => {
+    if (err) {
+    console.log('error creating mapping (you can safely ignore this)');
+    console.log(err);
+    } else {
+    console.log('mapping created!');
+    console.log(mapping);
+    }
+    });*/
+   
+
 
 module.exports =  Candidate;
