@@ -233,7 +233,7 @@ class ParserParent extends Component {
             <TableCell align="right">Birth date</TableCell>
             <TableCell align="right">Age</TableCell>
             <TableCell align="right">Experience</TableCell> 
-            <TableCell align="right">Delete</TableCell>
+          
          
           </TableRow>
         </TableHead>
@@ -254,10 +254,7 @@ class ParserParent extends Component {
               <TableCell align="right">{resumes.DateNaissance}</TableCell>
               <TableCell align="right">{resumes.age}</TableCell>
               <TableCell align="right">{resumes.experience}</TableCell>
-              <TableCell align="right">   <IconButton aria-label="delete" className={classes.margin} onClick={ console.log(resumes.filename) }>
-              <DeleteIcon />
-              </IconButton>
-              </TableCell>
+       
           
             </TableRow>
           ))}

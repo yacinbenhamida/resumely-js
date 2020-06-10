@@ -163,11 +163,11 @@ Resume.prototype.jsoned = function() {
   if(!isEmpty(this.parts)) 
   {
   
-  let name= this.parts.name
+
   if(this.parts.adresse!=undefined)
   { 
   let n = this.parts.adresse.toLowerCase().match(/(ariana|béja|ben arous|bizerte|bizert|gabès|gafsa|jendouba|kairouan|kasserine|kébili|kef|mahdia|manouba|médenine|monastir|nabeul|sfax|sidi bouzid|siliana|sousse|tataouine|tozeur|zaghouan|benarous|la marsa|petite ariana|tunis|goulette)(?!tunisie)(?!tunisia)(?!tunisienne)(?!tunisien)/);
-  let p = this.parts.adresse.toLowerCase().match(/(taza|chefchaouèn|salé|béni mellal|settat|khmissat|larache|ksar el kebir|jadida|beni mellal|khouribga|safi|mdiq fnideq|tétouan|fahs anjra|larache|hoceima|chefchaouen|ouezzane|oujda|nador|driouch|jerada|berkane|taourirt|guercif|figuig|fès|meknès|moulay yaacoub|boulemane|rabat|tikachmirine|casablanca|marrakech|agadir|tanger|kenitra)/)
+  let p = this.parts.adresse.toLowerCase().match(/(taza|casablanca|chefchaouèn|salé|béni mellal|settat|khmissat|larache|ksar el kebir|jadida|beni mellal|khouribga|safi|mdiq fnideq|tétouan|fahs anjra|larache|hoceima|chefchaouen|ouezzane|oujda|nador|driouch|jerada|berkane|taourirt|guercif|figuig|fès|meknès|moulay yaacoub|boulemane|rabat|tikachmirine|casablanca|marrakech|agadir|tanger|kenitra)/)
 
   if(n!=null&&p==null)
   {
@@ -189,12 +189,11 @@ Resume.prototype.jsoned = function() {
   {
     this.parts.adresse=String("Maroc");
   }
-  else{
+  if(m==null&&s==null)
+  {
     this.parts.adresse=" "
   }
   }
- 
-
 }
 
   if(this.parts.DateNaissance!=undefined)
@@ -332,8 +331,8 @@ if(matches!=null)
 }
   }
   
- /* months.forEach(element => console.log("moisssssssss"+element));*/
- // years.forEach(element => console.log("yearsss"+element));
+ // months.forEach(element => console.log("moisssssssss"+element));
+ //years.forEach(element => console.log("yearsss"+element));
  let smon=0;
  let smyear=0;
  let valueres=totalmonths(months,years);
@@ -364,6 +363,7 @@ if(matches!=null)
   }
   if(this.parts.name!=undefined)
   {
+  let name= this.parts.name
   let myfirst= human.parseName(name)
   let t=String(myfirst.firstName)
   let doc = nlp(t)
@@ -407,6 +407,7 @@ if(matches!=null)
 
   if(this.parts.name==undefined)
   {
+    let name= this.parts.name 
   if(this.parts.email!=undefined)
   {
   let test = this.parts.email.replace(/@.*$/,"");
