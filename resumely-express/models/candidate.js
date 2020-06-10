@@ -38,7 +38,7 @@ var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
 
 
 
-Candidate.createMapping({
+/*Candidate.createMapping({
     
     "settings": {
         "analysis": {
@@ -133,7 +133,7 @@ Candidate.createMapping({
     console.log('mapping created!');
     console.log(mapping);
     }
-    });
+    });*/
    
 
 
