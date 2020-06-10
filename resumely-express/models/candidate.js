@@ -28,8 +28,8 @@ const CandidateSchema = new mongoose.Schema({
 CandidateSchema.plugin(mongoosastic, {
     hosts: [
 
-     // 'http://51.178.142.162:9200'
- 'localhost:9200'
+     'http://51.178.142.162:9200'
+ //'localhost:9200'
 
   ],
   type: 'profile',
