@@ -28,8 +28,8 @@ const CandidateSchema = new mongoose.Schema({
 CandidateSchema.plugin(mongoosastic, {
     hosts: [
 
-     'http://51.178.142.162:9200'
- //'localhost:9200'
+     //'http://51.178.142.162:9200'
+ 'localhost:9200'
 
   ],
   type: 'profile',
@@ -38,7 +38,7 @@ var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
 
 
 
-/*Candidate.createMapping({
+Candidate.createMapping({
     
     "settings": {
         "analysis": {
@@ -133,7 +133,7 @@ var Candidate=mongoose.model('profile', CandidateSchema,'profiles')
     console.log('mapping created!');
     console.log(mapping);
     }
-    });*/
+    });
    
 
 

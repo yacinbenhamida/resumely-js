@@ -44,7 +44,7 @@ mongoose.connect(process.env.DB_URI, {
 //try {
    let stream = Candidate.synchronize()
     let count = 0;
-    /*stream.on('data', function (err, doc) {
+stream.on('data', function (err, doc) {
     
       
             
